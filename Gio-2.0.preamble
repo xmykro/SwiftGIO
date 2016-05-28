@@ -1,0 +1,12 @@
+import CGLib
+import GLib
+import GObject
+
+public struct GDatagramBased {}
+public struct GUnixConnectionPrivate {}
+public struct GUnixCredentialsMessagePrivate {}
+public struct GUnixFDListPrivate {}
+public struct GUnixFDMessagePrivate {}
+public struct GUnixInputStreamPrivate {}
+public struct GUnixOutputStreamPrivate {}
+public struct GUnixSocketAddressPrivate {}
