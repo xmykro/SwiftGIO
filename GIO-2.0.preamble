@@ -1,6 +1,11 @@
 import CGLib
 import GLib
+import GObject
 
-// export the following aliases as part of GIO (vs CGLib)
-
-
+public struct GUnixConnectionPrivate {}
+public struct GUnixCredentialsMessagePrivate {}
+public struct GUnixFDListPrivate {}
+public struct GUnixFDMessagePrivate {}
+public struct GUnixInputStreamPrivate {}
+public struct GUnixOutputStreamPrivate {}
+public struct GUnixSocketAddressPrivate {}

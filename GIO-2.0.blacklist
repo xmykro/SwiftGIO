@@ -1,0 +1,11 @@
+GDesktopAppInfo_autoptr
+GFileDescriptorBased_autoptr
+GUnixConnection_autoptr
+GUnixCredentialsMessage_autoptr
+GUnixFDList_autoptr
+GUnixFDMessage_autoptr
+GUnixInputStream_autoptr
+GUnixMountMonitor_autoptr
+GUnixOutputStream_autoptr
+GUnixSocketAddress_autoptr
+DESKTOP_APP_INFO_LOOKUP_EXTENSION_POINT_NAME
