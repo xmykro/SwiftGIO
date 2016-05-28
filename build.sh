@@ -1,13 +1,14 @@
 #!/bin/sh
 #
-MODULE=GIO-2.0
-module=`echo "${MODULE}" | tr '[:upper:]' '[:lower:]'`
+Module=Gio-2.0
+MODULE=`echo "${Module}" | tr '[:lower:]' '[:upper:]'`
+module=`echo "${Module}" | tr '[:upper:]' '[:lower:]'`
 export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:"${PATH}"
 GOBJECT_LIBDIR=`pkg-config --libs-only-L gobject-introspection-1.0 2>/dev/null | tr ' ' '\n' | grep gobject-introspection | tail -n1 | cut -c3-`
 GOBJECT_DIR=`dirname "${GOBJECT_LIBDIR}"`
 for prefix in $PREFIX GOBJECT_DIR /usr/local /usr ; do
 	gir_dir=${prefix}/share/gir-1.0
-	gir=${gir_dir}/${MODULE}.gir
+	gir=${gir_dir}/${Module}.gir
 	if [ -e "${gir}" ] ; then
 		export GIR=${gir}
 		export GIR_DIR=${gir_dir}
@@ -21,5 +22,5 @@ if [ ! -e "${GIR}" ] ; then
 fi
 LINKFLAGS=`pkg-config --libs $module gio-unix-2.0 glib-2.0 | tr ' ' '\n' | sed 's/^/-Xlinker /' | tr '\n' ' '`
 CCFLAGS=`pkg-config --cflags $module  gio-unix-2.0 glib-2.0 | tr ' ' '\n' | sed 's/^/-Xcc /' | tr '\n' ' ' `
-gir2swift -p ${GIR_DIR}/GObject-2.0.gir "${GIR}" | sed -f ${MODULE}.sed > Sources/${MODULE}.swift
+gir2swift -p ${GIR_DIR}/GObject-2.0.gir "${GIR}" | sed -f ${Module}.sed > Sources/${Module}.swift
 swift build $CCFLAGS $LINKFLAGS "$@"
