@@ -10,3 +10,11 @@ public struct GUnixFDMessagePrivate {}
 public struct GUnixInputStreamPrivate {}
 public struct GUnixOutputStreamPrivate {}
 public struct GUnixSocketAddressPrivate {}
+
+private func g_io_module_load(_ module: UnsafePointer<GIOModule>?) {
+	fatalError("private g_io_module_load called")
+}
+
+private func g_io_module_unload(_ module: UnsafePointer<GIOModule>?) {
+	fatalError("private g_io_module_unload called")
+}

@@ -9,3 +9,5 @@ GUnixMountMonitor_autoptr
 GUnixOutputStream_autoptr
 GUnixSocketAddress_autoptr
 DESKTOP_APP_INFO_LOOKUP_EXTENSION_POINT_NAME
+io_module_load
+io_module_unload
