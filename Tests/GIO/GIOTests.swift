@@ -16,7 +16,7 @@ class GIOTests: XCTestCase {
             }
             XCTAssertNotNil(ai.commandline)
             XCTAssertTrue(ai.supportsFiles())
-            XCTAssertFalse(ai.supportsUris())
+            XCTAssertFalse(ai.supportsURIs())
             XCTAssertFalse(ai.shouldShow())
             guard let ap = ai.dup() else { XCTFail() ; return }
             let dup = AppInfo(ap)
