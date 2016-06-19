@@ -1,6 +1,8 @@
 import XCTest
 @testable import GIO
 
+var cancellableCallbackFlag = false
+
 class GIOTests: XCTestCase {
 
     /// test lookup and creation of App Infos
@@ -26,11 +28,34 @@ class GIOTests: XCTestCase {
         }
     }
 
+    /// test cancellables
+    func testCancellable() {
+        var calledBackCount = 0
+        do {
+            let cancellable = Cancellable()
+            withUnsafeMutablePointer(&calledBackCount) { countPtr in
+                let rv = cancellable.connect(data: countPtr, dataDestroyFunc: {
+                    XCTAssertNotNil($0)
+                    let countPtr = UnsafeMutablePointer<Int>($0!)
+                    let count = countPtr.pointee
+                    countPtr.pointee = count + 1
+                }, callback: {
+                    cancellableCallbackFlag = true
+                })
+                XCTAssertNotEqual(rv, 0)
+                cancellable.cancel()
+                XCTAssertTrue(cancellableCallbackFlag)
+                XCTAssertEqual(calledBackCount, 0)
+            }
+        }
+        XCTAssertEqual(calledBackCount, 1)
+    }
 }
 extension GIOTests {
     static var allTests : [(String, (GIOTests) -> () throws -> Void)] {
         return [
-            ("testAppInfoAndFile", testAppInfoAndFile),
+            ("testAppInfoAndFile",  testAppInfoAndFile),
+            ("testCancellable",     testCancellable),
         ]
     }
 }
