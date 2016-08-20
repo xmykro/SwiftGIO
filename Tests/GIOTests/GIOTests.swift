@@ -33,10 +33,10 @@ class GIOTests: XCTestCase {
         var calledBackCount = 0
         do {
             let cancellable = Cancellable()
-            withUnsafeMutablePointer(&calledBackCount) { countPtr in
+            withUnsafeMutablePointer(to: &calledBackCount) { countPtr in
                 let rv = cancellable.connect(data: countPtr, dataDestroyFunc: {
                     XCTAssertNotNil($0)
-                    let countPtr = UnsafeMutablePointer<Int>($0!)
+                    let countPtr = $0!.assumingMemoryBound(to: Int.self)
                     let count = countPtr.pointee
                     countPtr.pointee = count + 1
                 }, callback: {
