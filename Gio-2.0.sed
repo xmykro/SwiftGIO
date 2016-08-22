@@ -17,3 +17,5 @@ s/Utf/UTF/g
 s/Id/ID/g
 s/IDle/Idle/g
 s/IDent/Ident/g
+s/g_io_module_load/_g_io_module_load/g
+s/g_io_module_unload/_g_io_module_unload/g
