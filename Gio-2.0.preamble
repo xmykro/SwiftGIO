@@ -1,6 +1,6 @@
 import CGLib
 import GLib
-import GObject
+import GLibObject
 
 public struct GDatagramBased {}
 public struct GUnixConnectionPrivate {}

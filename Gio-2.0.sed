@@ -33,3 +33,4 @@ s/: \([A-Za-z.]*Hook[,)]\)/: @escaping \1/g
 s/: \([A-Za-z.]*Function[,)]\)/: @escaping \1/g
 s/: \([A-Za-z.]*Mapping[,)]\)/: @escaping \1/g
 s/path: UnsafeMutablePointer<CChar>/path: UnsafePointer<CChar>/g
+s/GObject.Callback/GLibObject.Callback/g
