@@ -1,5 +1,5 @@
 import XCTest
-@testable import GIOTestSuite
+@testable import GIOTests
 
 XCTMain([
 	 testCase(GIOTests.allTests),
