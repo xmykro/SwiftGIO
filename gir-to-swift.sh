@@ -31,14 +31,14 @@ echo  > Sources/Swift${Mod}.swift "import CGLib"
 echo >> Sources/Swift${Mod}.swift "import GLib"
 echo >> Sources/Swift${Mod}.swift "import GLibObject"
 echo >> Sources/Swift${Mod}.swift ""
-grep 'public protocol' Sources/${Module}.swift | cut -d' ' -f3 | cut -d: -f1 | sort -u | sed -e 's/^\(.*\)/public typealias _gio_\1 = \1/' >> Sources/Swift${Mod}.swift
+grep -h 'public protocol' Sources/*-*.swift | cut -d' ' -f3 | cut -d: -f1 | sort -u | sed -e 's/^\(.*\)/public typealias _gio_\1 = \1/' >> Sources/Swift${Mod}.swift
 echo >> Sources/Swift${Mod}.swift ""
-grep '^open class' Sources/${Module}.swift | cut -d' ' -f3 | cut -d: -f1 | sort -u | sed -e 's/^\(.*\)/public typealias _gio_\1 = \1/' >> Sources/Swift${Mod}.swift
+grep -h '^open class' Sources/*-*.swift | cut -d' ' -f3 | cut -d: -f1 | sort -u | sed -e 's/^\(.*\)/public typealias _gio_\1 = \1/' >> Sources/Swift${Mod}.swift
 echo >> Sources/Swift${Mod}.swift ""
 echo >> Sources/Swift${Mod}.swift "public struct Gio {"
-grep 'public protocol' Sources/${Module}.swift | cut -d' ' -f3 | cut -d: -f1 | sort -u | sed -e 's/^\(.*\)/    public typealias \1 = _gio_\1/' >> Sources/Swift${Mod}.swift
+grep -h 'public protocol' Sources/*-*.swift | cut -d' ' -f3 | cut -d: -f1 | sort -u | sed -e 's/^\(.*\)/    public typealias \1 = _gio_\1/' >> Sources/Swift${Mod}.swift
 echo >> Sources/Swift${Mod}.swift ""
-grep '^open class' Sources/${Module}.swift | cut -d' ' -f3 | cut -d: -f1 | sort -u | sed -e 's/^\(.*\)/    public typealias \1 = _gio_\1/' >> Sources/Swift${Mod}.swift
+grep -h '^open class' Sources/*-*.swift | cut -d' ' -f3 | cut -d: -f1 | sort -u | sed -e 's/^\(.*\)/    public typealias \1 = _gio_\1/' >> Sources/Swift${Mod}.swift
 echo >> Sources/Swift${Mod}.swift ""
-grep '^public typealias' Sources/${Module}.swift | sed 's/^/    /' >> Sources/Swift${Mod}.swift
+grep -h '^public typealias' Sources/*-*.swift | sed 's/^/    /' >> Sources/Swift${Mod}.swift
 echo >> Sources/Swift${Mod}.swift "}"
