@@ -2,5 +2,7 @@
 /.build
 /Packages
 /*.xcodeproj
+Sources/SwiftGio.swift
 Package.pins
+Package.resolved
 *-*.swift
