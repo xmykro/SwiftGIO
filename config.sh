@@ -4,6 +4,7 @@
 # the compiler and linker flags to use.
 #
 Mod=Gio
+MOD=`echo "${Mod}" | tr '[:lower:]' '[:upper:]'`
 Module=${Mod}-2.0
 MODULE=`echo "${Module}" | tr '[:lower:]' '[:upper:]'`
 module=`echo "${Module}" | tr '[:upper:]' '[:lower:]'`

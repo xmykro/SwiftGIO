@@ -1,9 +1,17 @@
+// swift-tools-version:4.0
+
 import PackageDescription
 
 let package = Package(
     name: "GIO",
-    dependencies: [
-        .Package(url: "https://github.com/rhx/SwiftGObject.git", majorVersion: 2)
+    products: [
+        .library(name: "GIO", targets: ["GIO"]),
     ],
-    swiftLanguageVersions: [3]
+    dependencies: [
+        .package(url: "https://github.com/rhx/SwiftGObject.git", .branch("master"))
+    ],
+    targets: [
+        .target(name: "GIO", dependencies: ["GLibObject"]),
+        .testTarget(name: "GIOTests", dependencies: ["GIO"]),
+    ]
 )
