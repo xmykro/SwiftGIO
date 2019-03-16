@@ -11,3 +11,7 @@ GUnixSocketAddress_autoptr
 DESKTOP_APP_INFO_LOOKUP_EXTENSION_POINT_NAME
 io_module_load
 io_module_unload
+g_content_type_get_mime_dirs
+g_content_type_set_mime_dirs
+contentTypeGetMimeDirs
+contentTypeSetMimeDirs

@@ -5,7 +5,7 @@ A Swift wrapper around gio-2.x that is largely auto-generated from gobject-intro
 
 ### Swift
 
-To build, you need at least Swift 3.1 (Swift 4.x should work fine), download from https://swift.org/download/ -- if you are using macOS, make sure you have the command line tools installed as well).  Test that your compiler works using `swift --version`, which should give you something like
+To build, you need at least Swift 4.2 (Swift 5 should work fine), download from https://swift.org/download/ -- if you are using macOS, make sure you have the command line tools installed as well).  Test that your compiler works using `swift --version`, which should give you something like
 
 	$ swift --version
 	Apple Swift version 4.2.1 (swiftlang-1000.11.42 clang-1000.11.45.1)

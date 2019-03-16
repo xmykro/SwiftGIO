@@ -3,7 +3,7 @@
 //  GIO
 //
 //  Created by Rene Hexel on 20/6/16.
-//  Copyright © 2016, 2018 Rene Hexel.
+//  Copyright © 2016, 2018, 2019 Rene Hexel.
 //  All Rights Reserved
 //
 //
