@@ -24,6 +24,11 @@ fi
 gir2swift -o Sources/${MOD} -m ${Module}.module -p ${GIR_DIR}/GLib-2.0.gir -p ${GIR_DIR}/GObject-2.0.gir "${GIR}"
 for src in Sources/${MOD}/*-*.swift ; do
 	sed -f ${Module}.sed < ${src} > ${src}.out
+	for ver in 2.60 ; do
+		if pkg-config --atleast-version=$ver glib-2.0 ; then
+			sed -f ${Module}-$ver.sed < ${src} > ${src}.out
+		fi
+	done
 	mv ${src}.out ${src}
 done
 touch Sources/${MOD}/${Module}.swift
