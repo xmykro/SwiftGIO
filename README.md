@@ -8,18 +8,18 @@ A Swift wrapper around gio-2.x that is largely auto-generated from gobject-intro
 To build, you need at least Swift 4.2 (Swift 5 should work fine), download from https://swift.org/download/ -- if you are using macOS, make sure you have the command line tools installed as well).  Test that your compiler works using `swift --version`, which should give you something like
 
 	$ swift --version
-	Apple Swift version 4.2.1 (swiftlang-1000.11.42 clang-1000.11.45.1)
-	Target: x86_64-apple-darwin18.2.0
+	Apple Swift version 5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)
+	Target: x86_64-apple-darwin18.6.0
 
 on macOS, or on Linux you should get something like:
 
 	$ swift --version
-	Swift version 4.2.1 (swift-4.2.1-RELEASE)
+	Swift version 5.0.1 (swift-5.0.1-RELEASE)
 	Target: x86_64-unknown-linux-gnu
 
 ### GLib 2.46 or higher
 
-These Swift wrappers have been tested with glib-2.46, 2.48, 2.52, 2.56, 2.58, and 2.60.  They should work with higher versions, but YMMV.  Also make sure you have `gobject-introspection` and its `.gir` files installed.
+These Swift wrappers have been tested with glib-2.46, 2.48, 2.52, 2.56, 2.58, 2.60, and 2.61.  They should work with higher versions, but YMMV.  Also make sure you have `gobject-introspection` and its `.gir` files installed.
 
 #### Linux
 
