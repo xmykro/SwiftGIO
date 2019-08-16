@@ -1,4 +1,4 @@
-# SwiftGIO
+l# SwiftGIO
 A Swift wrapper around gio-2.x that is largely auto-generated from gobject-introspection
 
 ## Prerequisites
@@ -14,7 +14,7 @@ To build, you need at least Swift 4.2 (Swift 5 should work fine), download from 
 on macOS, or on Linux you should get something like:
 
 	$ swift --version
-	Swift version 5.0.1 (swift-5.0.1-RELEASE)
+	Swift version 5.0.2 (swift-5.0.2-RELEASE)
 	Target: x86_64-unknown-linux-gnu
 
 ### GLib 2.46 or higher
