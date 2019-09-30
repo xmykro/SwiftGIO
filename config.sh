@@ -3,9 +3,11 @@
 # Configuration for the module to compile, the Swift toolchain, and
 # the compiler and linker flags to use.
 #
+VER=2.0
+JAZZY_VER=2.62.0
 Mod=Gio
 MOD=`echo "${Mod}" | tr '[:lower:]' '[:upper:]'`
-Module=${Mod}-2.0
+Module=${Mod}-$VER
 MODULE=`echo "${Module}" | tr '[:lower:]' '[:upper:]'`
 module=`echo "${Module}" | tr '[:upper:]' '[:lower:]'`
 BUILD_DIR=`pwd`/.build
@@ -20,3 +22,4 @@ if which tac >/dev/null ; then
 	TAC=gtac
    fi
 fi
+JAZZY_B=`echo $CCFLAGS $LINKFLAGS | sed 's/  */,/g'`
