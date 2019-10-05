@@ -7492,7 +7492,7 @@ Use <code>ApplicationCommandLine</code> as a strong reference or owner of a <cod
 
 <p><code>GApplicationCommandLine</code> represents a command-line invocation of
 an application.  It is created by <code>GApplication</code> and emitted
-in the <code>GApplication</code>::command-line signal and virtual function.</p>
+in the <code>GApplication::command</code>-line signal and virtual function.</p>
 
 <p>The class contains the list of arguments that the program was invoked
 with.  It is also possible to query if the commandline invocation was
@@ -7502,7 +7502,7 @@ commandline to this process).</p>
 
 <p>The GApplicationCommandLine object can provide the <code>argc</code> and <code>argv</code>
 parameters for use with the <code>GOptionContext</code> command-line parsing API,
-with the g_application_command_line_get_arguments() function. See
+with the <code>g_application_command_line_get_arguments()</code> function. See
 [gapplication-example-cmdline3.c][gapplication-example-cmdline3]
 for an example.</p>
 
@@ -7513,7 +7513,7 @@ of this object (ie: the process exits when the last reference is
 dropped).</p>
 
 <p>The main use for <code>GApplicationCommandLine</code> (and the
-<code>GApplication</code>::command-line signal) is &lsquo;Emacs server&rsquo; like use cases:
+<code>GApplication::command</code>-line signal) is &lsquo;Emacs server&rsquo; like use cases:
 You can set the <code>EDITOR</code> environment variable to have e.g. git use
 your favourite editor to edit commit messages, and if you already
 have an instance of the editor running, the editing will happen
@@ -7522,7 +7522,7 @@ aspect of this use case is that the process that gets started by git
 does not return until the editing is done.</p>
 
 <p>Normally, the commandline is completely handled in the
-<code>GApplication</code>::command-line handler. The launching instance exits
+<code>GApplication::command</code>-line handler. The launching instance exits
 once the signal handler in the primary instance has returned, and
 the return value of the signal handler becomes the exit status
 of the launching instance.
@@ -7542,7 +7542,7 @@ command_line (GApplication            *application,
                                     "to stdout of the caller\n");
 
   for (i = 0; i &lt; argc; i++)
-    g_print ("argument `d`: `s`\n", i, argv[i]);
+    g_print ("argument %d: %s\n", i, argv[i]);
 
   g_strfreev (argv);
 
@@ -7571,14 +7571,14 @@ split between the launcher and the primary instance.
     {
       if (g_str_has_prefix (argv[i], "--local-"))
         {
-          g_print ("handling argument `s` locally\n", argv[i]);
+          g_print ("handling argument %s locally\n", argv[i]);
           g_free (argv[i]);
           for (j = i; argv[j]; j++)
             argv[j] = argv[j + 1];
         }
       else
         {
-          g_print ("not handling argument `s` locally\n", argv[i]);
+          g_print ("not handling argument %s locally\n", argv[i]);
           i++;
         }
     }
@@ -7599,7 +7599,7 @@ test_application_class_init (TestApplicationClass *class)
 
 <p>In this example of split commandline handling, options that start
 with <code>--local-</code> are handled locally, all other options are passed
-to the <code>GApplication</code>::command-line handler which runs in the primary
+to the <code>GApplication::command</code>-line handler which runs in the primary
 instance.</p>
 
 <p>The complete example can be found here:
@@ -7640,7 +7640,7 @@ command_line (GApplication            *application,
 </code></pre>
 
 <p>In this example the commandline is not completely handled before
-the <code>GApplication</code>::command-line handler returns. Instead, we keep
+the <code>GApplication::command</code>-line handler returns. Instead, we keep
 a reference to the <code>GApplicationCommandLine</code> object and handle it
 later (in this example, in an idle). Note that it is necessary to
 hold the application until you are done with the commandline.</p>
@@ -7681,7 +7681,7 @@ Ownership is transferred to the <code>ApplicationCommandLine</code> instance.</p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2661-L2663">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2649-L2651">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7707,12 +7707,12 @@ Will retain <code>GApplicationCommandLine</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/ApplicationCommandLineProtocol.html">ApplicationCommandLineProtocol</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/ApplicationCommandLineProtocol.html">ApplicationCommandLineProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2667-L2670">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2655-L2658">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7738,12 +7738,12 @@ Will retain <code>GApplicationCommandLine</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2674-L2676">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2662-L2664">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7769,12 +7769,12 @@ Will retain <code>GApplicationCommandLine</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2680-L2682">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2668-L2670">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7800,12 +7800,12 @@ Will retain <code>GApplicationCommandLine</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2686-L2688">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2674-L2676">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7831,12 +7831,12 @@ Will retain <code>GApplicationCommandLine</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2692-L2694">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2680-L2682">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7849,7 +7849,7 @@ Will retain <code>GApplicationCommandLine</code>.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

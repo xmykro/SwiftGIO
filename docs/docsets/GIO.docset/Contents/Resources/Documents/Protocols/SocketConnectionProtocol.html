@@ -7502,11 +7502,11 @@ instance, for a TCP/IP connection it will be a <code>GTcpConnection</code>.</p>
 <p>Choosing what type of object to construct is done with the socket
 connection factory, and it is possible for 3rd parties to register
 custom socket connection types for specific combination of socket
-family/type/protocol using g_socket_connection_factory_register_type().</p>
+family/type/protocol using <code>g_socket_connection_factory_register_type()</code>.</p>
 
-<p>To close a <code>GSocketConnection</code>, use g_io_stream_close(). Closing both
+<p>To close a <code>GSocketConnection</code>, use <code>g_io_stream_close()</code>. Closing both
 substreams of the <code>GIOStream</code> separately will not close the underlying
-<code>GSocket</code>.</p>
+<code>GSocket.</code></p>
 
           </div>
         </section>
@@ -7540,7 +7540,7 @@ substreams of the <code>GIOStream</code> separately will not close the underlyin
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8381">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8329">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7578,7 +7578,7 @@ substreams of the <code>GIOStream</code> separately will not close the underlyin
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8384">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8332">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7706,7 +7706,7 @@ substreams of the <code>GIOStream</code> separately will not close the underlyin
                         <p>binding reference or <code>nil</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8533-L8557">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8481-L8505">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7798,7 +7798,7 @@ substreams of the <code>GIOStream</code> separately will not close the underlyin
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8599-L8618">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8546-L8565">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7842,7 +7842,7 @@ substreams of the <code>GIOStream</code> separately will not close the underlyin
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8626-L8633">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8573-L8580">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7865,10 +7865,10 @@ substreams of the <code>GIOStream</code> separately will not close the underlyin
                       <div class="abstract">
                         <p>Asynchronously connect <code>connection</code> to the specified remote address.</p>
 
-<p>This clears the <code>GSocket</code>:blocking flag on <code>connection</code>&lsquo;s underlying
+<p>This clears the <code>GSocket:blocking</code> flag on <code>connection</code>&lsquo;s underlying
 socket if it is currently set.</p>
 
-<p>Use g_socket_connection_connect_finish() to retrieve the result.</p>
+<p>Use <code>g_socket_connection_connect_finish()</code> to retrieve the result.</p>
 
                       </div>
                       <div class="declaration">
@@ -7880,7 +7880,7 @@ socket if it is currently set.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8641-L8644">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8588-L8591">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7901,7 +7901,7 @@ socket if it is currently set.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the result of a g_socket_connection_connect_async() call.</p>
+                        <p>Gets the result of a <code>g_socket_connection_connect_async()</code> call.</p>
 
                       </div>
                       <div class="declaration">
@@ -7913,7 +7913,7 @@ socket if it is currently set.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8647-L8654">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8594-L8601">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7946,7 +7946,7 @@ socket if it is currently set.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8657-L8664">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8604-L8611">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7969,8 +7969,8 @@ socket if it is currently set.</p>
                       <div class="abstract">
                         <p>Try to get the remote address of a socket connection.</p>
 
-<p>Since GLib 2.40, when used with g_socket_client_connect() or
-g_socket_client_connect_async(), during emission of
+<p>Since GLib 2.40, when used with <code>g_socket_client_connect()</code> or
+<code>g_socket_client_connect_async()</code>, during emission of
 <code>G_SOCKET_CLIENT_CONNECTING</code>, this function will return the remote
 address that will be used for the connection.  This allows
 applications to print e.g. <q>Connecting to example.com
@@ -7986,7 +7986,7 @@ applications to print e.g. <q>Connecting to example.com
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8674-L8681">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8621-L8628">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8021,7 +8021,7 @@ not supported by the <code>GSocketConnection</code> APIs.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8686-L8689">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8633-L8636">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8043,7 +8043,7 @@ not supported by the <code>GSocketConnection</code> APIs.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Checks if <code>connection</code> is connected. This is equivalent to calling
-g_socket_is_connected() on <code>connection</code>&lsquo;s underlying <code>GSocket</code>.</p>
+<code>g_socket_is_connected()</code> on <code>connection</code>&lsquo;s underlying <code>GSocket.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8055,7 +8055,7 @@ g_socket_is_connected() on <code>connection</code>&lsquo;s underlying <code>GSoc
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8692-L8699">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8639-L8646">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8088,7 +8088,7 @@ g_socket_is_connected() on <code>connection</code>&lsquo;s underlying <code>GSoc
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8701-L8709">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8648-L8656">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8101,7 +8101,7 @@ g_socket_is_connected() on <code>connection</code>&lsquo;s underlying <code>GSoc
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

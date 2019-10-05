@@ -7513,7 +7513,7 @@ powering down external disk enclosures and starting/stopping
 multi-disk devices such as RAID devices. Note that the actual
 semantics and side-effects of starting/stopping a <code>GDrive</code> may vary
 according to implementation. To choose the correct verbs in e.g. a
-file manager, use g_drive_get_start_stop_type().</p>
+file manager, use <code>g_drive_get_start_stop_type()</code>.</p>
 
 <p>For porting from GnomeVFS note that there is no equivalent of
 <code>GDrive</code> in that API.</p>
@@ -7880,7 +7880,7 @@ file manager, use g_drive_get_start_stop_type().</p>
                         <p>Asynchronously ejects a drive.</p>
 
 <p>When the operation is finished, <code>callback</code> will be called.
-You can then call g_drive_eject_finish() to obtain the
+You can then call <code>g_drive_eject_finish()</code> to obtain the
 result of the operation.</p>
 
 <p><strong>eject is deprecated:</strong>
@@ -7891,7 +7891,7 @@ Use g_drive_eject_with_operation() instead.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">func</span> <span class="nf">eject</span><span class="p">(</span><span class="nv">flags</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO17MountUnmountFlagsa">MountUnmountFlags</a></span><span class="p">,</span> <span class="nv">cancellable</span><span class="p">:</span> <span class="kt"><a href="../Protocols/CancellableProtocol.html">CancellableProtocol</a></span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO18AsyncReadyCallbacka">AsyncReadyCallback</a></span><span class="p">,</span> <span class="n">userData</span> <span class="nv">user_data</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -7928,7 +7928,7 @@ Use g_drive_eject_with_operation_finish() instead.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">func</span> <span class="nf">ejectFinish</span><span class="p">(</span><span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Protocols/AsyncResultProtocol.html">AsyncResultProtocol</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
@@ -7956,8 +7956,8 @@ Use g_drive_eject_with_operation_finish() instead.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Ejects a drive. This is an asynchronous operation, and is
-finished by calling g_drive_eject_with_operation_finish() with the <code>drive</code>
-and <code>GAsyncResult</code> data returned in the <code>callback</code>.</p>
+finished by calling <code>g_drive_eject_with_operation_finish()</code> with the <code>drive</code>
+and <code>GAsyncResult</code> data returned in the <code>callback.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8025,7 +8025,7 @@ and <code>GAsyncResult</code> data returned in the <code>callback</code>.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the kinds of identifiers that <code>drive</code> has.
-Use g_drive_get_identifier() to obtain the identifiers
+Use <code>g_drive_get_identifier()</code> to obtain the identifiers
 themselves.</p>
 
                       </div>
@@ -8059,7 +8059,7 @@ themselves.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the icon for <code>drive</code>.</p>
+                        <p>Gets the icon for <code>drive.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8094,7 +8094,7 @@ themselves.</p>
                       <div class="abstract">
                         <p>Gets the identifier of the given kind for <code>drive</code>. The only
 identifier currently available is
-<code>G_DRIVE_IDENTIFIER_KIND_UNIX_DEVICE</code>.</p>
+<code>G_DRIVE_IDENTIFIER_KIND_UNIX_DEVICE.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8127,7 +8127,7 @@ identifier currently available is
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the name of <code>drive</code>.</p>
+                        <p>Gets the name of <code>drive.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8226,7 +8226,7 @@ identifier currently available is
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the icon for <code>drive</code>.</p>
+                        <p>Gets the icon for <code>drive.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8261,8 +8261,8 @@ identifier currently available is
                       <div class="abstract">
                         <p>Get a list of mountable volumes for <code>drive</code>.</p>
 
-<p>The returned list should be freed with g_list_free(), after
-its elements have been unreffed with g_object_unref().</p>
+<p>The returned list should be freed with <code>g_list_free()</code>, after
+its elements have been unreffed with <code>g_object_unref()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8296,7 +8296,7 @@ its elements have been unreffed with g_object_unref().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Checks if the <code>drive</code> has media. Note that the OS may not be polling
-the drive for media changes; see g_drive_is_media_check_automatic()
+the drive for media changes; see <code>g_drive_is_media_check_automatic()</code>
 for more details.</p>
 
                       </div>
@@ -8366,7 +8366,7 @@ for more details.</p>
                         <p>Asynchronously polls <code>drive</code> to see if media has been inserted or removed.</p>
 
 <p>When the operation is finished, <code>callback</code> will be called.
-You can then call g_drive_poll_for_media_finish() to obtain the
+You can then call <code>g_drive_poll_for_media_finish()</code> to obtain the
 result of the operation.</p>
 
                       </div>
@@ -8400,7 +8400,7 @@ result of the operation.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes an operation started with g_drive_poll_for_media() on a drive.</p>
+                        <p>Finishes an operation started with <code>g_drive_poll_for_media()</code> on a drive.</p>
 
                       </div>
                       <div class="declaration">
@@ -8436,7 +8436,7 @@ result of the operation.</p>
                         <p>Asynchronously starts a drive.</p>
 
 <p>When the operation is finished, <code>callback</code> will be called.
-You can then call g_drive_start_finish() to obtain the
+You can then call <code>g_drive_start_finish()</code> to obtain the
 result of the operation.</p>
 
                       </div>
@@ -8506,7 +8506,7 @@ result of the operation.</p>
                         <p>Asynchronously stops a drive.</p>
 
 <p>When the operation is finished, <code>callback</code> will be called.
-You can then call g_drive_stop_finish() to obtain the
+You can then call <code>g_drive_stop_finish()</code> to obtain the
 result of the operation.</p>
 
                       </div>
@@ -8573,7 +8573,7 @@ result of the operation.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the icon for <code>drive</code>.</p>
+                        <p>Gets the icon for <code>drive.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8673,7 +8673,7 @@ result of the operation.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Checks if the <code>GDrive</code> and/or its media is considered removable by the user.
-See g_drive_is_media_removable().</p>
+See <code>g_drive_is_media_removable()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8706,7 +8706,7 @@ See g_drive_is_media_removable().</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the name of <code>drive</code>.</p>
+                        <p>Gets the name of <code>drive.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8805,7 +8805,7 @@ See g_drive_is_media_removable().</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the icon for <code>drive</code>.</p>
+                        <p>Gets the icon for <code>drive.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8840,8 +8840,8 @@ See g_drive_is_media_removable().</p>
                       <div class="abstract">
                         <p>Get a list of mountable volumes for <code>drive</code>.</p>
 
-<p>The returned list should be freed with g_list_free(), after
-its elements have been unreffed with g_object_unref().</p>
+<p>The returned list should be freed with <code>g_list_free()</code>, after
+its elements have been unreffed with <code>g_object_unref()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8866,7 +8866,7 @@ its elements have been unreffed with g_object_unref().</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

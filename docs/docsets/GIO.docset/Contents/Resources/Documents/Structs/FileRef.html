@@ -7500,12 +7500,12 @@ file. All file content I/O is implemented as streaming operations
 <p>To construct a <code>GFile</code>, you can use:</p>
 
 <ul>
-<li>g_file_new_for_path() if you have a path.</li>
-<li>g_file_new_for_uri() if you have a URI.</li>
-<li>g_file_new_for_commandline_arg() for a command line argument.</li>
-<li>g_file_new_tmp() to create a temporary file from a template.</li>
-<li>g_file_parse_name() from a UTF-8 string gotten from g_file_get_parse_name().</li>
-<li>g_file_new_build_filename() to create a file from path elements.</li>
+<li><code>g_file_new_for_path()</code> if you have a path.</li>
+<li><code>g_file_new_for_uri()</code> if you have a URI.</li>
+<li><code>g_file_new_for_commandline_arg()</code> for a command line argument.</li>
+<li><code>g_file_new_tmp()</code> to create a temporary file from a template.</li>
+<li><code>g_file_parse_name()</code> from a UTF-8 string gotten from <code>g_file_get_parse_name()</code>.</li>
+<li><code>g_file_new_build_filename()</code> to create a file from path elements.</li>
 </ul>
 
 <p>One way to think of a <code>GFile</code> is as an abstraction of a pathname. For
@@ -7515,20 +7515,20 @@ to a pathname in a userspace implementation of a filesystem.</p>
 
 <p><code>GFiles</code> make up hierarchies of directories and files that correspond to
 the files on a filesystem. You can move through the file system with
-<code>GFile</code> using g_file_get_parent() to get an identifier for the parent
-directory, g_file_get_child() to get a child within a directory,
-g_file_resolve_relative_path() to resolve a relative path between two
+<code>GFile</code> using <code>g_file_get_parent()</code> to get an identifier for the parent
+directory, <code>g_file_get_child()</code> to get a child within a directory,
+<code>g_file_resolve_relative_path()</code> to resolve a relative path between two
 <code>GFiles</code>. There can be multiple hierarchies, so you may not end up at
-the same root if you repeatedly call g_file_get_parent() on two different
+the same root if you repeatedly call <code>g_file_get_parent()</code> on two different
 files.</p>
 
-<p>All <code>GFiles</code> have a basename (get with g_file_get_basename()). These names
+<p>All <code>GFiles</code> have a basename (get with <code>g_file_get_basename()</code>). These names
 are byte strings that are used to identify the file on the filesystem
 (relative to its parent directory) and there is no guarantees that they
 have any particular charset encoding or even make any sense at all. If
 you want to use filenames in a user interface you should use the display
 name that you can get by requesting the
-<code>G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME</code> attribute with g_file_query_info().
+<code>G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME</code> attribute with <code>g_file_query_info()</code>.
 This is guaranteed to be in UTF-8 and can be used in a user interface.
 But always store the real basename or the <code>GFile</code> to use to actually
 access the file, because there is no way to go from a display name to
@@ -7547,10 +7547,10 @@ path, <q>.</q> or <q>..</q> path segments, etc) does not create different <code>
 
 <p>Many <code>GFile</code> operations have both synchronous and asynchronous versions
 to suit your application. Asynchronous versions of synchronous functions
-simply have _async() appended to their function names. The asynchronous
+simply have <code>_async()</code> appended to their function names. The asynchronous
 I/O functions call a <code>GAsyncReadyCallback</code> which is then used to finalize
 the operation, producing a GAsyncResult which is then passed to the
-function&rsquo;s matching _finish() operation.</p>
+function&rsquo;s matching <code>_finish()</code> operation.</p>
 
 <p>It is highly recommended to use asynchronous calls when running within a
 shared main loop, such as in the main thread of an application. This avoids
@@ -7563,12 +7563,12 @@ more.</p>
 so do not have synchronous analogs. Notable cases include:</p>
 
 <ul>
-<li>g_file_mount_mountable() to mount a mountable file.</li>
-<li>g_file_unmount_mountable_with_operation() to unmount a mountable file.</li>
-<li>g_file_eject_mountable_with_operation() to eject a mountable file.</li>
+<li><code>g_file_mount_mountable()</code> to mount a mountable file.</li>
+<li><code>g_file_unmount_mountable_with_operation()</code> to unmount a mountable file.</li>
+<li><code>g_file_eject_mountable_with_operation()</code> to eject a mountable file.</li>
 </ul>
 
-<p>`<code>Entity Tags</code> {<code>gfile</code>-etag}</p>
+<p>&ldquo;<code>Entity Tags</code> {<code>gfile</code>-etag}</p>
 
 <p>One notable feature of <code>GFiles</code> are entity tags, or <q>etags</q> for
 short. Entity tags are somewhat like a more abstract version of the
@@ -7864,11 +7864,11 @@ support any I/O operation if <code>arg</code> points to a malformed path.</p>
 <p>Note that on Windows, this function expects its argument to be in
 UTF-8 &ndash; not the system code page.  This means that you
 should not use this function with string from argv as it is passed
-to main().  g_win32_get_command_line() will return a UTF-8 version of
+to <code>main()</code>.  <code>g_win32_get_command_line()</code> will return a UTF-8 version of
 the commandline.  <code>GApplication</code> also uses UTF-8 but
-g_application_command_line_create_file_for_arg() may be more useful
+<code>g_application_command_line_create_file_for_arg()</code> may be more useful
 for you there.  It is also always possible to use this function with
-<code>GOptionContext</code> arguments of type <code>G_OPTION_ARG_FILENAME</code>.</p>
+<code>GOptionContext</code> arguments of type <code>G_OPTION_ARG_FILENAME.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7900,7 +7900,7 @@ for you there.  It is also always possible to use this function with
                       <div class="abstract">
                         <p>Creates a <code>GFile</code> with the given argument from the command line.</p>
 
-<p>This function is similar to g_file_new_for_commandline_arg() except
+<p>This function is similar to <code>g_file_new_for_commandline_arg()</code> except
 that it allows for passing the current working directory as an
 argument instead of using the current working directory of the
 process.</p>
@@ -7908,7 +7908,7 @@ process.</p>
 <p>This is useful if the commandline argument was given in a context
 other than the invocation of the current process.</p>
 
-<p>See also g_application_command_line_create_file_for_arg().</p>
+<p>See also <code>g_application_command_line_create_file_for_arg()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8004,7 +8004,7 @@ not supported.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Opens a file in the preferred directory for temporary files (as
-returned by g_get_tmp_dir()) and returns a <code>GFile</code> and
+returned by <code>g_get_tmp_dir()</code>) and returns a <code>GFile</code> and
 <code>GFileIOStream</code> pointing to it.</p>
 
 <p><code>tmpl</code> should be a string in the GLib file name encoding
@@ -8043,7 +8043,7 @@ a temporary file could not be created.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Constructs a <code>GFile</code> with the given <code>parse_name</code> (i.e. something
-given by g_file_get_parse_name()). This operation never fails,
+given by <code>g_file_get_parse_name()</code>). This operation never fails,
 but the returned object might not support any I/O operation if
 the <code>parse_name</code> cannot be parsed.</p>
 
@@ -8070,7 +8070,7 @@ the <code>parse_name</code> cannot be parsed.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

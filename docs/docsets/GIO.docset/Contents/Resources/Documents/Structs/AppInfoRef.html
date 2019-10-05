@@ -7494,7 +7494,7 @@ Use <code>AppInfoRef</code> only as an <code>unowned</code> reference to an exis
 applications installed on the system.</p>
 
 <p>As of GLib 2.20, URIs will always be converted to POSIX paths
-(using g_file_get_path()) when using g_app_info_launch() even if
+(using <code>g_file_get_path()</code>) when using <code>g_app_info_launch()</code> even if
 the application requested an URI and not a POSIX path. For example
 for an desktop-file based application with Exec key <code>totem
 </code>U`<code>and a single URI,</code>sftp://foo/file.avi<code>, then
@@ -7509,10 +7509,10 @@ passed unmodified to the application.</p>
 <p>Specifically for gvfs 2.26 and later, the POSIX URI will be mapped
 back to the GIO URI in the <code>GFile</code> constructors (since gvfs
 implements the <code>GVfs</code> extension point). As such, if the application
-needs to examine the URI, it needs to use g_file_get_uri() or
+needs to examine the URI, it needs to use <code>g_file_get_uri()</code> or
 similar on <code>GFile</code>. In other words, an application cannot assume
-that the URI passed to e.g. g_file_new_for_commandline_arg() is
-equal to the result of g_file_get_uri(). The following snippet
+that the URI passed to e.g. <code>g_file_new_for_commandline_arg()</code> is
+equal to the result of <code>g_file_get_uri()</code>. The following snippet
 illustrates this:</p>
 <pre class="highlight swift"><code><span class="kt">GFile</span> <span class="o">*</span><span class="n">f</span><span class="p">;</span>
 <span class="n">char</span> <span class="o">*</span><span class="n">uri</span><span class="p">;</span>
@@ -7570,7 +7570,7 @@ For type-safe access, use the generated, typed pointer <code>app_info_ptr</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1423">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1421">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7611,7 +7611,7 @@ For type-safe access, use the generated, typed pointer <code>app_info_ptr</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1428-L1429">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1426-L1427">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7641,7 +7641,7 @@ For type-safe access, use the generated, typed pointer <code>app_info_ptr</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1432-L1434">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1430-L1432">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7672,7 +7672,7 @@ For type-safe access, use the generated, typed pointer <code>app_info_ptr</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1438-L1440">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1436-L1438">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7703,7 +7703,7 @@ For type-safe access, use the generated, typed pointer <code>app_info_ptr</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1444-L1446">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1442-L1444">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7734,7 +7734,7 @@ For type-safe access, use the generated, typed pointer <code>app_info_ptr</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1450-L1452">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1448-L1450">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7765,7 +7765,7 @@ For type-safe access, use the generated, typed pointer <code>app_info_ptr</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1456-L1458">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1454-L1456">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7796,7 +7796,7 @@ For type-safe access, use the generated, typed pointer <code>app_info_ptr</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1462-L1464">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1460-L1462">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7814,7 +7814,7 @@ For type-safe access, use the generated, typed pointer <code>app_info_ptr</code>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <pre class="highlight swift"><code><span class="kt">Creates</span> <span class="n">a</span> <span class="k">new</span> <span class="err">`</span><span class="kt">GAppInfo</span><span class="err">`</span> <span class="n">from</span> <span class="n">the</span> <span class="n">given</span> <span class="n">information</span><span class="o">.</span>
+                        <pre class="highlight swift"><code><span class="kt">Creates</span> <span class="n">a</span> <span class="k">new</span> <span class="p">`</span><span class="nv">GAppInfo</span><span class="p">`</span> <span class="n">from</span> <span class="n">the</span> <span class="n">given</span> <span class="n">information</span><span class="o">.</span>
 </code></pre>
 
 <p>Note that for <code>commandline</code>, the quoting rules of the Exec key of the
@@ -7833,7 +7833,7 @@ being swallowed by Exec key unquoting. See the specification for exact quoting r
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1473-L1480">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1471-L1478">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7863,7 +7863,7 @@ being swallowed by Exec key unquoting. See the specification for exact quoting r
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1483-L1486">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1481-L1484">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7896,7 +7896,7 @@ of the URI, up to but not including the &lsquo;:&rsquo;, e.g. <q>http</q>,
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1492-L1495">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1490-L1493">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7909,7 +7909,7 @@ of the URI, up to but not including the &lsquo;:&rsquo;, e.g. <q>http</q>,
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

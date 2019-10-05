@@ -7493,7 +7493,7 @@ Use <code>ThreadedSocketService</code> as a strong reference or owner of a <code
 <p>A <code>GThreadedSocketService</code> is a simple subclass of <code>GSocketService</code>
 that handles incoming connections by creating a worker thread and
 dispatching the connection to it by emitting the
-<code>GThreadedSocketService</code>::run signal in the new thread.</p>
+<code>GThreadedSocketService::run</code> signal in the new thread.</p>
 
 <p>The signal handler may perform blocking IO and need not return
 until the connection is closed.</p>
@@ -7503,7 +7503,7 @@ limited amount of threads available to serve incoming requests.
 The service automatically stops the <code>GSocketService</code> from accepting
 new connections when all threads are busy.</p>
 
-<p>As with <code>GSocketService</code>, you may connect to <code>GThreadedSocketService</code>::run,
+<p>As with <code>GSocketService</code>, you may connect to <code>GThreadedSocketService::run</code>,
 or subclass and override the default handler.</p>
 
           </div>
@@ -7539,7 +7539,7 @@ Ownership is transferred to the <code>ThreadedSocketService</code> instance.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1636-L1638">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1626-L1628">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7565,12 +7565,12 @@ Will retain <code>GThreadedSocketService</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/ThreadedSocketServiceProtocol.html">ThreadedSocketServiceProtocol</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/ThreadedSocketServiceProtocol.html">ThreadedSocketServiceProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1642-L1645">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1632-L1635">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7596,12 +7596,12 @@ Will retain <code>GThreadedSocketService</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1649-L1651">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1639-L1641">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7627,12 +7627,12 @@ Will retain <code>GThreadedSocketService</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1655-L1657">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1645-L1647">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7658,12 +7658,12 @@ Will retain <code>GThreadedSocketService</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1661-L1663">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1651-L1653">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7689,12 +7689,12 @@ Will retain <code>GThreadedSocketService</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1667-L1669">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1657-L1659">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7720,12 +7720,12 @@ must be added with one of the <code>GSocketListener</code> <q>add</q> methods.</
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">max_threads</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">max_threads</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1673-L1676">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1663-L1666">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7738,7 +7738,7 @@ must be added with one of the <code>GSocketListener</code> <q>add</q> methods.</
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

@@ -7658,7 +7658,7 @@ UNIX-file-descriptor-style asynchronous I/O rather than GIO-style.</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-NetworkMonitor-PollableInputStream.swift#L613-L632">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-NetworkMonitor-PollableInputStream.swift#L612-L631">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7708,7 +7708,7 @@ a stream cannot switch from pollable to non-pollable or vice versa.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-NetworkMonitor-PollableInputStream.swift#L646-L649">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-NetworkMonitor-PollableInputStream.swift#L645-L648">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7733,10 +7733,10 @@ a stream cannot switch from pollable to non-pollable or vice versa.</p>
 <code>cancellable</code> is triggered or an error occurs. The callback on the
 source is of the <code>GPollableSourceFunc</code> type.</p>
 
-<p>As with g_pollable_input_stream_is_readable(), it is possible that
+<p>As with <code>g_pollable_input_stream_is_readable()</code>, it is possible that
 the stream may not actually be readable even after the source
-triggers, so you should use g_pollable_input_stream_read_nonblocking()
-rather than g_input_stream_read() from the callback.</p>
+triggers, so you should use <code>g_pollable_input_stream_read_nonblocking()</code>
+rather than <code>g_input_stream_read()</code> from the callback.</p>
 
                       </div>
                       <div class="declaration">
@@ -7748,7 +7748,7 @@ rather than g_input_stream_read() from the callback.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-NetworkMonitor-PollableInputStream.swift#L659-L662">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-NetworkMonitor-PollableInputStream.swift#L658-L661">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7770,9 +7770,9 @@ rather than g_input_stream_read() from the callback.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Attempts to read up to <code>count</code> bytes from <code>stream</code> into <code>buffer</code>, as
-with g_input_stream_read(). If <code>stream</code> is not currently readable,
+with <code>g_input_stream_read()</code>. If <code>stream</code> is not currently readable,
 this will immediately return <code>G_IO_ERROR_WOULD_BLOCK</code>, and you can
-use g_pollable_input_stream_create_source() to create a <code>GSource</code>
+use <code>g_pollable_input_stream_create_source()</code> to create a <code>GSource</code>
 that will be triggered when <code>stream</code> is readable.</p>
 
 <p>Note that since this method never blocks, you cannot actually
@@ -7791,7 +7791,7 @@ to having been cancelled.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-NetworkMonitor-PollableInputStream.swift#L675-L682">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-NetworkMonitor-PollableInputStream.swift#L674-L681">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7815,10 +7815,10 @@ to having been cancelled.</p>
                         <p>Checks if <code>stream</code> can be read.</p>
 
 <p>Note that some stream types may not be able to implement this 100`<code>
-reliably, and it is possible that a call to g_input_stream_read()
+reliably, and it is possible that a call to</code>g_input_stream_read()<code>
 after this returns</code>true<code>would still block. To guarantee
 non-blocking behavior, you should always use
-g_pollable_input_stream_read_nonblocking(), which will return a
+</code>g_pollable_input_stream_read_nonblocking()<code>, which will return a
 </code>G_IO_ERROR_WOULD_BLOCK` error rather than blocking.</p>
 
                       </div>
@@ -7831,7 +7831,7 @@ g_pollable_input_stream_read_nonblocking(), which will return a
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-NetworkMonitor-PollableInputStream.swift#L691-L704">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-NetworkMonitor-PollableInputStream.swift#L690-L703">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7844,7 +7844,7 @@ g_pollable_input_stream_read_nonblocking(), which will return a
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

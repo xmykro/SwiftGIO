@@ -7494,13 +7494,13 @@ Use <code>TLSInteractionRef</code> only as an <code>unowned</code> reference to 
 code to interact with the user. It can be used to ask the user for passwords.</p>
 
 <p>To use a <code>GTlsInteraction</code> with a TLS connection use
-g_tls_connection_set_interaction().</p>
+<code>g_tls_connection_set_interaction()</code>.</p>
 
 <p>Callers should instantiate a derived class that implements the various
 interaction methods to show the required dialogs.</p>
 
 <p>Callers should use the &lsquo;invoke&rsquo; functions like
-g_tls_interaction_invoke_ask_password() to run interaction methods. These
+<code>g_tls_interaction_invoke_ask_password()</code> to run interaction methods. These
 functions make sure that the interaction is invoked in the main loop
 and not in the current thread, if the current thread is not running the
 main loop.</p>
@@ -7544,7 +7544,7 @@ For type-safe access, use the generated, typed pointer <code>tls_interaction_ptr
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3825">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3811">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7585,7 +7585,7 @@ For type-safe access, use the generated, typed pointer <code>tls_interaction_ptr
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3830-L3831">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3816-L3817">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7615,7 +7615,7 @@ For type-safe access, use the generated, typed pointer <code>tls_interaction_ptr
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3834-L3836">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3820-L3822">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7646,7 +7646,7 @@ For type-safe access, use the generated, typed pointer <code>tls_interaction_ptr
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3840-L3842">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3826-L3828">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7677,7 +7677,7 @@ For type-safe access, use the generated, typed pointer <code>tls_interaction_ptr
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3846-L3848">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3832-L3834">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7708,7 +7708,7 @@ For type-safe access, use the generated, typed pointer <code>tls_interaction_ptr
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3852-L3854">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3838-L3840">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7739,7 +7739,7 @@ For type-safe access, use the generated, typed pointer <code>tls_interaction_ptr
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3858-L3860">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3844-L3846">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7770,7 +7770,7 @@ For type-safe access, use the generated, typed pointer <code>tls_interaction_ptr
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3864-L3866">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3850-L3852">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7783,7 +7783,7 @@ For type-safe access, use the generated, typed pointer <code>tls_interaction_ptr
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

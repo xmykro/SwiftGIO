@@ -7506,7 +7506,7 @@ even need to be started in this case.  For this reason, you should
 only ever modify <code>GSettings</code> keys in response to explicit user action.
 Particular care should be paid to ensure that modifications are not
 made during startup &ndash; for example, when setting the initial value
-of preferences widgets.  The built-in g_settings_bind() functionality
+of preferences widgets.  The built-in <code>g_settings_bind()</code> functionality
 is careful not to write settings in response to notify signals as a
 result of modifications that it makes to widgets.</p>
 
@@ -7556,10 +7556,7 @@ attribute can be set on the <default> element to disambiguate multiple
 defaults which use the same string.</p>
 
 <p>For example:</p>
-<pre class="highlight swift"><code> <span class="o">&lt;!--</span> <span class="kt">Translators</span><span class="p">:</span> <span class="kt">A</span> <span class="n">list</span> <span class="n">of</span> <span class="n">words</span> <span class="n">which</span> <span class="n">are</span> <span class="n">not</span> <span class="n">allowed</span> <span class="n">to</span> <span class="n">be</span> <span class="n">typed</span><span class="p">,</span> <span class="k">in</span>
-      <span class="kt">GVariant</span> <span class="n">serialization</span> <span class="n">syntax</span><span class="o">.</span>
-      <span class="kt">See</span><span class="p">:</span> <span class="nv">https</span><span class="p">:</span><span class="c1">//developer.gnome.org/glib/stable/gvariant-text.html --&gt;</span>
- <span class="o">&lt;</span><span class="k">default</span> <span class="n">l10n</span><span class="o">=</span><span class="err">'</span><span class="n">messages</span><span class="err">'</span> <span class="n">context</span><span class="o">=</span><span class="err">'</span><span class="kt">Banned</span> <span class="n">words</span><span class="err">'</span><span class="o">&gt;</span><span class="p">[</span><span class="err">'</span><span class="n">bad</span><span class="err">'</span><span class="p">,</span> <span class="err">'</span><span class="n">words</span><span class="err">'</span><span class="p">]</span><span class="o">&lt;/</span><span class="k">default</span><span class="o">&gt;</span>
+<pre class="highlight swift"><code> <span class="o">&lt;</span><span class="k">default</span> <span class="n">l10n</span><span class="o">=</span><span class="err">'</span><span class="n">messages</span><span class="err">'</span> <span class="n">context</span><span class="o">=</span><span class="err">'</span><span class="kt">Banned</span> <span class="n">words</span><span class="err">'</span><span class="o">&gt;</span><span class="p">[</span><span class="err">'</span><span class="n">bad</span><span class="err">'</span><span class="p">,</span> <span class="err">'</span><span class="n">words</span><span class="err">'</span><span class="p">]</span><span class="o">&lt;/</span><span class="k">default</span><span class="o">&gt;</span>
 </code></pre>
 
 <p>Translations of default values must remain syntactically valid serialized
@@ -7589,8 +7586,8 @@ StudlyCaps, e.g. <q>org.gnome.font-rendering</q>.</p>
 enumerated types. These can be described by a <choice>,
 <enum> or <flags> element, as seen in the
 [example][schema-enumerated]. The underlying type of such a key
-is string, but you can use g_settings_get_enum(), g_settings_set_enum(),
-g_settings_get_flags(), g_settings_set_flags() access the numeric values
+is string, but you can use <code>g_settings_get_enum()</code>, <code>g_settings_set_enum()</code>,
+<code>g_settings_get_flags()</code>, <code>g_settings_set_flags()</code> access the numeric values
 corresponding to the string value of enum and flags keys.</p>
 
 <p>An example for default value:</p>
@@ -7663,7 +7660,7 @@ corresponding to the string value of enum and flags keys.</p>
 <span class="o">&lt;/</span><span class="n">schemalist</span><span class="o">&gt;</span>
 </code></pre>
 
-<p>&ldquo;` Vendor overrides</p>
+<p>&ldquo;&rdquo; Vendor overrides</p>
 
 <p>Default values are defined in the schemas that get installed by
 an application. Sometimes, it is necessary for a vendor or distributor
@@ -7683,7 +7680,7 @@ serialized GVariant form, as in the following example:</p>
 <code>.gschema.override</code>.</p>
 <pre class="highlight plaintext"><code>
 A very convenient feature of GSettings lets you bind `GObject` properties
-directly to settings, using g_settings_bind(). Once a GObject property
+directly to settings, using `g_settings_bind()`. Once a GObject property
 has been bound to a setting, changes on either side are automatically
 propagated to the other side. GSettings handles details like mapping
 between GObject and GVariant types, and preventing infinite cycles.
@@ -7695,12 +7692,12 @@ automatically binds it to the writability of the bound setting.
 If this 'magic' gets in the way, it can be suppressed with the
 `G_SETTINGS_BIND_NO_SENSITIVITY` flag.
 
-``` Relocatable schemas `` {`gsettings`-relocatable}
+```` Relocatable schemas `` {`gsettings`-relocatable}
 
 A relocatable schema is one with no `path` attribute specified on its
-&lt;schema&gt; element. By using g_settings_new_with_path(), a `GSettings` object
+&lt;schema&gt; element. By using `g_settings_new_with_path()`, a `GSettings` object
 can be instantiated for a relocatable schema, assigning a path to the
-instance. Paths passed to g_settings_new_with_path() will typically be
+instance. Paths passed to `g_settings_new_with_path()` will typically be
 constructed dynamically from a constant prefix plus some form of instance
 identifier; but they must still be valid GSettings paths. Paths could also
 be constant and used with a globally installed schema originating from a
@@ -7718,8 +7715,7 @@ they can be specified as &lt;child&gt; elements in the parent schema, e.g.:
   <child name="main" schema="org.foo.MyApp.Window"/>
 </schema></p>
 <pre class="highlight swift"><code>
-
-<span class="err">```</span> <span class="kt">Build</span> <span class="n">system</span> <span class="n">integration</span> <span class="err">``</span> <span class="p">{</span><span class="err">`</span><span class="n">gsettings</span><span class="err">`</span><span class="o">-</span><span class="n">build</span><span class="o">-</span><span class="n">system</span><span class="p">}</span>
+<span class="err">````</span> <span class="kt">Build</span> <span class="n">system</span> <span class="n">integration</span> <span class="err">``</span> <span class="p">{`</span><span class="nv">gsettings</span><span class="p">`</span><span class="o">-</span><span class="n">build</span><span class="o">-</span><span class="n">system</span><span class="p">}</span>
 
 <span class="kt">GSettings</span> <span class="n">comes</span> <span class="n">with</span> <span class="n">autotools</span> <span class="n">integration</span> <span class="n">to</span> <span class="n">simplify</span> <span class="n">compiling</span> <span class="n">and</span>
 <span class="n">installing</span> <span class="n">schemas</span><span class="o">.</span> <span class="kt">To</span> <span class="n">add</span> <span class="kt">GSettings</span> <span class="n">support</span> <span class="n">to</span> <span class="n">an</span> <span class="n">application</span><span class="p">,</span> <span class="n">add</span> <span class="n">the</span>
@@ -7728,7 +7724,6 @@ they can be specified as &lt;child&gt; elements in the parent schema, e.g.:
 
 <p>GLIB_GSETTINGS</p>
 <pre class="highlight swift"><code>
-
 <span class="kt">In</span> <span class="n">the</span> <span class="n">appropriate</span> <span class="err">`</span><span class="kt">Makefile</span><span class="o">.</span><span class="n">am</span><span class="err">`</span><span class="p">,</span> <span class="n">use</span> <span class="n">the</span> <span class="n">following</span> <span class="n">snippet</span> <span class="n">to</span> <span class="n">compile</span> <span class="n">and</span>
 <span class="n">install</span> <span class="n">the</span> <span class="n">named</span> <span class="nv">schema</span><span class="p">:</span>
 </code></pre>
@@ -7736,9 +7731,8 @@ they can be specified as &lt;child&gt; elements in the parent schema, e.g.:
 <p>gsettings_SCHEMAS = org.foo.MyApp.gschema.xml
 EXTRA_DIST = $(gsettings_SCHEMAS)</p>
 
-<p><code>GSETTINGS_RULES</code>`</p>
+<p>@GSETTINGS_RULES@</p>
 <pre class="highlight swift"><code>
-
 <span class="kt">No</span> <span class="n">changes</span> <span class="n">are</span> <span class="n">needed</span> <span class="n">to</span> <span class="n">the</span> <span class="n">build</span> <span class="n">system</span> <span class="n">to</span> <span class="n">mark</span> <span class="n">a</span> <span class="n">schema</span> <span class="kt">XML</span> <span class="n">file</span> <span class="k">for</span>
 <span class="n">translation</span><span class="o">.</span> <span class="kt">Assuming</span> <span class="n">it</span> <span class="n">sets</span> <span class="n">the</span> <span class="err">`</span><span class="n">gettext</span><span class="o">-</span><span class="n">domain</span><span class="err">`</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">a</span> <span class="n">schema</span> <span class="n">may</span>
 <span class="n">be</span> <span class="n">marked</span> <span class="k">for</span> <span class="n">translation</span> <span class="n">by</span> <span class="n">adding</span> <span class="n">it</span> <span class="n">to</span> <span class="err">`</span><span class="kt">POTFILES</span><span class="o">.</span><span class="k">in</span><span class="err">`</span><span class="p">,</span> <span class="n">assuming</span> <span class="n">gettext</span>
@@ -7747,15 +7741,13 @@ EXTRA_DIST = $(gsettings_SCHEMAS)</p>
 
 <p>data/org.foo.MyApp.gschema.xml</p>
 <pre class="highlight swift"><code>
-
 <span class="kt">Alternatively</span><span class="p">,</span> <span class="k">if</span> <span class="n">intltool</span> <span class="mf">0.50</span><span class="o">.</span><span class="mi">1</span> <span class="k">is</span> <span class="k">in</span> <span class="nv">use</span><span class="p">:</span>
 </code></pre>
 
 <p>[type: gettext/gsettings]data/org.foo.MyApp.gschema.xml</p>
 <pre class="highlight swift"><code>
-
 <span class="kt">GSettings</span> <span class="n">will</span> <span class="n">use</span> <span class="n">gettext</span> <span class="n">to</span> <span class="n">look</span> <span class="n">up</span> <span class="n">translations</span> <span class="k">for</span> <span class="n">the</span> <span class="o">&lt;</span><span class="n">summary</span><span class="o">&gt;</span> <span class="n">and</span>
-<span class="o">&lt;</span><span class="n">description</span><span class="o">&gt;</span> <span class="n">elements</span><span class="p">,</span> <span class="n">and</span> <span class="n">also</span> <span class="n">any</span> <span class="o">&lt;</span><span class="k">default</span><span class="o">&gt;</span> <span class="n">elements</span> <span class="n">which</span> <span class="n">have</span> <span class="n">a</span> <span class="err">`</span><span class="n">l10n</span><span class="err">`</span>
+<span class="o">&lt;</span><span class="n">description</span><span class="o">&gt;</span> <span class="n">elements</span><span class="p">,</span> <span class="n">and</span> <span class="n">also</span> <span class="n">any</span> <span class="o">&lt;</span><span class="k">default</span><span class="o">&gt;</span> <span class="n">elements</span> <span class="n">which</span> <span class="n">have</span> <span class="n">a</span> <span class="p">`</span><span class="nv">l10n</span><span class="p">`</span>
 <span class="n">attribute</span> <span class="k">set</span><span class="o">.</span> <span class="kt">Translations</span> <span class="n">must</span> <span class="n">not</span> <span class="n">be</span> <span class="n">included</span> <span class="k">in</span> <span class="n">the</span> <span class="err">`</span><span class="o">.</span><span class="n">gschema</span><span class="o">.</span><span class="n">xml</span><span class="err">`</span> <span class="n">file</span>
 <span class="n">by</span> <span class="n">the</span> <span class="n">build</span> <span class="n">system</span><span class="p">,</span> <span class="k">for</span> <span class="n">example</span> <span class="n">by</span> <span class="n">using</span> <span class="n">intltool</span> <span class="kt">XML</span> <span class="n">rules</span> <span class="n">with</span> <span class="n">a</span>
 <span class="err">`</span><span class="o">.</span><span class="n">gschema</span><span class="o">.</span><span class="n">xml</span><span class="o">.</span><span class="k">in</span><span class="err">`</span> <span class="n">template</span><span class="o">.</span>
@@ -7770,13 +7762,12 @@ EXTRA_DIST = $(gsettings_SCHEMAS)</p>
 <p>gsettings_ENUM_NAMESPACE = org.foo.MyApp
 gsettings_ENUM_FILES = my-app-enums.h my-app-misc.h</p>
 <pre class="highlight swift"><code>
-
-<span class="err">`</span><span class="n">gsettings_ENUM_NAMESPACE</span><span class="err">`</span> <span class="n">specifies</span> <span class="n">the</span> <span class="n">schema</span> <span class="n">namespace</span> <span class="k">for</span> <span class="n">the</span> <span class="kd">enum</span> <span class="n">files</span><span class="p">,</span>
-<span class="n">which</span> <span class="n">are</span> <span class="n">specified</span> <span class="k">in</span> <span class="err">`</span><span class="n">gsettings_ENUM_FILES</span><span class="err">`</span><span class="o">.</span> <span class="kt">This</span> <span class="n">will</span> <span class="n">generate</span> <span class="n">a</span>
+<span class="p">`</span><span class="nv">gsettings_ENUM_NAMESPACE</span><span class="p">`</span> <span class="n">specifies</span> <span class="n">the</span> <span class="n">schema</span> <span class="n">namespace</span> <span class="k">for</span> <span class="n">the</span> <span class="kd">enum</span> <span class="n">files</span><span class="p">,</span>
+<span class="n">which</span> <span class="n">are</span> <span class="n">specified</span> <span class="k">in</span> <span class="p">`</span><span class="nv">gsettings_ENUM_FILES</span><span class="p">`</span><span class="o">.</span> <span class="kt">This</span> <span class="n">will</span> <span class="n">generate</span> <span class="n">a</span>
 <span class="err">`</span><span class="n">org</span><span class="o">.</span><span class="n">foo</span><span class="o">.</span><span class="kt">MyApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">xml</span><span class="err">`</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">the</span> <span class="n">extracted</span> <span class="n">enums</span><span class="p">,</span> <span class="n">which</span> <span class="n">will</span> <span class="n">be</span>
 <span class="n">automatically</span> <span class="n">included</span> <span class="k">in</span> <span class="n">the</span> <span class="n">schema</span> <span class="n">compilation</span><span class="p">,</span> <span class="n">install</span> <span class="n">and</span> <span class="n">uninstall</span>
 <span class="n">rules</span><span class="o">.</span> <span class="kt">It</span> <span class="n">should</span> <span class="n">not</span> <span class="n">be</span> <span class="n">committed</span> <span class="n">to</span> <span class="n">version</span> <span class="n">control</span> <span class="n">or</span> <span class="n">included</span> <span class="k">in</span>
-<span class="err">`</span><span class="kt">EXTRA_DIST</span><span class="err">`</span><span class="o">.</span>
+<span class="p">`</span><span class="nv">EXTRA_DIST</span><span class="p">`</span><span class="o">.</span>
 </code></pre>
 
           </div>
@@ -7812,7 +7803,7 @@ For type-safe access, use the generated, typed pointer <code>settings_ptr</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L621">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L595">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7853,7 +7844,7 @@ For type-safe access, use the generated, typed pointer <code>settings_ptr</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L626-L627">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L600-L601">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7883,7 +7874,7 @@ For type-safe access, use the generated, typed pointer <code>settings_ptr</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L630-L632">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L604-L606">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7914,7 +7905,7 @@ For type-safe access, use the generated, typed pointer <code>settings_ptr</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L636-L638">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L610-L612">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7945,7 +7936,7 @@ For type-safe access, use the generated, typed pointer <code>settings_ptr</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L642-L644">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L616-L618">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7976,7 +7967,7 @@ For type-safe access, use the generated, typed pointer <code>settings_ptr</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L648-L650">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L622-L624">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8007,7 +7998,7 @@ For type-safe access, use the generated, typed pointer <code>settings_ptr</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L654-L656">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L628-L630">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8038,7 +8029,7 @@ For type-safe access, use the generated, typed pointer <code>settings_ptr</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L660-L662">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L634-L636">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8056,15 +8047,15 @@ For type-safe access, use the generated, typed pointer <code>settings_ptr</code>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <pre class="highlight swift"><code><span class="kt">Creates</span> <span class="n">a</span> <span class="k">new</span> <span class="err">`</span><span class="kt">GSettings</span><span class="err">`</span> <span class="n">object</span> <span class="n">with</span> <span class="n">the</span> <span class="n">schema</span> <span class="n">specified</span> <span class="n">by</span>
+                        <pre class="highlight swift"><code><span class="kt">Creates</span> <span class="n">a</span> <span class="k">new</span> <span class="p">`</span><span class="nv">GSettings</span><span class="p">`</span> <span class="n">object</span> <span class="n">with</span> <span class="n">the</span> <span class="n">schema</span> <span class="n">specified</span> <span class="n">by</span>
 </code></pre>
 
 <p><code>schema_id</code>.</p>
 
 <p>Signals on the newly created <code>GSettings</code> object will be dispatched
 via the thread-default <code>GMainContext</code> in effect at the time of the
-call to g_settings_new().  The new <code>GSettings</code> will hold a reference
-on the context.  See g_main_context_push_thread_default().</p>
+call to <code>g_settings_new()</code>.  The new <code>GSettings</code> will hold a reference
+on the context.  See <code>g_main_context_push_thread_default()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8076,7 +8067,7 @@ on the context.  See g_main_context_push_thread_default().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L671-L674">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L645-L648">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8109,7 +8100,7 @@ backend, and a <code>GMainContext</code> to which signals are dispatched.</p>
 <p>This constructor therefore gives you full control over constructing
 <code>GSettings</code> instances.  The first 3 parameters are given directly as
 <code>schema</code>, <code>backend</code> and <code>path</code>, and the main context is taken from the
-thread-default (as per g_settings_new()).</p>
+thread-default (as per <code>g_settings_new()</code>).</p>
 
 <p>If <code>backend</code> is <code>nil</code> then the default backend is used.</p>
 
@@ -8128,7 +8119,7 @@ have.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L699-L702">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L673-L676">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8165,7 +8156,7 @@ settings instead of the settings for this user.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L712-L715">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L686-L689">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8186,8 +8177,8 @@ settings instead of the settings for this user.</p>
                         <p>Creates a new <code>GSettings</code> object with the schema specified by
 <code>schema_id</code> and a given <code>GSettingsBackend</code> and path.</p>
 
-<p>This is a mix of g_settings_new_with_backend() and
-g_settings_new_with_path().</p>
+<p>This is a mix of <code>g_settings_new_with_backend()</code> and
+<code>g_settings_new_with_path()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8199,7 +8190,7 @@ g_settings_new_with_path().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L722-L725">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L696-L699">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8241,7 +8232,7 @@ characters.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L740-L743">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L714-L717">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8274,7 +8265,7 @@ backend, and a <code>GMainContext</code> to which signals are dispatched.</p>
 <p>This constructor therefore gives you full control over constructing
 <code>GSettings</code> instances.  The first 3 parameters are given directly as
 <code>schema</code>, <code>backend</code> and <code>path</code>, and the main context is taken from the
-thread-default (as per g_settings_new()).</p>
+thread-default (as per <code>g_settings_new()</code>).</p>
 
 <p>If <code>backend</code> is <code>nil</code> then the default backend is used.</p>
 
@@ -8293,7 +8284,7 @@ have.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L767-L770">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L741-L744">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8330,7 +8321,7 @@ settings instead of the settings for this user.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L780-L783">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L754-L757">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8351,8 +8342,8 @@ settings instead of the settings for this user.</p>
                         <p>Creates a new <code>GSettings</code> object with the schema specified by
 <code>schema_id</code> and a given <code>GSettingsBackend</code> and path.</p>
 
-<p>This is a mix of g_settings_new_with_backend() and
-g_settings_new_with_path().</p>
+<p>This is a mix of <code>g_settings_new_with_backend()</code> and
+<code>g_settings_new_with_path()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8364,7 +8355,7 @@ g_settings_new_with_path().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L790-L793">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L764-L767">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8406,7 +8397,7 @@ characters.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L808-L811">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L782-L785">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8419,7 +8410,7 @@ characters.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

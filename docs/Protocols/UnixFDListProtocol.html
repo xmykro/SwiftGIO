@@ -7495,8 +7495,8 @@ Alternatively, use <code><a href="../Structs/UnixFDListRef.html">UnixFDListRef</
 descriptors that it contains, closing them when finalized.</p>
 
 <p>It may be wrapped in a <code>GUnixFDMessage</code> and sent over a <code>GSocket</code> in
-the <code>G_SOCKET_FAMILY_UNIX</code> family by using g_socket_send_message()
-and received using g_socket_receive_message().</p>
+the <code>G_SOCKET_FAMILY_UNIX</code> family by using <code>g_socket_send_message()</code>
+and received using <code>g_socket_receive_message()</code>.</p>
 
 <p>Note that <code>&lt;gio/gunixfdlist.h&gt;</code> belongs to the UNIX-specific GIO
 interfaces, thus you have to use the <code>gio-unix-2.0.pc</code> pkg-config
@@ -7534,7 +7534,7 @@ file when using it.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L323">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L322">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7572,7 +7572,7 @@ file when using it.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L326">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L325">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7664,7 +7664,7 @@ file when using it.</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L545-L564">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L543-L562">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7698,7 +7698,7 @@ file when using it.</p>
                       <div class="abstract">
                         <p>Adds a file descriptor to <code>list</code>.</p>
 
-<p>The file descriptor is duplicated using dup(). You keep your copy
+<p>The file descriptor is duplicated using <code>dup()</code>. You keep your copy
 of the descriptor and the copy contained in <code>list</code> will be closed
 when <code>list</code> is finalized.</p>
 
@@ -7706,7 +7706,7 @@ when <code>list</code> is finalized.</p>
 system-wide file descriptor limit.</p>
 
 <p>The index of the file descriptor in the list is returned.  If you use
-this index with g_unix_fd_list_get() then you will receive back a
+this index with <code>g_unix_fd_list_get()</code> then you will receive back a
 duplicated copy of the same file descriptor.</p>
 
                       </div>
@@ -7719,7 +7719,7 @@ duplicated copy of the same file descriptor.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L583-L590">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L581-L588">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7744,10 +7744,10 @@ duplicated copy of the same file descriptor.</p>
 
 <p><code>index_</code> specifies the index of the file descriptor to get.  It is a
 programmer error for <code>index_</code> to be out of range; see
-g_unix_fd_list_get_length().</p>
+<code>g_unix_fd_list_get_length()</code>.</p>
 
-<p>The file descriptor is duplicated using dup() and set as
-close-on-exec before being returned.  You must call close() on it
+<p>The file descriptor is duplicated using <code>dup()</code> and set as
+close-on-exec before being returned.  You must call <code>close()</code> on it
 when you are done.</p>
 
 <p>A possible cause of failure is exceeding the per-process or
@@ -7763,7 +7763,7 @@ system-wide file descriptor limit.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L604-L611">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L602-L609">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7797,7 +7797,7 @@ contained within).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L615-L618">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L613-L616">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7842,7 +7842,7 @@ descriptors contained in <code>list</code>, an empty array is returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L633-L636">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L631-L634">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7870,7 +7870,7 @@ object.</p>
 <code>list</code>. Further calls will return an empty list (unless more
 descriptors have been added).</p>
 
-<p>The return result of this function must be freed with g_free().
+<p>The return result of this function must be freed with <code>g_free()</code>.
 The caller is also responsible for closing all of the file
 descriptors.  The file descriptors in the array are set to
 close-on-exec.</p>
@@ -7892,7 +7892,7 @@ descriptors contained in <code>list</code>, an empty array is returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L656-L659">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L654-L657">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7926,7 +7926,7 @@ contained within).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L662-L669">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L660-L667">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7939,7 +7939,7 @@ contained within).</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

@@ -7491,12 +7491,12 @@ The default implementation of these can be found in the protocol extension below
 For a concrete class that implements these methods and properties, see <code><a href="../Classes/OutputStream.html">OutputStream</a></code>.
 Alternatively, use <code><a href="../Structs/OutputStreamRef.html">OutputStreamRef</a></code> as a lighweight, <code>unowned</code> reference if you already have an instance you just want to use.</p>
 
-<p><code>GOutputStream</code> has functions to write to a stream (g_output_stream_write()),
-to close a stream (g_output_stream_close()) and to flush pending writes
-(g_output_stream_flush()).</p>
+<p><code>GOutputStream</code> has functions to write to a stream (<code>g_output_stream_write()</code>),
+to close a stream (<code>g_output_stream_close()</code>) and to flush pending writes
+(<code>g_output_stream_flush()</code>).</p>
 
 <p>To copy the content of an input stream to an output stream without
-manually handling the reads and writes, use g_output_stream_splice().</p>
+manually handling the reads and writes, use <code>g_output_stream_splice()</code>.</p>
 
 <p>See the documentation for <code>GIOStream</code> for details of thread safety of
 streaming APIs.</p>
@@ -7665,7 +7665,7 @@ streaming APIs.</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L189-L208">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L188-L207">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7697,7 +7697,7 @@ streaming APIs.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Clears the pending flag on <code>stream</code>.</p>
+                        <p>Clears the pending flag on <code>stream.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7709,7 +7709,7 @@ streaming APIs.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L216-L219">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L215-L218">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7770,7 +7770,7 @@ data will reach the target.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L250-L257">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L249-L256">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7793,10 +7793,10 @@ data will reach the target.</p>
                       <div class="abstract">
                         <p>Requests an asynchronous close of the stream, releasing resources
 related to it. When the operation is finished <code>callback</code> will be
-called. You can then call g_output_stream_close_finish() to get
+called. You can then call <code>g_output_stream_close_finish()</code> to get
 the result of the operation.</p>
 
-<p>For behaviour details see g_output_stream_close().</p>
+<p>For behaviour details see <code>g_output_stream_close()</code>.</p>
 
 <p>The asynchronous methods have a default fallback that uses threads
 to implement asynchronicity, so they are optional for inheriting
@@ -7812,7 +7812,7 @@ classes. However, if you override one you must override all.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L269-L272">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L268-L271">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7845,7 +7845,7 @@ classes. However, if you override one you must override all.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L275-L282">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L274-L281">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7886,7 +7886,7 @@ was cancelled, the error <code>G_IO_ERROR_CANCELLED</code> will be returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L293-L300">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L292-L299">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7909,10 +7909,10 @@ was cancelled, the error <code>G_IO_ERROR_CANCELLED</code> will be returned.</p>
                       <div class="abstract">
                         <p>Forces an asynchronous write of all user-space buffered data for
 the given <code>stream</code>.
-For behaviour details see g_output_stream_flush().</p>
+For behaviour details see <code>g_output_stream_flush()</code>.</p>
 
 <p>When the operation is finished <code>callback</code> will be
-called. You can then call g_output_stream_flush_finish() to get the
+called. You can then call <code>g_output_stream_flush_finish()</code> to get the
 result of the operation.</p>
 
                       </div>
@@ -7925,7 +7925,7 @@ result of the operation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L309-L312">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L308-L311">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7958,7 +7958,7 @@ result of the operation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L315-L322">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L314-L321">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7991,7 +7991,7 @@ result of the operation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L325-L328">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L324-L327">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8014,7 +8014,7 @@ result of the operation.</p>
                       <div class="abstract">
                         <p>Sets <code>stream</code> to have actions pending. If the pending flag is
 already set or <code>stream</code> is closed, it will return <code>false</code> and set
-<code>error</code>.</p>
+<code>error.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8026,7 +8026,7 @@ already set or <code>stream</code> is closed, it will return <code>false</code> 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L337-L344">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L336-L343">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8059,7 +8059,7 @@ already set or <code>stream</code> is closed, it will return <code>false</code> 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L347-L354">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L346-L353">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8082,11 +8082,11 @@ already set or <code>stream</code> is closed, it will return <code>false</code> 
                       <div class="abstract">
                         <p>Splices a stream asynchronously.
 When the operation is finished <code>callback</code> will be called.
-You can then call g_output_stream_splice_finish() to get the
+You can then call <code>g_output_stream_splice_finish()</code> to get the
 result of the operation.</p>
 
 <p>For the synchronous, blocking version of this function, see
-g_output_stream_splice().</p>
+<code>g_output_stream_splice()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8098,7 +8098,7 @@ g_output_stream_splice().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L363-L366">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L362-L365">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8131,7 +8131,7 @@ g_output_stream_splice().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L369-L376">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L368-L375">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8152,18 +8152,18 @@ g_output_stream_splice().</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This is a utility function around g_output_stream_write_all(). It
-uses g_strdup_vprintf() to turn <code>format</code> and <code>args</code> into a string that
+                        <p>This is a utility function around <code>g_output_stream_write_all()</code>. It
+uses <code>g_strdup_vprintf()</code> to turn <code>format</code> and <code>args</code> into a string that
 is then written to <code>stream</code>.</p>
 
-<p>See the documentation of g_output_stream_write_all() about the
+<p>See the documentation of <code>g_output_stream_write_all()</code> about the
 behavior of the actual write operation.</p>
 
 <p>Note that partial writes cannot be properly checked with this
 function due to the variable length of the written string, if you
 need precise control over partial write failures, you need to
-create you own printf()-like wrapper around g_output_stream_write()
-or g_output_stream_write_all().</p>
+create you own <code>printf()</code>-like wrapper around <code>g_output_stream_write()</code>
+or <code>g_output_stream_write_all()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8175,7 +8175,7 @@ or g_output_stream_write_all().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L390-L393">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L389-L392">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8227,7 +8227,7 @@ partial result will be returned, without an error.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L415-L422">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L414-L421">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8251,7 +8251,7 @@ partial result will be returned, without an error.</p>
                         <p>Tries to write <code>count</code> bytes from <code>buffer</code> into the stream. Will block
 during the operation.</p>
 
-<p>This function is similar to g_output_stream_write(), except it tries to
+<p>This function is similar to <code>g_output_stream_write()</code>, except it tries to
 write as many bytes as requested, only stopping on an error.</p>
 
 <p>On a successful write of <code>count</code> bytes, <code>true</code> is returned, and <code>bytes_written</code>
@@ -8266,7 +8266,7 @@ use <code>GError</code>, if this function returns <code>false</code> (and sets <
 successfully written before the error was encountered.  This
 functionality is only available from C.  If you need it from another
 language then you must write your own loop around
-g_output_stream_write().</p>
+<code>g_output_stream_write()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8278,7 +8278,7 @@ g_output_stream_write().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L443-L450">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L442-L449">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8301,12 +8301,12 @@ g_output_stream_write().</p>
                       <div class="abstract">
                         <p>Request an asynchronous write of <code>count</code> bytes from <code>buffer</code> into
 the stream. When the operation is finished <code>callback</code> will be called.
-You can then call g_output_stream_write_all_finish() to get the result of the
+You can then call <code>g_output_stream_write_all_finish()</code> to get the result of the
 operation.</p>
 
-<p>This is the asynchronous version of g_output_stream_write_all().</p>
+<p>This is the asynchronous version of <code>g_output_stream_write_all()</code>.</p>
 
-<p>Call g_output_stream_write_all_finish() to collect the result.</p>
+<p>Call <code>g_output_stream_write_all_finish()</code> to collect the result.</p>
 
 <p>Any outstanding I/O request with higher priority (lower numerical
 value) will be executed before an outstanding request with lower
@@ -8325,7 +8325,7 @@ until <code>callback</code> is called.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L467-L470">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L466-L469">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8347,7 +8347,7 @@ until <code>callback</code> is called.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Finishes an asynchronous stream write operation started with
-g_output_stream_write_all_async().</p>
+<code>g_output_stream_write_all_async()</code>.</p>
 
 <p>As a special exception to the normal conventions for functions that
 use <code>GError</code>, if this function returns <code>false</code> (and sets <code>error</code>) then
@@ -8355,7 +8355,7 @@ use <code>GError</code>, if this function returns <code>false</code> (and sets <
 successfully written before the error was encountered.  This
 functionality is only available from C.  If you need it from another
 language then you must write your own loop around
-g_output_stream_write_async().</p>
+<code>g_output_stream_write_async()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8367,7 +8367,7 @@ g_output_stream_write_async().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L482-L489">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L481-L488">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8390,7 +8390,7 @@ g_output_stream_write_async().</p>
                       <div class="abstract">
                         <p>Request an asynchronous write of <code>count</code> bytes from <code>buffer</code> into
 the stream. When the operation is finished <code>callback</code> will be called.
-You can then call g_output_stream_write_finish() to get the result of the
+You can then call <code>g_output_stream_write_finish()</code> to get the result of the
 operation.</p>
 
 <p>During an async request no other sync and async calls are allowed,
@@ -8417,10 +8417,10 @@ to implement asynchronicity, so they are optional for inheriting
 classes. However, if you override one you must override all.</p>
 
 <p>For the synchronous, blocking version of this function, see
-g_output_stream_write().</p>
+<code>g_output_stream_write()</code>.</p>
 
 <p>Note that no copy of <code>buffer</code> will be made, so it must stay valid
-until <code>callback</code> is called. See g_output_stream_write_bytes_async()
+until <code>callback</code> is called. See <code>g_output_stream_write_bytes_async()</code>
 for a <code>GBytes</code> version that will automatically hold a reference to
 the contents (without copying) for the duration of the call.</p>
 
@@ -8434,7 +8434,7 @@ the contents (without copying) for the duration of the call.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L526-L529">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L525-L528">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8455,15 +8455,15 @@ the contents (without copying) for the duration of the call.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A wrapper function for g_output_stream_write() which takes a
+                        <p>A wrapper function for <code>g_output_stream_write()</code> which takes a
 <code>GBytes</code> as input.  This can be more convenient for use by language
 bindings or in other cases where the refcounted nature of <code>GBytes</code>
 is helpful over a bare pointer interface.</p>
 
 <p>However, note that this function may still perform partial writes,
-just like g_output_stream_write().  If that occurs, to continue
+just like <code>g_output_stream_write()</code>.  If that occurs, to continue
 writing, you will need to create a new <code>GBytes</code> containing just the
-remaining bytes, using g_bytes_new_from_bytes(). Passing the same
+remaining bytes, using <code>g_bytes_new_from_bytes()</code>. Passing the same
 <code>GBytes</code> instance multiple times potentially can result in duplicated
 data in the output stream.</p>
 
@@ -8477,7 +8477,7 @@ data in the output stream.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L542-L549">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L541-L548">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8498,19 +8498,19 @@ data in the output stream.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This function is similar to g_output_stream_write_async(), but
+                        <p>This function is similar to <code>g_output_stream_write_async()</code>, but
 takes a <code>GBytes</code> as input.  Due to the refcounted nature of <code>GBytes</code>,
 this allows the stream to avoid taking a copy of the data.</p>
 
 <p>However, note that this function may still perform partial writes,
-just like g_output_stream_write_async(). If that occurs, to continue
+just like <code>g_output_stream_write_async()</code>. If that occurs, to continue
 writing, you will need to create a new <code>GBytes</code> containing just the
-remaining bytes, using g_bytes_new_from_bytes(). Passing the same
+remaining bytes, using <code>g_bytes_new_from_bytes()</code>. Passing the same
 <code>GBytes</code> instance multiple times potentially can result in duplicated
 data in the output stream.</p>
 
 <p>For the synchronous, blocking version of this function, see
-g_output_stream_write_bytes().</p>
+<code>g_output_stream_write_bytes()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8522,7 +8522,7 @@ g_output_stream_write_bytes().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L564-L567">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L563-L566">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8555,7 +8555,7 @@ g_output_stream_write_bytes().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L570-L577">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L569-L576">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8588,7 +8588,7 @@ g_output_stream_write_bytes().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L580-L587">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L579-L586">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8628,7 +8628,7 @@ was cancelled, the error <code>G_IO_ERROR_CANCELLED</code> will be returned. If 
 operation was partially finished when the operation was cancelled the
 partial result will be returned, without an error.</p>
 
-<p>Some implementations of g_output_stream_writev() may have limitations on the
+<p>Some implementations of <code>g_output_stream_writev()</code> may have limitations on the
 aggregate buffer size, and will return <code>G_IO_ERROR_INVALID_ARGUMENT</code> if these
 are exceeded. For example, when writing to a local file on UNIX platforms,
 the aggregate buffer size must not exceed <code>G_MAXSSIZE</code> bytes.</p>
@@ -8643,7 +8643,7 @@ the aggregate buffer size must not exceed <code>G_MAXSSIZE</code> bytes.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L612-L619">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L611-L618">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8667,7 +8667,7 @@ the aggregate buffer size must not exceed <code>G_MAXSSIZE</code> bytes.</p>
                         <p>Tries to write the bytes contained in the <code>n_vectors</code> <code>vectors</code> into the
 stream. Will block during the operation.</p>
 
-<p>This function is similar to g_output_stream_writev(), except it tries to
+<p>This function is similar to <code>g_output_stream_writev()</code>, except it tries to
 write as many bytes as requested, only stopping on an error.</p>
 
 <p>On a successful write of all <code>n_vectors</code> vectors, <code>true</code> is returned, and
@@ -8682,7 +8682,7 @@ use <code>GError</code>, if this function returns <code>false</code> (and sets <
 successfully written before the error was encountered.  This
 functionality is only available from C. If you need it from another
 language then you must write your own loop around
-g_output_stream_write().</p>
+<code>g_output_stream_write()</code>.</p>
 
 <p>The content of the individual elements of <code>vectors</code> might be changed by this
 function.</p>
@@ -8697,7 +8697,7 @@ function.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L643-L650">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L642-L649">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8720,12 +8720,12 @@ function.</p>
                       <div class="abstract">
                         <p>Request an asynchronous write of the bytes contained in the <code>n_vectors</code> <code>vectors</code> into
 the stream. When the operation is finished <code>callback</code> will be called.
-You can then call g_output_stream_writev_all_finish() to get the result of the
+You can then call <code>g_output_stream_writev_all_finish()</code> to get the result of the
 operation.</p>
 
-<p>This is the asynchronous version of g_output_stream_writev_all().</p>
+<p>This is the asynchronous version of <code>g_output_stream_writev_all()</code>.</p>
 
-<p>Call g_output_stream_writev_all_finish() to collect the result.</p>
+<p>Call <code>g_output_stream_writev_all_finish()</code> to collect the result.</p>
 
 <p>Any outstanding I/O request with higher priority (lower numerical
 value) will be executed before an outstanding request with lower
@@ -8745,7 +8745,7 @@ of <code>vectors</code> might be changed by this function.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L668-L671">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L667-L670">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8767,7 +8767,7 @@ of <code>vectors</code> might be changed by this function.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Finishes an asynchronous stream write operation started with
-g_output_stream_writev_all_async().</p>
+<code>g_output_stream_writev_all_async()</code>.</p>
 
 <p>As a special exception to the normal conventions for functions that
 use <code>GError</code>, if this function returns <code>false</code> (and sets <code>error</code>) then
@@ -8775,7 +8775,7 @@ use <code>GError</code>, if this function returns <code>false</code> (and sets <
 successfully written before the error was encountered.  This
 functionality is only available from C.  If you need it from another
 language then you must write your own loop around
-g_output_stream_writev_async().</p>
+<code>g_output_stream_writev_async()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8787,7 +8787,7 @@ g_output_stream_writev_async().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L683-L690">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L682-L689">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8810,7 +8810,7 @@ g_output_stream_writev_async().</p>
                       <div class="abstract">
                         <p>Request an asynchronous write of the bytes contained in <code>n_vectors</code> <code>vectors</code> into
 the stream. When the operation is finished <code>callback</code> will be called.
-You can then call g_output_stream_writev_finish() to get the result of the
+You can then call <code>g_output_stream_writev_finish()</code> to get the result of the
 operation.</p>
 
 <p>During an async request no other sync and async calls are allowed,
@@ -8834,7 +8834,7 @@ to implement asynchronicity, so they are optional for inheriting
 classes. However, if you override one you must override all.</p>
 
 <p>For the synchronous, blocking version of this function, see
-g_output_stream_writev().</p>
+<code>g_output_stream_writev()</code>.</p>
 
 <p>Note that no copy of <code>vectors</code> will be made, so it must stay valid
 until <code>callback</code> is called.</p>
@@ -8849,7 +8849,7 @@ until <code>callback</code> is called.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L722-L725">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L721-L724">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8882,7 +8882,7 @@ until <code>callback</code> is called.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L728-L735">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L727-L734">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8903,16 +8903,16 @@ until <code>callback</code> is called.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Tries to write to <code>stream</code>, as with g_output_stream_write() (if
-<code>blocking</code> is <code>true</code>) or g_pollable_output_stream_write_nonblocking()
+                        <p>Tries to write to <code>stream</code>, as with <code>g_output_stream_write()</code> (if
+<code>blocking</code> is <code>true</code>) or <code>g_pollable_output_stream_write_nonblocking()</code>
 (if <code>blocking</code> is <code>false</code>). This can be used to more easily share
 code between blocking and non-blocking implementations of a method.</p>
 
 <p>If <code>blocking</code> is <code>false</code>, then <code>stream</code> must be a
 <code>GPollableOutputStream</code> for which
-g_pollable_output_stream_can_poll() returns <code>true</code> or else the
+<code>g_pollable_output_stream_can_poll()</code> returns <code>true</code> or else the
 behavior is undefined. If <code>blocking</code> is <code>true</code>, then <code>stream</code> does not
-need to be a <code>GPollableOutputStream</code>.</p>
+need to be a <code>GPollableOutputStream.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8924,7 +8924,7 @@ need to be a <code>GPollableOutputStream</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L747-L754">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L746-L753">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8946,8 +8946,8 @@ need to be a <code>GPollableOutputStream</code>.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Tries to write <code>count</code> bytes to <code>stream</code>, as with
-g_output_stream_write_all(), but using g_pollable_stream_write()
-rather than g_output_stream_write().</p>
+<code>g_output_stream_write_all()</code>, but using <code>g_pollable_stream_write()</code>
+rather than <code>g_output_stream_write()</code>.</p>
 
 <p>On a successful write of <code>count</code> bytes, <code>true</code> is returned, and
 <code>bytes_written</code> is set to <code>count</code>.</p>
@@ -8958,11 +8958,11 @@ returned and <code>error</code> is set to indicate the error status,
 <code>bytes_written</code> is updated to contain the number of bytes written
 into the stream before the error occurred.</p>
 
-<p>As with g_pollable_stream_write(), if <code>blocking</code> is <code>false</code>, then
+<p>As with <code>g_pollable_stream_write()</code>, if <code>blocking</code> is <code>false</code>, then
 <code>stream</code> must be a <code>GPollableOutputStream</code> for which
-g_pollable_output_stream_can_poll() returns <code>true</code> or else the
+<code>g_pollable_output_stream_can_poll()</code> returns <code>true</code> or else the
 behavior is undefined. If <code>blocking</code> is <code>true</code>, then <code>stream</code> does not
-need to be a <code>GPollableOutputStream</code>.</p>
+need to be a <code>GPollableOutputStream.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8974,7 +8974,7 @@ need to be a <code>GPollableOutputStream</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L774-L781">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L773-L780">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9007,7 +9007,7 @@ need to be a <code>GPollableOutputStream</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L783-L789">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L782-L788">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9043,7 +9043,7 @@ the closing operation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L795-L804">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-OutputStream-Permission.swift#L794-L803">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9056,7 +9056,7 @@ the closing operation.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

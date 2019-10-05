@@ -7493,7 +7493,7 @@ Alternatively, use <code><a href="../Structs/ApplicationCommandLineRef.html">App
 
 <p><code>GApplicationCommandLine</code> represents a command-line invocation of
 an application.  It is created by <code>GApplication</code> and emitted
-in the <code>GApplication</code>::command-line signal and virtual function.</p>
+in the <code>GApplication::command</code>-line signal and virtual function.</p>
 
 <p>The class contains the list of arguments that the program was invoked
 with.  It is also possible to query if the commandline invocation was
@@ -7503,7 +7503,7 @@ commandline to this process).</p>
 
 <p>The GApplicationCommandLine object can provide the <code>argc</code> and <code>argv</code>
 parameters for use with the <code>GOptionContext</code> command-line parsing API,
-with the g_application_command_line_get_arguments() function. See
+with the <code>g_application_command_line_get_arguments()</code> function. See
 [gapplication-example-cmdline3.c][gapplication-example-cmdline3]
 for an example.</p>
 
@@ -7514,7 +7514,7 @@ of this object (ie: the process exits when the last reference is
 dropped).</p>
 
 <p>The main use for <code>GApplicationCommandLine</code> (and the
-<code>GApplication</code>::command-line signal) is &lsquo;Emacs server&rsquo; like use cases:
+<code>GApplication::command</code>-line signal) is &lsquo;Emacs server&rsquo; like use cases:
 You can set the <code>EDITOR</code> environment variable to have e.g. git use
 your favourite editor to edit commit messages, and if you already
 have an instance of the editor running, the editing will happen
@@ -7523,7 +7523,7 @@ aspect of this use case is that the process that gets started by git
 does not return until the editing is done.</p>
 
 <p>Normally, the commandline is completely handled in the
-<code>GApplication</code>::command-line handler. The launching instance exits
+<code>GApplication::command</code>-line handler. The launching instance exits
 once the signal handler in the primary instance has returned, and
 the return value of the signal handler becomes the exit status
 of the launching instance.
@@ -7543,7 +7543,7 @@ command_line (GApplication            *application,
                                     "to stdout of the caller\n");
 
   for (i = 0; i &lt; argc; i++)
-    g_print ("argument `d`: `s`\n", i, argv[i]);
+    g_print ("argument %d: %s\n", i, argv[i]);
 
   g_strfreev (argv);
 
@@ -7572,14 +7572,14 @@ split between the launcher and the primary instance.
     {
       if (g_str_has_prefix (argv[i], "--local-"))
         {
-          g_print ("handling argument `s` locally\n", argv[i]);
+          g_print ("handling argument %s locally\n", argv[i]);
           g_free (argv[i]);
           for (j = i; argv[j]; j++)
             argv[j] = argv[j + 1];
         }
       else
         {
-          g_print ("not handling argument `s` locally\n", argv[i]);
+          g_print ("not handling argument %s locally\n", argv[i]);
           i++;
         }
     }
@@ -7600,7 +7600,7 @@ test_application_class_init (TestApplicationClass *class)
 
 <p>In this example of split commandline handling, options that start
 with <code>--local-</code> are handled locally, all other options are passed
-to the <code>GApplication</code>::command-line handler which runs in the primary
+to the <code>GApplication::command</code>-line handler which runs in the primary
 instance.</p>
 
 <p>The complete example can be found here:
@@ -7641,7 +7641,7 @@ command_line (GApplication            *application,
 </code></pre>
 
 <p>In this example the commandline is not completely handled before
-the <code>GApplication</code>::command-line handler returns. Instead, we keep
+the <code>GApplication::command</code>-line handler returns. Instead, we keep
 a reference to the <code>GApplicationCommandLine</code> object and handle it
 later (in this example, in an idle). Note that it is necessary to
 hold the application until you are done with the commandline.</p>
@@ -7681,7 +7681,7 @@ hold the application until you are done with the commandline.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2276">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2270">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7719,7 +7719,7 @@ hold the application until you are done with the commandline.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2279">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2273">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7847,7 +7847,7 @@ hold the application until you are done with the commandline.</p>
                         <p>binding reference or <code>nil</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2716-L2740">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2704-L2728">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7939,7 +7939,7 @@ hold the application until you are done with the commandline.</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2782-L2801">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2769-L2788">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7974,7 +7974,7 @@ hold the application until you are done with the commandline.</p>
                         <p>Creates a <code>GFile</code> corresponding to a filename that was given as part
 of the invocation of <code>cmdline</code>.</p>
 
-<p>This differs from g_file_new_for_commandline_arg() in that it
+<p>This differs from <code>g_file_new_for_commandline_arg()</code> in that it
 resolves relative pathnames using the current working directory of
 the invoking process rather than the local process.</p>
 
@@ -7988,7 +7988,7 @@ the invoking process rather than the local process.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2814-L2817">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2801-L2804">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8016,10 +8016,10 @@ filenames or arguments given in the system locale) but are always in
 UTF-8 on Windows.</p>
 
 <p>If you wish to use the return value with <code>GOptionContext</code>, you must
-use g_option_context_parse_strv().</p>
+use <code>g_option_context_parse_strv()</code>.</p>
 
 <p>The return value is <code>nil</code>-terminated and should be freed using
-g_strfreev().</p>
+<code>g_strfreev()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8031,7 +8031,7 @@ g_strfreev().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2830-L2833">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2817-L2820">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8071,7 +8071,7 @@ long as <code>cmdline</code> exists.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2843-L2846">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2830-L2833">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8093,7 +8093,7 @@ long as <code>cmdline</code> exists.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the contents of the &lsquo;environ&rsquo; variable of the command line
-invocation, as would be returned by g_get_environ(), ie as a
+invocation, as would be returned by <code>g_get_environ()</code>, ie as a
 <code>nil</code>-terminated list of strings in the form &lsquo;NAME=VALUE&rsquo;.
 The strings may contain non-utf8 data.</p>
 
@@ -8105,7 +8105,7 @@ to invocation messages from other applications).</p>
 <p>The return value should not be modified or freed and is valid for as
 long as <code>cmdline</code> exists.</p>
 
-<p>See g_application_command_line_getenv() if you are only interested
+<p>See <code>g_application_command_line_getenv()</code> if you are only interested
 in the value of a single environment variable.</p>
 
                       </div>
@@ -8118,7 +8118,7 @@ in the value of a single environment variable.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2863-L2866">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2850-L2853">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8140,7 +8140,7 @@ in the value of a single environment variable.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the exit status of <code>cmdline</code>.  See
-g_application_command_line_set_exit_status() for more information.</p>
+<code>g_application_command_line_set_exit_status()</code> for more information.</p>
 
                       </div>
                       <div class="declaration">
@@ -8152,7 +8152,7 @@ g_application_command_line_set_exit_status() for more information.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2870-L2873">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2857-L2860">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8185,7 +8185,7 @@ g_application_command_line_set_exit_status() for more information.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2876-L2879">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2863-L2866">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8206,12 +8206,12 @@ g_application_command_line_set_exit_status() for more information.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the options there were passed to g_application_command_line().</p>
+                        <p>Gets the options there were passed to <code>g_application_command_line()</code>.</p>
 
-<p>If you did not override local_command_line() then these are the same
+<p>If you did not override <code>local_command_line()</code> then these are the same
 options that were parsed according to the <code>GOptionEntrys</code> added to the
-application with g_application_add_main_option_entries() and possibly
-modified from your GApplication::handle-local-options handler.</p>
+application with <code>g_application_add_main_option_entries()</code> and possibly
+modified from your GApplication<code>handle</code>-local-options handler.</p>
 
 <p>If no options were sent then an empty dictionary is returned so that
 you don&rsquo;t need to check for <code>nil</code>.</p>
@@ -8226,7 +8226,7 @@ you don&rsquo;t need to check for <code>nil</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2890-L2893">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2877-L2880">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8266,7 +8266,7 @@ notification ID.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2903-L2906">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2890-L2893">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8308,7 +8308,7 @@ future, support may be expanded to other platforms.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2918-L2921">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2905-L2908">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8330,7 +8330,7 @@ future, support may be expanded to other platforms.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the value of a particular environment variable of the command
-line invocation, as would be returned by g_getenv().  The strings may
+line invocation, as would be returned by <code>g_getenv()</code>.  The strings may
 contain non-utf8 data.</p>
 
 <p>The remote application usually does not send an environment.  Use
@@ -8351,7 +8351,7 @@ long as <code>cmdline</code> exists.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2934-L2937">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2921-L2924">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8375,7 +8375,7 @@ long as <code>cmdline</code> exists.</p>
                         <p>Sets the exit status that will be used when the invoking process
 exits.</p>
 
-<p>The return value of the <code>GApplication</code>::command-line signal is
+<p>The return value of the <code>GApplication::command</code>-line signal is
 passed to this function when the handler returns.  This is the usual
 way of setting the exit status.</p>
 
@@ -8404,7 +8404,7 @@ status of the local <code>GApplicationCommandLine</code> is used.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2968-L2971">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2955-L2958">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8444,7 +8444,7 @@ long as <code>cmdline</code> exists.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2980-L2993">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2967-L2980">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8466,7 +8466,7 @@ long as <code>cmdline</code> exists.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the contents of the &lsquo;environ&rsquo; variable of the command line
-invocation, as would be returned by g_get_environ(), ie as a
+invocation, as would be returned by <code>g_get_environ()</code>, ie as a
 <code>nil</code>-terminated list of strings in the form &lsquo;NAME=VALUE&rsquo;.
 The strings may contain non-utf8 data.</p>
 
@@ -8478,7 +8478,7 @@ to invocation messages from other applications).</p>
 <p>The return value should not be modified or freed and is valid for as
 long as <code>cmdline</code> exists.</p>
 
-<p>See g_application_command_line_getenv() if you are only interested
+<p>See <code>g_application_command_line_getenv()</code> if you are only interested
 in the value of a single environment variable.</p>
 
                       </div>
@@ -8491,7 +8491,7 @@ in the value of a single environment variable.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3010-L3030">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L2997-L3017">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8513,7 +8513,7 @@ in the value of a single environment variable.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the exit status of <code>cmdline</code>.  See
-g_application_command_line_set_exit_status() for more information.</p>
+<code>g_application_command_line_set_exit_status()</code> for more information.</p>
 
                       </div>
                       <div class="declaration">
@@ -8525,7 +8525,7 @@ g_application_command_line_set_exit_status() for more information.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3034-L3065">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3021-L3052">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8558,7 +8558,7 @@ g_application_command_line_set_exit_status() for more information.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3068-L3074">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3055-L3061">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8579,12 +8579,12 @@ g_application_command_line_set_exit_status() for more information.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the options there were passed to g_application_command_line().</p>
+                        <p>Gets the options there were passed to <code>g_application_command_line()</code>.</p>
 
-<p>If you did not override local_command_line() then these are the same
+<p>If you did not override <code>local_command_line()</code> then these are the same
 options that were parsed according to the <code>GOptionEntrys</code> added to the
-application with g_application_add_main_option_entries() and possibly
-modified from your GApplication::handle-local-options handler.</p>
+application with <code>g_application_add_main_option_entries()</code> and possibly
+modified from your GApplication<code>handle</code>-local-options handler.</p>
 
 <p>If no options were sent then an empty dictionary is returned so that
 you don&rsquo;t need to check for <code>nil</code>.</p>
@@ -8599,7 +8599,7 @@ you don&rsquo;t need to check for <code>nil</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3085-L3099">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3072-L3086">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8639,7 +8639,7 @@ notification ID.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3109-L3122">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3096-L3109">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8681,7 +8681,7 @@ future, support may be expanded to other platforms.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3134-L3149">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3121-L3136">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8694,7 +8694,7 @@ future, support may be expanded to other platforms.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

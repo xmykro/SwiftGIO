@@ -7525,7 +7525,7 @@ Alternatively, use <code><a href="../Structs/VfsRef.html">VfsRef</a></code> as a
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2467">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2460">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7563,7 +7563,7 @@ Alternatively, use <code><a href="../Structs/VfsRef.html">VfsRef</a></code> as a
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2470">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2463">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7655,7 +7655,7 @@ Alternatively, use <code><a href="../Structs/VfsRef.html">VfsRef</a></code> as a
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2633-L2652">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2625-L2644">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7687,7 +7687,7 @@ Alternatively, use <code><a href="../Structs/VfsRef.html">VfsRef</a></code> as a
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets a <code>GFile</code> for <code>path</code>.</p>
+                        <p>Gets a <code>GFile</code> for <code>path.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7699,7 +7699,7 @@ Alternatively, use <code><a href="../Structs/VfsRef.html">VfsRef</a></code> as a
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2660-L2663">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2652-L2655">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7736,7 +7736,7 @@ is malformed or if the URI scheme is not supported.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2670-L2673">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2662-L2665">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7757,7 +7757,7 @@ is malformed or if the URI scheme is not supported.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets a list of URI schemes supported by <code>vfs</code>.</p>
+                        <p>Gets a list of URI schemes supported by <code>vfs.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7769,7 +7769,7 @@ is malformed or if the URI scheme is not supported.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2676-L2679">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2668-L2671">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7804,7 +7804,7 @@ be parsed by the <code>GVfs</code> module.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2684-L2687">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2676-L2679">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7831,20 +7831,20 @@ Note that <code>scheme</code> is registered only within the running application,
 opposed to desktop-wide as it happens with GVfs backends.</p>
 
 <p>When a <code>GFile</code> is requested with an URI containing <code>scheme</code> (e.g. through
-g_file_new_for_uri()), <code>uri_func</code> will be called to allow a custom
+<code>g_file_new_for_uri()</code>), <code>uri_func</code> will be called to allow a custom
 constructor. The implementation of <code>uri_func</code> should not be blocking, and
-must not call g_vfs_register_uri_scheme() or g_vfs_unregister_uri_scheme().</p>
+must not call <code>g_vfs_register_uri_scheme()</code> or <code>g_vfs_unregister_uri_scheme()</code>.</p>
 
-<p>When g_file_parse_name() is called with a parse name obtained from such file,
+<p>When <code>g_file_parse_name()</code> is called with a parse name obtained from such file,
 <code>parse_name_func</code> will be called to allow the <code>GFile</code> to be created again. In
 that case, it&rsquo;s responsibility of <code>parse_name_func</code> to make sure the parse
 name matches what the custom <code>GFile</code> implementation returned when
-g_file_get_parse_name() was previously called. The implementation of
+<code>g_file_get_parse_name()</code> was previously called. The implementation of
 <code>parse_name_func</code> should not be blocking, and must not call
-g_vfs_register_uri_scheme() or g_vfs_unregister_uri_scheme().</p>
+<code>g_vfs_register_uri_scheme()</code> or <code>g_vfs_unregister_uri_scheme()</code>.</p>
 
 <p>It&rsquo;s an error to call this function twice with the same scheme. To unregister
-a custom URI scheme, use g_vfs_unregister_uri_scheme().</p>
+a custom URI scheme, use <code>g_vfs_unregister_uri_scheme()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7856,7 +7856,7 @@ a custom URI scheme, use g_vfs_unregister_uri_scheme().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2709-L2712">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2701-L2704">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7878,7 +7878,7 @@ a custom URI scheme, use g_vfs_unregister_uri_scheme().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Unregisters the URI handler for <code>scheme</code> previously registered with
-g_vfs_register_uri_scheme().</p>
+<code>g_vfs_register_uri_scheme()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7890,7 +7890,7 @@ g_vfs_register_uri_scheme().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2716-L2719">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2708-L2711">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7923,7 +7923,7 @@ g_vfs_register_uri_scheme().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2721-L2727">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2713-L2719">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7944,7 +7944,7 @@ g_vfs_register_uri_scheme().</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets a list of URI schemes supported by <code>vfs</code>.</p>
+                        <p>Gets a list of URI schemes supported by <code>vfs.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7956,7 +7956,7 @@ g_vfs_register_uri_scheme().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2730-L2736">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2722-L2728">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7969,7 +7969,7 @@ g_vfs_register_uri_scheme().</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

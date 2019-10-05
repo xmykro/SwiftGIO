@@ -7494,7 +7494,7 @@ Use <code>AppInfo</code> as a strong reference or owner of a <code>GAppInfo</cod
 applications installed on the system.</p>
 
 <p>As of GLib 2.20, URIs will always be converted to POSIX paths
-(using g_file_get_path()) when using g_app_info_launch() even if
+(using <code>g_file_get_path()</code>) when using <code>g_app_info_launch()</code> even if
 the application requested an URI and not a POSIX path. For example
 for an desktop-file based application with Exec key <code>totem
 </code>U`<code>and a single URI,</code>sftp://foo/file.avi<code>, then
@@ -7509,10 +7509,10 @@ passed unmodified to the application.</p>
 <p>Specifically for gvfs 2.26 and later, the POSIX URI will be mapped
 back to the GIO URI in the <code>GFile</code> constructors (since gvfs
 implements the <code>GVfs</code> extension point). As such, if the application
-needs to examine the URI, it needs to use g_file_get_uri() or
+needs to examine the URI, it needs to use <code>g_file_get_uri()</code> or
 similar on <code>GFile</code>. In other words, an application cannot assume
-that the URI passed to e.g. g_file_new_for_commandline_arg() is
-equal to the result of g_file_get_uri(). The following snippet
+that the URI passed to e.g. <code>g_file_new_for_commandline_arg()</code> is
+equal to the result of <code>g_file_get_uri()</code>. The following snippet
 illustrates this:</p>
 <pre class="highlight swift"><code><span class="kt">GFile</span> <span class="o">*</span><span class="n">f</span><span class="p">;</span>
 <span class="n">char</span> <span class="o">*</span><span class="n">uri</span><span class="p">;</span>
@@ -7570,7 +7570,7 @@ For type-safe access, use the generated, typed pointer <code>app_info_ptr</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1554">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1551">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7601,7 +7601,7 @@ Ownership is transferred to the <code>AppInfo</code> instance.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1558-L1560">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1555-L1557">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7627,12 +7627,12 @@ Ownership is transferred to the <code>AppInfo</code> instance.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/AppInfoProtocol.html">AppInfoProtocol</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/AppInfoProtocol.html">AppInfoProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1564-L1567">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1561-L1564">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7658,12 +7658,12 @@ Ownership is transferred to the <code>AppInfo</code> instance.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1576-L1578">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1573-L1575">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7689,12 +7689,12 @@ Ownership is transferred to the <code>AppInfo</code> instance.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1582-L1584">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1579-L1581">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7720,12 +7720,12 @@ Ownership is transferred to the <code>AppInfo</code> instance.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1588-L1590">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1585-L1587">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7751,12 +7751,12 @@ Ownership is transferred to the <code>AppInfo</code> instance.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1594-L1596">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1591-L1593">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7792,7 +7792,7 @@ being swallowed by Exec key unquoting. See the specification for exact quoting r
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1606-L1613">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1603-L1610">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7822,7 +7822,7 @@ being swallowed by Exec key unquoting. See the specification for exact quoting r
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1616-L1619">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1613-L1616">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7855,7 +7855,7 @@ of the URI, up to but not including the &lsquo;:&rsquo;, e.g. <q>http</q>,
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1625-L1628">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L1622-L1625">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7868,7 +7868,7 @@ of the URI, up to but not including the &lsquo;:&rsquo;, e.g. <q>http</q>,
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

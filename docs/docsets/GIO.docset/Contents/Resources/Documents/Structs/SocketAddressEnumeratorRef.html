@@ -7492,16 +7492,16 @@ Use <code>SocketAddressEnumeratorRef</code> only as an <code>unowned</code> refe
 
 <p><code>GSocketAddressEnumerator</code> is an enumerator type for <code>GSocketAddress</code>
 instances. It is returned by enumeration functions such as
-g_socket_connectable_enumerate(), which returns a <code>GSocketAddressEnumerator</code>
+<code>g_socket_connectable_enumerate()</code>, which returns a <code>GSocketAddressEnumerator</code>
 to list each <code>GSocketAddress</code> which could be used to connect to that
 <code>GSocketConnectable</code>.</p>
 
 <p>Enumeration is typically a blocking operation, so the asynchronous methods
-g_socket_address_enumerator_next_async() and
-g_socket_address_enumerator_next_finish() should be used where possible.</p>
+<code>g_socket_address_enumerator_next_async()</code> and
+<code>g_socket_address_enumerator_next_finish()</code> should be used where possible.</p>
 
 <p>Each <code>GSocketAddressEnumerator</code> can only be enumerated once. Once
-g_socket_address_enumerator_next() has returned <code>nil</code> (and no error), further
+<code>g_socket_address_enumerator_next()</code> has returned <code>nil</code> (and no error), further
 enumeration with that <code>GSocketAddressEnumerator</code> is not possible, and it can
 be unreffed.</p>
 
@@ -7538,7 +7538,7 @@ For type-safe access, use the generated, typed pointer <code>socket_address_enum
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7215">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7165">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7579,7 +7579,7 @@ For type-safe access, use the generated, typed pointer <code>socket_address_enum
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7220-L7221">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7170-L7171">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7609,7 +7609,7 @@ For type-safe access, use the generated, typed pointer <code>socket_address_enum
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7224-L7226">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7174-L7176">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7640,7 +7640,7 @@ For type-safe access, use the generated, typed pointer <code>socket_address_enum
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7230-L7232">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7180-L7182">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7671,7 +7671,7 @@ For type-safe access, use the generated, typed pointer <code>socket_address_enum
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7236-L7238">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7186-L7188">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7702,7 +7702,7 @@ For type-safe access, use the generated, typed pointer <code>socket_address_enum
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7242-L7244">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7192-L7194">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7733,7 +7733,7 @@ For type-safe access, use the generated, typed pointer <code>socket_address_enum
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7248-L7250">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7198-L7200">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7764,7 +7764,7 @@ For type-safe access, use the generated, typed pointer <code>socket_address_enum
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7254-L7256">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7204-L7206">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7777,7 +7777,7 @@ For type-safe access, use the generated, typed pointer <code>socket_address_enum
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

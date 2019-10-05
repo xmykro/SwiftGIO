@@ -7502,22 +7502,22 @@ from where the operation was initiated. It will be passed a
 <code>GAsyncResult</code> instance filled with the details of the operation&rsquo;s
 success or failure, the object the asynchronous function was
 started for and any error codes returned. The asynchronous callback
-function is then expected to call the corresponding <q>_finish()</q>
+function is then expected to call the corresponding <code>&quot;_finish()</code>&ldquo;
 function, passing the object the function was called for, the
 <code>GAsyncResult</code> instance, and (optionally) an <code>error</code> to grab any
 error conditions that may have occurred.</p>
 
-<p>The <q>_finish()</q> function for an operation takes the generic result
-(of type <code>GAsyncResult</code>) and returns the specific result that the
-operation in question yields (e.g. a <code>GFileEnumerator</code> for a
-<q>enumerate children</q> operation). If the result or error status of the
-operation is not needed, there is no need to call the <q>_finish()</q>
+<p>The <code>&quot;_finish()</code><q>function for an operation takes the generic result
+(of type `GAsyncResult`) and returns the specific result that the
+operation in question yields (e.g. a `GFileEnumerator` for a
+</q>enumerate children<q>operation). If the result or error status of the
+operation is not needed, there is no need to call the `</q>_finish()<code>&quot;
 function; GIO will take care of cleaning up the result and error
-information after the <code>GAsyncReadyCallback</code> returns. You can pass
-<code>nil</code> for the <code>GAsyncReadyCallback</code> if you don&rsquo;t need to take any
+information after the</code>GAsyncReadyCallback<code>returns. You can pass
+</code>nil<code>for the</code>GAsyncReadyCallback<code>if you don&#39;t need to take any
 action at all after the operation completes. Applications may also
-take a reference to the <code>GAsyncResult</code> and call <q>_finish()</q> later;
-however, the <q>_finish()</q> function may be called at most once.</p>
+take a reference to the</code>GAsyncResult<code>and call</code><q>_finish()`</q> later;
+however, the <code>&quot;_finish()</code>&rdquo; function may be called at most once.</p>
 
 <p>Example of a typical asynchronous operation flow:
 (C Language Example):</p>
@@ -7565,7 +7565,7 @@ int main (int argc, void *argv[])
 always called, even in the case of a cancelled operation. On cancellation
 the result is a <code>G_IO_ERROR_CANCELLED</code> error.</p>
 
-<p>`<code>I/O Priority</code> {<code>io</code>-priority}</p>
+<p>&ldquo;<code>I/O Priority</code> {<code>io</code>-priority}</p>
 
 <p>Many I/O-related asynchronous operations have a priority parameter,
 which is used in certain cases to determine the order in which
@@ -7608,7 +7608,7 @@ For type-safe access, use the generated, typed pointer <code>async_result_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2681">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2676">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7649,7 +7649,7 @@ For type-safe access, use the generated, typed pointer <code>async_result_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2686-L2687">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2681-L2682">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7679,7 +7679,7 @@ For type-safe access, use the generated, typed pointer <code>async_result_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2690-L2692">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2685-L2687">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7710,7 +7710,7 @@ For type-safe access, use the generated, typed pointer <code>async_result_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2696-L2698">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2691-L2693">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7741,7 +7741,7 @@ For type-safe access, use the generated, typed pointer <code>async_result_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2702-L2704">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2697-L2699">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7772,7 +7772,7 @@ For type-safe access, use the generated, typed pointer <code>async_result_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2708-L2710">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2703-L2705">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7803,7 +7803,7 @@ For type-safe access, use the generated, typed pointer <code>async_result_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2714-L2716">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2709-L2711">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7834,7 +7834,7 @@ For type-safe access, use the generated, typed pointer <code>async_result_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2720-L2722">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2715-L2717">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7847,7 +7847,7 @@ For type-safe access, use the generated, typed pointer <code>async_result_ptr</c
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

@@ -7496,48 +7496,48 @@ lot of flexibility. For instance, it lets you establish a connection
 over any transport that can by represented as a <code>GIOStream</code>.</p>
 
 <p>This class is rarely used directly in D-Bus clients. If you are writing
-a D-Bus client, it is often easier to use the g_bus_own_name(),
-g_bus_watch_name() or g_dbus_proxy_new_for_bus() APIs.</p>
+a D-Bus client, it is often easier to use the <code>g_bus_own_name()</code>,
+<code>g_bus_watch_name()</code> or <code>g_dbus_proxy_new_for_bus()</code> APIs.</p>
 
 <p>As an exception to the usual GLib rule that a particular object must not
 be used by two threads at the same time, <code>GDBusConnection</code>&lsquo;s methods may be
-called from any thread. This is so that g_bus_get() and g_bus_get_sync()
+called from any thread. This is so that <code>g_bus_get()</code> and <code>g_bus_get_sync()</code>
 can safely return the same <code>GDBusConnection</code> when called from any thread.</p>
 
 <p>Most of the ways to obtain a <code>GDBusConnection</code> automatically initialize it
-(i.e. connect to D-Bus): for instance, g_dbus_connection_new() and
-g_bus_get(), and the synchronous versions of those methods, give you an
+(i.e. connect to D-Bus): for instance, <code>g_dbus_connection_new()</code> and
+<code>g_bus_get()</code>, and the synchronous versions of those methods, give you an
 initialized connection. Language bindings for GIO should use
-g_initable_new() or g_async_initable_new_async(), which also initialize the
+<code>g_initable_new()</code> or <code>g_async_initable_new_async()</code>, which also initialize the
 connection.</p>
 
 <p>If you construct an uninitialized <code>GDBusConnection</code>, such as via
-g_object_new(), you must initialize it via g_initable_init() or
-g_async_initable_init_async() before using its methods or properties.
+<code>g_object_new()</code>, you must initialize it via <code>g_initable_init()</code> or
+<code>g_async_initable_init_async()</code> before using its methods or properties.
 Calling methods or accessing properties on a <code>GDBusConnection</code> that has not
 completed initialization successfully is considered to be invalid, and leads
 to undefined behaviour. In particular, if initialization fails with a
 <code>GError</code>, the only valid thing you can do with that <code>GDBusConnection</code> is to
-free it with g_object_unref().</p>
+free it with <code>g_object_unref()</code>.</p>
 
-<p>`<code>An example D-Bus server</code> {<code>gdbus</code>-server}</p>
+<p>&ldquo;<code>An example D-Bus server</code> {<code>gdbus</code>-server}</p>
 
 <p>Here is an example for a D-Bus server:
 <a href="https://git.gnome.org/browse/glib/tree/gio/tests/gdbus-example-server.c">gdbus-example-server.c</a></p>
 
-<p>`<code>An example for exporting a subtree</code> {<code>gdbus</code>-subtree-server}</p>
+<p>&rdquo;<code>An example for exporting a subtree</code> {<code>gdbus</code>-subtree-server}</p>
 
 <p>Here is an example for exporting a subtree:
 <a href="https://git.gnome.org/browse/glib/tree/gio/tests/gdbus-example-subtree.c">gdbus-example-subtree.c</a></p>
 
-<p>`<code>An example for file descriptor passing</code> {<code>gdbus</code>-unix-fd-client}</p>
+<p>&ldquo;<code>An example for file descriptor passing</code> {<code>gdbus</code>-unix-fd-client}</p>
 
 <p>Here is an example for passing UNIX file descriptors:
 <a href="https://git.gnome.org/browse/glib/tree/gio/tests/gdbus-example-unix-fd-client.c">gdbus-unix-fd-client.c</a></p>
 
-<p>`<code>An example for exporting a GObject</code> {<code>gdbus</code>-export}</p>
+<p>&rdquo;<code>An example for exporting a GObject</code> {<code>gdbus</code>-export}</p>
 
-<p>Here is an example for exporting a <code>GObject</code>:
+<p>Here is an example for exporting a <code>GObject:</code>
 <a href="https://git.gnome.org/browse/glib/tree/gio/tests/gdbus-example-export.c">gdbus-example-export.c</a></p>
 
           </div>
@@ -7573,7 +7573,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_connection_ptr
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L524">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L520">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7614,7 +7614,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_connection_ptr
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L529-L530">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L525-L526">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7644,7 +7644,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_connection_ptr
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L533-L535">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L529-L531">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7675,7 +7675,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_connection_ptr
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L539-L541">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L535-L537">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7706,7 +7706,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_connection_ptr
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L545-L547">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L541-L543">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7737,7 +7737,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_connection_ptr
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L551-L553">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L547-L549">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7768,7 +7768,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_connection_ptr
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L557-L559">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L553-L555">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7799,7 +7799,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_connection_ptr
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L563-L565">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L559-L561">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7817,7 +7817,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_connection_ptr
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes an operation started with g_dbus_connection_new().</p>
+                        <p>Finishes an operation started with <code>g_dbus_connection_new()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7829,7 +7829,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_connection_ptr
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L568-L575">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L564-L571">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7847,7 +7847,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_connection_ptr
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes an operation started with g_dbus_connection_new_for_address().</p>
+                        <p>Finishes an operation started with <code>g_dbus_connection_new_for_address()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7859,7 +7859,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_connection_ptr
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L578-L585">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L574-L581">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7883,13 +7883,13 @@ which must be in the
 <a href="https://dbus.freedesktop.org/doc/dbus-specification.html%60addresses%60">D-Bus address format</a>.</p>
 
 <p>This constructor can only be used to initiate client-side
-connections - use g_dbus_connection_new_sync() if you need to act
+connections - use <code>g_dbus_connection_new_sync()</code> if you need to act
 as the server. In particular, <code>flags</code> cannot contain the
 <code>G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_SERVER</code> or
 <code>G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_ALLOW_ANONYMOUS</code> flags.</p>
 
 <p>This is a synchronous failable constructor. See
-g_dbus_connection_new_for_address() for the asynchronous version.</p>
+<code>g_dbus_connection_new_for_address()</code> for the asynchronous version.</p>
 
 <p>If <code>observer</code> is not <code>nil</code> it may be used to control the
 authentication process.</p>
@@ -7904,7 +7904,7 @@ authentication process.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L603-L610">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L599-L606">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7930,13 +7930,13 @@ will be put into non-blocking mode.</p>
 
 <p>The D-Bus connection will interact with <code>stream</code> from a worker thread.
 As a result, the caller should not interact with <code>stream</code> after this
-method has been called, except by calling g_object_unref() on it.</p>
+method has been called, except by calling <code>g_object_unref()</code> on it.</p>
 
 <p>If <code>observer</code> is not <code>nil</code> it may be used to control the
 authentication process.</p>
 
 <p>This is a synchronous failable constructor. See
-g_dbus_connection_new() for the asynchronous version.</p>
+<code>g_dbus_connection_new()</code> for the asynchronous version.</p>
 
                       </div>
                       <div class="declaration">
@@ -7948,7 +7948,7 @@ g_dbus_connection_new() for the asynchronous version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L627-L634">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L623-L630">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7966,7 +7966,7 @@ g_dbus_connection_new() for the asynchronous version.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes an operation started with g_dbus_connection_new().</p>
+                        <p>Finishes an operation started with <code>g_dbus_connection_new()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7978,7 +7978,7 @@ g_dbus_connection_new() for the asynchronous version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L636-L643">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L632-L639">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7996,7 +7996,7 @@ g_dbus_connection_new() for the asynchronous version.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes an operation started with g_dbus_connection_new_for_address().</p>
+                        <p>Finishes an operation started with <code>g_dbus_connection_new_for_address()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8008,7 +8008,7 @@ g_dbus_connection_new() for the asynchronous version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L646-L653">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L642-L649">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8032,13 +8032,13 @@ which must be in the
 <a href="https://dbus.freedesktop.org/doc/dbus-specification.html%60addresses%60">D-Bus address format</a>.</p>
 
 <p>This constructor can only be used to initiate client-side
-connections - use g_dbus_connection_new_sync() if you need to act
+connections - use <code>g_dbus_connection_new_sync()</code> if you need to act
 as the server. In particular, <code>flags</code> cannot contain the
 <code>G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_SERVER</code> or
 <code>G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_ALLOW_ANONYMOUS</code> flags.</p>
 
 <p>This is a synchronous failable constructor. See
-g_dbus_connection_new_for_address() for the asynchronous version.</p>
+<code>g_dbus_connection_new_for_address()</code> for the asynchronous version.</p>
 
 <p>If <code>observer</code> is not <code>nil</code> it may be used to control the
 authentication process.</p>
@@ -8053,7 +8053,7 @@ authentication process.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L671-L678">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L667-L674">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8079,13 +8079,13 @@ will be put into non-blocking mode.</p>
 
 <p>The D-Bus connection will interact with <code>stream</code> from a worker thread.
 As a result, the caller should not interact with <code>stream</code> after this
-method has been called, except by calling g_object_unref() on it.</p>
+method has been called, except by calling <code>g_object_unref()</code> on it.</p>
 
 <p>If <code>observer</code> is not <code>nil</code> it may be used to control the
 authentication process.</p>
 
 <p>This is a synchronous failable constructor. See
-g_dbus_connection_new() for the asynchronous version.</p>
+<code>g_dbus_connection_new()</code> for the asynchronous version.</p>
 
                       </div>
                       <div class="declaration">
@@ -8097,7 +8097,7 @@ g_dbus_connection_new() for the asynchronous version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L695-L702">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L691-L698">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8110,7 +8110,7 @@ g_dbus_connection_new() for the asynchronous version.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

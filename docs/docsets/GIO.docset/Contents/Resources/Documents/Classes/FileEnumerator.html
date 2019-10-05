@@ -7492,17 +7492,17 @@ Use <code>FileEnumerator</code> as a strong reference or owner of a <code>GFileE
 
 <p><code>GFileEnumerator</code> allows you to operate on a set of <code>GFiles</code>,
 returning a <code>GFileInfo</code> structure for each file enumerated (e.g.
-g_file_enumerate_children() will return a <code>GFileEnumerator</code> for each
+<code>g_file_enumerate_children()</code> will return a <code>GFileEnumerator</code> for each
 of the children within a directory).</p>
 
 <p>To get the next file&rsquo;s information from a <code>GFileEnumerator</code>, use
-g_file_enumerator_next_file() or its asynchronous version,
-g_file_enumerator_next_files_async(). Note that the asynchronous
+<code>g_file_enumerator_next_file()</code> or its asynchronous version,
+<code>g_file_enumerator_next_files_async()</code>. Note that the asynchronous
 version will return a list of <code>GFileInfos</code>, whereas the
 synchronous will only return the next file in the enumerator.</p>
 
 <p>The ordering of returned files is unspecified for non-Unix
-platforms; for more information, see g_dir_read_name().  On Unix,
+platforms; for more information, see <code>g_dir_read_name()</code>.  On Unix,
 when operating on local files, returned files will be sorted by
 inode number.  Effectively you can assume that the ordering of
 returned files will be stable between successive calls (and
@@ -7512,10 +7512,10 @@ applications) assuming the directory is unchanged.</p>
 modification time, you will have to implement that in your
 application code.</p>
 
-<p>To close a <code>GFileEnumerator</code>, use g_file_enumerator_close(), or
-its asynchronous version, g_file_enumerator_close_async(). Once
+<p>To close a <code>GFileEnumerator</code>, use <code>g_file_enumerator_close()</code>, or
+its asynchronous version, <code>g_file_enumerator_close_async()</code>. Once
 a <code>GFileEnumerator</code> is closed, no further actions may be performed
-on it, and it should be freed with g_object_unref().</p>
+on it, and it should be freed with <code>g_object_unref()</code>.</p>
 
           </div>
         </section>
@@ -7550,7 +7550,7 @@ Ownership is transferred to the <code>FileEnumerator</code> instance.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L444-L446">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L443-L445">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7576,12 +7576,12 @@ Will retain <code>GFileEnumerator</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/FileEnumeratorProtocol.html">FileEnumeratorProtocol</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/FileEnumeratorProtocol.html">FileEnumeratorProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L450-L453">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L449-L452">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7607,12 +7607,12 @@ Will retain <code>GFileEnumerator</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L457-L459">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L456-L458">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7638,12 +7638,12 @@ Will retain <code>GFileEnumerator</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L463-L465">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L462-L464">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7669,12 +7669,12 @@ Will retain <code>GFileEnumerator</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L469-L471">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L468-L470">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7700,12 +7700,12 @@ Will retain <code>GFileEnumerator</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L475-L477">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L474-L476">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7718,7 +7718,7 @@ Will retain <code>GFileEnumerator</code>.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

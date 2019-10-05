@@ -7492,23 +7492,23 @@ Use <code>TaskRef</code> only as an <code>unowned</code> reference to an existin
 
 <p>A <code>GTask</code> represents and manages a cancellable <q>task</q>.</p>
 
-<p>&ldquo;` Asynchronous operations</p>
+<p>&ldquo;&rdquo; Asynchronous operations</p>
 
 <p>The most common usage of <code>GTask</code> is as a <code>GAsyncResult</code>, to
 manage data during an asynchronous operation. You call
-g_task_new() in the <q>start</q> method, followed by
-g_task_set_task_data() and the like if you need to keep some
+<code>g_task_new()</code> in the <q>start</q> method, followed by
+<code>g_task_set_task_data()</code> and the like if you need to keep some
 additional data associated with the task, and then pass the
 task object around through your asynchronous operation.
 Eventually, you will call a method such as
-g_task_return_pointer() or g_task_return_error(), which will
+<code>g_task_return_pointer()</code> or <code>g_task_return_error()</code>, which will
 save the value you give it and then invoke the task&rsquo;s callback
 function in the
 [thread-default main context][g-main-context-push-thread-default]
 where it was created (waiting until the next iteration of the main
 loop first, if necessary). The caller will pass the <code>GTask</code> back to
 the operation&rsquo;s finish function (as a <code>GAsyncResult</code>), and you can
-use g_task_propagate_pointer() or the like to extract the
+use <code>g_task_propagate_pointer()</code> or the like to extract the
 return value.</p>
 
 <p>Here is an example for using GTask as a GAsyncResult:
@@ -7572,7 +7572,7 @@ return value.</p>
       if (radius &lt; 3)
         {
           g_task_return_new_error (task, BAKER_ERROR, BAKER_ERROR_TOO_SMALL,
-                                   "`ucm` radius cakes are silly",
+                                   "%ucm radius cakes are silly",
                                    radius);
           g_object_unref (task);
           return;
@@ -7606,20 +7606,21 @@ return value.</p>
     }
 </code></pre>
 
-<p>&rdquo;` Chained asynchronous operations</p>
+<p>&ldquo;&rdquo; Chained asynchronous operations</p>
 
 <p><code>GTask</code> also tries to simplify asynchronous operations that
 internally chain together several smaller asynchronous
-operations. g_task_get_cancellable(), g_task_get_context(),
-and g_task_get_priority() allow you to get back the task&rsquo;s
+operations. <code>g_task_get_cancellable()</code>, <code>g_task_get_context()</code>,
+and <code>g_task_get_priority()</code> allow you to get back the task&rsquo;s
 <code>GCancellable</code>, <code>GMainContext</code>, and [I/O priority][io-priority]
 when starting a new subtask, so you don&rsquo;t have to keep track
-of them yourself. g_task_attach_source() simplifies the case
+of them yourself. <code>g_task_attach_source()</code> simplifies the case
 of waiting for a source to fire (automatically using the correct
 <code>GMainContext</code> and priority).</p>
 
-<p>Here is an example for chained asynchronous operations:
-  (C Language Example):</p>
+<p>Here is an example for chained asynchronous operations:</p>
+
+<p>(C Language Example):</p>
 <pre class="highlight plaintext"><code>    typedef struct {
       Cake *cake;
       CakeFrostingType frosting;
@@ -7702,7 +7703,7 @@ of waiting for a source to fire (automatically using the correct
           GSource *source;
 
           source = cake_decorator_wait_source_new (cake);
-          // Attach `source` to `task`'s GMainContext and have it call
+          // Attach @source to @task's GMainContext and have it call
           // decorator_ready() when it is ready.
           g_task_attach_source (task, source, decorator_ready);
           g_source_unref (source);
@@ -7745,16 +7746,17 @@ of waiting for a source to fire (automatically using the correct
     }
 </code></pre>
 
-<p>&ldquo;` Asynchronous operations from synchronous ones</p>
+<p>&ldquo;&rdquo; Asynchronous operations from synchronous ones</p>
 
-<p>You can use g_task_run_in_thread() to turn a synchronous
+<p>You can use <code>g_task_run_in_thread()</code> to turn a synchronous
 operation into an asynchronous one, by running it in a thread.
 When it completes, the result will be dispatched to the
 [thread-default main context][g-main-context-push-thread-default]
 where the <code>GTask</code> was created.</p>
 
-<p>Running a task in a thread:
-  (C Language Example):</p>
+<p>Running a task in a thread:</p>
+
+<p>(C Language Example):</p>
 <pre class="highlight plaintext"><code>    typedef struct {
       guint radius;
       CakeFlavor flavor;
@@ -7824,11 +7826,11 @@ where the <code>GTask</code> was created.</p>
     }
 </code></pre>
 
-<p>&rdquo;` Adding cancellability to uncancellable tasks</p>
+<p>&ldquo;&rdquo; Adding cancellability to uncancellable tasks</p>
 
-<p>Finally, g_task_run_in_thread() and g_task_run_in_thread_sync()
+<p>Finally, <code>g_task_run_in_thread()</code> and <code>g_task_run_in_thread_sync()</code>
 can be used to turn an uncancellable operation into a
-cancellable one. If you call g_task_set_return_on_cancel(),
+cancellable one. If you call <code>g_task_set_return_on_cancel()</code>,
 passing <code>true</code>, then if the task&rsquo;s <code>GCancellable</code> is cancelled,
 it will return control back to the caller immediately, while
 allowing the task thread to continue running in the background
@@ -7838,8 +7840,9 @@ locks and other externally-visible resources, this allows you
 to make <q>GLib-friendly</q> asynchronous and cancellable
 synchronous variants of blocking APIs.</p>
 
-<p>Cancelling a task:
-  (C Language Example):</p>
+<p>Cancelling a task:</p>
+
+<p>(C Language Example):</p>
 <pre class="highlight plaintext"><code>    static void
     bake_cake_thread (GTask         *task,
                       gpointer       source_object,
@@ -7863,8 +7866,8 @@ synchronous variants of blocking APIs.</p>
       // If the task has already been cancelled, then we don't want to add
       // the cake to the cake cache. Likewise, we don't  want to have the
       // task get cancelled in the middle of updating the cache.
-      // g_task_set_return_on_cancel() will return `true` here if it managed
-      // to disable return-on-cancel, or `false` if the task was cancelled
+      // g_task_set_return_on_cancel() will return %TRUE here if it managed
+      // to disable return-on-cancel, or %FALSE if the task was cancelled
       // before it could.
       if (g_task_set_return_on_cancel (task, FALSE))
         {
@@ -7930,35 +7933,35 @@ synchronous variants of blocking APIs.</p>
     }
 </code></pre>
 
-<p>&ldquo;` Porting from GSimpleAsyncResult</p>
+<p>&ldquo;&rdquo; Porting from GSimpleAsyncResult</p>
 
 <p><code>GTask</code>&lsquo;s API attempts to be simpler than <code>GSimpleAsyncResult</code>&rsquo;s
 in several ways:</p>
 
 <ul>
-<li>You can save task-specific data with g_task_set_task_data(), and
-retrieve it later with g_task_get_task_data(). This replaces the
-abuse of g_simple_async_result_set_op_res_gpointer() for the same
+<li>You can save task-specific data with <code>g_task_set_task_data()</code>, and
+retrieve it later with <code>g_task_get_task_data()</code>. This replaces the
+abuse of <code>g_simple_async_result_set_op_res_gpointer()</code> for the same
 purpose with <code>GSimpleAsyncResult</code>.</li>
 <li>In addition to the task data, <code>GTask</code> also keeps track of the
 [priority][io-priority], <code>GCancellable</code>, and
 <code>GMainContext</code> associated with the task, so tasks that consist of
 a chain of simpler asynchronous operations will have easy access
 to those values when starting each sub-task.</li>
-<li>g_task_return_error_if_cancelled() provides simplified
+<li><code>g_task_return_error_if_cancelled()</code> provides simplified
 handling for cancellation. In addition, cancellation
 overrides any other <code>GTask</code> return value by default, like
 <code>GSimpleAsyncResult</code> does when
-g_simple_async_result_set_check_cancellable() is called.
-(You can use g_task_set_check_cancellable() to turn off that
-behavior.) On the other hand, g_task_run_in_thread()
+<code>g_simple_async_result_set_check_cancellable()</code> is called.
+(You can use <code>g_task_set_check_cancellable()</code> to turn off that
+behavior.) On the other hand, <code>g_task_run_in_thread()</code>
 guarantees that it will always run your
 <code>task_func</code>, even if the task&rsquo;s <code>GCancellable</code>
 is already cancelled before the task gets a chance to run;
 you can start your <code>task_func</code> with a
-g_task_return_error_if_cancelled() check if you need the
+<code>g_task_return_error_if_cancelled()</code> check if you need the
 old behavior.</li>
-<li>The <q>return</q> methods (eg, g_task_return_pointer())
+<li>The <q>return</q> methods (eg, <code>g_task_return_pointer()</code>)
 automatically cause the task to be <q>completed</q> as well, and
 there is no need to worry about the <q>complete</q> vs <q>complete
 in idle</q> distinction. (<code>GTask</code> automatically figures out
@@ -7967,12 +7970,12 @@ if it needs to be sent to another <code>GMainContext</code>, or delayed
 until the next iteration of the current <code>GMainContext</code>.)</li>
 <li>The <q>finish</q> functions for <code>GTask</code> based operations are generally
 much simpler than <code>GSimpleAsyncResult</code> ones, normally consisting
-of only a single call to g_task_propagate_pointer() or the like.
-Since g_task_propagate_pointer() <q>steals</q> the return value from
+of only a single call to <code>g_task_propagate_pointer()</code> or the like.
+Since <code>g_task_propagate_pointer()</code> <q>steals</q> the return value from
 the <code>GTask</code>, it is not necessary to juggle pointers around to
 prevent it from being freed twice.</li>
 <li>With <code>GSimpleAsyncResult</code>, it was common to call
-g_simple_async_result_propagate_error() from the
+<code>g_simple_async_result_propagate_error()</code> from the
 <code>_finish()</code> wrapper function, and have
 virtual method implementations only deal with successful
 returns. This behavior is deprecated, because it makes it
@@ -7981,12 +7984,12 @@ methods. Instead, the wrapper function should just be a
 simple wrapper, and the virtual method should call an
 appropriate <code>g_task_propagate_</code> function.
 Note that wrapper methods can now use
-g_async_result_legacy_propagate_error() to do old-style
+<code>g_async_result_legacy_propagate_error()</code> to do old-style
 <code>GSimpleAsyncResult</code> error-returning behavior, and
-g_async_result_is_tagged() to check if a result is tagged as
+<code>g_async_result_is_tagged()</code> to check if a result is tagged as
 having come from the <code>_async()</code> wrapper
 function (for <q>short-circuit</q> results, such as when passing
-0 to g_input_stream_read_async()).</li>
+0 to <code>g_input_stream_read_async()</code>).</li>
 </ul>
 
           </div>
@@ -8022,7 +8025,7 @@ For type-safe access, use the generated, typed pointer <code>task_ptr</code> pro
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L12360">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L12300">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8063,7 +8066,7 @@ For type-safe access, use the generated, typed pointer <code>task_ptr</code> pro
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L12365-L12366">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L12305-L12306">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8093,7 +8096,7 @@ For type-safe access, use the generated, typed pointer <code>task_ptr</code> pro
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L12369-L12371">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L12309-L12311">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8124,7 +8127,7 @@ For type-safe access, use the generated, typed pointer <code>task_ptr</code> pro
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L12375-L12377">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L12315-L12317">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8155,7 +8158,7 @@ For type-safe access, use the generated, typed pointer <code>task_ptr</code> pro
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L12381-L12383">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L12321-L12323">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8186,7 +8189,7 @@ For type-safe access, use the generated, typed pointer <code>task_ptr</code> pro
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L12387-L12389">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L12327-L12329">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8217,7 +8220,7 @@ For type-safe access, use the generated, typed pointer <code>task_ptr</code> pro
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L12393-L12395">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L12333-L12335">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8248,7 +8251,7 @@ For type-safe access, use the generated, typed pointer <code>task_ptr</code> pro
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L12399-L12401">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L12339-L12341">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8266,7 +8269,7 @@ For type-safe access, use the generated, typed pointer <code>task_ptr</code> pro
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <pre class="highlight swift"><code><span class="kt">Creates</span> <span class="n">a</span> <span class="err">`</span><span class="kt">GTask</span><span class="err">`</span> <span class="n">acting</span> <span class="n">on</span> <span class="err">`</span><span class="n">source_object</span><span class="err">`</span><span class="p">,</span> <span class="n">which</span> <span class="n">will</span> <span class="n">eventually</span> <span class="n">be</span>
+                        <pre class="highlight swift"><code><span class="kt">Creates</span> <span class="n">a</span> <span class="p">`</span><span class="nv">GTask</span><span class="p">`</span> <span class="n">acting</span> <span class="n">on</span> <span class="p">`</span><span class="nv">source_object</span><span class="p">`,</span> <span class="n">which</span> <span class="n">will</span> <span class="n">eventually</span> <span class="n">be</span>
 </code></pre>
 
 <p>used to invoke <code>callback</code> in the current
@@ -8274,8 +8277,8 @@ For type-safe access, use the generated, typed pointer <code>task_ptr</code> pro
 
 <p>Call this in the <q>start</q> method of your asynchronous method, and
 pass the <code>GTask</code> around throughout the asynchronous operation. You
-can use g_task_set_task_data() to attach task-specific data to the
-object, which you can retrieve later via g_task_get_task_data().</p>
+can use <code>g_task_set_task_data()</code> to attach task-specific data to the
+object, which you can retrieve later via <code>g_task_get_task_data()</code>.</p>
 
 <p>By default, if <code>cancellable</code> is cancelled, then the return value of
 the task will always be <code>G_IO_ERROR_CANCELLED</code>, even if the task had
@@ -8283,7 +8286,7 @@ already completed before the cancellation. This allows for
 simplified handling in cases where cancellation may imply that
 other objects that the task depends on have been destroyed. If you
 do not want this behavior, you can use
-g_task_set_check_cancellable() to change it.</p>
+<code>g_task_set_check_cancellable()</code> to change it.</p>
 
                       </div>
                       <div class="declaration">
@@ -8295,7 +8298,7 @@ g_task_set_check_cancellable() to change it.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L12419-L12422">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L12359-L12362">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8308,7 +8311,7 @@ g_task_set_check_cancellable() to change it.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

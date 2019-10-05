@@ -7658,7 +7658,7 @@ UNIX-file-descriptor-style asynchronous I/O rather than GIO-style.</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PollableOutputStream-RemoteActionGroup.swift#L168-L187">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PollableOutputStream-RemoteActionGroup.swift#L167-L186">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7708,7 +7708,7 @@ a stream cannot switch from pollable to non-pollable or vice versa.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PollableOutputStream-RemoteActionGroup.swift#L201-L204">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PollableOutputStream-RemoteActionGroup.swift#L200-L203">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7733,10 +7733,10 @@ a stream cannot switch from pollable to non-pollable or vice versa.</p>
 <code>cancellable</code> is triggered or an error occurs. The callback on the
 source is of the <code>GPollableSourceFunc</code> type.</p>
 
-<p>As with g_pollable_output_stream_is_writable(), it is possible that
+<p>As with <code>g_pollable_output_stream_is_writable()</code>, it is possible that
 the stream may not actually be writable even after the source
-triggers, so you should use g_pollable_output_stream_write_nonblocking()
-rather than g_output_stream_write() from the callback.</p>
+triggers, so you should use <code>g_pollable_output_stream_write_nonblocking()</code>
+rather than <code>g_output_stream_write()</code> from the callback.</p>
 
                       </div>
                       <div class="declaration">
@@ -7748,7 +7748,7 @@ rather than g_output_stream_write() from the callback.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PollableOutputStream-RemoteActionGroup.swift#L214-L217">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PollableOutputStream-RemoteActionGroup.swift#L213-L216">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7770,9 +7770,9 @@ rather than g_output_stream_write() from the callback.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Attempts to write up to <code>count</code> bytes from <code>buffer</code> to <code>stream</code>, as
-with g_output_stream_write(). If <code>stream</code> is not currently writable,
+with <code>g_output_stream_write()</code>. If <code>stream</code> is not currently writable,
 this will immediately return <code>G_IO_ERROR_WOULD_BLOCK</code>, and you can
-use g_pollable_output_stream_create_source() to create a <code>GSource</code>
+use <code>g_pollable_output_stream_create_source()</code> to create a <code>GSource</code>
 that will be triggered when <code>stream</code> is writable.</p>
 
 <p>Note that since this method never blocks, you cannot actually
@@ -7795,7 +7795,7 @@ transports like D/TLS require that you re-send the same <code>buffer</code> and
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PollableOutputStream-RemoteActionGroup.swift#L234-L241">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PollableOutputStream-RemoteActionGroup.swift#L233-L240">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7817,9 +7817,9 @@ transports like D/TLS require that you re-send the same <code>buffer</code> and
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Attempts to write the bytes contained in the <code>n_vectors</code> <code>vectors</code> to <code>stream</code>,
-as with g_output_stream_writev(). If <code>stream</code> is not currently writable,
-this will immediately return `<code>G_POLLABLE_RETURN_WOULD_BLOCK</code>, and you can
-use g_pollable_output_stream_create_source() to create a <code>GSource</code>
+as with <code>g_output_stream_writev()</code>. If <code>stream</code> is not currently writable,
+this will immediately return &ldquo;<code>G_POLLABLE_RETURN_WOULD_BLOCK</code>, and you can
+use <code>g_pollable_output_stream_create_source()</code> to create a <code>GSource</code>
 that will be triggered when <code>stream</code> is writable. <code>error</code> will <em>not</em> be
 set in that case.</p>
 
@@ -7843,7 +7843,7 @@ transports like D/TLS require that you re-send the same <code>vectors</code> and
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PollableOutputStream-RemoteActionGroup.swift#L259-L266">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PollableOutputStream-RemoteActionGroup.swift#L258-L265">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7867,10 +7867,10 @@ transports like D/TLS require that you re-send the same <code>vectors</code> and
                         <p>Checks if <code>stream</code> can be written.</p>
 
 <p>Note that some stream types may not be able to implement this 100`<code>
-reliably, and it is possible that a call to g_output_stream_write()
+reliably, and it is possible that a call to</code>g_output_stream_write()<code>
 after this returns</code>true<code>would still block. To guarantee
 non-blocking behavior, you should always use
-g_pollable_output_stream_write_nonblocking(), which will return a
+</code>g_pollable_output_stream_write_nonblocking()<code>, which will return a
 </code>G_IO_ERROR_WOULD_BLOCK` error rather than blocking.</p>
 
                       </div>
@@ -7883,7 +7883,7 @@ g_pollable_output_stream_write_nonblocking(), which will return a
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PollableOutputStream-RemoteActionGroup.swift#L275-L288">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PollableOutputStream-RemoteActionGroup.swift#L274-L287">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7896,7 +7896,7 @@ g_pollable_output_stream_write_nonblocking(), which will return a
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

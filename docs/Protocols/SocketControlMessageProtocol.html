@@ -7500,8 +7500,8 @@ information from the socket or can represent a special kind of
 transfer to the peer (for example, sending a file descriptor over
 a UNIX socket).</p>
 
-<p>These messages are sent with g_socket_send_message() and received
-with g_socket_receive_message().</p>
+<p>These messages are sent with <code>g_socket_send_message()</code> and received
+with <code>g_socket_receive_message()</code>.</p>
 
 <p>To extend the set of control message that can be sent, subclass this
 class and override the get_size, get_level, get_type and serialize
@@ -7510,7 +7510,7 @@ methods.</p>
 <p>To extend the set of control messages that can be received, subclass
 this class and implement the deserialize method. Also, make sure your
 class is registered with the GType typesystem before calling
-g_socket_receive_message() to read such a message.</p>
+<code>g_socket_receive_message()</code> to read such a message.</p>
 
           </div>
         </section>
@@ -7544,7 +7544,7 @@ g_socket_receive_message() to read such a message.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8743">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8690">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7582,7 +7582,7 @@ g_socket_receive_message() to read such a message.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8746">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8693">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7674,7 +7674,7 @@ g_socket_receive_message() to read such a message.</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8947-L8966">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8893-L8912">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7719,7 +7719,7 @@ This is often SOL_SOCKET.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8975-L8978">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8921-L8924">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7753,7 +7753,7 @@ For instance, for UNIX fd passing this would be SCM_RIGHTS.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8982-L8985">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8928-L8931">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7787,7 +7787,7 @@ headers or alignment.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8989-L8992">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8935-L8938">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7812,7 +7812,7 @@ headers or alignment.</p>
 message.</p>
 
 <p><code>data</code> is guaranteed to have enough space to fit the size
-returned by g_socket_control_message_get_size() on this
+returned by <code>g_socket_control_message_get_size()</code> on this
 object.</p>
 
                       </div>
@@ -7825,7 +7825,7 @@ object.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9000-L9003">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8946-L8949">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7859,7 +7859,7 @@ This is often SOL_SOCKET.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9006-L9013">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8952-L8959">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7893,7 +7893,7 @@ For instance, for UNIX fd passing this would be SCM_RIGHTS.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9017-L9024">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8963-L8970">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7927,7 +7927,7 @@ headers or alignment.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9028-L9035">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8974-L8981">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7940,7 +7940,7 @@ headers or alignment.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

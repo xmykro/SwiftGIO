@@ -7499,7 +7499,7 @@ visible in the filesystem and not affected by the filesystem
 permissions, visibility, etc. Currently this is only supported
 under Linux. If you attempt to use abstract sockets on other
 systems, function calls may return <code>G_IO_ERROR_NOT_SUPPORTED</code>
-errors. You can use g_unix_socket_address_abstract_names_supported()
+errors. You can use <code>g_unix_socket_address_abstract_names_supported()</code>
 to see if abstract names are supported.</p>
 
 <p>Note that <code>&lt;gio/gunixsocketaddress.h&gt;</code> belongs to the UNIX-specific GIO
@@ -7538,7 +7538,7 @@ when using it.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L1919">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L1913">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7576,7 +7576,7 @@ when using it.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L1922">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L1916">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7704,7 +7704,7 @@ when using it.</p>
                         <p>binding reference or <code>nil</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2272-L2296">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2266-L2290">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7796,7 +7796,7 @@ when using it.</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2345-L2364">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2338-L2357">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7840,7 +7840,7 @@ when using it.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2372-L2375">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2365-L2368">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7871,13 +7871,13 @@ Use g_unix_socket_address_get_address_type()</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">func</span> <span class="nf">getIsAbstract</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2381-L2384">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2374-L2377">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7902,7 +7902,7 @@ Use g_unix_socket_address_get_address_type()</p>
 
 <p>Guaranteed to be zero-terminated, but an abstract socket
 may contain embedded zeros, and thus you should use
-g_unix_socket_address_get_path_len() to get the true length
+<code>g_unix_socket_address_get_path_len()</code> to get the true length
 of this string.</p>
 
                       </div>
@@ -7915,7 +7915,7 @@ of this string.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2392-L2395">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2385-L2388">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7938,7 +7938,7 @@ of this string.</p>
                       <div class="abstract">
                         <p>Gets the length of <code>address</code>&lsquo;s path.</p>
 
-<p>For details, see g_unix_socket_address_get_path().</p>
+<p>For details, see <code>g_unix_socket_address_get_path()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7950,7 +7950,7 @@ of this string.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2400-L2403">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2393-L2396">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7983,7 +7983,7 @@ of this string.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2405-L2411">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2398-L2404">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8019,7 +8019,7 @@ Use g_unix_socket_address_get_address_type()</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2417-L2426">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2410-L2419">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8052,7 +8052,7 @@ Use g_unix_socket_address_get_address_type()</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2428-L2439">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2421-L2432">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8075,7 +8075,7 @@ Use g_unix_socket_address_get_address_type()</p>
                       <div class="abstract">
                         <p>Gets the length of <code>address</code>&lsquo;s path.</p>
 
-<p>For details, see g_unix_socket_address_get_path().</p>
+<p>For details, see <code>g_unix_socket_address_get_path()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8087,7 +8087,7 @@ Use g_unix_socket_address_get_address_type()</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2444-L2452">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L2437-L2445">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8100,7 +8100,7 @@ Use g_unix_socket_address_get_address_type()</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

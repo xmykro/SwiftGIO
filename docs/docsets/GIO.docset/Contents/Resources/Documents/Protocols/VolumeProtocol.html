@@ -7497,7 +7497,7 @@ equivalent of <code>GnomeVFSDrive</code>.</p>
 
 <p>Mounting a <code>GVolume</code> instance is an asynchronous operation. For more
 information about asynchronous operations, see <code>GAsyncResult</code> and
-<code>GTask</code>. To mount a <code>GVolume</code>, first call g_volume_mount() with (at
+<code>GTask</code>. To mount a <code>GVolume</code>, first call <code>g_volume_mount()</code> with (at
 least) the <code>GVolume</code> instance, optionally a <code>GMountOperation</code> object
 and a <code>GAsyncReadyCallback</code>.</p>
 
@@ -7509,12 +7509,12 @@ for credentials.</p>
 <p>The callback will be fired when the operation has resolved (either
 with success or failure), and a <code>GAsyncResult</code> instance will be
 passed to the callback.  That callback should then call
-g_volume_mount_finish() with the <code>GVolume</code> instance and the
+<code>g_volume_mount_finish()</code> with the <code>GVolume</code> instance and the
 <code>GAsyncResult</code> data to see if the operation was completed
-successfully.  If an <code>error</code> is present when g_volume_mount_finish()
+successfully.  If an <code>error</code> is present when <code>g_volume_mount_finish()</code>
 is called, then it will be filled with any error information.</p>
 
-<p>`<code>Volume Identifiers</code> {<code>volume</code>-identifier}</p>
+<p>&ldquo;<code>Volume Identifiers</code> {<code>volume</code>-identifier}</p>
 
 <p>It is sometimes necessary to directly access the underlying
 operating system object behind a volume (e.g. for passing a volume
@@ -7524,13 +7524,13 @@ different kinds of identifiers, such as Hal UDIs, filesystem labels,
 traditional Unix devices (e.g. <code>/dev/sda2</code>), UUIDs. GIO uses predefined
 strings as names for the different kinds of identifiers:
 <code>G_VOLUME_IDENTIFIER_KIND_UUID</code>, <code>G_VOLUME_IDENTIFIER_KIND_LABEL</code>, etc.
-Use g_volume_get_identifier() to obtain an identifier for a volume.</p>
+Use <code>g_volume_get_identifier()</code> to obtain an identifier for a volume.</p>
 
 <p>Note that <code>G_VOLUME_IDENTIFIER_KIND_HAL_UDI</code> will only be available
 when the gvfs hal volume monitor is in use. Other volume monitors
 will generally be able to provide the <code>G_VOLUME_IDENTIFIER_KIND_UNIX_DEVICE</code>
 identifier, which can be used to obtain a hal device by means of
-libhal_manager_find_device_string_match().</p>
+<code>libhal_manager_find_device_string_match()</code>.</p>
 
           </div>
         </section>
@@ -7564,7 +7564,7 @@ libhal_manager_find_device_string_match().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1282">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1279">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7602,7 +7602,7 @@ libhal_manager_find_device_string_match().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1285">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1282">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7694,7 +7694,7 @@ libhal_manager_find_device_string_match().</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1495-L1514">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1492-L1511">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7738,7 +7738,7 @@ libhal_manager_find_device_string_match().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1522-L1525">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1519-L1522">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7771,7 +7771,7 @@ libhal_manager_find_device_string_match().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1528-L1531">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1525-L1528">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7793,8 +7793,8 @@ libhal_manager_find_device_string_match().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Ejects a volume. This is an asynchronous operation, and is
-finished by calling g_volume_eject_finish() with the <code>volume</code>
-and <code>GAsyncResult</code> returned in the <code>callback</code>.</p>
+finished by calling <code>g_volume_eject_finish()</code> with the <code>volume</code>
+and <code>GAsyncResult</code> returned in the <code>callback.</code></p>
 
 <p><strong>eject is deprecated:</strong>
 Use g_volume_eject_with_operation() instead.</p>
@@ -7804,13 +7804,13 @@ Use g_volume_eject_with_operation() instead.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">func</span> <span class="nf">eject</span><span class="p">(</span><span class="nv">flags</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO17MountUnmountFlagsa">MountUnmountFlags</a></span><span class="p">,</span> <span class="nv">cancellable</span><span class="p">:</span> <span class="kt"><a href="../Protocols/CancellableProtocol.html">CancellableProtocol</a></span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO18AsyncReadyCallbacka">AsyncReadyCallback</a></span><span class="p">,</span> <span class="n">userData</span> <span class="nv">user_data</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1539-L1542">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1536-L1539">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7842,13 +7842,13 @@ Use g_volume_eject_with_operation_finish() instead.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">func</span> <span class="nf">ejectFinish</span><span class="p">(</span><span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Protocols/AsyncResultProtocol.html">AsyncResultProtocol</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1549-L1556">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1546-L1553">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7870,8 +7870,8 @@ Use g_volume_eject_with_operation_finish() instead.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Ejects a volume. This is an asynchronous operation, and is
-finished by calling g_volume_eject_with_operation_finish() with the <code>volume</code>
-and <code>GAsyncResult</code> data returned in the <code>callback</code>.</p>
+finished by calling <code>g_volume_eject_with_operation_finish()</code> with the <code>volume</code>
+and <code>GAsyncResult</code> data returned in the <code>callback.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7883,7 +7883,7 @@ and <code>GAsyncResult</code> data returned in the <code>callback</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1561-L1564">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1558-L1561">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7917,7 +7917,7 @@ and <code>GAsyncResult</code> data returned in the <code>callback</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1568-L1575">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1565-L1572">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7939,7 +7939,7 @@ and <code>GAsyncResult</code> data returned in the <code>callback</code>.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the kinds of [identifiers][volume-identifier] that <code>volume</code> has.
-Use g_volume_get_identifier() to obtain the identifiers themselves.</p>
+Use <code>g_volume_get_identifier()</code> to obtain the identifiers themselves.</p>
 
                       </div>
                       <div class="declaration">
@@ -7951,7 +7951,7 @@ Use g_volume_get_identifier() to obtain the identifiers themselves.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1579-L1582">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1576-L1579">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7974,8 +7974,8 @@ Use g_volume_get_identifier() to obtain the identifiers themselves.</p>
                       <div class="abstract">
                         <p>Gets the activation root for a <code>GVolume</code> if it is known ahead of
 mount time. Returns <code>nil</code> otherwise. If not <code>nil</code> and if <code>volume</code>
-is mounted, then the result of g_mount_get_root() on the
-<code>GMount</code> object obtained from g_volume_get_mount() will always
+is mounted, then the result of <code>g_mount_get_root()</code> on the
+<code>GMount</code> object obtained from <code>g_volume_get_mount()</code> will always
 either be equal or a prefix of what this function returns. In
 other words, in code</p>
 
@@ -7999,7 +7999,7 @@ other words, in code</p>
 
 <p>Activation roots are typically used in <code>GVolumeMonitor</code>
 implementations to find the underlying mount to shadow, see
-g_mount_is_shadowed() for more details.</p>
+<code>g_mount_is_shadowed()</code> for more details.</p>
 
                       </div>
                       <div class="declaration">
@@ -8011,7 +8011,7 @@ g_mount_is_shadowed() for more details.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1614-L1617">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1609-L1612">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8032,7 +8032,7 @@ g_mount_is_shadowed() for more details.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the drive for the <code>volume</code>.</p>
+                        <p>Gets the drive for the <code>volume.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8044,7 +8044,7 @@ g_mount_is_shadowed() for more details.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1620-L1623">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1615-L1618">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8065,7 +8065,7 @@ g_mount_is_shadowed() for more details.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the icon for <code>volume</code>.</p>
+                        <p>Gets the icon for <code>volume.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8077,7 +8077,7 @@ g_mount_is_shadowed() for more details.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1626-L1629">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1621-L1624">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8112,7 +8112,7 @@ information about volume identifiers.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1634-L1637">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1629-L1632">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8133,7 +8133,7 @@ information about volume identifiers.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the mount for the <code>volume</code>.</p>
+                        <p>Gets the mount for the <code>volume.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8145,7 +8145,7 @@ information about volume identifiers.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1640-L1643">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1635-L1638">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8166,7 +8166,7 @@ information about volume identifiers.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the name of <code>volume</code>.</p>
+                        <p>Gets the name of <code>volume.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8178,7 +8178,7 @@ information about volume identifiers.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1646-L1649">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1641-L1644">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8211,7 +8211,7 @@ information about volume identifiers.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1652-L1655">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1647-L1650">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8232,7 +8232,7 @@ information about volume identifiers.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the symbolic icon for <code>volume</code>.</p>
+                        <p>Gets the symbolic icon for <code>volume.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8244,7 +8244,7 @@ information about volume identifiers.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1658-L1661">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1653-L1656">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8280,7 +8280,7 @@ available.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1667-L1670">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1662-L1665">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8302,8 +8302,8 @@ available.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Mounts a volume. This is an asynchronous operation, and is
-finished by calling g_volume_mount_finish() with the <code>volume</code>
-and <code>GAsyncResult</code> returned in the <code>callback</code>.</p>
+finished by calling <code>g_volume_mount_finish()</code> with the <code>volume</code>
+and <code>GAsyncResult</code> returned in the <code>callback.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8315,7 +8315,7 @@ and <code>GAsyncResult</code> returned in the <code>callback</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1675-L1678">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1670-L1673">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8339,10 +8339,10 @@ and <code>GAsyncResult</code> returned in the <code>callback</code>.</p>
                         <p>Finishes mounting a volume. If any errors occurred during the operation,
 <code>error</code> will be set to contain the errors and <code>false</code> will be returned.</p>
 
-<p>If the mount operation succeeded, g_volume_get_mount() on <code>volume</code>
+<p>If the mount operation succeeded, <code>g_volume_get_mount()</code> on <code>volume</code>
 is guaranteed to return the mount right after calling this
 function; there&rsquo;s no need to listen for the &lsquo;mount-added&rsquo; signal on
-<code>GVolumeMonitor</code>.</p>
+<code>GVolumeMonitor.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8354,7 +8354,7 @@ function; there&rsquo;s no need to listen for the &lsquo;mount-added&rsquo; sign
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1687-L1694">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1682-L1689">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8387,7 +8387,7 @@ function; there&rsquo;s no need to listen for the &lsquo;mount-added&rsquo; sign
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1697-L1700">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1692-L1695">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8410,8 +8410,8 @@ function; there&rsquo;s no need to listen for the &lsquo;mount-added&rsquo; sign
                       <div class="abstract">
                         <p>Gets the activation root for a <code>GVolume</code> if it is known ahead of
 mount time. Returns <code>nil</code> otherwise. If not <code>nil</code> and if <code>volume</code>
-is mounted, then the result of g_mount_get_root() on the
-<code>GMount</code> object obtained from g_volume_get_mount() will always
+is mounted, then the result of <code>g_mount_get_root()</code> on the
+<code>GMount</code> object obtained from <code>g_volume_get_mount()</code> will always
 either be equal or a prefix of what this function returns. In
 other words, in code</p>
 
@@ -8435,7 +8435,7 @@ other words, in code</p>
 
 <p>Activation roots are typically used in <code>GVolumeMonitor</code>
 implementations to find the underlying mount to shadow, see
-g_mount_is_shadowed() for more details.</p>
+<code>g_mount_is_shadowed()</code> for more details.</p>
 
                       </div>
                       <div class="declaration">
@@ -8447,7 +8447,7 @@ g_mount_is_shadowed() for more details.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1731-L1766">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1724-L1757">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8468,7 +8468,7 @@ g_mount_is_shadowed() for more details.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the drive for the <code>volume</code>.</p>
+                        <p>Gets the drive for the <code>volume.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8480,7 +8480,7 @@ g_mount_is_shadowed() for more details.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1769-L1775">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1760-L1766">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8501,7 +8501,7 @@ g_mount_is_shadowed() for more details.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the icon for <code>volume</code>.</p>
+                        <p>Gets the icon for <code>volume.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8513,7 +8513,7 @@ g_mount_is_shadowed() for more details.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1778-L1784">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1769-L1775">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8534,7 +8534,7 @@ g_mount_is_shadowed() for more details.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the mount for the <code>volume</code>.</p>
+                        <p>Gets the mount for the <code>volume.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8546,7 +8546,7 @@ g_mount_is_shadowed() for more details.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1787-L1793">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1778-L1784">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8567,7 +8567,7 @@ g_mount_is_shadowed() for more details.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the name of <code>volume</code>.</p>
+                        <p>Gets the name of <code>volume.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8579,7 +8579,7 @@ g_mount_is_shadowed() for more details.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1796-L1802">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1787-L1793">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8612,7 +8612,7 @@ g_mount_is_shadowed() for more details.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1805-L1811">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1796-L1802">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8633,7 +8633,7 @@ g_mount_is_shadowed() for more details.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the symbolic icon for <code>volume</code>.</p>
+                        <p>Gets the symbolic icon for <code>volume.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8645,7 +8645,7 @@ g_mount_is_shadowed() for more details.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1814-L1820">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1805-L1811">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8681,7 +8681,7 @@ available.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1826-L1835">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1817-L1826">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8694,7 +8694,7 @@ available.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

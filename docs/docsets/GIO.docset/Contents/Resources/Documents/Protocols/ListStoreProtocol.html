@@ -7529,7 +7529,7 @@ with a fast path for the common case of iterating the list linearly.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2465">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2460">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7567,7 +7567,7 @@ with a fast path for the common case of iterating the list linearly.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2468">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2463">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7695,7 +7695,7 @@ with a fast path for the common case of iterating the list linearly.</p>
                         <p>binding reference or <code>nil</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2606-L2630">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2601-L2625">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7787,7 +7787,7 @@ with a fast path for the common case of iterating the list linearly.</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2671-L2690">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2665-L2684">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7819,11 +7819,11 @@ with a fast path for the common case of iterating the list linearly.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Appends <code>item</code> to <code>store</code>. <code>item</code> must be of type <code>GListStore</code>:item-type.</p>
+                        <p>Appends <code>item</code> to <code>store</code>. <code>item</code> must be of type <code>GListStore:item</code>-type.</p>
 
 <p>This function takes a ref on <code>item</code>.</p>
 
-<p>Use g_list_store_splice() to append multiple items at the same time
+<p>Use <code>g_list_store_splice()</code> to append multiple items at the same time
 efficiently.</p>
 
                       </div>
@@ -7836,7 +7836,7 @@ efficiently.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2703-L2706">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2697-L2700">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7858,12 +7858,12 @@ efficiently.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Inserts <code>item</code> into <code>store</code> at <code>position</code>. <code>item</code> must be of type
-<code>GListStore</code>:item-type or derived from it. <code>position</code> must be smaller
+<code>GListStore:item</code>-type or derived from it. <code>position</code> must be smaller
 than the length of the list, or equal to it to append.</p>
 
 <p>This function takes a ref on <code>item</code>.</p>
 
-<p>Use g_list_store_splice() to insert multiple items at the same time
+<p>Use <code>g_list_store_splice()</code> to insert multiple items at the same time
 efficiently.</p>
 
                       </div>
@@ -7876,7 +7876,7 @@ efficiently.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2716-L2719">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2710-L2713">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7904,7 +7904,7 @@ efficiently.</p>
 result is undefined.  Usually you would approach this by only ever
 inserting items by way of this function.</p>
 
-<p>This function takes a ref on <code>item</code>.</p>
+<p>This function takes a ref on <code>item.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7916,7 +7916,7 @@ inserting items by way of this function.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2729-L2732">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2723-L2726">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7940,7 +7940,7 @@ inserting items by way of this function.</p>
                         <p>Removes the item from <code>store</code> that is at <code>position</code>. <code>position</code> must be
 smaller than the current length of the list.</p>
 
-<p>Use g_list_store_splice() to remove multiple items at the same time
+<p>Use <code>g_list_store_splice()</code> to remove multiple items at the same time
 efficiently.</p>
 
                       </div>
@@ -7953,7 +7953,7 @@ efficiently.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2739-L2742">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2733-L2736">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7974,7 +7974,7 @@ efficiently.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Removes all items from <code>store</code>.</p>
+                        <p>Removes all items from <code>store.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7986,7 +7986,7 @@ efficiently.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2745-L2748">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2739-L2742">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8007,7 +8007,7 @@ efficiently.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Sort the items in <code>store</code> according to <code>compare_func</code>.</p>
+                        <p>Sort the items in <code>store</code> according to <code>compare_func.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8019,7 +8019,7 @@ efficiently.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2751-L2754">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2745-L2748">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8042,11 +8042,11 @@ efficiently.</p>
                       <div class="abstract">
                         <p>Changes <code>store</code> by removing <code>n_removals</code> items and adding <code>n_additions</code>
 items to it. <code>additions</code> must contain <code>n_additions</code> items of type
-<code>GListStore</code>:item-type.  <code>nil</code> is not permitted.</p>
+<code>GListStore:item</code>-type.  <code>nil</code> is not permitted.</p>
 
-<p>This function is more efficient than g_list_store_insert() and
-g_list_store_remove(), because it only emits
-<code>GListModel</code>::items-changed once for the change.</p>
+<p>This function is more efficient than <code>g_list_store_insert()</code> and
+<code>g_list_store_remove()</code>, because it only emits
+<code>GListModel::items</code>-changed once for the change.</p>
 
 <p>This function takes a ref on each item in <code>additions</code>.</p>
 
@@ -8064,7 +8064,7 @@ the list at the time this function is called).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2769-L2772">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2763-L2766">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8077,7 +8077,7 @@ the list at the time this function is called).</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

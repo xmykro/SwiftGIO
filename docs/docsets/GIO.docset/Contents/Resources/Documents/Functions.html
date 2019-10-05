@@ -7550,16 +7550,16 @@ nor the characters &lsquo;:&rsquo;, &lsquo;(&rsquo; or &lsquo;)&rsquo;.  For exa
 <p>The second format is used to represent an action with a target value
 that is a non-empty string consisting only of alphanumerics, plus &lsquo;-&rsquo;
 and &lsquo;.&rsquo;.  In that case, the action name and target value are
-separated by a double colon (<q>::</q>).  For example:
-<q>app.action::target</q>.</p>
+separated by a double colon (<q>&ldquo;</q>).  For example:
+<q>app.action`target`</q>.</p>
 
 <p>The third format is used to represent an action with any type of
 target value, including strings.  The target value follows the action
-name, surrounded in parens.  For example: <q>app.action(42)</q>.  The
-target value is parsed using g_variant_parse().  If a tuple-typed
+name, surrounded in parens.  For example: <code>&quot;app.action(42)</code><q>.  The
+target value is parsed using `g_variant_parse()`.  If a tuple-typed
 value is desired, it must be specified in the same way, resulting in
-two sets of parens, for example: <q>app.action((1,2,3))</q>.  A string
-target can be specified this way as well: <q>app.action(&lsquo;target&rsquo;)</q>.
+two sets of parens, for example: `</q>app.action((1,2,3)<code>)&quot;.  A string
+target can be specified this way as well:</code><q>app.action(&lsquo;target&rsquo;)`</q>.
 For strings, this third format must be used if * target value is
 empty or contains characters other than alphanumerics, &lsquo;-&rsquo; and &lsquo;.&rsquo;.</p>
 
@@ -7595,7 +7595,7 @@ empty or contains characters other than alphanumerics, &lsquo;-&rsquo; and &lsqu
 
 <p>It is an error to call this function with an invalid action name.</p>
 
-<p>This function is the opposite of g_action_parse_detailed_name().
+<p>This function is the opposite of <code>g_action_parse_detailed_name()</code>.
 It will produce a string that can be parsed back to the <code>action_name</code>
 and <code>target_value</code> by that function.</p>
 
@@ -7671,7 +7671,7 @@ on this system.</p>
 
 <p>For desktop files, this includes applications that have
 <code>NoDisplay=true</code> set or are excluded from display by means
-of <code>OnlyShowIn</code> or <code>NotShowIn</code>. See g_app_info_should_show().
+of <code>OnlyShowIn</code> or <code>NotShowIn</code>. See <code>g_app_info_should_show()</code>.
 The returned list does not include applications which have
 the <code>Hidden</code> key set.</p>
 
@@ -7705,8 +7705,8 @@ the <code>Hidden</code> key set.</p>
                       <div class="abstract">
                         <p>Gets a list of all <code>GAppInfos</code> for a given content type,
 including the recommended and fallback <code>GAppInfos</code>. See
-g_app_info_get_recommended_for_type() and
-g_app_info_get_fallback_for_type().</p>
+<code>g_app_info_get_recommended_for_type()</code> and
+<code>g_app_info_get_fallback_for_type()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7835,7 +7835,7 @@ by MIME type subclassing and not directly.</p>
 those applications which claim to support the given content type exactly,
 and not by MIME type subclassing.
 Note that the first application of the list is the last used one, i.e.
-the last one for which g_app_info_set_as_last_used_for_type() has been
+the last one for which <code>g_app_info_set_as_last_used_for_type()</code> has been
 called.</p>
 
                       </div>
@@ -7873,7 +7873,7 @@ required.</p>
 
 <p>The D-Bus–activated applications don&rsquo;t have to be started if your application
 terminates too soon after this function. To prevent this, use
-g_app_info_launch_default_for_uri_async() instead.</p>
+<code>g_app_info_launch_default_for_uri_async()</code> instead.</p>
 
                       </div>
                       <div class="declaration">
@@ -7903,7 +7903,7 @@ g_app_info_launch_default_for_uri_async() instead.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Async version of g_app_info_launch_default_for_uri().</p>
+                        <p>Async version of <code>g_app_info_launch_default_for_uri()</code>.</p>
 
 <p>This version is useful if you are interested in receiving
 error information in the case where the application is
@@ -7973,10 +7973,10 @@ in receiving error information from their activation.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Removes all changes to the type associations done by
-g_app_info_set_as_default_for_type(),
-g_app_info_set_as_default_for_extension(),
-g_app_info_add_supports_type() or
-g_app_info_remove_supports_type().</p>
+<code>g_app_info_set_as_default_for_type()</code>,
+<code>g_app_info_set_as_default_for_extension()</code>,
+<code>g_app_info_add_supports_type()</code> or
+<code>g_app_info_remove_supports_type()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8007,10 +8007,10 @@ g_app_info_remove_supports_type().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Helper function for constructing <code>GAsyncInitable</code> object. This is
-similar to g_object_newv() but also initializes the object asynchronously.</p>
+similar to <code>g_object_newv()</code> but also initializes the object asynchronously.</p>
 
 <p>When the initialization is finished, <code>callback</code> will be called. You can
-then call g_async_initable_new_finish() to get the new object and check
+then call <code>g_async_initable_new_finish()</code> to get the new object and check
 for any errors.</p>
 
 <p><strong>async_initable_newv_async is deprecated:</strong>
@@ -8022,7 +8022,7 @@ g_async_initable_init_async() instead. See #GParameter for more information.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">asyncInitableNewvAsync</span><span class="p">(</span><span class="n">objectType</span> <span class="nv">object_type</span><span class="p">:</span> <span class="kt">GType</span><span class="p">,</span> <span class="n">nParameters</span> <span class="nv">n_parameters</span><span class="p">:</span> <span class="kt">CUnsignedInt</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="kt">ParameterProtocol</span><span class="p">,</span> <span class="n">ioPriority</span> <span class="nv">io_priority</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">cancellable</span><span class="p">:</span> <span class="kt"><a href="Protocols/CancellableProtocol.html">CancellableProtocol</a></span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="Typealiases.html#/s:3GIO18AsyncReadyCallbacka">AsyncReadyCallback</a></span><span class="p">,</span> <span class="n">userData</span> <span class="nv">user_data</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -8049,9 +8049,9 @@ g_async_initable_init_async() instead. See #GParameter for more information.</p>
                         <p>Asynchronously connects to the message bus specified by <code>bus_type</code>.</p>
 
 <p>When the operation is finished, <code>callback</code> will be invoked. You can
-then call g_bus_get_finish() to get the result of the operation.</p>
+then call <code>g_bus_get_finish()</code> to get the result of the operation.</p>
 
-<p>This is an asynchronous failable function. See g_bus_get_sync() for
+<p>This is an asynchronous failable function. See <code>g_bus_get_sync()</code> for
 the synchronous version.</p>
 
                       </div>
@@ -8082,16 +8082,16 @@ the synchronous version.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes an operation started with g_bus_get().</p>
+                        <p>Finishes an operation started with <code>g_bus_get()</code>.</p>
 
 <p>The returned object is a singleton, that is, shared with other
-callers of g_bus_get() and g_bus_get_sync() for <code>bus_type</code>. In the
+callers of <code>g_bus_get()</code> and <code>g_bus_get_sync()</code> for <code>bus_type</code>. In the
 event that you need a private message bus connection, use
-g_dbus_address_get_for_bus_sync() and
-g_dbus_connection_new_for_address().</p>
+<code>g_dbus_address_get_for_bus_sync()</code> and
+<code>g_dbus_connection_new_for_address()</code>.</p>
 
 <p>Note that the returned <code>GDBusConnection</code> object will (usually) have
-the <code>GDBusConnection</code>:exit-on-close property set to <code>true</code>.</p>
+the <code>GDBusConnection:exit</code>-on-close property set to <code>true</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8126,17 +8126,17 @@ Note that the returned object may shared with other callers,
 e.g. if two separate parts of a process calls this function with
 the same <code>bus_type</code>, they will share the same object.</p>
 
-<p>This is a synchronous failable function. See g_bus_get() and
-g_bus_get_finish() for the asynchronous version.</p>
+<p>This is a synchronous failable function. See <code>g_bus_get()</code> and
+<code>g_bus_get_finish()</code> for the asynchronous version.</p>
 
 <p>The returned object is a singleton, that is, shared with other
-callers of g_bus_get() and g_bus_get_sync() for <code>bus_type</code>. In the
+callers of <code>g_bus_get()</code> and <code>g_bus_get_sync()</code> for <code>bus_type</code>. In the
 event that you need a private message bus connection, use
-g_dbus_address_get_for_bus_sync() and
-g_dbus_connection_new_for_address().</p>
+<code>g_dbus_address_get_for_bus_sync()</code> and
+<code>g_dbus_connection_new_for_address()</code>.</p>
 
 <p>Note that the returned <code>GDBusConnection</code> object will (usually) have
-the <code>GDBusConnection</code>:exit-on-close property set to <code>true</code>.</p>
+the <code>GDBusConnection:exit</code>-on-close property set to <code>true</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8185,7 +8185,7 @@ obtained)</p></li>
 obtained).</p></li>
 </ul>
 
-<p>When you are done owning the name, just call g_bus_unown_name()
+<p>When you are done owning the name, just call <code>g_bus_unown_name()</code>
 with the owner id this function returns.</p>
 
 <p>If the name is acquired or lost (for example another application
@@ -8195,8 +8195,8 @@ If the <code>GDBusConnection</code> that is used for attempting to own the name
 closes, then <code>name_lost_handler</code> is invoked since it is no longer
 possible for other processes to access the process.</p>
 
-<p>You cannot use g_bus_own_name() several times for the same name (unless
-interleaved with calls to g_bus_unown_name()) - only the first call
+<p>You cannot use <code>g_bus_own_name()</code> several times for the same name (unless
+interleaved with calls to <code>g_bus_unown_name()</code>) - only the first call
 will work.</p>
 
 <p>Another guarantee is that invocations of <code>name_acquired_handler</code>
@@ -8206,7 +8206,7 @@ guaranteed that the next time one of the handlers is invoked, it
 will be <code>name_lost_handler</code>. The reverse is also true.</p>
 
 <p>If you plan on exporting objects (using e.g.
-g_dbus_connection_register_object()), note that it is generally too late
+<code>g_dbus_connection_register_object()</code>), note that it is generally too late
 to export the objects in <code>name_acquired_handler</code>. Instead, you can do this
 in <code>bus_acquired_handler</code> since you are guaranteed that this will run
 before <code>name</code> is requested from the bus.</p>
@@ -8214,7 +8214,7 @@ before <code>name</code> is requested from the bus.</p>
 <p>This behavior makes it very simple to write applications that wants
 to [own names][gdbus-owning-names] and export objects.
 Simply register objects to be exported in <code>bus_acquired_handler</code> and
-unregister the objects (if any) in <code>name_lost_handler</code>.</p>
+unregister the objects (if any) in <code>name_lost_handler.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8244,8 +8244,8 @@ unregister the objects (if any) in <code>name_lost_handler</code>.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Like g_bus_own_name() but takes a <code>GDBusConnection</code> instead of a
-<code>GBusType</code>.</p>
+                        <p>Like <code>g_bus_own_name()</code> but takes a <code>GDBusConnection</code> instead of a
+<code>GBusType.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8275,7 +8275,7 @@ unregister the objects (if any) in <code>name_lost_handler</code>.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Version of g_bus_own_name_on_connection() using closures instead of
+                        <p>Version of <code>g_bus_own_name_on_connection()</code> using closures instead of
 callbacks for easier binding in other languages.</p>
 
                       </div>
@@ -8306,7 +8306,7 @@ callbacks for easier binding in other languages.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Version of g_bus_own_name() using closures instead of callbacks for
+                        <p>Version of <code>g_bus_own_name()</code> using closures instead of callbacks for
 easier binding in other languages.</p>
 
                       </div>
@@ -8406,7 +8406,7 @@ of the thread you are calling this function from.</p>
 
 <p>You are guaranteed that one of the handlers will be invoked after
 calling this function. When you are done watching the name, just
-call g_bus_unwatch_name() with the watcher id this function
+call <code>g_bus_unwatch_name()</code> with the watcher id this function
 returns.</p>
 
 <p>If the name vanishes or appears (for example the application owning
@@ -8425,7 +8425,7 @@ will be <code>name_vanished_handler</code>. The reverse is also true.</p>
 to take action when a certain [name exists][gdbus-watching-names].
 Basically, the application should create object proxies in
 <code>name_appeared_handler</code> and destroy them again (if any) in
-<code>name_vanished_handler</code>.</p>
+<code>name_vanished_handler.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8455,8 +8455,8 @@ Basically, the application should create object proxies in
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Like g_bus_watch_name() but takes a <code>GDBusConnection</code> instead of a
-<code>GBusType</code>.</p>
+                        <p>Like <code>g_bus_watch_name()</code> but takes a <code>GDBusConnection</code> instead of a
+<code>GBusType.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8486,7 +8486,7 @@ Basically, the application should create object proxies in
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Version of g_bus_watch_name_on_connection() using closures instead of callbacks for
+                        <p>Version of <code>g_bus_watch_name_on_connection()</code> using closures instead of callbacks for
 easier binding in other languages.</p>
 
                       </div>
@@ -8517,7 +8517,7 @@ easier binding in other languages.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Version of g_bus_watch_name() using closures instead of callbacks for
+                        <p>Version of <code>g_bus_watch_name()</code> using closures instead of callbacks for
 easier binding in other languages.</p>
 
                       </div>
@@ -8837,7 +8837,7 @@ x-content/audio-cdda (for audio CDs) or x-content/image-dcf
 specification for more on x-content types.</p>
 
 <p>This function is useful in the implementation of
-g_mount_guess_content_type().</p>
+<code>g_mount_guess_content_type()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8867,7 +8867,7 @@ g_mount_guess_content_type().</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Determines if <code>type</code> is a subset of <code>supertype</code>.</p>
+                        <p>Determines if <code>type</code> is a subset of <code>supertype.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8898,7 +8898,7 @@ g_mount_guess_content_type().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Determines if <code>type</code> is a subset of <code>mime_type</code>.
-Convenience wrapper around g_content_type_is_a().</p>
+Convenience wrapper around <code>g_content_type_is_a()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -9070,11 +9070,11 @@ of the D-Bus authentication conversation. <code>address</code> must be in the
 <a href="https://dbus.freedesktop.org/doc/dbus-specification.html%60addresses%60">D-Bus address format</a>.</p>
 
 <p>When the operation is finished, <code>callback</code> will be invoked. You can
-then call g_dbus_address_get_stream_finish() to get the result of
+then call <code>g_dbus_address_get_stream_finish()</code> to get the result of
 the operation.</p>
 
 <p>This is an asynchronous failable function. See
-g_dbus_address_get_stream_sync() for the synchronous version.</p>
+<code>g_dbus_address_get_stream_sync()</code> for the synchronous version.</p>
 
                       </div>
                       <div class="declaration">
@@ -9104,7 +9104,7 @@ g_dbus_address_get_stream_sync() for the synchronous version.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes an operation started with g_dbus_address_get_stream().</p>
+                        <p>Finishes an operation started with <code>g_dbus_address_get_stream()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -9140,7 +9140,7 @@ of the D-Bus authentication conversation. <code>address</code> must be in the
 <a href="https://dbus.freedesktop.org/doc/dbus-specification.html%60addresses%60">D-Bus address format</a>.</p>
 
 <p>This is a synchronous failable function. See
-g_dbus_address_get_stream() for the asynchronous version.</p>
+<code>g_dbus_address_get_stream()</code> for the asynchronous version.</p>
 
                       </div>
                       <div class="declaration">
@@ -9172,7 +9172,7 @@ g_dbus_address_get_stream() for the asynchronous version.</p>
                       <div class="abstract">
                         <p>Looks up the value of an annotation.</p>
 
-<p>The cost of this function is O(n) in number of annotations.</p>
+<p>The cost of this function is <code>O(n)</code> in number of annotations.</p>
 
                       </div>
                       <div class="declaration">
@@ -9203,13 +9203,13 @@ g_dbus_address_get_stream() for the asynchronous version.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Creates a D-Bus error name to use for <code>error</code>. If <code>error</code> matches
-a registered error (cf. g_dbus_error_register_error()), the corresponding
+a registered error (cf. <code>g_dbus_error_register_error()</code>), the corresponding
 D-Bus error name will be returned.</p>
 
 <p>Otherwise the a name of the form
 <code>org.gtk.GDBus.UnmappedGError.Quark._ESCAPED_QUARK_NAME.Code_ERROR_CODE</code>
 will be used. This allows other GDBus applications to map the error
-on the wire back to a <code>GError</code> using g_dbus_error_new_for_dbus_error().</p>
+on the wire back to a <code>GError</code> using <code>g_dbus_error_new_for_dbus_error()</code>.</p>
 
 <p>This function is typically only used in object mappings to put a
 <code>GError</code> on the wire. Regular applications should not use it.</p>
@@ -9246,8 +9246,8 @@ on the wire back to a <code>GError</code> using g_dbus_error_new_for_dbus_error(
 
 <p>This function is guaranteed to return a D-Bus error name for all
 <code>GErrors</code> returned from functions handling remote method calls
-(e.g. g_dbus_connection_call_finish()) unless
-g_dbus_error_strip_remote_error() has been used on <code>error</code>.</p>
+(e.g. <code>g_dbus_connection_call_finish()</code>) unless
+<code>g_dbus_error_strip_remote_error()</code> has been used on <code>error.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -9278,7 +9278,7 @@ g_dbus_error_strip_remote_error() has been used on <code>error</code>.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Checks if <code>error</code> represents an error received via D-Bus from a remote peer. If so,
-use g_dbus_error_get_remote_error() to get the name of the error.</p>
+use <code>g_dbus_error_get_remote_error()</code> to get the name of the error.</p>
 
                       </div>
                       <div class="declaration">
@@ -9311,25 +9311,25 @@ use g_dbus_error_get_remote_error() to get the name of the error.</p>
                         <p>Creates a <code>GError</code> based on the contents of <code>dbus_error_name</code> and
 <code>dbus_error_message</code>.</p>
 
-<p>Errors registered with g_dbus_error_register_error() will be looked
+<p>Errors registered with <code>g_dbus_error_register_error()</code> will be looked
 up using <code>dbus_error_name</code> and if a match is found, the error domain
-and code is used. Applications can use g_dbus_error_get_remote_error()
+and code is used. Applications can use <code>g_dbus_error_get_remote_error()</code>
 to recover <code>dbus_error_name</code>.</p>
 
 <p>If a match against a registered error is not found and the D-Bus
-error name is in a form as returned by g_dbus_error_encode_gerror()
+error name is in a form as returned by <code>g_dbus_error_encode_gerror()</code>
 the error domain and code encoded in the name is used to
 create the <code>GError</code>. Also, <code>dbus_error_name</code> is added to the error message
-such that it can be recovered with g_dbus_error_get_remote_error().</p>
+such that it can be recovered with <code>g_dbus_error_get_remote_error()</code>.</p>
 
 <p>Otherwise, a <code>GError</code> with the error code <code>G_IO_ERROR_DBUS_ERROR</code>
 in the <code>G_IO_ERROR</code> error domain is returned. Also, <code>dbus_error_name</code> is
 added to the error message such that it can be recovered with
-g_dbus_error_get_remote_error().</p>
+<code>g_dbus_error_get_remote_error()</code>.</p>
 
 <p>In all three cases, <code>dbus_error_name</code> can always be recovered from the
-returned <code>GError</code> using the g_dbus_error_get_remote_error() function
-(unless g_dbus_error_strip_remote_error() hasn&rsquo;t been used on the returned error).</p>
+returned <code>GError</code> using the <code>g_dbus_error_get_remote_error()</code> function
+(unless <code>g_dbus_error_strip_remote_error()</code> hasn&rsquo;t been used on the returned error).</p>
 
 <p>This function is typically only used in object mappings to prepare
 <code>GError</code> instances for applications. Regular applications should not use
@@ -9492,7 +9492,7 @@ received on the wire.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Destroys an association previously set up with g_dbus_error_register_error().</p>
+                        <p>Destroys an association previously set up with <code>g_dbus_error_register_error()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -9523,7 +9523,7 @@ received on the wire.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Generate a D-Bus GUID that can be used with
-e.g. g_dbus_connection_new().</p>
+e.g. <code>g_dbus_connection_new()</code>.</p>
 
 <p>See the D-Bus specification regarding what strings are valid D-Bus
 GUID (for example, D-Bus GUIDs are not RFC-4122 compliant).</p>
@@ -9562,16 +9562,16 @@ parameter.</p>
 <p>The conversion is using the following rules:</p>
 
 <ul>
-<li><code>G_TYPE_STRING</code>: &lsquo;s&rsquo;, &lsquo;o&rsquo;, &lsquo;g&rsquo; or &lsquo;ay&rsquo;</li>
-<li><code>G_TYPE_STRV</code>: &lsquo;as&rsquo;, &lsquo;ao&rsquo; or &lsquo;aay&rsquo;</li>
-<li><code>G_TYPE_BOOLEAN</code>: &lsquo;b&rsquo;</li>
-<li><code>G_TYPE_UCHAR</code>: &lsquo;y&rsquo;</li>
-<li><code>G_TYPE_INT</code>: &lsquo;i&rsquo;, &lsquo;n&rsquo;</li>
-<li><code>G_TYPE_UINT</code>: &lsquo;u&rsquo;, &lsquo;q&rsquo;</li>
+<li><code>G_TYPE_STRING:</code> &lsquo;s&rsquo;, &lsquo;o&rsquo;, &lsquo;g&rsquo; or &lsquo;ay&rsquo;</li>
+<li><code>G_TYPE_STRV:</code> &lsquo;as&rsquo;, &lsquo;ao&rsquo; or &lsquo;aay&rsquo;</li>
+<li><code>G_TYPE_BOOLEAN:</code> &lsquo;b&rsquo;</li>
+<li><code>G_TYPE_UCHAR:</code> &lsquo;y&rsquo;</li>
+<li><code>G_TYPE_INT:</code> &lsquo;i&rsquo;, &lsquo;n&rsquo;</li>
+<li><code>G_TYPE_UINT:</code> &lsquo;u&rsquo;, &lsquo;q&rsquo;</li>
 <li><code>G_TYPE_INT64</code> &lsquo;x&rsquo;</li>
-<li><code>G_TYPE_UINT64</code>: &lsquo;t&rsquo;</li>
-<li><code>G_TYPE_DOUBLE</code>: &lsquo;d&rsquo;</li>
-<li><code>G_TYPE_VARIANT</code>: Any <code>GVariantType</code></li>
+<li><code>G_TYPE_UINT64:</code> &lsquo;t&rsquo;</li>
+<li><code>G_TYPE_DOUBLE:</code> &lsquo;d&rsquo;</li>
+<li><code>G_TYPE_VARIANT:</code> Any <code>GVariantType</code></li>
 </ul>
 
 <p>This can fail if e.g. <code>gvalue</code> is of type <code>G_TYPE_STRING</code> and <code>type</code>
@@ -9584,8 +9584,8 @@ in the table above.</p>
 returned (e.g. 0 for scalar types, the empty string for string types,
 &lsquo;/&rsquo; for object path types, the empty array for any array type and so on).</p>
 
-<p>See the g_dbus_gvariant_to_gvalue() function for how to convert a
-<code>GVariant</code> to a <code>GValue</code>.</p>
+<p>See the <code>g_dbus_gvariant_to_gvalue()</code> function for how to convert a
+<code>GVariant</code> to a <code>GValue.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -9617,7 +9617,7 @@ returned (e.g. 0 for scalar types, the empty string for string types,
                       <div class="abstract">
                         <p>Converts a <code>GVariant</code> to a <code>GValue</code>. If <code>value</code> is floating, it is consumed.</p>
 
-<p>The rules specified in the g_dbus_gvalue_to_gvariant() function are
+<p>The rules specified in the <code>g_dbus_gvalue_to_gvariant()</code> function are
 used - this function is essentially its reverse form. So, a <code>GVariant</code>
 containing any basic or string array type will be converted to a <code>GValue</code>
 containing a basic value or string array. Any other <code>GVariant</code> (handle,
@@ -9625,7 +9625,7 @@ variant, tuple, dict entry) will be converted to a <code>GValue</code> containin
 <code>GVariant</code>.</p>
 
 <p>The conversion never fails - a valid <code>GValue</code> is always returned in
-<code>out_gvalue</code>.</p>
+<code>out_gvalue.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -9659,7 +9659,7 @@ variant, tuple, dict entry) will be converted to a <code>GValue</code> containin
 <a href="https://dbus.freedesktop.org/doc/dbus-specification.html%60addresses%60">D-Bus address</a>.</p>
 
 <p>This doesn&rsquo;t check if <code>string</code> is actually supported by <code>GDBusServer</code>
-or <code>GDBusConnection</code> - use g_dbus_is_supported_address() to do more
+or <code>GDBusConnection</code> - use <code>g_dbus_is_supported_address()</code> to do more
 checks.</p>
 
                       </div>
@@ -9813,7 +9813,7 @@ GUID (for example, D-Bus GUIDs are not RFC-4122 compliant).</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Like g_dbus_is_address() but also checks if the library supports the
+                        <p>Like <code>g_dbus_is_address()</code> but also checks if the library supports the
 transports in <code>string</code> and that key/value pairs for each transport
 are valid. See the specification of the
 <a href="https://dbus.freedesktop.org/doc/dbus-specification.html%60addresses%60">D-Bus address format</a>.</p>
@@ -9877,7 +9877,7 @@ are valid. See the specification of the
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Creates a new <code>GDtlsClientConnection</code> wrapping <code>base_socket</code> which is
-assumed to communicate with the server identified by <code>server_identity</code>.</p>
+assumed to communicate with the server identified by <code>server_identity.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -9907,7 +9907,7 @@ assumed to communicate with the server identified by <code>server_identity</code
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Creates a new <code>GDtlsServerConnection</code> wrapping <code>base_socket</code>.</p>
+                        <p>Creates a new <code>GDtlsServerConnection</code> wrapping <code>base_socket.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -9946,11 +9946,11 @@ support any I/O operation if <code>arg</code> points to a malformed path.</p>
 <p>Note that on Windows, this function expects its argument to be in
 UTF-8 &ndash; not the system code page.  This means that you
 should not use this function with string from argv as it is passed
-to main().  g_win32_get_command_line() will return a UTF-8 version of
+to <code>main()</code>.  <code>g_win32_get_command_line()</code> will return a UTF-8 version of
 the commandline.  <code>GApplication</code> also uses UTF-8 but
-g_application_command_line_create_file_for_arg() may be more useful
+<code>g_application_command_line_create_file_for_arg()</code> may be more useful
 for you there.  It is also always possible to use this function with
-<code>GOptionContext</code> arguments of type <code>G_OPTION_ARG_FILENAME</code>.</p>
+<code>GOptionContext</code> arguments of type <code>G_OPTION_ARG_FILENAME.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -9982,7 +9982,7 @@ for you there.  It is also always possible to use this function with
                       <div class="abstract">
                         <p>Creates a <code>GFile</code> with the given argument from the command line.</p>
 
-<p>This function is similar to g_file_new_for_commandline_arg() except
+<p>This function is similar to <code>g_file_new_for_commandline_arg()</code> except
 that it allows for passing the current working directory as an
 argument instead of using the current working directory of the
 process.</p>
@@ -9990,7 +9990,7 @@ process.</p>
 <p>This is useful if the commandline argument was given in a context
 other than the invocation of the current process.</p>
 
-<p>See also g_application_command_line_create_file_for_arg().</p>
+<p>See also <code>g_application_command_line_create_file_for_arg()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -10086,7 +10086,7 @@ not supported.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Opens a file in the preferred directory for temporary files (as
-returned by g_get_tmp_dir()) and returns a <code>GFile</code> and
+returned by <code>g_get_tmp_dir()</code>) and returns a <code>GFile</code> and
 <code>GFileIOStream</code> pointing to it.</p>
 
 <p><code>tmpl</code> should be a string in the GLib file name encoding
@@ -10125,7 +10125,7 @@ a temporary file could not be created.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Constructs a <code>GFile</code> with the given <code>parse_name</code> (i.e. something
-given by g_file_get_parse_name()). This operation never fails,
+given by <code>g_file_get_parse_name()</code>). This operation never fails,
 but the returned object might not support any I/O operation if
 the <code>parse_name</code> cannot be parsed.</p>
 
@@ -10157,7 +10157,7 @@ the <code>parse_name</code> cannot be parsed.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Deserializes a <code>GIcon</code> previously serialized using g_icon_serialize().</p>
+                        <p>Deserializes a <code>GIcon</code> previously serialized using <code>g_icon_serialize()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -10218,11 +10218,11 @@ the <code>parse_name</code> cannot be parsed.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Generate a <code>GIcon</code> instance from <code>str</code>. This function can fail if
-<code>str</code> is not valid - see g_icon_to_string() for discussion.</p>
+<code>str</code> is not valid - see <code>g_icon_to_string()</code> for discussion.</p>
 
 <p>If your application or library provides one or more <code>GIcon</code>
 implementations you need to ensure that each <code>GType</code> is registered
-with the type system prior to calling g_icon_new_for_string().</p>
+with the type system prior to calling <code>g_icon_new_for_string()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -10253,7 +10253,7 @@ with the type system prior to calling g_icon_new_for_string().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Helper function for constructing <code>GInitable</code> object. This is
-similar to g_object_newv() but also initializes the object
+similar to <code>g_object_newv()</code> but also initializes the object
 and returns <code>nil</code>, setting an error on failure.</p>
 
 <p><strong>initable_newv is deprecated:</strong>
@@ -10265,7 +10265,7 @@ g_initable_init() instead. See #GParameter for more information.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">initableNewv</span><span class="p">(</span><span class="n">objectType</span> <span class="nv">object_type</span><span class="p">:</span> <span class="kt">GType</span><span class="p">,</span> <span class="n">nParameters</span> <span class="nv">n_parameters</span><span class="p">:</span> <span class="kt">CUnsignedInt</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">GParameter</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">cancellable</span><span class="p">:</span> <span class="kt"><a href="Protocols/CancellableProtocol.html">CancellableProtocol</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span></code></pre>
 
                         </div>
@@ -10452,7 +10452,7 @@ extension point, the existing <code>GIOExtension</code> object is returned.</p>
                         <p>Loads all the modules in the specified directory.</p>
 
 <p>If don&rsquo;t require all modules to be initialized (and thus registering
-all gtypes) then you can use g_io_modules_scan_all_in_directory()
+all gtypes) then you can use <code>g_io_modules_scan_all_in_directory()</code>
 which allows delayed/lazy loading of modules.</p>
 
                       </div>
@@ -10486,7 +10486,7 @@ which allows delayed/lazy loading of modules.</p>
                         <p>Loads all the modules in the specified directory.</p>
 
 <p>If don&rsquo;t require all modules to be initialized (and thus registering
-all gtypes) then you can use g_io_modules_scan_all_in_directory()
+all gtypes) then you can use <code>g_io_modules_scan_all_in_directory()</code>
 which allows delayed/lazy loading of modules.</p>
 
                       </div>
@@ -10523,11 +10523,11 @@ any extension point implemented by a module is registered.</p>
 <p>This may not actually load and initialize all the types in each
 module, some modules may be lazily loaded and initialized when
 an extension point it implementes is used with e.g.
-g_io_extension_point_get_extensions() or
-g_io_extension_point_get_extension_by_name().</p>
+<code>g_io_extension_point_get_extensions()</code> or
+<code>g_io_extension_point_get_extension_by_name()</code>.</p>
 
 <p>If you need to guarantee that all types are loaded in all the modules,
-use g_io_modules_load_all_in_directory().</p>
+use <code>g_io_modules_load_all_in_directory()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -10563,11 +10563,11 @@ any extension point implemented by a module is registered.</p>
 <p>This may not actually load and initialize all the types in each
 module, some modules may be lazily loaded and initialized when
 an extension point it implementes is used with e.g.
-g_io_extension_point_get_extensions() or
-g_io_extension_point_get_extension_by_name().</p>
+<code>g_io_extension_point_get_extensions()</code> or
+<code>g_io_extension_point_get_extension_by_name()</code>.</p>
 
 <p>If you need to guarantee that all types are loaded in all the modules,
-use g_io_modules_load_all_in_directory().</p>
+use <code>g_io_modules_load_all_in_directory()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -10600,7 +10600,7 @@ use g_io_modules_load_all_in_directory().</p>
                         <p>Cancels all cancellable I/O jobs.</p>
 
 <p>A job is cancellable if a <code>GCancellable</code> was passed into
-g_io_scheduler_push_job().</p>
+<code>g_io_scheduler_push_job()</code>.</p>
 
 <p><strong>io_scheduler_cancel_all_jobs is deprecated:</strong>
 You should never call this function, since you don&rsquo;t
@@ -10612,7 +10612,7 @@ gioscheduler.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">ioSchedulerCancelAllJobs</span><span class="p">()</span></code></pre>
 
                         </div>
@@ -10642,8 +10642,8 @@ gioscheduler.</p>
 regardless whether the job was cancelled or has run to completion.</p>
 
 <p>If <code>cancellable</code> is not <code>nil</code>, it can be used to cancel the I/O job
-by calling g_cancellable_cancel() or by calling
-g_io_scheduler_cancel_all_jobs().</p>
+by calling <code>g_cancellable_cancel()</code> or by calling
+<code>g_io_scheduler_cancel_all_jobs()</code>.</p>
 
 <p><strong>io_scheduler_push_job is deprecated:</strong>
 use #GThreadPool or g_task_run_in_thread()</p>
@@ -10653,7 +10653,7 @@ use #GThreadPool or g_task_run_in_thread()</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">ioSchedulerPushJob</span><span class="p">(</span><span class="n">jobFunc</span> <span class="nv">job_func</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="Typealiases.html#/s:3GIO18IOSchedulerJobFunca">IOSchedulerJobFunc</a></span><span class="p">,</span> <span class="n">userData</span> <span class="nv">user_data</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">,</span> <span class="nv">notify</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">GLib</span><span class="o">.</span><span class="kt">DestroyNotify</span><span class="p">,</span> <span class="n">ioPriority</span> <span class="nv">io_priority</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">cancellable</span><span class="p">:</span> <span class="kt"><a href="Protocols/CancellableProtocol.html">CancellableProtocol</a></span><span class="p">)</span></code></pre>
 
                         </div>
@@ -10719,7 +10719,7 @@ characters in your path names or &lsquo;=&rsquo; in your key names you may be in
 trouble.</p>
 
 <p>The backend reads default values from a keyfile called <code>defaults</code> in
-the directory specified by the <code>GKeyfileSettingsBackend</code>:defaults-dir property,
+the directory specified by the <code>GKeyfileSettingsBackend:defaults</code>-dir property,
 and a list of locked keys from a text file with the name <code>locks</code> in
 the same location.</p>
 
@@ -10733,7 +10733,7 @@ the same location.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1408-L1411">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1406-L1409">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -10767,7 +10767,7 @@ the memory backend will start out with the default values again.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1421-L1424">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1419-L1422">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -10797,7 +10797,7 @@ the memory backend will start out with the default values again.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1430-L1433">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1428-L1431">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -10816,7 +10816,7 @@ the memory backend will start out with the default values again.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Initializes the platform networking libraries (eg, on Windows, this
-calls WSAStartup()). GLib will call this itself if it is needed, so
+calls <code>WSAStartup()</code>). GLib will call this itself if it is needed, so
 you only need to call it if you directly call system networking
 functions (without calling any GLib networking functions first).</p>
 
@@ -10830,7 +10830,7 @@ functions (without calling any GLib networking functions first).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1442-L1445">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1440-L1443">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -10863,7 +10863,7 @@ will always have their default values.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1454-L1457">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1452-L1455">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -10884,7 +10884,7 @@ will always have their default values.</p>
                         <p>Utility method for <code>GPollableInputStream</code> and <code>GPollableOutputStream</code>
 implementations. Creates a new <code>GSource</code> that expects a callback of
 type <code>GPollableSourceFunc</code>. The new source does not actually do
-anything on its own; use g_source_add_child_source() to add other
+anything on its own; use <code>g_source_add_child_source()</code> to add other
 sources to it to cause it to trigger.</p>
 
                       </div>
@@ -10897,7 +10897,7 @@ sources to it to cause it to trigger.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1467-L1470">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1465-L1468">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -10917,7 +10917,7 @@ sources to it to cause it to trigger.</p>
                       <div class="abstract">
                         <p>Utility method for <code>GPollableInputStream</code> and <code>GPollableOutputStream</code>
 implementations. Creates a new <code>GSource</code>, as with
-g_pollable_source_new(), but also attaching <code>child_source</code> (with a
+<code>g_pollable_source_new()</code>, but also attaching <code>child_source</code> (with a
 dummy callback), and <code>cancellable</code>, if they are non-<code>nil</code>.</p>
 
                       </div>
@@ -10930,7 +10930,7 @@ dummy callback), and <code>cancellable</code>, if they are non-<code>nil</code>.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1479-L1482">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1477-L1480">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -10948,15 +10948,15 @@ dummy callback), and <code>cancellable</code>, if they are non-<code>nil</code>.
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Tries to read from <code>stream</code>, as with g_input_stream_read() (if
-<code>blocking</code> is <code>true</code>) or g_pollable_input_stream_read_nonblocking()
+                        <p>Tries to read from <code>stream</code>, as with <code>g_input_stream_read()</code> (if
+<code>blocking</code> is <code>true</code>) or <code>g_pollable_input_stream_read_nonblocking()</code>
 (if <code>blocking</code> is <code>false</code>). This can be used to more easily share
 code between blocking and non-blocking implementations of a method.</p>
 
 <p>If <code>blocking</code> is <code>false</code>, then <code>stream</code> must be a
-<code>GPollableInputStream</code> for which g_pollable_input_stream_can_poll()
+<code>GPollableInputStream</code> for which <code>g_pollable_input_stream_can_poll()</code>
 returns <code>true</code>, or else the behavior is undefined. If <code>blocking</code> is
-<code>true</code>, then <code>stream</code> does not need to be a <code>GPollableInputStream</code>.</p>
+<code>true</code>, then <code>stream</code> does not need to be a <code>GPollableInputStream.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -10968,7 +10968,7 @@ returns <code>true</code>, or else the behavior is undefined. If <code>blocking<
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1496-L1503">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1494-L1501">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -10986,16 +10986,16 @@ returns <code>true</code>, or else the behavior is undefined. If <code>blocking<
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Tries to write to <code>stream</code>, as with g_output_stream_write() (if
-<code>blocking</code> is <code>true</code>) or g_pollable_output_stream_write_nonblocking()
+                        <p>Tries to write to <code>stream</code>, as with <code>g_output_stream_write()</code> (if
+<code>blocking</code> is <code>true</code>) or <code>g_pollable_output_stream_write_nonblocking()</code>
 (if <code>blocking</code> is <code>false</code>). This can be used to more easily share
 code between blocking and non-blocking implementations of a method.</p>
 
 <p>If <code>blocking</code> is <code>false</code>, then <code>stream</code> must be a
 <code>GPollableOutputStream</code> for which
-g_pollable_output_stream_can_poll() returns <code>true</code> or else the
+<code>g_pollable_output_stream_can_poll()</code> returns <code>true</code> or else the
 behavior is undefined. If <code>blocking</code> is <code>true</code>, then <code>stream</code> does not
-need to be a <code>GPollableOutputStream</code>.</p>
+need to be a <code>GPollableOutputStream.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -11007,7 +11007,7 @@ need to be a <code>GPollableOutputStream</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1518-L1525">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1516-L1523">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11026,8 +11026,8 @@ need to be a <code>GPollableOutputStream</code>.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Tries to write <code>count</code> bytes to <code>stream</code>, as with
-g_output_stream_write_all(), but using g_pollable_stream_write()
-rather than g_output_stream_write().</p>
+<code>g_output_stream_write_all()</code>, but using <code>g_pollable_stream_write()</code>
+rather than <code>g_output_stream_write()</code>.</p>
 
 <p>On a successful write of <code>count</code> bytes, <code>true</code> is returned, and
 <code>bytes_written</code> is set to <code>count</code>.</p>
@@ -11038,11 +11038,11 @@ returned and <code>error</code> is set to indicate the error status,
 <code>bytes_written</code> is updated to contain the number of bytes written
 into the stream before the error occurred.</p>
 
-<p>As with g_pollable_stream_write(), if <code>blocking</code> is <code>false</code>, then
+<p>As with <code>g_pollable_stream_write()</code>, if <code>blocking</code> is <code>false</code>, then
 <code>stream</code> must be a <code>GPollableOutputStream</code> for which
-g_pollable_output_stream_can_poll() returns <code>true</code> or else the
+<code>g_pollable_output_stream_can_poll()</code> returns <code>true</code> or else the
 behavior is undefined. If <code>blocking</code> is <code>true</code>, then <code>stream</code> does not
-need to be a <code>GPollableOutputStream</code>.</p>
+need to be a <code>GPollableOutputStream.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -11054,7 +11054,7 @@ need to be a <code>GPollableOutputStream</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1548-L1555">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1546-L1553">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11085,7 +11085,7 @@ the specified protocol.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1562-L1565">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1560-L1563">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11115,7 +11115,7 @@ the specified protocol.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1571-L1574">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1569-L1572">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11145,7 +11145,7 @@ the specified protocol.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1580-L1583">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1578-L1581">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11175,7 +11175,7 @@ the specified protocol.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1589-L1592">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1587-L1590">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11197,11 +11197,11 @@ the specified protocol.</p>
 you to query it for data.</p>
 
 <p>If you want to use this resource in the global resource namespace you need
-to register it with g_resources_register().</p>
+to register it with <code>g_resources_register()</code>.</p>
 
 <p>If <code>filename</code> is empty or the data in it is corrupt,
 <code>G_RESOURCE_ERROR_INTERNAL</code> will be returned. If <code>filename</code> doesn’t exist, or
-there is an error in reading it, an error from g_mapped_file_new() will be
+there is an error in reading it, an error from <code>g_mapped_file_new()</code> will be
 returned.</p>
 
                       </div>
@@ -11214,7 +11214,7 @@ returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1607-L1614">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1605-L1612">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11235,7 +11235,7 @@ returned.</p>
                         <p>Returns all the names of children at the specified <code>path</code> in the set of
 globally registered resources.
 The return result is a <code>nil</code> terminated list of strings which should
-be released with g_strfreev().</p>
+be released with <code>g_strfreev()</code>.</p>
 
 <p><code>lookup_flags</code> controls the behaviour of the lookup.</p>
 
@@ -11249,7 +11249,7 @@ be released with g_strfreev().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1625-L1632">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1623-L1630">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11282,7 +11282,7 @@ globally registered resources and if found returns information about it.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1641-L1648">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1639-L1646">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11325,7 +11325,7 @@ the heap and automatically uncompress the data.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1667-L1674">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1665-L1672">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11359,7 +11359,7 @@ that lets you read the data.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1684-L1691">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1682-L1689">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11379,7 +11379,7 @@ that lets you read the data.</p>
                       <div class="abstract">
                         <p>Registers the resource with the process-global set of resources.
 Once a resource is registered the files in it can be accessed
-with the global resource lookup functions like g_resources_lookup_data().</p>
+with the global resource lookup functions like <code>g_resources_lookup_data()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -11391,7 +11391,7 @@ with the global resource lookup functions like g_resources_lookup_data().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1699-L1702">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1697-L1700">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11421,7 +11421,7 @@ with the global resource lookup functions like g_resources_lookup_data().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1708-L1711">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1706-L1709">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11463,7 +11463,7 @@ recursively.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1729-L1732">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1727-L1730">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11482,7 +11482,7 @@ recursively.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Reports an error in an idle function. Similar to
-g_simple_async_report_error_in_idle(), but takes a <code>GError</code> rather
+<code>g_simple_async_report_error_in_idle()</code>, but takes a <code>GError</code> rather
 than building a new one.</p>
 
 <p><strong>simple_async_report_gerror_in_idle is deprecated:</strong>
@@ -11493,13 +11493,13 @@ Use g_task_report_error().</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">simpleAsyncReportGerrorInIdle</span><span class="p">(</span><span class="nv">object</span><span class="p">:</span> <span class="kt">ObjectProtocol</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="Typealiases.html#/s:3GIO18AsyncReadyCallbacka">AsyncReadyCallback</a></span><span class="p">,</span> <span class="n">userData</span> <span class="nv">user_data</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">ErrorTypeProtocol</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1750-L1753">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1748-L1751">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11518,7 +11518,7 @@ Use g_task_report_error().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Reports an error in an idle function. Similar to
-g_simple_async_report_gerror_in_idle(), but takes over the caller&rsquo;s
+<code>g_simple_async_report_gerror_in_idle()</code>, but takes over the caller&rsquo;s
 ownership of <code>error</code>, so the caller does not have to free it any more.</p>
 
 <p><strong>simple_async_report_take_gerror_in_idle is deprecated:</strong>
@@ -11529,13 +11529,13 @@ Use g_task_report_error().</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">simpleAsyncReportTakeGerrorInIdle</span><span class="p">(</span><span class="nv">object</span><span class="p">:</span> <span class="kt">ObjectProtocol</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="Typealiases.html#/s:3GIO18AsyncReadyCallbacka">AsyncReadyCallback</a></span><span class="p">,</span> <span class="n">userData</span> <span class="nv">user_data</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">ErrorTypeProtocol</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1764-L1767">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1762-L1765">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11565,7 +11565,7 @@ Use g_task_report_error().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1773-L1776">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1771-L1774">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11595,7 +11595,7 @@ Use g_task_report_error().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1782-L1785">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1780-L1783">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11617,7 +11617,7 @@ Use g_task_report_error().</p>
 must have pollable input and output streams) which is assumed to
 communicate with the server identified by <code>server_identity</code>.</p>
 
-<p>See the documentation for <code>GTlsConnection</code>:base-io-stream for restrictions
+<p>See the documentation for <code>GTlsConnection:base</code>-io-stream for restrictions
 on when application code can run operations on the <code>base_io_stream</code> after
 this function has returned.</p>
 
@@ -11631,7 +11631,7 @@ this function has returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1797-L1804">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1795-L1802">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11661,7 +11661,7 @@ this function has returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1810-L1813">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1808-L1811">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11694,7 +11694,7 @@ in <code>anchors</code> to verify certificate chains.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1822-L1829">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1820-L1827">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11715,7 +11715,7 @@ in <code>anchors</code> to verify certificate chains.</p>
                         <p>Creates a new <code>GTlsServerConnection</code> wrapping <code>base_io_stream</code> (which
 must have pollable input and output streams).</p>
 
-<p>See the documentation for <code>GTlsConnection</code>:base-io-stream for restrictions
+<p>See the documentation for <code>GTlsConnection:base</code>-io-stream for restrictions
 on when application code can run operations on the <code>base_io_stream</code> after
 this function has returned.</p>
 
@@ -11729,7 +11729,7 @@ this function has returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1840-L1847">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1838-L1845">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11762,7 +11762,7 @@ casual user.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1856-L1859">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1854-L1857">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11798,7 +11798,7 @@ appear in a GUI. For example, the Linux <code>/proc</code> filesystem.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1871-L1874">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1869-L1872">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11834,7 +11834,7 @@ appear in a GUI. For example, the Linux <code>/proc</code> filesystem.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1886-L1889">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1884-L1887">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11854,7 +11854,7 @@ appear in a GUI. For example, the Linux <code>/proc</code> filesystem.</p>
                       <div class="abstract">
                         <p>Gets a <code>GUnixMountEntry</code> for a given mount path. If <code>time_read</code>
 is set, it will be filled with a unix timestamp for checking
-if the mounts have changed since with g_unix_mounts_changed_since().</p>
+if the mounts have changed since with <code>g_unix_mounts_changed_since()</code>.</p>
 
 <p>If more mounts have the same mount path, the last matching mount
 is returned.</p>
@@ -11869,7 +11869,7 @@ is returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1900-L1903">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1898-L1901">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11899,7 +11899,7 @@ is returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1909-L1912">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1907-L1910">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11917,7 +11917,7 @@ is returned.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Makes a copy of <code>mount_entry</code>.</p>
+                        <p>Makes a copy of <code>mount_entry.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -11929,7 +11929,7 @@ is returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1918-L1921">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1916-L1919">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11949,7 +11949,7 @@ is returned.</p>
                       <div class="abstract">
                         <p>Gets a <code>GUnixMountEntry</code> for a given file path. If <code>time_read</code>
 is set, it will be filled with a unix timestamp for checking
-if the mounts have changed since with g_unix_mounts_changed_since().</p>
+if the mounts have changed since with <code>g_unix_mounts_changed_since()</code>.</p>
 
 <p>If more mounts have the same mount path, the last matching mount
 is returned.</p>
@@ -11964,7 +11964,7 @@ is returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1932-L1935">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1930-L1933">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -11994,7 +11994,7 @@ is returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1941-L1944">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1939-L1942">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -12024,7 +12024,7 @@ is returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1950-L1953">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1948-L1951">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -12054,7 +12054,7 @@ is returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1959-L1962">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1957-L1960">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -12084,7 +12084,7 @@ is returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1968-L1971">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1966-L1969">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -12105,7 +12105,7 @@ is returned.</p>
                         <p>Gets a comma-separated list of mount options for the unix mount. For example,
 <code>rw,relatime,seclabel,data=ordered</code>.</p>
 
-<p>This is similar to g_unix_mount_point_get_options(), but it takes
+<p>This is similar to <code>g_unix_mount_point_get_options()</code>, but it takes
 a <code>GUnixMountEntry</code> as an argument.</p>
 
                       </div>
@@ -12118,7 +12118,7 @@ a <code>GUnixMountEntry</code> as an argument.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1981-L1984">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1979-L1982">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -12153,7 +12153,7 @@ mounts created by bind operation, or btrfs subvolumes.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1995-L1998">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L1993-L1996">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -12183,7 +12183,7 @@ mounts created by bind operation, or btrfs subvolumes.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L2004-L2007">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L2002-L2005">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -12213,7 +12213,7 @@ mounts created by bind operation, or btrfs subvolumes.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L2013-L2016">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L2011-L2014">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -12244,7 +12244,7 @@ The result is a translated string.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L2023-L2026">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L2021-L2024">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -12274,7 +12274,7 @@ The result is a translated string.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L2032-L2035">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L2030-L2033">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -12304,7 +12304,7 @@ The result is a translated string.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L2041-L2044">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L2039-L2042">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -12334,7 +12334,7 @@ The result is a translated string.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L2050-L2053">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L2048-L2051">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -12353,8 +12353,8 @@ The result is a translated string.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Checks if a Unix mount is a system mount. This is the Boolean OR of
-g_unix_is_system_fs_type(), g_unix_is_system_device_path() and
-g_unix_is_mount_path_system_internal() on <code>mount_entry</code>’s properties.</p>
+<code>g_unix_is_system_fs_type()</code>, <code>g_unix_is_system_device_path()</code> and
+<code>g_unix_is_mount_path_system_internal()</code> on <code>mount_entry</code>’s properties.</p>
 
 <p>The definition of what a ‘system’ mount entry is may change over time as new
 file system types and device paths are ignored.</p>
@@ -12369,7 +12369,7 @@ file system types and device paths are ignored.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L2064-L2067">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L2062-L2065">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -12399,7 +12399,7 @@ file system types and device paths are ignored.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L2073-L2076">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L2071-L2074">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -12420,7 +12420,7 @@ file system types and device paths are ignored.</p>
                         <p>Gets a <code>GList</code> of <code>GUnixMountPoint</code> containing the unix mount points.
 If <code>time_read</code> is set, it will be filled with the mount timestamp,
 allowing for checking if the mounts have changed with
-g_unix_mount_points_changed_since().</p>
+<code>g_unix_mount_points_changed_since()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -12432,7 +12432,7 @@ g_unix_mount_points_changed_since().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L2085-L2088">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L2083-L2086">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -12462,7 +12462,7 @@ g_unix_mount_points_changed_since().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L2094-L2097">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L2092-L2095">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -12483,7 +12483,7 @@ g_unix_mount_points_changed_since().</p>
                         <p>Gets a <code>GList</code> of <code>GUnixMountEntry</code> containing the unix mounts.
 If <code>time_read</code> is set, it will be filled with the mount
 timestamp, allowing for checking if the mounts have changed
-with g_unix_mounts_changed_since().</p>
+with <code>g_unix_mounts_changed_since()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -12495,7 +12495,7 @@ with g_unix_mounts_changed_since().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L2106-L2109">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-functions.swift#L2104-L2107">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -12508,7 +12508,7 @@ with g_unix_mounts_changed_since().</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

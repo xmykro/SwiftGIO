@@ -7503,22 +7503,22 @@ from where the operation was initiated. It will be passed a
 <code>GAsyncResult</code> instance filled with the details of the operation&rsquo;s
 success or failure, the object the asynchronous function was
 started for and any error codes returned. The asynchronous callback
-function is then expected to call the corresponding <q>_finish()</q>
+function is then expected to call the corresponding <code>&quot;_finish()</code>&ldquo;
 function, passing the object the function was called for, the
 <code>GAsyncResult</code> instance, and (optionally) an <code>error</code> to grab any
 error conditions that may have occurred.</p>
 
-<p>The <q>_finish()</q> function for an operation takes the generic result
-(of type <code>GAsyncResult</code>) and returns the specific result that the
-operation in question yields (e.g. a <code>GFileEnumerator</code> for a
-<q>enumerate children</q> operation). If the result or error status of the
-operation is not needed, there is no need to call the <q>_finish()</q>
+<p>The <code>&quot;_finish()</code><q>function for an operation takes the generic result
+(of type `GAsyncResult`) and returns the specific result that the
+operation in question yields (e.g. a `GFileEnumerator` for a
+</q>enumerate children<q>operation). If the result or error status of the
+operation is not needed, there is no need to call the `</q>_finish()<code>&quot;
 function; GIO will take care of cleaning up the result and error
-information after the <code>GAsyncReadyCallback</code> returns. You can pass
-<code>nil</code> for the <code>GAsyncReadyCallback</code> if you don&rsquo;t need to take any
+information after the</code>GAsyncReadyCallback<code>returns. You can pass
+</code>nil<code>for the</code>GAsyncReadyCallback<code>if you don&#39;t need to take any
 action at all after the operation completes. Applications may also
-take a reference to the <code>GAsyncResult</code> and call <q>_finish()</q> later;
-however, the <q>_finish()</q> function may be called at most once.</p>
+take a reference to the</code>GAsyncResult<code>and call</code><q>_finish()`</q> later;
+however, the <code>&quot;_finish()</code>&rdquo; function may be called at most once.</p>
 
 <p>Example of a typical asynchronous operation flow:
 (C Language Example):</p>
@@ -7566,7 +7566,7 @@ int main (int argc, void *argv[])
 always called, even in the case of a cancelled operation. On cancellation
 the result is a <code>G_IO_ERROR_CANCELLED</code> error.</p>
 
-<p>`<code>I/O Priority</code> {<code>io</code>-priority}</p>
+<p>&ldquo;<code>I/O Priority</code> {<code>io</code>-priority}</p>
 
 <p>Many I/O-related asynchronous operations have a priority parameter,
 which is used in certain cases to determine the order in which
@@ -7608,7 +7608,7 @@ as a default.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2582">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2578">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7646,7 +7646,7 @@ as a default.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2585">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2581">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7678,7 +7678,7 @@ as a default.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the source object from a <code>GAsyncResult</code>.</p>
+                        <p>Gets the source object from a <code>GAsyncResult.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7690,7 +7690,7 @@ as a default.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2877-L2880">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2871-L2874">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7711,7 +7711,7 @@ as a default.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the user data from a <code>GAsyncResult</code>.</p>
+                        <p>Gets the user data from a <code>GAsyncResult.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7723,7 +7723,7 @@ as a default.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2883-L2886">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2877-L2880">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7757,7 +7757,7 @@ pointer indicating the function <code>res</code> was created by).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2890-L2893">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2884-L2887">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7779,10 +7779,10 @@ pointer indicating the function <code>res</code> was created by).</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>If <code>res</code> is a <code>GSimpleAsyncResult</code>, this is equivalent to
-g_simple_async_result_propagate_error(). Otherwise it returns
+<code>g_simple_async_result_propagate_error()</code>. Otherwise it returns
 <code>false</code>.</p>
 
-<p>This can be used for legacy error handling in async *_finish()
+<p>This can be used for legacy error handling in async <code>*_finish()</code>
 wrapper functions that traditionally handled <code>GSimpleAsyncResult</code>
 error returns themselves rather than calling into the virtual method.
 This should not be used in new code; <code>GAsyncResult</code> errors that are
@@ -7799,7 +7799,7 @@ to enable subclasses to chain up correctly.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2905-L2912">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2899-L2906">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7832,7 +7832,7 @@ to enable subclasses to chain up correctly.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2915-L2922">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2909-L2916">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7853,16 +7853,16 @@ to enable subclasses to chain up correctly.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes an operation started with g_bus_get().</p>
+                        <p>Finishes an operation started with <code>g_bus_get()</code>.</p>
 
 <p>The returned object is a singleton, that is, shared with other
-callers of g_bus_get() and g_bus_get_sync() for <code>bus_type</code>. In the
+callers of <code>g_bus_get()</code> and <code>g_bus_get_sync()</code> for <code>bus_type</code>. In the
 event that you need a private message bus connection, use
-g_dbus_address_get_for_bus_sync() and
-g_dbus_connection_new_for_address().</p>
+<code>g_dbus_address_get_for_bus_sync()</code> and
+<code>g_dbus_connection_new_for_address()</code>.</p>
 
 <p>Note that the returned <code>GDBusConnection</code> object will (usually) have
-the <code>GDBusConnection</code>:exit-on-close property set to <code>true</code>.</p>
+the <code>GDBusConnection:exit</code>-on-close property set to <code>true</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7874,7 +7874,7 @@ the <code>GDBusConnection</code>:exit-on-close property set to <code>true</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2934-L2941">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2928-L2935">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7895,7 +7895,7 @@ the <code>GDBusConnection</code>:exit-on-close property set to <code>true</code>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes an operation started with g_dbus_address_get_stream().</p>
+                        <p>Finishes an operation started with <code>g_dbus_address_get_stream()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7907,7 +7907,7 @@ the <code>GDBusConnection</code>:exit-on-close property set to <code>true</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2944-L2951">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2938-L2945">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7928,7 +7928,7 @@ the <code>GDBusConnection</code>:exit-on-close property set to <code>true</code>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the source object from a <code>GAsyncResult</code>.</p>
+                        <p>Gets the source object from a <code>GAsyncResult.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7940,7 +7940,7 @@ the <code>GDBusConnection</code>:exit-on-close property set to <code>true</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2953-L2959">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2947-L2953">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7961,7 +7961,7 @@ the <code>GDBusConnection</code>:exit-on-close property set to <code>true</code>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the user data from a <code>GAsyncResult</code>.</p>
+                        <p>Gets the user data from a <code>GAsyncResult.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7973,7 +7973,7 @@ the <code>GDBusConnection</code>:exit-on-close property set to <code>true</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2962-L2968">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2956-L2962">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7986,7 +7986,7 @@ the <code>GDBusConnection</code>:exit-on-close property set to <code>true</code>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

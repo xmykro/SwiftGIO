@@ -7531,7 +7531,7 @@ guaranteed to never be <code>nil</code> (either may be empty though).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6464">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6447">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7561,7 +7561,7 @@ guaranteed to never be <code>nil</code> (either may be empty though).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6466">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6449">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7580,20 +7580,20 @@ guaranteed to never be <code>nil</code> (either may be empty though).</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The notify signal is emitted on an object when one of its properties has
-its value set through g_object_set_property(), g_object_set(), et al.</p>
+its value set through <code>g_object_set_property()</code>, <code>g_object_set()</code>, et al.</p>
 
 <p>Note that getting this signal doesn’t itself guarantee that the value of
 the property has actually changed. When it is emitted is determined by the
 derived GObject class. If the implementor did not create the property with
-<code>G_PARAM_EXPLICIT_NOTIFY</code>, then any call to g_object_set_property() results
-in ::notify being emitted, even if the new value is the same as the old.
+<code>G_PARAM_EXPLICIT_NOTIFY</code>, then any call to <code>g_object_set_property()</code> results
+in <code>notify</code> being emitted, even if the new value is the same as the old.
 If they did pass <code>G_PARAM_EXPLICIT_NOTIFY</code>, then this signal is emitted only
-when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+when they explicitly call <code>g_object_notify()</code> or <code>g_object_notify_by_pspec()</code>,
 and common practice is to do that only when the value has actually changed.</p>
 
 <p>This signal is typically used to obtain change notification for a
 single property, by specifying the property name as a detail in the
-g_signal_connect() call, like this:
+<code>g_signal_connect()</code> call, like this:
 (C Language Example):</p>
 <pre class="highlight plaintext"><code>g_signal_connect (text_view-&gt;buffer, "notify::paste-target-list",
                   G_CALLBACK (gtk_text_view_target_list_notify),
@@ -7614,7 +7614,7 @@ detail strings for the notify signal.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6492">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6474">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7633,8 +7633,8 @@ detail strings for the notify signal.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>If this property is not <code>G_BUS_TYPE_NONE</code>, then
-<code>GDBusProxy</code>:g-connection must be <code>nil</code> and will be set to the
-<code>GDBusConnection</code> obtained by calling g_bus_get() with the value
+<code>GDBusProxy:g</code>-connection must be <code>nil</code> and will be set to the
+<code>GDBusConnection</code> obtained by calling <code>g_bus_get()</code> with the value
 of this property.</p>
 
                       </div>
@@ -7647,7 +7647,7 @@ of this property.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6497">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6479">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7677,7 +7677,7 @@ of this property.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6499">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6481">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7696,8 +7696,8 @@ of this property.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The timeout to use if -1 (specifying default timeout) is passed
-as <code>timeout_msec</code> in the g_dbus_proxy_call() and
-g_dbus_proxy_call_sync() functions.</p>
+as <code>timeout_msec</code> in the <code>g_dbus_proxy_call()</code> and
+<code>g_dbus_proxy_call_sync()</code> functions.</p>
 
 <p>This allows applications to set a proxy-wide timeout for all
 remote method invocations on the proxy. If this property is -1,
@@ -7714,7 +7714,7 @@ the default timeout (typically 25 seconds) is used. If set to
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6508">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6490">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7744,7 +7744,7 @@ the default timeout (typically 25 seconds) is used. If set to
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6510">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6492">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7774,13 +7774,13 @@ said to be the <q>expected interface</q>.</p>
 the reply message isn&rsquo;t what&rsquo;s expected, the reply is
 discarded and the <code>GError</code> is set to <code>G_IO_ERROR_INVALID_ARGUMENT</code>.</p></li>
 <li><p>Received signals that have a type signature mismatch are dropped and
-a warning is logged via g_warning().</p></li>
+a warning is logged via <code>g_warning()</code>.</p></li>
 <li><p>Properties received via the initial <code>GetAll()</code> call or via the
-<code>::PropertiesChanged</code> signal (on the
+<code>PropertiesChanged</code> signal (on the
 <a href="http://dbus.freedesktop.org/doc/dbus-specification.html%60standard%60-interfaces-properties">org.freedesktop.DBus.Properties</a>
-interface) or set using g_dbus_proxy_set_cached_property()
+interface) or set using <code>g_dbus_proxy_set_cached_property()</code>
 with a type signature mismatch are ignored and a warning is
-logged via g_warning().</p></li>
+logged via <code>g_warning()</code>.</p></li>
 </ul>
 
 <p>Note that these checks are never done on methods, signals and
@@ -7798,7 +7798,7 @@ service-side is not considered an ABI break.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6535">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6517">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7828,7 +7828,7 @@ service-side is not considered an ABI break.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6537">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6519">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7858,7 +7858,7 @@ service-side is not considered an ABI break.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6539">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6521">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7876,8 +7876,8 @@ service-side is not considered an ABI break.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The unique name that owns <code>GDBusProxy</code>:g-name or <code>nil</code> if no-one
-currently owns that name. You may connect to <code>GObject</code>::notify signal to
+                        <p>The unique name that owns <code>GDBusProxy:g</code>-name or <code>nil</code> if no-one
+currently owns that name. You may connect to <code>GObject::notify</code> signal to
 track changes to this property.</p>
 
                       </div>
@@ -7890,7 +7890,7 @@ track changes to this property.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6543">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6525">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7920,7 +7920,7 @@ track changes to this property.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6545">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6527">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7933,7 +7933,7 @@ track changes to this property.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

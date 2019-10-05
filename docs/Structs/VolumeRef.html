@@ -7496,7 +7496,7 @@ equivalent of <code>GnomeVFSDrive</code>.</p>
 
 <p>Mounting a <code>GVolume</code> instance is an asynchronous operation. For more
 information about asynchronous operations, see <code>GAsyncResult</code> and
-<code>GTask</code>. To mount a <code>GVolume</code>, first call g_volume_mount() with (at
+<code>GTask</code>. To mount a <code>GVolume</code>, first call <code>g_volume_mount()</code> with (at
 least) the <code>GVolume</code> instance, optionally a <code>GMountOperation</code> object
 and a <code>GAsyncReadyCallback</code>.</p>
 
@@ -7508,12 +7508,12 @@ for credentials.</p>
 <p>The callback will be fired when the operation has resolved (either
 with success or failure), and a <code>GAsyncResult</code> instance will be
 passed to the callback.  That callback should then call
-g_volume_mount_finish() with the <code>GVolume</code> instance and the
+<code>g_volume_mount_finish()</code> with the <code>GVolume</code> instance and the
 <code>GAsyncResult</code> data to see if the operation was completed
-successfully.  If an <code>error</code> is present when g_volume_mount_finish()
+successfully.  If an <code>error</code> is present when <code>g_volume_mount_finish()</code>
 is called, then it will be filled with any error information.</p>
 
-<p>`<code>Volume Identifiers</code> {<code>volume</code>-identifier}</p>
+<p>&ldquo;<code>Volume Identifiers</code> {<code>volume</code>-identifier}</p>
 
 <p>It is sometimes necessary to directly access the underlying
 operating system object behind a volume (e.g. for passing a volume
@@ -7523,13 +7523,13 @@ different kinds of identifiers, such as Hal UDIs, filesystem labels,
 traditional Unix devices (e.g. <code>/dev/sda2</code>), UUIDs. GIO uses predefined
 strings as names for the different kinds of identifiers:
 <code>G_VOLUME_IDENTIFIER_KIND_UUID</code>, <code>G_VOLUME_IDENTIFIER_KIND_LABEL</code>, etc.
-Use g_volume_get_identifier() to obtain an identifier for a volume.</p>
+Use <code>g_volume_get_identifier()</code> to obtain an identifier for a volume.</p>
 
 <p>Note that <code>G_VOLUME_IDENTIFIER_KIND_HAL_UDI</code> will only be available
 when the gvfs hal volume monitor is in use. Other volume monitors
 will generally be able to provide the <code>G_VOLUME_IDENTIFIER_KIND_UNIX_DEVICE</code>
 identifier, which can be used to obtain a hal device by means of
-libhal_manager_find_device_string_match().</p>
+<code>libhal_manager_find_device_string_match()</code>.</p>
 
           </div>
         </section>
@@ -7564,7 +7564,7 @@ For type-safe access, use the generated, typed pointer <code>volume_ptr</code> p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1336">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1333">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7605,7 +7605,7 @@ For type-safe access, use the generated, typed pointer <code>volume_ptr</code> p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1341-L1342">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1338-L1339">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7635,7 +7635,7 @@ For type-safe access, use the generated, typed pointer <code>volume_ptr</code> p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1345-L1347">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1342-L1344">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7666,7 +7666,7 @@ For type-safe access, use the generated, typed pointer <code>volume_ptr</code> p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1351-L1353">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1348-L1350">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7697,7 +7697,7 @@ For type-safe access, use the generated, typed pointer <code>volume_ptr</code> p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1357-L1359">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1354-L1356">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7728,7 +7728,7 @@ For type-safe access, use the generated, typed pointer <code>volume_ptr</code> p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1363-L1365">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1360-L1362">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7759,7 +7759,7 @@ For type-safe access, use the generated, typed pointer <code>volume_ptr</code> p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1369-L1371">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1366-L1368">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7790,7 +7790,7 @@ For type-safe access, use the generated, typed pointer <code>volume_ptr</code> p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1375-L1377">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L1372-L1374">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7803,7 +7803,7 @@ For type-safe access, use the generated, typed pointer <code>volume_ptr</code> p
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

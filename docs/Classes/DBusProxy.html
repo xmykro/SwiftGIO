@@ -7502,7 +7502,7 @@ well-known name, the property cache is flushed when the name owner
 vanishes and reloaded when a name owner appears.</p>
 
 <p>The unique name owner of the proxy&rsquo;s name is tracked and can be read from
-<code>GDBusProxy</code>:g-name-owner. Connect to the <code>GObject</code>::notify signal to
+<code>GDBusProxy:g</code>-name-owner. Connect to the <code>GObject::notify</code> signal to
 get notified of changes. Additionally, only signals and property
 changes emitted from the current name owner are considered and
 calls are always sent to the current name owner. This avoids a
@@ -7512,16 +7512,16 @@ then calls will be sent to the well-known name which may result in
 the message bus launching an owner (unless
 <code>G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START</code> is set).</p>
 
-<p>The generic <code>GDBusProxy</code>::g-properties-changed and
-<code>GDBusProxy</code>::g-signal signals are not very convenient to work with.
+<p>The generic <code>GDBusProxy::g</code>-properties-changed and
+<code>GDBusProxy::g</code>-signal signals are not very convenient to work with.
 Therefore, the recommended way of working with proxies is to subclass
 <code>GDBusProxy</code>, and have more natural properties and signals in your derived
 class. This [example][gdbus-example-gdbus-codegen] shows how this can
 easily be done using the [gdbus-codegen][gdbus-codegen] tool.</p>
 
 <p>A <code>GDBusProxy</code> instance can be used from multiple threads but note
-that all signals (e.g. <code>GDBusProxy</code>::g-signal, <code>GDBusProxy</code>::g-properties-changed
-and <code>GObject</code>::notify) are emitted in the
+that all signals (e.g. <code>GDBusProxy::g</code>-signal, <code>GDBusProxy::g</code>-properties-changed
+and <code>GObject::notify</code>) are emitted in the
 [thread-default main context][g-main-context-push-thread-default]
 of the thread where the instance was constructed.</p>
 
@@ -7561,7 +7561,7 @@ Ownership is transferred to the <code>DBusProxy</code> instance.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6196-L6198">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6179-L6181">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7587,12 +7587,12 @@ Will retain <code>GDBusProxy</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DBusProxyProtocol.html">DBusProxyProtocol</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DBusProxyProtocol.html">DBusProxyProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6202-L6205">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6185-L6188">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7618,12 +7618,12 @@ Will retain <code>GDBusProxy</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6209-L6211">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6192-L6194">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7649,12 +7649,12 @@ Will retain <code>GDBusProxy</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6215-L6217">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6198-L6200">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7680,12 +7680,12 @@ Will retain <code>GDBusProxy</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6221-L6223">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6204-L6206">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7711,12 +7711,12 @@ Will retain <code>GDBusProxy</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6227-L6229">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6210-L6212">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7734,19 +7734,19 @@ Will retain <code>GDBusProxy</code>.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes creating a <code>GDBusProxy</code>.</p>
+                        <p>Finishes creating a <code>GDBusProxy.</code></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="n">finish</span> <span class="nv">res</span><span class="p">:</span> <span class="kt"><a href="../Protocols/AsyncResultProtocol.html">AsyncResultProtocol</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="n">finish</span> <span class="nv">res</span><span class="p">:</span> <span class="kt"><a href="../Protocols/AsyncResultProtocol.html">AsyncResultProtocol</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6232-L6239">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6215-L6222">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7764,19 +7764,19 @@ Will retain <code>GDBusProxy</code>.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes creating a <code>GDBusProxy</code>.</p>
+                        <p>Finishes creating a <code>GDBusProxy.</code></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="n">busFinish</span> <span class="nv">res</span><span class="p">:</span> <span class="kt"><a href="../Protocols/AsyncResultProtocol.html">AsyncResultProtocol</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="n">busFinish</span> <span class="nv">res</span><span class="p">:</span> <span class="kt"><a href="../Protocols/AsyncResultProtocol.html">AsyncResultProtocol</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6242-L6249">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6225-L6232">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7794,7 +7794,7 @@ Will retain <code>GDBusProxy</code>.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Like g_dbus_proxy_new_sync() but takes a <code>GBusType</code> instead of a <code>GDBusConnection</code>.</p>
+                        <p>Like <code>g_dbus_proxy_new_sync()</code> but takes a <code>GBusType</code> instead of a <code>GDBusConnection</code>.</p>
 
 <p><code>GDBusProxy</code> is used in this [example][gdbus-wellknown-proxy].</p>
 
@@ -7803,12 +7803,12 @@ Will retain <code>GDBusProxy</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="n">busSync</span> <span class="nv">bus_type</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO7BusTypea">BusType</a></span><span class="p">,</span> <span class="nv">flags</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO14DBusProxyFlagsa">DBusProxyFlags</a></span><span class="p">,</span> <span class="nv">info</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DBusInterfaceInfoProtocol.html">DBusInterfaceInfoProtocol</a></span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">objectPath</span> <span class="nv">object_path</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">interfaceName</span> <span class="nv">interface_name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">cancellable</span><span class="p">:</span> <span class="kt"><a href="../Protocols/CancellableProtocol.html">CancellableProtocol</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="n">busSync</span> <span class="nv">bus_type</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO7BusTypea">BusType</a></span><span class="p">,</span> <span class="nv">flags</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO14DBusProxyFlagsa">DBusProxyFlags</a></span><span class="p">,</span> <span class="nv">info</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DBusInterfaceInfoProtocol.html">DBusInterfaceInfoProtocol</a></span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">objectPath</span> <span class="nv">object_path</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">interfaceName</span> <span class="nv">interface_name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">cancellable</span><span class="p">:</span> <span class="kt"><a href="../Protocols/CancellableProtocol.html">CancellableProtocol</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6254-L6261">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6237-L6244">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7832,7 +7832,7 @@ loads D-Bus properties unless the
 <code>G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES</code> flag is used.</p>
 
 <p>If the <code>G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS</code> flag is not set, also sets up
-match rules for signals. Connect to the <code>GDBusProxy</code>::g-signal signal
+match rules for signals. Connect to the <code>GDBusProxy::g</code>-signal signal
 to handle signals from the remote object.</p>
 
 <p>If both <code>G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES</code> and
@@ -7844,8 +7844,8 @@ guaranteed to return immediately without blocking.</p>
 flags aren&rsquo;t set and no name owner currently exists, the message bus
 will be requested to launch a name owner for the name.</p>
 
-<p>This is a synchronous failable constructor. See g_dbus_proxy_new()
-and g_dbus_proxy_new_finish() for the asynchronous version.</p>
+<p>This is a synchronous failable constructor. See <code>g_dbus_proxy_new()</code>
+and <code>g_dbus_proxy_new_finish()</code> for the asynchronous version.</p>
 
 <p><code>GDBusProxy</code> is used in this [example][gdbus-wellknown-proxy].</p>
 
@@ -7854,12 +7854,12 @@ and g_dbus_proxy_new_finish() for the asynchronous version.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="n">sync</span> <span class="nv">connection</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DBusConnectionProtocol.html">DBusConnectionProtocol</a></span><span class="p">,</span> <span class="nv">flags</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO14DBusProxyFlagsa">DBusProxyFlags</a></span><span class="p">,</span> <span class="nv">info</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DBusInterfaceInfoProtocol.html">DBusInterfaceInfoProtocol</a></span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">objectPath</span> <span class="nv">object_path</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">interfaceName</span> <span class="nv">interface_name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">cancellable</span><span class="p">:</span> <span class="kt"><a href="../Protocols/CancellableProtocol.html">CancellableProtocol</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="n">sync</span> <span class="nv">connection</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DBusConnectionProtocol.html">DBusConnectionProtocol</a></span><span class="p">,</span> <span class="nv">flags</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO14DBusProxyFlagsa">DBusProxyFlags</a></span><span class="p">,</span> <span class="nv">info</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DBusInterfaceInfoProtocol.html">DBusInterfaceInfoProtocol</a></span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">objectPath</span> <span class="nv">object_path</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">interfaceName</span> <span class="nv">interface_name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">cancellable</span><span class="p">:</span> <span class="kt"><a href="../Protocols/CancellableProtocol.html">CancellableProtocol</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6285-L6292">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6268-L6275">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7877,7 +7877,7 @@ and g_dbus_proxy_new_finish() for the asynchronous version.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes creating a <code>GDBusProxy</code>.</p>
+                        <p>Finishes creating a <code>GDBusProxy.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7889,7 +7889,7 @@ and g_dbus_proxy_new_finish() for the asynchronous version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6295-L6302">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6278-L6285">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7907,7 +7907,7 @@ and g_dbus_proxy_new_finish() for the asynchronous version.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes creating a <code>GDBusProxy</code>.</p>
+                        <p>Finishes creating a <code>GDBusProxy.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7919,7 +7919,7 @@ and g_dbus_proxy_new_finish() for the asynchronous version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6305-L6312">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6288-L6295">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7937,7 +7937,7 @@ and g_dbus_proxy_new_finish() for the asynchronous version.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Like g_dbus_proxy_new_sync() but takes a <code>GBusType</code> instead of a <code>GDBusConnection</code>.</p>
+                        <p>Like <code>g_dbus_proxy_new_sync()</code> but takes a <code>GBusType</code> instead of a <code>GDBusConnection</code>.</p>
 
 <p><code>GDBusProxy</code> is used in this [example][gdbus-wellknown-proxy].</p>
 
@@ -7951,7 +7951,7 @@ and g_dbus_proxy_new_finish() for the asynchronous version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6317-L6324">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6300-L6307">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7975,7 +7975,7 @@ loads D-Bus properties unless the
 <code>G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES</code> flag is used.</p>
 
 <p>If the <code>G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS</code> flag is not set, also sets up
-match rules for signals. Connect to the <code>GDBusProxy</code>::g-signal signal
+match rules for signals. Connect to the <code>GDBusProxy::g</code>-signal signal
 to handle signals from the remote object.</p>
 
 <p>If both <code>G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES</code> and
@@ -7987,8 +7987,8 @@ guaranteed to return immediately without blocking.</p>
 flags aren&rsquo;t set and no name owner currently exists, the message bus
 will be requested to launch a name owner for the name.</p>
 
-<p>This is a synchronous failable constructor. See g_dbus_proxy_new()
-and g_dbus_proxy_new_finish() for the asynchronous version.</p>
+<p>This is a synchronous failable constructor. See <code>g_dbus_proxy_new()</code>
+and <code>g_dbus_proxy_new_finish()</code> for the asynchronous version.</p>
 
 <p><code>GDBusProxy</code> is used in this [example][gdbus-wellknown-proxy].</p>
 
@@ -8002,7 +8002,7 @@ and g_dbus_proxy_new_finish() for the asynchronous version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6348-L6355">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6331-L6338">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8015,7 +8015,7 @@ and g_dbus_proxy_new_finish() for the asynchronous version.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

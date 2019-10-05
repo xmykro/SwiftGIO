@@ -7498,7 +7498,7 @@ proxies, and a list of hosts that proxies should not be used for.</p>
 <p><code>GSimpleProxyResolver</code> is never the default proxy resolver, but it
 can be used as the base class for another proxy resolver
 implementation, or it can be created and used manually, such as
-with g_socket_client_set_proxy_resolver().</p>
+with <code>g_socket_client_set_proxy_resolver()</code>.</p>
 
           </div>
         </section>
@@ -7532,7 +7532,7 @@ with g_socket_client_set_proxy_resolver().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L4727">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L4680">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7570,7 +7570,7 @@ with g_socket_client_set_proxy_resolver().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L4730">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L4683">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7698,7 +7698,7 @@ with g_socket_client_set_proxy_resolver().</p>
                         <p>binding reference or <code>nil</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L4902-L4926">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L4855-L4879">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7790,7 +7790,7 @@ with g_socket_client_set_proxy_resolver().</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L5007-L5026">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L4959-L4978">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7823,8 +7823,8 @@ with g_socket_client_set_proxy_resolver().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Sets the default proxy on <code>resolver</code>, to be used for any URIs that
-don&rsquo;t match <code>GSimpleProxyResolver</code>:ignore-hosts or a proxy set
-via g_simple_proxy_resolver_set_uri_proxy().</p>
+don&rsquo;t match <code>GSimpleProxyResolver:ignore</code>-hosts or a proxy set
+via <code>g_simple_proxy_resolver_set_uri_proxy()</code>.</p>
 
 <p>If <code>default_proxy</code> starts with <q>socks://</q>,
 <code>GSimpleProxyResolver</code> will treat it as referring to all three of
@@ -7840,7 +7840,7 @@ the socks5, socks4a, and socks4 proxy types.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L5040-L5043">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L4992-L4995">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7863,7 +7863,7 @@ the socks5, socks4a, and socks4 proxy types.</p>
                       <div class="abstract">
                         <p>Sets the list of ignored hosts.</p>
 
-<p>See <code>GSimpleProxyResolver</code>:ignore-hosts for more details on how the
+<p>See <code>GSimpleProxyResolver:ignore</code>-hosts for more details on how the
 <code>ignore_hosts</code> argument is interpreted.</p>
 
                       </div>
@@ -7876,7 +7876,7 @@ the socks5, socks4a, and socks4 proxy types.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L5049-L5052">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L5001-L5004">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7899,9 +7899,9 @@ the socks5, socks4a, and socks4 proxy types.</p>
                       <div class="abstract">
                         <p>Adds a URI-scheme-specific proxy to <code>resolver</code>; URIs whose scheme
 matches <code>uri_scheme</code> (and which don&rsquo;t match
-<code>GSimpleProxyResolver</code>:ignore-hosts) will be proxied via <code>proxy</code>.</p>
+<code>GSimpleProxyResolver:ignore</code>-hosts) will be proxied via <code>proxy</code>.</p>
 
-<p>As with <code>GSimpleProxyResolver</code>:default-proxy, if <code>proxy</code> starts with
+<p>As with <code>GSimpleProxyResolver:default</code>-proxy, if <code>proxy</code> starts with
 <q>socks://</q>, <code>GSimpleProxyResolver</code> will treat it
 as referring to all three of the socks5, socks4a, and socks4 proxy
 types.</p>
@@ -7916,7 +7916,7 @@ types.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L5062-L5065">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L5014-L5017">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7929,7 +7929,7 @@ types.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

@@ -7510,19 +7510,19 @@
                       <div class="abstract">
                         <p>Emitted during the TLS handshake after the peer certificate has
 been received. You can examine <code>peer_cert</code>&lsquo;s certification path by
-calling g_tls_certificate_get_issuer() on it.</p>
+calling <code>g_tls_certificate_get_issuer()</code> on it.</p>
 
 <p>For a client-side connection, <code>peer_cert</code> is the server&rsquo;s
 certificate, and the signal will only be emitted if the
 certificate was not acceptable according to <code>conn</code>&rsquo;s
-<code>GTlsClientConnection</code>:validation_flags. If you would like the
+<code>GTlsClientConnection:validation_flags</code>. If you would like the
 certificate to be accepted despite <code>errors</code>, return <code>true</code> from the
 signal handler. Otherwise, if no handler accepts the certificate,
 the handshake will fail with <code>G_TLS_ERROR_BAD_CERTIFICATE</code>.</p>
 
 <p>For a server-side connection, <code>peer_cert</code> is the certificate
 presented by the client, if this was requested via the server&rsquo;s
-<code>GTlsServerConnection</code>:authentication_mode. On the server side,
+<code>GTlsServerConnection:authentication_mode</code>. On the server side,
 the signal is always emitted when the client presents a
 certificate, and the certificate will only be accepted if a
 handler returns <code>true</code>.</p>
@@ -7571,20 +7571,20 @@ handler until the UI thread returns an answer.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The notify signal is emitted on an object when one of its properties has
-its value set through g_object_set_property(), g_object_set(), et al.</p>
+its value set through <code>g_object_set_property()</code>, <code>g_object_set()</code>, et al.</p>
 
 <p>Note that getting this signal doesn’t itself guarantee that the value of
 the property has actually changed. When it is emitted is determined by the
 derived GObject class. If the implementor did not create the property with
-<code>G_PARAM_EXPLICIT_NOTIFY</code>, then any call to g_object_set_property() results
-in ::notify being emitted, even if the new value is the same as the old.
+<code>G_PARAM_EXPLICIT_NOTIFY</code>, then any call to <code>g_object_set_property()</code> results
+in <code>notify</code> being emitted, even if the new value is the same as the old.
 If they did pass <code>G_PARAM_EXPLICIT_NOTIFY</code>, then this signal is emitted only
-when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+when they explicitly call <code>g_object_notify()</code> or <code>g_object_notify_by_pspec()</code>,
 and common practice is to do that only when the value has actually changed.</p>
 
 <p>This signal is typically used to obtain change notification for a
 single property, by specifying the property name as a detail in the
-g_signal_connect() call, like this:
+<code>g_signal_connect()</code> call, like this:
 (C Language Example):</p>
 <pre class="highlight plaintext"><code>g_signal_connect (text_view-&gt;buffer, "notify::paste-target-list",
                   G_CALLBACK (gtk_text_view_target_list_notify),
@@ -7605,7 +7605,7 @@ detail strings for the notify signal.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L314">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L313">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7641,7 +7641,7 @@ subject DN of the certificate authority.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L322">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L321">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7661,7 +7661,7 @@ subject DN of the certificate authority.</p>
                       <div class="abstract">
                         <p>The list of application-layer protocols that the connection
 advertises that it is willing to speak. See
-g_tls_connection_set_advertised_protocols().</p>
+<code>g_tls_connection_set_advertised_protocols()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7673,7 +7673,7 @@ g_tls_connection_set_advertised_protocols().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L326">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L325">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7707,7 +7707,7 @@ stream when no <code>GIOStream</code> operations are running.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L332">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L331">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7726,7 +7726,7 @@ stream when no <code>GIOStream</code> operations are running.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The connection&rsquo;s certificate; see
-g_tls_connection_set_certificate().</p>
+<code>g_tls_connection_set_certificate()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7738,7 +7738,7 @@ g_tls_connection_set_certificate().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L335">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L334">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7788,7 +7788,7 @@ g_tls_connection_set_certificate().</p>
                       <div class="abstract">
                         <p>The certificate database to use when verifying this TLS connection.
 If no certificate database is set, then the default database will be
-used. See g_tls_backend_get_default_database().</p>
+used. See <code>g_tls_backend_get_default_database()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7800,7 +7800,7 @@ used. See g_tls_backend_get_default_database().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L340">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L339">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7862,7 +7862,7 @@ user for passwords where necessary.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L345">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L344">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7881,7 +7881,7 @@ user for passwords where necessary.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The application-layer protocol negotiated during the TLS
-handshake. See g_tls_connection_get_negotiated_protocol().</p>
+handshake. See <code>g_tls_connection_get_negotiated_protocol()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7893,7 +7893,7 @@ handshake. See g_tls_connection_get_negotiated_protocol().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L348">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L347">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7944,9 +7944,9 @@ handshake. See g_tls_connection_get_negotiated_protocol().</p>
                         <p>The connection&rsquo;s peer&rsquo;s certificate, after the TLS handshake has
 completed and the certificate has been accepted. Note in
 particular that this is not yet set during the emission of
-<code>GTlsConnection</code>::accept-certificate.</p>
+<code>GTlsConnection::accept</code>-certificate.</p>
 
-<p>(You can watch for a <code>GObject</code>::notify signal on this property to
+<p>(You can watch for a <code>GObject::notify</code> signal on this property to
 detect when a handshake has occurred.)</p>
 
                       </div>
@@ -7959,7 +7959,7 @@ detect when a handshake has occurred.)</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L357">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L356">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7978,10 +7978,10 @@ detect when a handshake has occurred.)</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The errors noticed-and-ignored while verifying
-<code>GTlsConnection</code>:peer-certificate. Normally this should be 0, but
-it may not be if <code>GTlsClientConnection</code>:validation-flags is not
+<code>GTlsConnection:peer</code>-certificate. Normally this should be 0, but
+it may not be if <code>GTlsClientConnection:validation</code>-flags is not
 <code>G_TLS_CERTIFICATE_VALIDATE_ALL</code>, or if
-<code>GTlsConnection</code>::accept-certificate overrode the default
+<code>GTlsConnection::accept</code>-certificate overrode the default
 behavior.</p>
 
                       </div>
@@ -7994,7 +7994,7 @@ behavior.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L364">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L363">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8013,7 +8013,7 @@ behavior.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The rehandshaking mode. See
-g_tls_connection_set_rehandshake_mode().</p>
+<code>g_tls_connection_set_rehandshake_mode()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8025,7 +8025,7 @@ g_tls_connection_set_rehandshake_mode().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L367">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L366">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8044,7 +8044,7 @@ g_tls_connection_set_rehandshake_mode().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Whether or not proper TLS close notification is required.
-See g_tls_connection_set_require_close_notify().</p>
+See <code>g_tls_connection_set_require_close_notify()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8056,7 +8056,7 @@ See g_tls_connection_set_require_close_notify().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L370">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L369">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8078,9 +8078,9 @@ See g_tls_connection_set_require_close_notify().</p>
 is expected on the other end of the connection.</p>
 
 <p>If the <code>G_TLS_CERTIFICATE_BAD_IDENTITY</code> flag is set in
-<code>GTlsClientConnection</code>:validation-flags, this object will be used
+<code>GTlsClientConnection:validation</code>-flags, this object will be used
 to determine the expected identify of the remote end of the
-connection; if <code>GTlsClientConnection</code>:server-identity is not set,
+connection; if <code>GTlsClientConnection:server</code>-identity is not set,
 or does not match the identity presented by the server, then the
 <code>G_TLS_CERTIFICATE_BAD_IDENTITY</code> validation will fail.</p>
 
@@ -8099,7 +8099,7 @@ virtual hosts.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L385">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L384">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8119,7 +8119,7 @@ virtual hosts.</p>
                       <div class="abstract">
                         <p>If <code>true</code>, forces the connection to use a fallback version of TLS
 or SSL, rather than trying to negotiate the best version of TLS
-to use. See g_tls_client_connection_set_use_ssl3().</p>
+to use. See <code>g_tls_client_connection_set_use_ssl3()</code>.</p>
 
 <p><strong>use-ssl3 is deprecated:</strong>
 SSL 3.0 is insecure, and this property does not
@@ -8135,7 +8135,7 @@ generally enable or disable it, despite its name.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L393">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L392">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8155,7 +8155,7 @@ generally enable or disable it, despite its name.</p>
                       <div class="abstract">
                         <p>Whether or not the system certificate database will be used to
 verify peer certificates. See
-g_tls_connection_set_use_system_certdb().</p>
+<code>g_tls_connection_set_use_system_certdb()</code>.</p>
 
 <p><strong>use-system-certdb is deprecated:</strong>
 Use GTlsConnection:database instead</p>
@@ -8170,7 +8170,7 @@ Use GTlsConnection:database instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L400">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L399">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8191,7 +8191,7 @@ Use GTlsConnection:database instead</p>
                         <p>What steps to perform when validating a certificate received from
 a server. Server certificates that fail to validate in all of the
 ways indicated here will be rejected unless the application
-overrides the default via <code>GTlsConnection</code>::accept-certificate.</p>
+overrides the default via <code>GTlsConnection::accept</code>-certificate.</p>
 
                       </div>
                       <div class="declaration">
@@ -8203,7 +8203,7 @@ overrides the default via <code>GTlsConnection</code>::accept-certificate.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L405">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TlsClientConnection-Volume.swift#L404">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8216,7 +8216,7 @@ overrides the default via <code>GTlsConnection</code>::accept-certificate.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

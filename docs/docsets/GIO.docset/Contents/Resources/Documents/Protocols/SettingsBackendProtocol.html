@@ -7507,7 +7507,7 @@ callers that are documented on each of the interface methods.</p>
 
 <p>Some of the <code>GSettingsBackend</code> functions accept or return a <code>GTree</code>.
 These trees always have strings as keys and <code>GVariant</code> as values.
-g_settings_backend_create_tree() is a convenience function to create
+<code>g_settings_backend_create_tree()</code> is a convenience function to create
 suitable trees.</p>
 
 <p>The <code>GSettingsBackend</code> API is exported to allow third-party
@@ -7548,7 +7548,7 @@ C preprocessor symbol <code>G_SETTINGS_ENABLE_BACKEND</code> before including
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2123">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2083">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7586,7 +7586,7 @@ C preprocessor symbol <code>G_SETTINGS_ENABLE_BACKEND</code> before including
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2126">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2086">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7678,7 +7678,7 @@ C preprocessor symbol <code>G_SETTINGS_ENABLE_BACKEND</code> before including
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2331-L2350">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2290-L2309">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7718,7 +7718,7 @@ value.</p>
 &lsquo;//&rsquo;, and not ending with a slash).</p>
 
 <p>The implementation must call this function during any call to
-g_settings_backend_write(), before the call returns (except in the
+<code>g_settings_backend_write()</code>, before the call returns (except in the
 case that no keys are actually changed and it cares to detect this
 fact).  It may not rely on the existence of a mainloop for
 dispatching the signal later.</p>
@@ -7727,10 +7727,10 @@ dispatching the signal later.</p>
 in response to other events (such as changes occurring outside of the
 program).  These calls may originate from a mainloop or may originate
 in response to any other action (including from calls to
-g_settings_backend_write()).</p>
+<code>g_settings_backend_write()</code>).</p>
 
 <p>In the case that this call is in response to a call to
-g_settings_backend_write() then <code>origin_tag</code> must be set to the same
+<code>g_settings_backend_write()</code> then <code>origin_tag</code> must be set to the same
 value that was passed to that call.</p>
 
                       </div>
@@ -7743,7 +7743,7 @@ value that was passed to that call.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2379-L2382">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2338-L2341">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7766,7 +7766,7 @@ value that was passed to that call.</p>
                       <div class="abstract">
                         <p>This call is a convenience wrapper.  It gets the list of changes from
 <code>tree</code>, computes the longest common prefix and calls
-g_settings_backend_changed().</p>
+<code>g_settings_backend_changed()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7778,7 +7778,7 @@ g_settings_backend_changed().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2387-L2390">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2346-L2349">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7813,9 +7813,9 @@ from the contatenation of <code>path</code> with each item in <code>items</code>
 changed.</p>
 
 <p>The same rules for when notifications must occur apply as per
-g_settings_backend_changed().  These two calls can be used
+<code>g_settings_backend_changed()</code>.  These two calls can be used
 interchangeably if exactly one item has changed (although in that
-case g_settings_backend_changed() is definitely preferred).</p>
+case <code>g_settings_backend_changed()</code> is definitely preferred).</p>
 
 <p>For efficiency reasons, the implementation should strive for <code>path</code> to
 be as long as possible (ie: the longest common prefix of all of the
@@ -7831,7 +7831,7 @@ keys that were changed) but this is not strictly required.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2413-L2416">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2372-L2375">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7863,7 +7863,7 @@ not containing &lsquo;//&rsquo;).</p>
 starting with <code>path</code> may have changed.</p>
 
 <p>The same rules for when notifications must occur apply as per
-g_settings_backend_changed().  This call might be an appropriate
+<code>g_settings_backend_changed()</code>.  This call might be an appropriate
 reasponse to a &lsquo;reset&rsquo; call but implementations are also free to
 explicitly list the keys that were affected by that call if they can
 easily do so.</p>
@@ -7884,7 +7884,7 @@ single key in the application will be notified of a possible change.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2439-L2442">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2398-L2401">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7921,7 +7921,7 @@ will always be made in response to external events.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2449-L2452">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2408-L2411">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7957,7 +7957,7 @@ will always be made in response to external events.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2458-L2461">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2417-L2420">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7970,7 +7970,7 @@ will always be made in response to external events.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

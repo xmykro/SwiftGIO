@@ -7499,9 +7499,9 @@ see the descriptions on <code>GInitable</code>.</p>
 
 <p>Users of objects implementing this are not intended to use the interface
 method directly; instead it will be used automatically in various ways.
-For C applications you generally just call g_async_initable_new_async()
-directly, or indirectly via a foo_thing_new_async() wrapper. This will call
-g_async_initable_init_async() under the cover, calling back with <code>nil</code> and
+For C applications you generally just call <code>g_async_initable_new_async()</code>
+directly, or indirectly via a <code>foo_thing_new_async()</code> wrapper. This will call
+<code>g_async_initable_init_async()</code> under the cover, calling back with <code>nil</code> and
 a set <code>GError</code> on failure.</p>
 
 <p>A typical implementation might look something like this:</p>
@@ -7622,7 +7622,7 @@ foo_async_initable_iface_init (gpointer g_iface,
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2099">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2096">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7660,7 +7660,7 @@ foo_async_initable_iface_init (gpointer g_iface,
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2102">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2099">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7695,13 +7695,13 @@ foo_async_initable_iface_init (gpointer g_iface,
                         <p>Starts asynchronous initialization of the object implementing the
 interface. This must be done before any real use of the object after
 initial construction. If the object also implements <code>GInitable</code> you can
-optionally call g_initable_init() instead.</p>
+optionally call <code>g_initable_init()</code> instead.</p>
 
 <p>This method is intended for language bindings. If writing in C,
-g_async_initable_new_async() should typically be used instead.</p>
+<code>g_async_initable_new_async()</code> should typically be used instead.</p>
 
 <p>When the initialization is finished, <code>callback</code> will be called. You can
-then call g_async_initable_init_finish() to get the result of the
+then call <code>g_async_initable_init_finish()</code> to get the result of the
 initialization.</p>
 
 <p>Implementations may also support cancellation. If <code>cancellable</code> is not
@@ -7713,18 +7713,18 @@ the object doesn&rsquo;t support cancellable initialization, the error
 
 <p>As with <code>GInitable</code>, if the object is not initialized, or initialization
 returns with an error, then all operations on the object except
-g_object_ref() and g_object_unref() are considered to be invalid, and
-have undefined behaviour. They will often fail with g_critical() or
-g_warning(), but this must not be relied on.</p>
+<code>g_object_ref()</code> and <code>g_object_unref()</code> are considered to be invalid, and
+have undefined behaviour. They will often fail with <code>g_critical()</code> or
+<code>g_warning()</code>, but this must not be relied on.</p>
 
 <p>Callers should not assume that a class which implements <code>GAsyncInitable</code> can
-be initialized multiple times; for more information, see g_initable_init().
+be initialized multiple times; for more information, see <code>g_initable_init()</code>.
 If a class explicitly supports being initialized multiple times,
-implementation requires yielding all subsequent calls to init_async() on the
+implementation requires yielding all subsequent calls to <code>init_async()</code> on the
 results of the first call.</p>
 
 <p>For classes that also support the <code>GInitable</code> interface, the default
-implementation of this method will run the g_initable_init() function
+implementation of this method will run the <code>g_initable_init()</code> function
 in a thread, so if you want to support asynchronous initialization via
 threads, just implement the <code>GAsyncInitable</code> interface without overriding
 any interface methods.</p>
@@ -7739,7 +7739,7 @@ any interface methods.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2457-L2460">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2454-L2457">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7761,7 +7761,7 @@ any interface methods.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Finishes asynchronous initialization and returns the result.
-See g_async_initable_init_async().</p>
+See <code>g_async_initable_init_async()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7773,7 +7773,7 @@ See g_async_initable_init_async().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2464-L2471">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2461-L2468">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7807,7 +7807,7 @@ calls, returning the created object or <code>nil</code> on error.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2475-L2482">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Action-Converter.swift#L2472-L2479">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7820,7 +7820,7 @@ calls, returning the created object or <code>nil</code> on error.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

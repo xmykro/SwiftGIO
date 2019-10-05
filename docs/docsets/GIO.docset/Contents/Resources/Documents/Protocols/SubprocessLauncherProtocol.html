@@ -7532,7 +7532,7 @@ a similar configuration.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10842">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10785">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7570,7 +7570,7 @@ a similar configuration.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10845">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10788">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7698,7 +7698,7 @@ a similar configuration.</p>
                         <p>binding reference or <code>nil</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10993-L11017">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10936-L10960">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7790,7 +7790,7 @@ a similar configuration.</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11056-L11075">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10998-L11017">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7838,7 +7838,7 @@ On Windows, it will be UTF-8.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11087-L11090">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11029-L11032">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7861,11 +7861,11 @@ On Windows, it will be UTF-8.</p>
                       <div class="abstract">
                         <p>Sets up a child setup function.</p>
 
-<p>The child setup function will be called after fork() but before
-exec() on the child&rsquo;s side.</p>
+<p>The child setup function will be called after <code>fork()</code> but before
+<code>exec()</code> on the child&rsquo;s side.</p>
 
 <p><code>destroy_notify</code> will not be automatically called on the child&rsquo;s side
-of the fork().  It will only be called when the last reference on the
+of the <code>fork()</code>.  It will only be called when the last reference on the
 <code>GSubprocessLauncher</code> is dropped or when a new child setup function is
 given.</p>
 
@@ -7883,7 +7883,7 @@ given.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11105-L11108">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11047-L11050">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7920,7 +7920,7 @@ of the launching process at the time of launch.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11115-L11118">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11057-L11060">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7944,18 +7944,18 @@ of the launching process at the time of launch.</p>
                         <p>Replace the entire environment of processes launched from this
 launcher with the given &lsquo;environ&rsquo; variable.</p>
 
-<p>Typically you will build this variable by using g_listenv() to copy
-the process &lsquo;environ&rsquo; and using the functions g_environ_setenv(),
-g_environ_unsetenv(), etc.</p>
+<p>Typically you will build this variable by using <code>g_listenv()</code> to copy
+the process &lsquo;environ&rsquo; and using the functions <code>g_environ_setenv()</code>,
+<code>g_environ_unsetenv()</code>, etc.</p>
 
-<p>As an alternative, you can use g_subprocess_launcher_setenv(),
-g_subprocess_launcher_unsetenv(), etc.</p>
+<p>As an alternative, you can use <code>g_subprocess_launcher_setenv()</code>,
+<code>g_subprocess_launcher_unsetenv()</code>, etc.</p>
 
 <p>Pass an empty array to set an empty environment. Pass <code>nil</code> to inherit the
 parent process’ environment. As of GLib 2.54, the parent process’ environment
-will be copied when g_subprocess_launcher_set_environ() is called.
+will be copied when <code>g_subprocess_launcher_set_environ()</code> is called.
 Previously, it was copied when the subprocess was executed. This means the
-copied environment may now be modified (using g_subprocess_launcher_setenv(),
+copied environment may now be modified (using <code>g_subprocess_launcher_setenv()</code>,
 etc.) before launching the subprocess.</p>
 
 <p>On UNIX, all strings in this array can be arbitrary byte strings.
@@ -7971,7 +7971,7 @@ On Windows, they should be in UTF-8.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11139-L11142">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11081-L11084">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8002,8 +8002,8 @@ handle a particular stdio stream (eg: specifying both
 <code>G_SUBPROCESS_FLAGS_STDIN_INHERIT</code>).</p>
 
 <p>You may also not set a flag that conflicts with a previous call to a
-function like g_subprocess_launcher_set_stdin_file_path() or
-g_subprocess_launcher_take_stdout_fd().</p>
+function like <code>g_subprocess_launcher_set_stdin_file_path()</code> or
+<code>g_subprocess_launcher_take_stdout_fd()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8015,7 +8015,7 @@ g_subprocess_launcher_take_stdout_fd().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11156-L11159">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11098-L11101">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8061,7 +8061,7 @@ if the launcher flags contain any flags directing stderr elsewhere.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11175-L11178">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11117-L11120">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8103,7 +8103,7 @@ the launcher flags contain any flags directing stdin elsewhere.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11190-L11193">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11132-L11135">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8146,7 +8146,7 @@ if the launcher flags contain any flags directing stdout elsewhere.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11206-L11209">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11148-L11151">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8184,7 +8184,7 @@ On Windows, they should be in UTF-8.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11217-L11220">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11159-L11162">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8217,7 +8217,7 @@ On Windows, they should be in UTF-8.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11227-L11234">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11169-L11176">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8243,8 +8243,8 @@ child.  This function takes <q>ownership</q> of the fd; it will be closed
 in the parent when <code>self</code> is freed.</p>
 
 <p>By default, all file descriptors from the parent will be closed.
-This function allows you to create (for example) a custom pipe() or
-socketpair() before launching the process, and choose the target
+This function allows you to create (for example) a custom <code>pipe()</code> or
+<code>socketpair()</code> before launching the process, and choose the target
 descriptor in the child.</p>
 
 <p>An example use case is GNUPG, which has a command line argument
@@ -8261,7 +8261,7 @@ the passphrase to be written.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11248-L11251">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11190-L11193">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8309,7 +8309,7 @@ if the launcher flags contain any flags directing stderr elsewhere.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11269-L11272">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11211-L11214">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8359,7 +8359,7 @@ the launcher flags contain any flags directing stdin elsewhere.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11292-L11295">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11234-L11237">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8408,7 +8408,7 @@ if the launcher flags contain any flags directing stdout elsewhere.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11314-L11317">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11256-L11259">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8445,7 +8445,7 @@ containing &lsquo;=&rsquo;. On Windows, it should be in UTF-8.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11324-L11327">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11266-L11269">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8458,7 +8458,7 @@ containing &lsquo;=&rsquo;. On Windows, it should be in UTF-8.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

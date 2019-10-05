@@ -7494,13 +7494,13 @@ Alternatively, use <code><a href="../Structs/TestDBusRef.html">TestDBusRef</a></
 <p>A helper class for testing code which uses D-Bus without touching the user&rsquo;s
 session bus.</p>
 
-<p>Note that <code>GTestDBus</code> modifies the user’s environment, calling setenv().
+<p>Note that <code>GTestDBus</code> modifies the user’s environment, calling <code>setenv()</code>.
 This is not thread-safe, so all <code>GTestDBus</code> calls should be completed before
 threads are spawned, or should have appropriate locking to ensure no access
 conflicts to environment variables shared between <code>GTestDBus</code> and other
 threads.</p>
 
-<p>&ldquo;` Creating unit tests using GTestDBus</p>
+<p>&ldquo;&rdquo; Creating unit tests using GTestDBus</p>
 
 <p>Testing of D-Bus services can be tricky because normally we only ever run
 D-Bus services over an existing instance of the D-Bus daemon thus we
@@ -7520,14 +7520,14 @@ achieve this by adding a file such as <code>my-server.service.in</code> in the s
 directory and have it processed by configure.</p>
 <pre class="highlight swift"><code>    <span class="p">[</span><span class="kt">D</span><span class="o">-</span><span class="kt">BUS</span> <span class="kt">Service</span><span class="p">]</span>
     <span class="kt">Name</span><span class="o">=</span><span class="n">org</span><span class="o">.</span><span class="n">gtk</span><span class="o">.</span><span class="kt">GDBus</span><span class="o">.</span><span class="kt">Examples</span><span class="o">.</span><span class="kt">ObjectManager</span>
-    <span class="kt">Exec</span><span class="o">=</span><span class="err">`</span><span class="n">abs_top_builddir</span><span class="err">``</span><span class="o">/</span><span class="n">gio</span><span class="o">/</span><span class="n">tests</span><span class="o">/</span><span class="n">gdbus</span><span class="o">-</span><span class="n">example</span><span class="o">-</span><span class="n">objectmanager</span><span class="o">-</span><span class="n">server</span>
+    <span class="kt">Exec</span><span class="o">=</span><span class="kd">@abs_top_builddir</span><span class="err">@</span><span class="o">/</span><span class="n">gio</span><span class="o">/</span><span class="n">tests</span><span class="o">/</span><span class="n">gdbus</span><span class="o">-</span><span class="n">example</span><span class="o">-</span><span class="n">objectmanager</span><span class="o">-</span><span class="n">server</span>
 </code></pre>
 
 <p>You will also need to indicate this service directory in your test
 fixtures, so you will need to pass the path while compiling your
 test cases. Typically this is done with autotools with an added
 preprocessor flag specified to compile your tests such as:</p>
-<pre class="highlight swift"><code>    <span class="o">-</span><span class="kt">DTEST_SERVICES</span><span class="o">=</span><span class="err">\</span><span class="s">""</span><span class="err">$</span><span class="p">(</span><span class="n">abs_top_builddir</span><span class="p">)</span><span class="o">/</span><span class="n">tests</span><span class="o">/</span><span class="n">services</span><span class="s">"</span><span class="se">\"</span><span class="s">
+<pre class="highlight swift"><code>    <span class="o">-</span><span class="kt">DTEST_SERVICES</span><span class="o">=</span><span class="p">\</span><span class="s">""</span><span class="err">$</span><span class="p">(</span><span class="n">abs_top_builddir</span><span class="p">)</span><span class="o">/</span><span class="n">tests</span><span class="o">/</span><span class="n">services</span><span class="s">"</span><span class="se">\"</span><span class="s">
 </span></code></pre>
 <pre class="highlight swift"><code><span class="kt">Once</span> <span class="n">you</span> <span class="n">have</span> <span class="n">a</span> <span class="n">service</span> <span class="n">definition</span> <span class="n">file</span> <span class="n">which</span> <span class="k">is</span> <span class="n">local</span> <span class="n">to</span> <span class="n">your</span> <span class="n">source</span> <span class="n">tree</span><span class="p">,</span>
 </code></pre>
@@ -7553,7 +7553,7 @@ D-Bus daemon activates, using the setup routine for your fixture is
 a practical place to help sandbox your runtime environment. For the
 rather typical GSettings case we can work around this by setting
 <code>GSETTINGS_SCHEMA_DIR</code> to the in tree directory holding your schemas
-in the above fixture_setup() routine.</p>
+in the above <code>fixture_setup()</code> routine.</p>
 
 <p>The GSettings schemas need to be locally pre-compiled for this to work. This can be achieved
 by compiling the schemas locally as a step before running test cases, an autotools setup might
@@ -7596,7 +7596,7 @@ do the following in the directory holding schemas:</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L631">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L627">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7634,7 +7634,7 @@ do the following in the directory holding schemas:</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L634">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L630">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7762,7 +7762,7 @@ do the following in the directory holding schemas:</p>
                         <p>binding reference or <code>nil</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L909-L933">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L901-L925">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7854,7 +7854,7 @@ do the following in the directory holding schemas:</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L973-L992">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L964-L983">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7887,7 +7887,7 @@ do the following in the directory holding schemas:</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Add a path where dbus-daemon will look up .service files. This can&rsquo;t be
-called after g_test_dbus_up().</p>
+called after <code>g_test_dbus_up()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7899,7 +7899,7 @@ called after g_test_dbus_up().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1001-L1004">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L992-L995">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7920,9 +7920,9 @@ called after g_test_dbus_up().</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Stop the session bus started by g_test_dbus_up().</p>
+                        <p>Stop the session bus started by <code>g_test_dbus_up()</code>.</p>
 
-<p>This will wait for the singleton returned by g_bus_get() or g_bus_get_sync()
+<p>This will wait for the singleton returned by <code>g_bus_get()</code> or <code>g_bus_get_sync()</code>
 to be destroyed. This is done to ensure that the next unit test won&rsquo;t get a
 leaked singleton from this test.</p>
 
@@ -7936,7 +7936,7 @@ leaked singleton from this test.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1011-L1014">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1002-L1005">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7957,9 +7957,9 @@ leaked singleton from this test.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Get the address on which dbus-daemon is running. If g_test_dbus_up() has not
+                        <p>Get the address on which dbus-daemon is running. If <code>g_test_dbus_up()</code> has not
 been called yet, <code>nil</code> is returned. This can be used with
-g_dbus_connection_new_for_address().</p>
+<code>g_dbus_connection_new_for_address()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7971,7 +7971,7 @@ g_dbus_connection_new_for_address().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1019-L1022">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1010-L1013">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8004,7 +8004,7 @@ g_dbus_connection_new_for_address().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1025-L1028">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1016-L1019">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8025,12 +8025,12 @@ g_dbus_connection_new_for_address().</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Stop the session bus started by g_test_dbus_up().</p>
+                        <p>Stop the session bus started by <code>g_test_dbus_up()</code>.</p>
 
-<p>Unlike g_test_dbus_down(), this won&rsquo;t verify the <code>GDBusConnection</code>
-singleton returned by g_bus_get() or g_bus_get_sync() is destroyed. Unit
+<p>Unlike <code>g_test_dbus_down()</code>, this won&rsquo;t verify the <code>GDBusConnection</code>
+singleton returned by <code>g_bus_get()</code> or <code>g_bus_get_sync()</code> is destroyed. Unit
 tests wanting to verify behaviour after the session bus has been stopped
-can use this function but should still call g_test_dbus_down() when done.</p>
+can use this function but should still call <code>g_test_dbus_down()</code> when done.</p>
 
                       </div>
                       <div class="declaration">
@@ -8042,7 +8042,7 @@ can use this function but should still call g_test_dbus_down() when done.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1036-L1039">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1027-L1030">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8066,11 +8066,11 @@ can use this function but should still call g_test_dbus_down() when done.</p>
                         <p>Start a dbus-daemon instance and set DBUS_SESSION_BUS_ADDRESS. After this
 call, it is safe for unit tests to start sending messages on the session bus.</p>
 
-<p>If this function is called from setup callback of g_test_add(),
-g_test_dbus_down() must be called in its teardown callback.</p>
+<p>If this function is called from setup callback of <code>g_test_add()</code>,
+<code>g_test_dbus_down()</code> must be called in its teardown callback.</p>
 
-<p>If this function is called from unit test&rsquo;s main(), then g_test_dbus_down()
-must be called after g_test_run().</p>
+<p>If this function is called from unit test&rsquo;s <code>main()</code>, then <code>g_test_dbus_down()</code>
+must be called after <code>g_test_run()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8082,7 +8082,7 @@ must be called after g_test_run().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1049-L1052">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1040-L1043">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8103,9 +8103,9 @@ must be called after g_test_run().</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Get the address on which dbus-daemon is running. If g_test_dbus_up() has not
+                        <p>Get the address on which dbus-daemon is running. If <code>g_test_dbus_up()</code> has not
 been called yet, <code>nil</code> is returned. This can be used with
-g_dbus_connection_new_for_address().</p>
+<code>g_dbus_connection_new_for_address()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8117,7 +8117,7 @@ g_dbus_connection_new_for_address().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1056-L1064">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1047-L1055">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8150,7 +8150,7 @@ g_dbus_connection_new_for_address().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1067-L1073">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L1058-L1064">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8163,7 +8163,7 @@ g_dbus_connection_new_for_address().</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

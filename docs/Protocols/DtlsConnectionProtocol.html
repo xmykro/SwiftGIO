@@ -7501,13 +7501,13 @@ implement client-side and server-side DTLS, respectively.</p>
 <p>As DTLS is datagram based, <code>GDtlsConnection</code> implements <code><a href="../Structs.html#/s:3GIO14GDatagramBasedV">GDatagramBased</a></code>,
 presenting a datagram-socket-like API for the encrypted connection. This
 operates over a base datagram connection, which is also a <code><a href="../Structs.html#/s:3GIO14GDatagramBasedV">GDatagramBased</a></code>
-(<code>GDtlsConnection</code>:base-socket).</p>
+(<code>GDtlsConnection:base</code>-socket).</p>
 
-<p>To close a DTLS connection, use g_dtls_connection_close().</p>
+<p>To close a DTLS connection, use <code>g_dtls_connection_close()</code>.</p>
 
 <p>Neither <code>GDtlsServerConnection</code> or <code>GDtlsClientConnection</code> set the peer address
 on their base <code><a href="../Structs.html#/s:3GIO14GDatagramBasedV">GDatagramBased</a></code> if it is a <code>GSocket</code> — it is up to the caller to
-do that if they wish. If they do not, and g_socket_close() is called on the
+do that if they wish. If they do not, and <code>g_socket_close()</code> is called on the
 base socket, the <code>GDtlsConnection</code> will not raise a <code>G_IO_ERROR_NOT_CONNECTED</code>
 error on further I/O.</p>
 
@@ -7834,12 +7834,12 @@ error on further I/O.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Close the DTLS connection. This is equivalent to calling
-g_dtls_connection_shutdown() to shut down both sides of the connection.</p>
+<code>g_dtls_connection_shutdown()</code> to shut down both sides of the connection.</p>
 
 <p>Closing a <code>GDtlsConnection</code> waits for all buffered but untransmitted data to
 be sent before it completes. It then sends a <code>close_notify</code> DTLS alert to the
 peer and may wait for a <code>close_notify</code> to be received from the peer. It does
-not close the underlying <code>GDtlsConnection</code>:base-socket; that must be closed
+not close the underlying <code>GDtlsConnection:base</code>-socket; that must be closed
 separately.</p>
 
 <p>Once <code>conn</code> is closed, all other operations will return <code>G_IO_ERROR_CLOSED</code>.
@@ -7851,7 +7851,7 @@ released as early as possible.</p>
 
 <p>If <code>cancellable</code> is cancelled, the <code>GDtlsConnection</code> may be left
 partially-closed and any pending untransmitted data may be lost. Call
-g_dtls_connection_close() again to complete closing the <code>GDtlsConnection</code>.</p>
+<code>g_dtls_connection_close()</code> again to complete closing the <code>GDtlsConnection.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7884,7 +7884,7 @@ g_dtls_connection_close() again to complete closing the <code>GDtlsConnection</c
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Asynchronously close the DTLS connection. See g_dtls_connection_close() for
+                        <p>Asynchronously close the DTLS connection. See <code>g_dtls_connection_close()</code> for
 more information.</p>
 
                       </div>
@@ -7918,7 +7918,7 @@ more information.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finish an asynchronous TLS close operation. See g_dtls_connection_close()
+                        <p>Finish an asynchronous TLS close operation. See <code>g_dtls_connection_close()</code>
 for more information.</p>
 
                       </div>
@@ -7953,7 +7953,7 @@ for more information.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Used by <code>GDtlsConnection</code> implementations to emit the
-<code>GDtlsConnection</code>::accept-certificate signal.</p>
+<code>GDtlsConnection::accept</code>-certificate signal.</p>
 
                       </div>
                       <div class="declaration">
@@ -7987,7 +7987,7 @@ for more information.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets <code>conn</code>&lsquo;s certificate, as set by
-g_dtls_connection_set_certificate().</p>
+<code>g_dtls_connection_set_certificate()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8021,7 +8021,7 @@ g_dtls_connection_set_certificate().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the certificate database that <code>conn</code> uses to verify
-peer certificates. See g_dtls_connection_set_database().</p>
+peer certificates. See <code>g_dtls_connection_set_database()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8095,7 +8095,7 @@ the handshake.</p>
 <p>If the peer did not use the ALPN extension, or did not advertise a
 protocol that matched one of <code>conn</code>&lsquo;s protocols, or the TLS backend
 does not support ALPN, then this will be <code>nil</code>. See
-g_dtls_connection_set_advertised_protocols().</p>
+<code>g_dtls_connection_set_advertised_protocols()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8130,7 +8130,7 @@ g_dtls_connection_set_advertised_protocols().</p>
                       <div class="abstract">
                         <p>Gets <code>conn</code>&lsquo;s peer&rsquo;s certificate after the handshake has completed.
 (It is not set during the emission of
-<code>GDtlsConnection</code>::accept-certificate.)</p>
+<code>GDtlsConnection::accept</code>-certificate.)</p>
 
                       </div>
                       <div class="declaration">
@@ -8165,7 +8165,7 @@ g_dtls_connection_set_advertised_protocols().</p>
                       <div class="abstract">
                         <p>Gets the errors associated with validating <code>conn</code>&lsquo;s peer&rsquo;s
 certificate, after the handshake has completed. (It is not set
-during the emission of <code>GDtlsConnection</code>::accept-certificate.)</p>
+during the emission of <code>GDtlsConnection::accept</code>-certificate.)</p>
 
                       </div>
                       <div class="declaration">
@@ -8199,7 +8199,7 @@ during the emission of <code>GDtlsConnection</code>::accept-certificate.)</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets <code>conn</code> rehandshaking mode. See
-g_dtls_connection_set_rehandshake_mode() for details.</p>
+<code>g_dtls_connection_set_rehandshake_mode()</code> for details.</p>
 
                       </div>
                       <div class="declaration">
@@ -8234,7 +8234,7 @@ g_dtls_connection_set_rehandshake_mode() for details.</p>
                       <div class="abstract">
                         <p>Tests whether or not <code>conn</code> expects a proper TLS close notification
 when the connection is closed. See
-g_dtls_connection_set_require_close_notify() for details.</p>
+<code>g_dtls_connection_set_require_close_notify()</code> for details.</p>
 
                       </div>
                       <div class="declaration">
@@ -8275,7 +8275,7 @@ connecting (or after sending a <q>STARTTLS</q>-type command) and may
 need to rehandshake later if the server requests it,
 <code>GDtlsConnection</code> will handle this for you automatically when you try
 to send or receive data on the connection. However, you can call
-g_dtls_connection_handshake() manually if you want to know for sure
+<code>g_dtls_connection_handshake()</code> manually if you want to know for sure
 whether the initial handshake succeeded or failed (as opposed to
 just immediately trying to write to <code>conn</code>, in which
 case if it fails, it may not be possible to tell if it failed
@@ -8286,7 +8286,7 @@ the beginning of the communication, you do not need to call this
 function explicitly unless you want clearer error reporting.</p>
 
 <p>If TLS 1.2 or older is in use, you may call
-g_dtls_connection_handshake() after the initial handshake to
+<code>g_dtls_connection_handshake()</code> after the initial handshake to
 rehandshake; however, this usage is deprecated because rehandshaking
 is no longer part of the TLS protocol in TLS 1.3. Accordingly, the
 behavior of calling this function after the initial handshake is now
@@ -8294,7 +8294,7 @@ undefined, except it is guaranteed to be reasonable and
 nondestructive so as to preserve compatibility with code written for
 older versions of GLib.</p>
 
-<p><code>GDtlsConnection</code>::accept_certificate may be emitted during the
+<p><code>GDtlsConnection::accept_certificate</code> may be emitted during the
 handshake.</p>
 
                       </div>
@@ -8329,7 +8329,7 @@ handshake.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Asynchronously performs a TLS handshake on <code>conn</code>. See
-g_dtls_connection_handshake() for more information.</p>
+<code>g_dtls_connection_handshake()</code> for more information.</p>
 
                       </div>
                       <div class="declaration">
@@ -8363,7 +8363,7 @@ g_dtls_connection_handshake() for more information.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Finish an asynchronous TLS handshake operation. See
-g_dtls_connection_handshake() for more information.</p>
+<code>g_dtls_connection_handshake()</code> for more information.</p>
 
                       </div>
                       <div class="declaration">
@@ -8400,7 +8400,7 @@ g_dtls_connection_handshake() for more information.</p>
 caller is willing to speak on this connection. The
 Application-Layer Protocol Negotiation (ALPN) extension will be
 used to negotiate a compatible protocol with the peer; use
-g_dtls_connection_get_negotiated_protocol() to find the negotiated
+<code>g_dtls_connection_get_negotiated_protocol()</code> to find the negotiated
 protocol after the handshake.  Specifying <code>nil</code> for the the value
 of <code>protocols</code> will disable ALPN negotiation.</p>
 
@@ -8447,14 +8447,14 @@ time.</p>
 with <code>G_TLS_ERROR_CERTIFICATE_REQUIRED</code>, that means that the server
 requires a certificate, and if you try connecting again, you should
 call this method first. You can call
-g_dtls_client_connection_get_accepted_cas() on the failed connection
+<code>g_dtls_client_connection_get_accepted_cas()</code> on the failed connection
 to get a list of Certificate Authorities that the server will
 accept certificates from.</p>
 
 <p>(It is also possible that a server will allow the connection with
 or without a certificate; in that case, if you don&rsquo;t provide a
 certificate, you can tell that the server requested one by the fact
-that g_dtls_client_connection_get_accepted_cas() will return
+that <code>g_dtls_client_connection_get_accepted_cas()</code> will return
 non-<code>nil</code>.)</p>
 
                       </div>
@@ -8490,12 +8490,12 @@ non-<code>nil</code>.)</p>
                       <div class="abstract">
                         <p>Sets the certificate database that is used to verify peer certificates.
 This is set to the default database by default. See
-g_tls_backend_get_default_database(). If set to <code>nil</code>, then
+<code>g_tls_backend_get_default_database()</code>. If set to <code>nil</code>, then
 peer certificate validation will always set the
 <code>G_TLS_CERTIFICATE_UNKNOWN_CA</code> error (meaning
-<code>GDtlsConnection</code>::accept-certificate will always be emitted on
+<code>GDtlsConnection::accept</code>-certificate will always be emitted on
 client-side connections, unless that bit is not set in
-<code>GDtlsClientConnection</code>:validation-flags).</p>
+<code>GDtlsClientConnection:validation</code>-flags).</p>
 
                       </div>
                       <div class="declaration">
@@ -8597,7 +8597,7 @@ Changing the rehandshake mode is no longer
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">func</span> <span class="nf">setRehandshake</span><span class="p">(</span><span class="nv">mode</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO18TLSRehandshakeModea">TLSRehandshakeMode</a></span><span class="p">)</span></code></pre>
 
                         </div>
@@ -8637,17 +8637,17 @@ connection was closed cleanly based on application-level data
 (because the application-level data includes a length field, or is
 somehow self-delimiting); in this case, the close notify is
 redundant and may be omitted. You
-can use g_dtls_connection_set_require_close_notify() to tell <code>conn</code>
+can use <code>g_dtls_connection_set_require_close_notify()</code> to tell <code>conn</code>
 to allow an <q>unannounced</q> connection close, in which case the close
 will show up as a 0-length read, as in a non-TLS
 <code><a href="../Structs.html#/s:3GIO14GDatagramBasedV">GDatagramBased</a></code>, and it is up to the application to check that
 the data has been fully received.</p>
 
 <p>Note that this only affects the behavior when the peer closes the
-connection; when the application calls g_dtls_connection_close_async() on
+connection; when the application calls <code>g_dtls_connection_close_async()</code> on
 <code>conn</code> itself, this will send a close notification regardless of the
 setting of this property. If you explicitly want to do an unclean
-close, you can close <code>conn</code>&lsquo;s <code>GDtlsConnection</code>:base-socket rather
+close, you can close <code>conn</code>&lsquo;s <code>GDtlsConnection:base</code>-socket rather
 than closing <code>conn</code> itself.</p>
 
                       </div>
@@ -8685,18 +8685,18 @@ than closing <code>conn</code> itself.</p>
 
 <p>If <code>shutdown_read</code> is <code>true</code> then the receiving side of the connection is shut
 down, and further reading is disallowed. Subsequent calls to
-g_datagram_based_receive_messages() will return <code>G_IO_ERROR_CLOSED</code>.</p>
+<code>g_datagram_based_receive_messages()</code> will return <code>G_IO_ERROR_CLOSED</code>.</p>
 
 <p>If <code>shutdown_write</code> is <code>true</code> then the sending side of the connection is shut
 down, and further writing is disallowed. Subsequent calls to
-g_datagram_based_send_messages() will return <code>G_IO_ERROR_CLOSED</code>.</p>
+<code>g_datagram_based_send_messages()</code> will return <code>G_IO_ERROR_CLOSED</code>.</p>
 
 <p>It is allowed for both <code>shutdown_read</code> and <code>shutdown_write</code> to be TRUE — this
-is equivalent to calling g_dtls_connection_close().</p>
+is equivalent to calling <code>g_dtls_connection_close()</code>.</p>
 
 <p>If <code>cancellable</code> is cancelled, the <code>GDtlsConnection</code> may be left
 partially-closed and any pending untransmitted data may be lost. Call
-g_dtls_connection_shutdown() again to complete closing the <code>GDtlsConnection</code>.</p>
+<code>g_dtls_connection_shutdown()</code> again to complete closing the <code>GDtlsConnection.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8730,7 +8730,7 @@ g_dtls_connection_shutdown() again to complete closing the <code>GDtlsConnection
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Asynchronously shut down part or all of the DTLS connection. See
-g_dtls_connection_shutdown() for more information.</p>
+<code>g_dtls_connection_shutdown()</code> for more information.</p>
 
                       </div>
                       <div class="declaration">
@@ -8764,7 +8764,7 @@ g_dtls_connection_shutdown() for more information.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Finish an asynchronous TLS shutdown operation. See
-g_dtls_connection_shutdown() for more information.</p>
+<code>g_dtls_connection_shutdown()</code> for more information.</p>
 
                       </div>
                       <div class="declaration">
@@ -8798,7 +8798,7 @@ g_dtls_connection_shutdown() for more information.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The connection&rsquo;s certificate; see
-g_dtls_connection_set_certificate().</p>
+<code>g_dtls_connection_set_certificate()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8833,7 +8833,7 @@ g_dtls_connection_set_certificate().</p>
                       <div class="abstract">
                         <p>The certificate database to use when verifying this TLS connection.
 If no certificate database is set, then the default database will be
-used. See g_tls_backend_get_default_database().</p>
+used. See <code>g_tls_backend_get_default_database()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8907,7 +8907,7 @@ the handshake.</p>
 <p>If the peer did not use the ALPN extension, or did not advertise a
 protocol that matched one of <code>conn</code>&lsquo;s protocols, or the TLS backend
 does not support ALPN, then this will be <code>nil</code>. See
-g_dtls_connection_set_advertised_protocols().</p>
+<code>g_dtls_connection_set_advertised_protocols()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8942,7 +8942,7 @@ g_dtls_connection_set_advertised_protocols().</p>
                       <div class="abstract">
                         <p>Gets <code>conn</code>&lsquo;s peer&rsquo;s certificate after the handshake has completed.
 (It is not set during the emission of
-<code>GDtlsConnection</code>::accept-certificate.)</p>
+<code>GDtlsConnection::accept</code>-certificate.)</p>
 
                       </div>
                       <div class="declaration">
@@ -8977,7 +8977,7 @@ g_dtls_connection_set_advertised_protocols().</p>
                       <div class="abstract">
                         <p>Gets the errors associated with validating <code>conn</code>&lsquo;s peer&rsquo;s
 certificate, after the handshake has completed. (It is not set
-during the emission of <code>GDtlsConnection</code>::accept-certificate.)</p>
+during the emission of <code>GDtlsConnection::accept</code>-certificate.)</p>
 
                       </div>
                       <div class="declaration">
@@ -9011,7 +9011,7 @@ during the emission of <code>GDtlsConnection</code>::accept-certificate.)</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets <code>conn</code> rehandshaking mode. See
-g_dtls_connection_set_rehandshake_mode() for details.</p>
+<code>g_dtls_connection_set_rehandshake_mode()</code> for details.</p>
 
                       </div>
                       <div class="declaration">
@@ -9046,7 +9046,7 @@ g_dtls_connection_set_rehandshake_mode() for details.</p>
                       <div class="abstract">
                         <p>Tests whether or not <code>conn</code> expects a proper TLS close notification
 when the connection is closed. See
-g_dtls_connection_set_require_close_notify() for details.</p>
+<code>g_dtls_connection_set_require_close_notify()</code> for details.</p>
 
                       </div>
                       <div class="declaration">
@@ -9071,7 +9071,7 @@ g_dtls_connection_set_require_close_notify() for details.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

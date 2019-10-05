@@ -7504,7 +7504,7 @@ race-free API for sending UNIX signals to a subprocess.</p>
 
 <p>One major advantage that GIO brings over the core GLib library is
 comprehensive API for asynchronous I/O, such
-g_output_stream_splice_async().  This makes GSubprocess
+<code>g_output_stream_splice_async()</code>.  This makes GSubprocess
 significantly more powerful and flexible than equivalent APIs in
 some other languages such as the <code>subprocess.py</code>
 included with Python.  For example, using <code>GSubprocess</code> one could
@@ -7512,20 +7512,20 @@ create two child processes, reading standard output from the first,
 processing it, and writing to the input stream of the second, all
 without blocking the main loop.</p>
 
-<p>A powerful g_subprocess_communicate() API is provided similar to the
+<p>A powerful <code>g_subprocess_communicate()</code> API is provided similar to the
 <code>communicate()</code> method of <code>subprocess.py</code>. This enables very easy
 interaction with a subprocess that has been opened with pipes.</p>
 
 <p><code>GSubprocess</code> defaults to tight control over the file descriptors open
 in the child process, avoiding dangling-fd issues that are caused by
-a simple fork()/exec().  The only open file descriptors in the
+a simple <code>fork()</code><code>/exec()</code>.  The only open file descriptors in the
 spawned process are ones that were explicitly specified by the
 <code>GSubprocess</code> API (unless <code>G_SUBPROCESS_FLAGS_INHERIT_FDS</code> was
 specified).</p>
 
 <p><code>GSubprocess</code> will quickly reap all child processes as they exit,
 avoiding <q>zombie processes</q> remaining around for long periods of
-time.  g_subprocess_wait() can be used to wait for this to happen,
+time.  <code>g_subprocess_wait()</code> can be used to wait for this to happen,
 but it will happen even without the call being explicitly made.</p>
 
 <p>As a matter of principle, <code>GSubprocess</code> has no API that accepts
@@ -7535,15 +7535,15 @@ not contain a directory separator in their name.</p>
 
 <p><code>GSubprocess</code> attempts to have a very simple API for most uses (ie:
 spawning a subprocess with arguments and support for most typical
-kinds of input and output redirection).  See g_subprocess_new(). The
+kinds of input and output redirection).  See <code>g_subprocess_new()</code>. The
 <code>GSubprocessLauncher</code> API is provided for more complicated cases
 (advanced types of redirection, environment variable manipulation,
 change of working directory, child setup functions, etc).</p>
 
 <p>A typical use of <code>GSubprocess</code> will involve calling
-g_subprocess_new(), followed by g_subprocess_wait_async() or
-g_subprocess_wait().  After the process exits, the status can be
-checked using functions such as g_subprocess_get_if_exited() (which
+<code>g_subprocess_new()</code>, followed by <code>g_subprocess_wait_async()</code> or
+<code>g_subprocess_wait()</code>.  After the process exits, the status can be
+checked using functions such as <code>g_subprocess_get_if_exited()</code> (which
 are similar to the familiar WIFEXITED-style POSIX macros).</p>
 
           </div>
@@ -7578,7 +7578,7 @@ are similar to the familiar WIFEXITED-style POSIX macros).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9956">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9900">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7616,7 +7616,7 @@ are similar to the familiar WIFEXITED-style POSIX macros).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9959">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9903">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7744,7 +7744,7 @@ are similar to the familiar WIFEXITED-style POSIX macros).</p>
                         <p>binding reference or <code>nil</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10234-L10258">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10178-L10202">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7836,7 +7836,7 @@ are similar to the familiar WIFEXITED-style POSIX macros).</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10298-L10317">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10241-L10260">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7901,8 +7901,8 @@ discarded. None of the out variables (aside from <code>error</code>) will have
 been set to anything in particular and should not be inspected.</p>
 
 <p>In the case that <code>true</code> is returned, the subprocess has exited and the
-exit status inspection APIs (eg: g_subprocess_get_if_exited(),
-g_subprocess_get_exit_status()) may be used.</p>
+exit status inspection APIs (eg: <code>g_subprocess_get_if_exited()</code>,
+<code>g_subprocess_get_exit_status()</code>) may be used.</p>
 
 <p>You should not attempt to use any of the subprocess pipes after
 starting this function, since they may be left in strange states,
@@ -7920,7 +7920,7 @@ attempt to interact with the pipes while the operation is in progress
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10365-L10372">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10308-L10315">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7941,8 +7941,8 @@ attempt to interact with the pipes while the operation is in progress
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Asynchronous version of g_subprocess_communicate().  Complete
-invocation with g_subprocess_communicate_finish().</p>
+                        <p>Asynchronous version of <code>g_subprocess_communicate()</code>.  Complete
+invocation with <code>g_subprocess_communicate_finish()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7954,7 +7954,7 @@ invocation with g_subprocess_communicate_finish().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10376-L10379">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10319-L10322">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7975,7 +7975,7 @@ invocation with g_subprocess_communicate_finish().</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Complete an invocation of g_subprocess_communicate_async().</p>
+                        <p>Complete an invocation of <code>g_subprocess_communicate_async()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7987,7 +7987,7 @@ invocation with g_subprocess_communicate_finish().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10382-L10389">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10325-L10332">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8008,7 +8008,7 @@ invocation with g_subprocess_communicate_finish().</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Like g_subprocess_communicate(), but validates the output of the
+                        <p>Like <code>g_subprocess_communicate()</code>, but validates the output of the
 process as UTF-8, and returns it as a regular NUL terminated string.</p>
 
 <p>On error, <code>stdout_buf</code> and <code>stderr_buf</code> will be set to undefined values and
@@ -8024,7 +8024,7 @@ should not be used.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10396-L10403">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10339-L10346">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8045,8 +8045,8 @@ should not be used.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Asynchronous version of g_subprocess_communicate_utf8().  Complete
-invocation with g_subprocess_communicate_utf8_finish().</p>
+                        <p>Asynchronous version of <code>g_subprocess_communicate_utf8()</code>.  Complete
+invocation with <code>g_subprocess_communicate_utf8_finish()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8058,7 +8058,7 @@ invocation with g_subprocess_communicate_utf8_finish().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10407-L10410">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10350-L10353">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8079,7 +8079,7 @@ invocation with g_subprocess_communicate_utf8_finish().</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Complete an invocation of g_subprocess_communicate_utf8_async().</p>
+                        <p>Complete an invocation of <code>g_subprocess_communicate_utf8_async()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8091,7 +8091,7 @@ invocation with g_subprocess_communicate_utf8_finish().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10413-L10420">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10356-L10363">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8115,10 +8115,10 @@ invocation with g_subprocess_communicate_utf8_finish().</p>
                         <p>Use an operating-system specific method to attempt an immediate,
 forceful termination of the process.  There is no mechanism to
 determine whether or not the request itself was successful;
-however, you can use g_subprocess_wait() to monitor the status of
+however, you can use <code>g_subprocess_wait()</code> to monitor the status of
 the process after calling this function.</p>
 
-<p>On Unix, this function sends <code>SIGKILL</code>.</p>
+<p>On Unix, this function sends <code>SIGKILL.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8130,7 +8130,7 @@ the process after calling this function.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10429-L10432">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10372-L10375">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8152,13 +8152,13 @@ the process after calling this function.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Check the exit status of the subprocess, given that it exited
-normally.  This is the value passed to the exit() system call or the
+normally.  This is the value passed to the <code>exit()</code> system call or the
 return value from main.</p>
 
 <p>This is equivalent to the system WEXITSTATUS macro.</p>
 
-<p>It is an error to call this function before g_subprocess_wait() and
-unless g_subprocess_get_if_exited() returned <code>true</code>.</p>
+<p>It is an error to call this function before <code>g_subprocess_wait()</code> and
+unless <code>g_subprocess_get_if_exited()</code> returned <code>true</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8170,7 +8170,7 @@ unless g_subprocess_get_if_exited() returned <code>true</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10442-L10445">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10385-L10388">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8192,7 +8192,7 @@ unless g_subprocess_get_if_exited() returned <code>true</code>.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>On UNIX, returns the process ID as a decimal string.
-On Windows, returns the result of GetProcessID() also as a string.
+On Windows, returns the result of <code>GetProcessID()</code> also as a string.
 If the subprocess has terminated, this will return <code>nil</code>.</p>
 
                       </div>
@@ -8205,7 +8205,7 @@ If the subprocess has terminated, this will return <code>nil</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10450-L10453">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10393-L10396">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8226,12 +8226,12 @@ If the subprocess has terminated, this will return <code>nil</code>.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Check if the given subprocess exited normally (ie: by way of exit()
-or return from main()).</p>
+                        <p>Check if the given subprocess exited normally (ie: by way of <code>exit()</code>
+or return from <code>main()</code>).</p>
 
 <p>This is equivalent to the system WIFEXITED macro.</p>
 
-<p>It is an error to call this function before g_subprocess_wait() has
+<p>It is an error to call this function before <code>g_subprocess_wait()</code> has
 returned.</p>
 
                       </div>
@@ -8244,7 +8244,7 @@ returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10462-L10465">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10405-L10408">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8269,7 +8269,7 @@ returned.</p>
 
 <p>This is equivalent to the system WIFSIGNALED macro.</p>
 
-<p>It is an error to call this function before g_subprocess_wait() has
+<p>It is an error to call this function before <code>g_subprocess_wait()</code> has
 returned.</p>
 
                       </div>
@@ -8282,7 +8282,7 @@ returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10473-L10476">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10416-L10419">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8303,16 +8303,16 @@ returned.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the raw status code of the process, as from waitpid().</p>
+                        <p>Gets the raw status code of the process, as from <code>waitpid()</code>.</p>
 
 <p>This value has no particular meaning, but it can be used with the
 macros defined by the system headers such as WIFEXITED.  It can also
-be used with g_spawn_check_exit_status().</p>
+be used with <code>g_spawn_check_exit_status()</code>.</p>
 
-<p>It is more likely that you want to use g_subprocess_get_if_exited()
-followed by g_subprocess_get_exit_status().</p>
+<p>It is more likely that you want to use <code>g_subprocess_get_if_exited()</code>
+followed by <code>g_subprocess_get_exit_status()</code>.</p>
 
-<p>It is an error to call this function before g_subprocess_wait() has
+<p>It is an error to call this function before <code>g_subprocess_wait()</code> has
 returned.</p>
 
                       </div>
@@ -8325,7 +8325,7 @@ returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10489-L10492">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10432-L10435">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8350,7 +8350,7 @@ returned.</p>
 <code>subprocess</code>.</p>
 
 <p>The process must have been created with
-<code>G_SUBPROCESS_FLAGS_STDERR_PIPE</code>.</p>
+<code>G_SUBPROCESS_FLAGS_STDERR_PIPE.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8362,7 +8362,7 @@ returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10499-L10502">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10442-L10445">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8387,7 +8387,7 @@ returned.</p>
 to the stdin of <code>subprocess</code>.</p>
 
 <p>The process must have been created with
-<code>G_SUBPROCESS_FLAGS_STDIN_PIPE</code>.</p>
+<code>G_SUBPROCESS_FLAGS_STDIN_PIPE.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8399,7 +8399,7 @@ to the stdin of <code>subprocess</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10509-L10512">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10452-L10455">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8424,7 +8424,7 @@ to the stdin of <code>subprocess</code>.</p>
 <code>subprocess</code>.</p>
 
 <p>The process must have been created with
-<code>G_SUBPROCESS_FLAGS_STDOUT_PIPE</code>.</p>
+<code>G_SUBPROCESS_FLAGS_STDOUT_PIPE.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8436,7 +8436,7 @@ to the stdin of <code>subprocess</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10519-L10522">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10462-L10465">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8459,9 +8459,9 @@ to the stdin of <code>subprocess</code>.</p>
                       <div class="abstract">
                         <p>Checks if the process was <q>successful</q>.  A process is considered
 successful if it exited cleanly with an exit status of 0, either by
-way of the exit() system call or return from main().</p>
+way of the <code>exit()</code> system call or return from <code>main()</code>.</p>
 
-<p>It is an error to call this function before g_subprocess_wait() has
+<p>It is an error to call this function before <code>g_subprocess_wait()</code> has
 returned.</p>
 
                       </div>
@@ -8474,7 +8474,7 @@ returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10530-L10533">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10473-L10476">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8500,8 +8500,8 @@ that it terminated due to a signal.</p>
 
 <p>This is equivalent to the system WTERMSIG macro.</p>
 
-<p>It is an error to call this function before g_subprocess_wait() and
-unless g_subprocess_get_if_signaled() returned <code>true</code>.</p>
+<p>It is an error to call this function before <code>g_subprocess_wait()</code> and
+unless <code>g_subprocess_get_if_signaled()</code> returned <code>true</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8513,7 +8513,7 @@ unless g_subprocess_get_if_signaled() returned <code>true</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10542-L10545">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10485-L10488">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8552,7 +8552,7 @@ be signalled.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10554-L10557">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10497-L10500">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8576,14 +8576,14 @@ be signalled.</p>
                         <p>Synchronously wait for the subprocess to terminate.</p>
 
 <p>After the process terminates you can query its exit status with
-functions such as g_subprocess_get_if_exited() and
-g_subprocess_get_exit_status().</p>
+functions such as <code>g_subprocess_get_if_exited()</code> and
+<code>g_subprocess_get_exit_status()</code>.</p>
 
 <p>This function does not fail in the case of the subprocess having
-abnormal termination.  See g_subprocess_wait_check() for that.</p>
+abnormal termination.  See <code>g_subprocess_wait_check()</code> for that.</p>
 
 <p>Cancelling <code>cancellable</code> doesn&rsquo;t kill the subprocess.  Call
-g_subprocess_force_exit() if it is desirable.</p>
+<code>g_subprocess_force_exit()</code> if it is desirable.</p>
 
                       </div>
                       <div class="declaration">
@@ -8595,7 +8595,7 @@ g_subprocess_force_exit() if it is desirable.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10570-L10577">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10513-L10520">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8618,7 +8618,7 @@ g_subprocess_force_exit() if it is desirable.</p>
                       <div class="abstract">
                         <p>Wait for the subprocess to terminate.</p>
 
-<p>This is the asynchronous version of g_subprocess_wait().</p>
+<p>This is the asynchronous version of <code>g_subprocess_wait()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8630,7 +8630,7 @@ g_subprocess_force_exit() if it is desirable.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10582-L10585">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10525-L10528">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8651,7 +8651,7 @@ g_subprocess_force_exit() if it is desirable.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Combines g_subprocess_wait() with g_spawn_check_exit_status().</p>
+                        <p>Combines <code>g_subprocess_wait()</code> with <code>g_spawn_check_exit_status()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8663,7 +8663,7 @@ g_subprocess_force_exit() if it is desirable.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10588-L10595">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10531-L10538">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8684,9 +8684,9 @@ g_subprocess_force_exit() if it is desirable.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Combines g_subprocess_wait_async() with g_spawn_check_exit_status().</p>
+                        <p>Combines <code>g_subprocess_wait_async()</code> with <code>g_spawn_check_exit_status()</code>.</p>
 
-<p>This is the asynchronous version of g_subprocess_wait_check().</p>
+<p>This is the asynchronous version of <code>g_subprocess_wait_check()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8698,7 +8698,7 @@ g_subprocess_force_exit() if it is desirable.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10600-L10603">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10543-L10546">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8720,7 +8720,7 @@ g_subprocess_force_exit() if it is desirable.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Collects the result of a previous call to
-g_subprocess_wait_check_async().</p>
+<code>g_subprocess_wait_check_async()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8732,7 +8732,7 @@ g_subprocess_wait_check_async().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10607-L10614">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10550-L10557">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8754,7 +8754,7 @@ g_subprocess_wait_check_async().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Collects the result of a previous call to
-g_subprocess_wait_async().</p>
+<code>g_subprocess_wait_async()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8766,7 +8766,7 @@ g_subprocess_wait_async().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10618-L10625">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10561-L10568">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8788,13 +8788,13 @@ g_subprocess_wait_async().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Check the exit status of the subprocess, given that it exited
-normally.  This is the value passed to the exit() system call or the
+normally.  This is the value passed to the <code>exit()</code> system call or the
 return value from main.</p>
 
 <p>This is equivalent to the system WEXITSTATUS macro.</p>
 
-<p>It is an error to call this function before g_subprocess_wait() and
-unless g_subprocess_get_if_exited() returned <code>true</code>.</p>
+<p>It is an error to call this function before <code>g_subprocess_wait()</code> and
+unless <code>g_subprocess_get_if_exited()</code> returned <code>true</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8806,7 +8806,7 @@ unless g_subprocess_get_if_exited() returned <code>true</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10634-L10647">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10577-L10590">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8828,7 +8828,7 @@ unless g_subprocess_get_if_exited() returned <code>true</code>.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>On UNIX, returns the process ID as a decimal string.
-On Windows, returns the result of GetProcessID() also as a string.
+On Windows, returns the result of <code>GetProcessID()</code> also as a string.
 If the subprocess has terminated, this will return <code>nil</code>.</p>
 
                       </div>
@@ -8841,7 +8841,7 @@ If the subprocess has terminated, this will return <code>nil</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10652-L10660">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10595-L10603">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8862,12 +8862,12 @@ If the subprocess has terminated, this will return <code>nil</code>.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Check if the given subprocess exited normally (ie: by way of exit()
-or return from main()).</p>
+                        <p>Check if the given subprocess exited normally (ie: by way of <code>exit()</code>
+or return from <code>main()</code>).</p>
 
 <p>This is equivalent to the system WIFEXITED macro.</p>
 
-<p>It is an error to call this function before g_subprocess_wait() has
+<p>It is an error to call this function before <code>g_subprocess_wait()</code> has
 returned.</p>
 
                       </div>
@@ -8880,7 +8880,7 @@ returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10669-L10681">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10612-L10624">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8905,7 +8905,7 @@ returned.</p>
 
 <p>This is equivalent to the system WIFSIGNALED macro.</p>
 
-<p>It is an error to call this function before g_subprocess_wait() has
+<p>It is an error to call this function before <code>g_subprocess_wait()</code> has
 returned.</p>
 
                       </div>
@@ -8918,7 +8918,7 @@ returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10689-L10700">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10632-L10643">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8939,16 +8939,16 @@ returned.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the raw status code of the process, as from waitpid().</p>
+                        <p>Gets the raw status code of the process, as from <code>waitpid()</code>.</p>
 
 <p>This value has no particular meaning, but it can be used with the
 macros defined by the system headers such as WIFEXITED.  It can also
-be used with g_spawn_check_exit_status().</p>
+be used with <code>g_spawn_check_exit_status()</code>.</p>
 
-<p>It is more likely that you want to use g_subprocess_get_if_exited()
-followed by g_subprocess_get_exit_status().</p>
+<p>It is more likely that you want to use <code>g_subprocess_get_if_exited()</code>
+followed by <code>g_subprocess_get_exit_status()</code>.</p>
 
-<p>It is an error to call this function before g_subprocess_wait() has
+<p>It is an error to call this function before <code>g_subprocess_wait()</code> has
 returned.</p>
 
                       </div>
@@ -8961,7 +8961,7 @@ returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10713-L10729">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10656-L10672">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8986,7 +8986,7 @@ returned.</p>
 <code>subprocess</code>.</p>
 
 <p>The process must have been created with
-<code>G_SUBPROCESS_FLAGS_STDERR_PIPE</code>.</p>
+<code>G_SUBPROCESS_FLAGS_STDERR_PIPE.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8998,7 +8998,7 @@ returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10736-L10746">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10679-L10689">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9023,7 +9023,7 @@ returned.</p>
 to the stdin of <code>subprocess</code>.</p>
 
 <p>The process must have been created with
-<code>G_SUBPROCESS_FLAGS_STDIN_PIPE</code>.</p>
+<code>G_SUBPROCESS_FLAGS_STDIN_PIPE.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -9035,7 +9035,7 @@ to the stdin of <code>subprocess</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10753-L10763">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10696-L10706">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9060,7 +9060,7 @@ to the stdin of <code>subprocess</code>.</p>
 <code>subprocess</code>.</p>
 
 <p>The process must have been created with
-<code>G_SUBPROCESS_FLAGS_STDOUT_PIPE</code>.</p>
+<code>G_SUBPROCESS_FLAGS_STDOUT_PIPE.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -9072,7 +9072,7 @@ to the stdin of <code>subprocess</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10770-L10780">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10713-L10723">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9095,9 +9095,9 @@ to the stdin of <code>subprocess</code>.</p>
                       <div class="abstract">
                         <p>Checks if the process was <q>successful</q>.  A process is considered
 successful if it exited cleanly with an exit status of 0, either by
-way of the exit() system call or return from main().</p>
+way of the <code>exit()</code> system call or return from <code>main()</code>.</p>
 
-<p>It is an error to call this function before g_subprocess_wait() has
+<p>It is an error to call this function before <code>g_subprocess_wait()</code> has
 returned.</p>
 
                       </div>
@@ -9110,7 +9110,7 @@ returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10788-L10799">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10731-L10742">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9136,8 +9136,8 @@ that it terminated due to a signal.</p>
 
 <p>This is equivalent to the system WTERMSIG macro.</p>
 
-<p>It is an error to call this function before g_subprocess_wait() and
-unless g_subprocess_get_if_signaled() returned <code>true</code>.</p>
+<p>It is an error to call this function before <code>g_subprocess_wait()</code> and
+unless <code>g_subprocess_get_if_signaled()</code> returned <code>true</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -9149,7 +9149,7 @@ unless g_subprocess_get_if_signaled() returned <code>true</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10808-L10820">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10751-L10763">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9162,7 +9162,7 @@ unless g_subprocess_get_if_signaled() returned <code>true</code>.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

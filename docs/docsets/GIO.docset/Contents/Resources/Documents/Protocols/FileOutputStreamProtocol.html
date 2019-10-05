@@ -7499,12 +7499,12 @@ stream to jump to arbitrary positions in the file and to truncate
 the file, provided the filesystem of the file supports these
 operations.</p>
 
-<p>To find the position of a file output stream, use g_seekable_tell().
+<p>To find the position of a file output stream, use <code>g_seekable_tell()</code>.
 To find out if a file output stream supports seeking, use
-g_seekable_can_seek().To position a file output stream, use
-g_seekable_seek(). To find out if a file output stream supports
-truncating, use g_seekable_can_truncate(). To truncate a file output
-stream, use g_seekable_truncate().</p>
+<code>g_seekable_can_seek()</code>.To position a file output stream, use
+<code>g_seekable_seek()</code>. To find out if a file output stream supports
+truncating, use <code>g_seekable_can_truncate()</code>. To truncate a file output
+stream, use <code>g_seekable_truncate()</code>.</p>
 
           </div>
         </section>
@@ -7538,7 +7538,7 @@ stream, use g_seekable_truncate().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L2148">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L2143">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7576,7 +7576,7 @@ stream, use g_seekable_truncate().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L2151">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L2146">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7668,7 +7668,7 @@ stream, use g_seekable_truncate().</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L2318-L2337">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L2312-L2331">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7714,7 +7714,7 @@ and closed, as the etag can change while writing.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L2347-L2350">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L2341-L2344">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7737,7 +7737,7 @@ and closed, as the etag can change while writing.</p>
                       <div class="abstract">
                         <p>Queries a file output stream for the given <code>attributes</code>.
 This function blocks while querying the stream. For the asynchronous
-version of this function, see g_file_output_stream_query_info_async().
+version of this function, see <code>g_file_output_stream_query_info_async()</code>.
 While the stream is blocked, the stream will set the pending flag
 internally, and any other operations on the stream will fail with
 <code>G_IO_ERROR_PENDING</code>.</p>
@@ -7763,7 +7763,7 @@ be returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L2369-L2376">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L2363-L2370">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7786,10 +7786,10 @@ be returned.</p>
                       <div class="abstract">
                         <p>Asynchronously queries the <code>stream</code> for a <code>GFileInfo</code>. When completed,
 <code>callback</code> will be called with a <code>GAsyncResult</code> which can be used to
-finish the operation with g_file_output_stream_query_info_finish().</p>
+finish the operation with <code>g_file_output_stream_query_info_finish()</code>.</p>
 
 <p>For the synchronous version of this function, see
-g_file_output_stream_query_info().</p>
+<code>g_file_output_stream_query_info()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7801,7 +7801,7 @@ g_file_output_stream_query_info().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L2384-L2387">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L2378-L2381">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7823,7 +7823,7 @@ g_file_output_stream_query_info().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Finalizes the asynchronous query started
-by g_file_output_stream_query_info_async().</p>
+by <code>g_file_output_stream_query_info_async()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7835,7 +7835,7 @@ by g_file_output_stream_query_info_async().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L2391-L2398">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L2385-L2392">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7870,7 +7870,7 @@ and closed, as the etag can change while writing.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L2402-L2410">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L2396-L2404">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7883,7 +7883,7 @@ and closed, as the etag can change while writing.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

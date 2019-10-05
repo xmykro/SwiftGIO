@@ -7498,17 +7498,17 @@ representation data for displaying the actions to the user, e.g. in
 a menu.</p>
 
 <p>The main way to interact with the actions in a GActionGroup is to
-activate them with g_action_group_activate_action(). Activating an
+activate them with <code>g_action_group_activate_action()</code>. Activating an
 action may require a <code>GVariant</code> parameter. The required type of the
-parameter can be inquired with g_action_group_get_action_parameter_type().
-Actions may be disabled, see g_action_group_get_action_enabled().
+parameter can be inquired with <code>g_action_group_get_action_parameter_type()</code>.
+Actions may be disabled, see <code>g_action_group_get_action_enabled()</code>.
 Activating a disabled action has no effect.</p>
 
 <p>Actions may optionally have a state in the form of a <code>GVariant</code>. The
 current state of an action can be inquired with
-g_action_group_get_action_state(). Activating a stateful action may
+<code>g_action_group_get_action_state()</code>. Activating a stateful action may
 change its state, but it is also possible to set the state by calling
-g_action_group_change_action_state().</p>
+<code>g_action_group_change_action_state()</code>.</p>
 
 <p>As typical example, consider a text editing application which has an
 option to change the current font to &lsquo;bold&rsquo;. A good way to represent
@@ -7516,7 +7516,7 @@ this would be a stateful action, with a boolean state. Activating the
 action would toggle the state.</p>
 
 <p>Each action in the group has a unique name (which is a string).  All
-method calls, except g_action_group_list_actions() take the name of
+method calls, except <code>g_action_group_list_actions()</code> take the name of
 an action as an argument.</p>
 
 <p>The <code>GActionGroup</code> API is meant to be the &lsquo;public&rsquo; API to the action
@@ -7524,17 +7524,17 @@ group.  The calls here are exactly the interaction that &lsquo;external
 forces&rsquo; (eg: UI, incoming D-Bus messages, etc.) are supposed to have
 with actions.  &lsquo;Internal&rsquo; APIs (ie: ones meant only to be accessed by
 the action group implementation) are found on subclasses.  This is
-why you will find - for example - g_action_group_get_action_enabled()
-but not an equivalent set() call.</p>
+why you will find - for example - <code>g_action_group_get_action_enabled()</code>
+but not an equivalent <code>set()</code> call.</p>
 
 <p>Signals are emitted on the action group in response to state changes
 on individual actions.</p>
 
 <p>Implementations of <code>GActionGroup</code> should provide implementations for
-the virtual functions g_action_group_list_actions() and
-g_action_group_query_action().  The other virtual functions should
+the virtual functions <code>g_action_group_list_actions()</code> and
+<code>g_action_group_query_action()</code>.  The other virtual functions should
 not be implemented - their <q>wrappers</q> are actually implemented with
-calls to g_action_group_query_action().</p>
+calls to <code>g_action_group_query_action()</code>.</p>
 
           </div>
         </section>
@@ -7626,7 +7626,7 @@ Ownership is transferred to the <code>ActionGroup</code> instance.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/ActionGroupProtocol.html">ActionGroupProtocol</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/ActionGroupProtocol.html">ActionGroupProtocol</a></span></code></pre>
 
                         </div>
                       </div>
@@ -7657,7 +7657,7 @@ Ownership is transferred to the <code>ActionGroup</code> instance.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -7688,7 +7688,7 @@ Ownership is transferred to the <code>ActionGroup</code> instance.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -7719,7 +7719,7 @@ Ownership is transferred to the <code>ActionGroup</code> instance.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -7750,7 +7750,7 @@ Ownership is transferred to the <code>ActionGroup</code> instance.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -7768,7 +7768,7 @@ Ownership is transferred to the <code>ActionGroup</code> instance.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

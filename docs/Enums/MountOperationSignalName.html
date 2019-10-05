@@ -7524,7 +7524,7 @@ by dismissing open password dialogs.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3251">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3240">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7546,7 +7546,7 @@ by dismissing open password dialogs.</p>
 
 <p>If the message contains a line break, the first line should be
 presented as a heading. For example, it may be used as the
-primary text in a <code>GtkMessageDialog</code>.</p>
+primary text in a <code>GtkMessageDialog.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7558,7 +7558,7 @@ primary text in a <code>GtkMessageDialog</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3257">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3246">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7581,7 +7581,7 @@ choices for the user to choose from.</p>
 
 <p>If the message contains a line break, the first line should be
 presented as a heading. For example, it may be used as the
-primary text in a <code>GtkMessageDialog</code>.</p>
+primary text in a <code>GtkMessageDialog.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7593,7 +7593,7 @@ primary text in a <code>GtkMessageDialog</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3264">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3253">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7612,20 +7612,20 @@ primary text in a <code>GtkMessageDialog</code>.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The notify signal is emitted on an object when one of its properties has
-its value set through g_object_set_property(), g_object_set(), et al.</p>
+its value set through <code>g_object_set_property()</code>, <code>g_object_set()</code>, et al.</p>
 
 <p>Note that getting this signal doesn’t itself guarantee that the value of
 the property has actually changed. When it is emitted is determined by the
 derived GObject class. If the implementor did not create the property with
-<code>G_PARAM_EXPLICIT_NOTIFY</code>, then any call to g_object_set_property() results
-in ::notify being emitted, even if the new value is the same as the old.
+<code>G_PARAM_EXPLICIT_NOTIFY</code>, then any call to <code>g_object_set_property()</code> results
+in <code>notify</code> being emitted, even if the new value is the same as the old.
 If they did pass <code>G_PARAM_EXPLICIT_NOTIFY</code>, then this signal is emitted only
-when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+when they explicitly call <code>g_object_notify()</code> or <code>g_object_notify_by_pspec()</code>,
 and common practice is to do that only when the value has actually changed.</p>
 
 <p>This signal is typically used to obtain change notification for a
 single property, by specifying the property name as a detail in the
-g_signal_connect() call, like this:
+<code>g_signal_connect()</code> call, like this:
 (C Language Example):</p>
 <pre class="highlight plaintext"><code>g_signal_connect (text_view-&gt;buffer, "notify::paste-target-list",
                   G_CALLBACK (gtk_text_view_target_list_notify),
@@ -7646,7 +7646,7 @@ detail strings for the notify signal.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3290">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3278">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7676,7 +7676,7 @@ detail strings for the notify signal.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3292">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3280">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7699,13 +7699,13 @@ e.g. unmounting/ejecting a <code>GMount</code> or stopping a <code>GDrive</code>
 
 <p>Note that this signal may be emitted several times to update the
 list of blocking processes as processes close files. The
-application should only respond with g_mount_operation_reply() to
-the latest signal (setting <code>GMountOperation</code>:choice to the choice
+application should only respond with <code>g_mount_operation_reply()</code> to
+the latest signal (setting <code>GMountOperation:choice</code> to the choice
 the user made).</p>
 
 <p>If the message contains a line break, the first line should be
 presented as a heading. For example, it may be used as the
-primary text in a <code>GtkMessageDialog</code>.</p>
+primary text in a <code>GtkMessageDialog.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7717,7 +7717,7 @@ primary text in a <code>GtkMessageDialog</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3305">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3293">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7750,7 +7750,7 @@ of completion, when <code>bytes_left</code> reaches zero.</p>
 
 <p>If the message contains a line break, the first line should be
 presented as a heading. For example, it may be used as the
-primary text in a <code>GtkMessageDialog</code>.</p>
+primary text in a <code>GtkMessageDialog.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7762,7 +7762,7 @@ primary text in a <code>GtkMessageDialog</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3322">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3310">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7792,7 +7792,7 @@ primary text in a <code>GtkMessageDialog</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3324">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3312">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7811,7 +7811,7 @@ primary text in a <code>GtkMessageDialog</code>.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The index of the user&rsquo;s choice when a question is asked during the
-mount operation. See the <code>GMountOperation</code>::ask-question signal.</p>
+mount operation. See the <code>GMountOperation::ask</code>-question signal.</p>
 
                       </div>
                       <div class="declaration">
@@ -7823,7 +7823,7 @@ mount operation. See the <code>GMountOperation</code>::ask-question signal.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3327">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3315">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7853,7 +7853,7 @@ mount operation. See the <code>GMountOperation</code>::ask-question signal.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3329">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3317">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7872,7 +7872,7 @@ mount operation. See the <code>GMountOperation</code>::ask-question signal.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Whether the device to be unlocked is a TCRYPT hidden volume.
-See <a href="https://www.veracrypt.fr/en/Hidden%6020Volume%60.html">the VeraCrypt documentation</a>.</p>
+See <a href="https://www.veracrypt.fr/en/Hidden%6020Volume.html%60">the VeraCrypt documentation</a>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7884,7 +7884,7 @@ See <a href="https://www.veracrypt.fr/en/Hidden%6020Volume%60.html">the VeraCryp
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3332">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3320">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7906,7 +7906,7 @@ See <a href="https://www.veracrypt.fr/en/Hidden%6020Volume%60.html">the VeraCryp
 In this context, a system volume is a volume with a bootloader
 and operating system installed. This is only supported for Windows
 operating systems. For further documentation, see
-<a href="https://www.veracrypt.fr/en/System%6020Encryption%60.html">the VeraCrypt documentation</a>.</p>
+<a href="https://www.veracrypt.fr/en/System%6020Encryption.html%60">the VeraCrypt documentation</a>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7918,7 +7918,7 @@ operating systems. For further documentation, see
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3338">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3326">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7949,7 +7949,7 @@ the mount operation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3341">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3329">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7979,7 +7979,7 @@ the mount operation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3343">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3331">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7998,7 +7998,7 @@ the mount operation.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The VeraCrypt PIM value, when unlocking a VeraCrypt volume. See
-<a href="https://www.veracrypt.fr/en/Personal%6020Iterations%6020Multiplier%6020%60(PIM).html">the VeraCrypt documentation</a>.</p>
+<a href="https://www.veracrypt.fr/en/Personal%6020Iterations%60%6020Multiplier%60%6020%60%60(PIM)%60.html">the VeraCrypt documentation</a>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8010,7 +8010,7 @@ the mount operation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3346">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3334">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8041,7 +8041,7 @@ the mount operation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3349">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L3337">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8054,7 +8054,7 @@ the mount operation.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

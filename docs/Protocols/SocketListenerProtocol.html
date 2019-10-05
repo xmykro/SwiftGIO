@@ -7495,10 +7495,10 @@ Alternatively, use <code><a href="../Structs/SocketListenerRef.html">SocketListe
 of server sockets and helps you accept sockets from any of the
 socket, either sync or async.</p>
 
-<p>Add addresses and ports to listen on using g_socket_listener_add_address()
-and g_socket_listener_add_inet_port(). These will be listened on until
-g_socket_listener_close() is called. Dropping your final reference to the
-<code>GSocketListener</code> will not cause g_socket_listener_close() to be called
+<p>Add addresses and ports to listen on using <code>g_socket_listener_add_address()</code>
+and <code>g_socket_listener_add_inet_port()</code>. These will be listened on until
+<code>g_socket_listener_close()</code> is called. Dropping your final reference to the
+<code>GSocketListener</code> will not cause <code>g_socket_listener_close()</code> to be called
 implicitly, as some references to the <code>GSocketListener</code> may be held
 internally.</p>
 
@@ -7538,7 +7538,7 @@ that make this even easier.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9063">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9009">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7576,7 +7576,7 @@ that make this even easier.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9066">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9012">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7704,7 +7704,7 @@ that make this even easier.</p>
                         <p>binding reference or <code>nil</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9222-L9246">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9168-L9192">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7796,7 +7796,7 @@ that make this even easier.</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9290-L9309">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9235-L9254">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7850,7 +7850,7 @@ was cancelled, the error <code>G_IO_ERROR_CANCELLED</code> will be returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9327-L9334">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9272-L9279">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7871,10 +7871,10 @@ was cancelled, the error <code>G_IO_ERROR_CANCELLED</code> will be returned.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This is the asynchronous version of g_socket_listener_accept().</p>
+                        <p>This is the asynchronous version of <code>g_socket_listener_accept()</code>.</p>
 
 <p>When the operation is finished <code>callback</code> will be
-called. You can then call g_socket_listener_accept_socket()
+called. You can then call <code>g_socket_listener_accept_socket()</code>
 to get the result of the operation.</p>
 
                       </div>
@@ -7887,7 +7887,7 @@ to get the result of the operation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9341-L9344">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9286-L9289">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7908,7 +7908,7 @@ to get the result of the operation.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes an async accept operation. See g_socket_listener_accept_async()</p>
+                        <p>Finishes an async accept operation. See <code>g_socket_listener_accept_async()</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7920,7 +7920,7 @@ to get the result of the operation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9347-L9354">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9292-L9299">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7945,7 +7945,7 @@ to get the result of the operation.</p>
 to the listener. Returns the <code>GSocket</code> that was accepted.</p>
 
 <p>If you want to accept the high-level <code>GSocketConnection</code>, not a <code>GSocket</code>,
-which is often the case, then you should use g_socket_listener_accept()
+which is often the case, then you should use <code>g_socket_listener_accept()</code>
 instead.</p>
 
 <p>If <code>source_object</code> is not <code>nil</code> it will be filled out with the source
@@ -7966,7 +7966,7 @@ was cancelled, the error <code>G_IO_ERROR_CANCELLED</code> will be returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9370-L9377">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9315-L9322">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7987,10 +7987,10 @@ was cancelled, the error <code>G_IO_ERROR_CANCELLED</code> will be returned.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This is the asynchronous version of g_socket_listener_accept_socket().</p>
+                        <p>This is the asynchronous version of <code>g_socket_listener_accept_socket()</code>.</p>
 
 <p>When the operation is finished <code>callback</code> will be
-called. You can then call g_socket_listener_accept_socket_finish()
+called. You can then call <code>g_socket_listener_accept_socket_finish()</code>
 to get the result of the operation.</p>
 
                       </div>
@@ -8003,7 +8003,7 @@ to get the result of the operation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9384-L9387">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9329-L9332">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8024,7 +8024,7 @@ to get the result of the operation.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes an async accept operation. See g_socket_listener_accept_socket_async()</p>
+                        <p>Finishes an async accept operation. See <code>g_socket_listener_accept_socket_async()</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8036,7 +8036,7 @@ to get the result of the operation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9390-L9397">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9335-L9342">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8064,7 +8064,7 @@ sockets from.</p>
 <p>Note that adding an IPv6 address, depending on the platform,
 may or may not result in a listener that also accepts IPv4
 connections.  For more deterministic behavior, see
-g_socket_listener_add_inet_port().</p>
+<code>g_socket_listener_add_inet_port()</code>.</p>
 
 <p><code>source_object</code> will be passed out in the various calls
 to accept to identify this particular source, which is
@@ -8077,7 +8077,7 @@ is helpful for determining the port number that was used for when
 requesting a binding to port 0 (ie: <q>any port</q>).  This address, if
 requested, belongs to the caller and must be freed.</p>
 
-<p>Call g_socket_listener_close() to stop listening on <code>address</code>; this will not
+<p>Call <code>g_socket_listener_close()</code> to stop listening on <code>address</code>; this will not
 be done automatically when you drop your final reference to <code>listener</code>, as
 references may be held internally.</p>
 
@@ -8091,7 +8091,7 @@ references may be held internally.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9422-L9429">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9367-L9374">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8133,7 +8133,7 @@ different things depending on what address is connected to.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9441-L9448">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9386-L9393">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8154,7 +8154,7 @@ different things depending on what address is connected to.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Helper function for g_socket_listener_add_address() that
+                        <p>Helper function for <code>g_socket_listener_add_address()</code> that
 creates a TCP/IP socket listening on IPv4 and IPv6 (if
 supported) on the specified port on all interfaces.</p>
 
@@ -8163,7 +8163,7 @@ to accept to identify this particular source, which is
 useful if you&rsquo;re listening on multiple addresses and do
 different things depending on what address is connected to.</p>
 
-<p>Call g_socket_listener_close() to stop listening on <code>port</code>; this will not
+<p>Call <code>g_socket_listener_close()</code> to stop listening on <code>port</code>; this will not
 be done automatically when you drop your final reference to <code>listener</code>, as
 references may be held internally.</p>
 
@@ -8177,7 +8177,7 @@ references may be held internally.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9462-L9469">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9407-L9414">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8222,7 +8222,7 @@ if references to it were held elsewhere.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9484-L9491">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9429-L9436">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8255,7 +8255,7 @@ if references to it were held elsewhere.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9494-L9497">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9439-L9442">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8278,9 +8278,9 @@ if references to it were held elsewhere.</p>
                       <div class="abstract">
                         <p>Sets the listen backlog on the sockets in the listener. This must be called
 before adding any sockets, addresses or ports to the <code>GSocketListener</code> (for
-example, by calling g_socket_listener_add_inet_port()) to be effective.</p>
+example, by calling <code>g_socket_listener_add_inet_port()</code>) to be effective.</p>
 
-<p>See g_socket_set_listen_backlog() for details</p>
+<p>See <code>g_socket_set_listen_backlog()</code> for details</p>
 
                       </div>
                       <div class="declaration">
@@ -8292,7 +8292,7 @@ example, by calling g_socket_listener_add_inet_port()) to be effective.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9504-L9507">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9449-L9452">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8305,7 +8305,7 @@ example, by calling g_socket_listener_add_inet_port()) to be effective.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

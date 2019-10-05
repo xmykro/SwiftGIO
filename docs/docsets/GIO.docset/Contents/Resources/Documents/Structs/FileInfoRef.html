@@ -7497,19 +7497,19 @@ contain, and allows for manipulation of extended attributes.</p>
 <p>See [GFileAttribute][gio-GFileAttribute] for more information on how
 GIO handles file attributes.</p>
 
-<p>To obtain a <code>GFileInfo</code> for a <code>GFile</code>, use g_file_query_info() (or its
+<p>To obtain a <code>GFileInfo</code> for a <code>GFile</code>, use <code>g_file_query_info()</code> (or its
 async variant). To obtain a <code>GFileInfo</code> for a file input or output
-stream, use g_file_input_stream_query_info() or
-g_file_output_stream_query_info() (or their async variants).</p>
+stream, use <code>g_file_input_stream_query_info()</code> or
+<code>g_file_output_stream_query_info()</code> (or their async variants).</p>
 
 <p>To change the actual attributes of a file, you should then set the
-attribute in the <code>GFileInfo</code> and call g_file_set_attributes_from_info()
-or g_file_set_attributes_async() on a GFile.</p>
+attribute in the <code>GFileInfo</code> and call <code>g_file_set_attributes_from_info()</code>
+or <code>g_file_set_attributes_async()</code> on a GFile.</p>
 
 <p>However, not all attributes can be changed in the file. For instance,
-the actual size of a file cannot be changed via g_file_info_set_size().
-You may call g_file_query_settable_attributes() and
-g_file_query_writable_namespaces() to discover the settable attributes
+the actual size of a file cannot be changed via <code>g_file_info_set_size()</code>.
+You may call <code>g_file_query_settable_attributes()</code> and
+<code>g_file_query_writable_namespaces()</code> to discover the settable attributes
 of a particular file at runtime.</p>
 
 <p><code>GFileAttributeMatcher</code> allows for searching through a <code>GFileInfo</code> for
@@ -7548,7 +7548,7 @@ For type-safe access, use the generated, typed pointer <code>file_info_ptr</code
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L694">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L692">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7589,7 +7589,7 @@ For type-safe access, use the generated, typed pointer <code>file_info_ptr</code
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L699-L700">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L697-L698">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7619,7 +7619,7 @@ For type-safe access, use the generated, typed pointer <code>file_info_ptr</code
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L703-L705">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L701-L703">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7650,7 +7650,7 @@ For type-safe access, use the generated, typed pointer <code>file_info_ptr</code
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L709-L711">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L707-L709">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7681,7 +7681,7 @@ For type-safe access, use the generated, typed pointer <code>file_info_ptr</code
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L715-L717">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L713-L715">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7712,7 +7712,7 @@ For type-safe access, use the generated, typed pointer <code>file_info_ptr</code
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L721-L723">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L719-L721">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7743,7 +7743,7 @@ For type-safe access, use the generated, typed pointer <code>file_info_ptr</code
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L727-L729">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L725-L727">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7774,7 +7774,7 @@ For type-safe access, use the generated, typed pointer <code>file_info_ptr</code
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L733-L735">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L731-L733">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7804,7 +7804,7 @@ For type-safe access, use the generated, typed pointer <code>file_info_ptr</code
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L738-L741">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L736-L739">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7817,7 +7817,7 @@ For type-safe access, use the generated, typed pointer <code>file_info_ptr</code
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

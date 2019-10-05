@@ -7493,17 +7493,17 @@ Alternatively, use <code><a href="../Structs/FileEnumeratorRef.html">FileEnumera
 
 <p><code>GFileEnumerator</code> allows you to operate on a set of <code>GFiles</code>,
 returning a <code>GFileInfo</code> structure for each file enumerated (e.g.
-g_file_enumerate_children() will return a <code>GFileEnumerator</code> for each
+<code>g_file_enumerate_children()</code> will return a <code>GFileEnumerator</code> for each
 of the children within a directory).</p>
 
 <p>To get the next file&rsquo;s information from a <code>GFileEnumerator</code>, use
-g_file_enumerator_next_file() or its asynchronous version,
-g_file_enumerator_next_files_async(). Note that the asynchronous
+<code>g_file_enumerator_next_file()</code> or its asynchronous version,
+<code>g_file_enumerator_next_files_async()</code>. Note that the asynchronous
 version will return a list of <code>GFileInfos</code>, whereas the
 synchronous will only return the next file in the enumerator.</p>
 
 <p>The ordering of returned files is unspecified for non-Unix
-platforms; for more information, see g_dir_read_name().  On Unix,
+platforms; for more information, see <code>g_dir_read_name()</code>.  On Unix,
 when operating on local files, returned files will be sorted by
 inode number.  Effectively you can assume that the ordering of
 returned files will be stable between successive calls (and
@@ -7513,10 +7513,10 @@ applications) assuming the directory is unchanged.</p>
 modification time, you will have to implement that in your
 application code.</p>
 
-<p>To close a <code>GFileEnumerator</code>, use g_file_enumerator_close(), or
-its asynchronous version, g_file_enumerator_close_async(). Once
+<p>To close a <code>GFileEnumerator</code>, use <code>g_file_enumerator_close()</code>, or
+its asynchronous version, <code>g_file_enumerator_close_async()</code>. Once
 a <code>GFileEnumerator</code> is closed, no further actions may be performed
-on it, and it should be freed with g_object_unref().</p>
+on it, and it should be freed with <code>g_object_unref()</code>.</p>
 
           </div>
         </section>
@@ -7550,7 +7550,7 @@ on it, and it should be freed with g_object_unref().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L327">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L326">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7588,7 +7588,7 @@ on it, and it should be freed with g_object_unref().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L330">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L329">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7716,7 +7716,7 @@ on it, and it should be freed with g_object_unref().</p>
                         <p>binding reference or <code>nil</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L496-L520">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L495-L519">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7808,7 +7808,7 @@ on it, and it should be freed with g_object_unref().</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L559-L578">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L557-L576">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7857,7 +7857,7 @@ sure resources are released as early as possible.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L591-L598">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L589-L596">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7883,7 +7883,7 @@ sure resources are released as early as possible.</p>
 <p>If <code>cancellable</code> is not <code>nil</code>, then the operation can be cancelled by
 triggering the cancellable object from another thread. If the operation
 was cancelled, the error <code>G_IO_ERROR_CANCELLED</code> will be returned in
-g_file_enumerator_close_finish().</p>
+<code>g_file_enumerator_close_finish()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7895,7 +7895,7 @@ g_file_enumerator_close_finish().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L606-L609">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L604-L607">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7916,9 +7916,9 @@ g_file_enumerator_close_finish().</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes closing a file enumerator, started from g_file_enumerator_close_async().</p>
+                        <p>Finishes closing a file enumerator, started from <code>g_file_enumerator_close_async()</code>.</p>
 
-<p>If the file enumerator was already closed when g_file_enumerator_close_async()
+<p>If the file enumerator was already closed when <code>g_file_enumerator_close_async()</code>
 was called, then this function will report <code>G_IO_ERROR_CLOSED</code> in <code>error</code>, and
 return <code>false</code>. If the file enumerator had pending operation when the close
 operation was started, then this function will report <code>G_IO_ERROR_PENDING</code>, and
@@ -7937,7 +7937,7 @@ returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L621-L628">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L619-L626">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7960,7 +7960,7 @@ returned.</p>
                       <div class="abstract">
                         <p>Return a new <code>GFile</code> which refers to the file named by <code>info</code> in the source
 directory of <code>enumerator</code>.  This function is primarily intended to be used
-inside loops with g_file_enumerator_next_file().</p>
+inside loops with <code>g_file_enumerator_next_file()</code>.</p>
 
 <p>This is a convenience method that&rsquo;s equivalent to:
 (C Language Example):</p>
@@ -7979,7 +7979,7 @@ inside loops with g_file_enumerator_next_file().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L642-L645">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L640-L643">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8012,7 +8012,7 @@ inside loops with g_file_enumerator_next_file().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L648-L651">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L646-L649">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8045,7 +8045,7 @@ inside loops with g_file_enumerator_next_file().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L654-L657">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L652-L655">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8066,13 +8066,13 @@ inside loops with g_file_enumerator_next_file().</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This is a version of g_file_enumerator_next_file() that&rsquo;s easier to
-use correctly from C programs.  With g_file_enumerator_next_file(),
+                        <p>This is a version of <code>g_file_enumerator_next_file()</code> that&rsquo;s easier to
+use correctly from C programs.  With <code>g_file_enumerator_next_file()</code>,
 the gboolean return value signifies <q>end of iteration or error</q>, which
 requires allocation of a temporary <code>GError</code>.</p>
 
 <p>In contrast, with this function, a <code>false</code> return from
-g_file_enumerator_iterate() <em>always</em> means
+<code>g_file_enumerator_iterate()</code> <em>always</em> means
 <q>error</q>.  End of iteration is signaled by <code>out_info</code> or <code>out_child</code> being <code>nil</code>.</p>
 
 <p>Another crucial difference is that the references for <code>out_info</code> and
@@ -8086,7 +8086,7 @@ well.</p>
 
 <p>You must specify at least one of <code>out_info</code> or <code>out_child</code>.</p>
 
-<p>The code pattern for correctly using g_file_enumerator_iterate() from C
+<p>The code pattern for correctly using <code>g_file_enumerator_iterate()</code> from C
 is:</p>
 <pre class="highlight swift"><code><span class="n">direnum</span> <span class="o">=</span> <span class="nf">g_file_enumerate_children</span> <span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="o">...</span><span class="p">);</span>
 <span class="k">while</span> <span class="p">(</span><span class="kt">TRUE</span><span class="p">)</span>
@@ -8100,7 +8100,7 @@ is:</p>
   <span class="p">}</span>
 
 <span class="nv">out</span><span class="p">:</span>
-  <span class="nf">g_object_unref</span> <span class="p">(</span><span class="n">direnum</span><span class="p">);</span> <span class="c1">// Note: frees the last `info`</span>
+  <span class="nf">g_object_unref</span> <span class="p">(</span><span class="n">direnum</span><span class="p">);</span> <span class="c1">// Note: frees the last @info</span>
 </code></pre>
 
                       </div>
@@ -8113,7 +8113,7 @@ is:</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L698-L705">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L696-L703">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8156,7 +8156,7 @@ be unset.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L718-L725">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L716-L723">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8195,7 +8195,7 @@ result in <code>G_IO_ERROR_PENDING</code> errors.</p>
 
 <p>Any outstanding i/o request with higher priority (lower numerical value) will
 be executed before an outstanding request with lower priority. Default
-priority is <code>G_PRIORITY_DEFAULT</code>.</p>
+priority is <code>G_PRIORITY_DEFAULT.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8207,7 +8207,7 @@ priority is <code>G_PRIORITY_DEFAULT</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L746-L749">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L744-L747">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8228,7 +8228,7 @@ priority is <code>G_PRIORITY_DEFAULT</code>.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes the asynchronous operation started with g_file_enumerator_next_files_async().</p>
+                        <p>Finishes the asynchronous operation started with <code>g_file_enumerator_next_files_async()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8240,7 +8240,7 @@ priority is <code>G_PRIORITY_DEFAULT</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L752-L759">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L750-L757">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8273,7 +8273,7 @@ priority is <code>G_PRIORITY_DEFAULT</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L762-L765">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L760-L763">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8306,7 +8306,7 @@ priority is <code>G_PRIORITY_DEFAULT</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L766-L772">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L764-L770">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8339,7 +8339,7 @@ priority is <code>G_PRIORITY_DEFAULT</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L775-L781">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-EmblemedIcon-FileEnumerator.swift#L773-L779">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8352,7 +8352,7 @@ priority is <code>G_PRIORITY_DEFAULT</code>.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

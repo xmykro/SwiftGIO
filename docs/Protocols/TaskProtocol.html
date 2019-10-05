@@ -7493,23 +7493,23 @@ Alternatively, use <code><a href="../Structs/TaskRef.html">TaskRef</a></code> as
 
 <p>A <code>GTask</code> represents and manages a cancellable <q>task</q>.</p>
 
-<p>&ldquo;` Asynchronous operations</p>
+<p>&ldquo;&rdquo; Asynchronous operations</p>
 
 <p>The most common usage of <code>GTask</code> is as a <code>GAsyncResult</code>, to
 manage data during an asynchronous operation. You call
-g_task_new() in the <q>start</q> method, followed by
-g_task_set_task_data() and the like if you need to keep some
+<code>g_task_new()</code> in the <q>start</q> method, followed by
+<code>g_task_set_task_data()</code> and the like if you need to keep some
 additional data associated with the task, and then pass the
 task object around through your asynchronous operation.
 Eventually, you will call a method such as
-g_task_return_pointer() or g_task_return_error(), which will
+<code>g_task_return_pointer()</code> or <code>g_task_return_error()</code>, which will
 save the value you give it and then invoke the task&rsquo;s callback
 function in the
 [thread-default main context][g-main-context-push-thread-default]
 where it was created (waiting until the next iteration of the main
 loop first, if necessary). The caller will pass the <code>GTask</code> back to
 the operation&rsquo;s finish function (as a <code>GAsyncResult</code>), and you can
-use g_task_propagate_pointer() or the like to extract the
+use <code>g_task_propagate_pointer()</code> or the like to extract the
 return value.</p>
 
 <p>Here is an example for using GTask as a GAsyncResult:
@@ -7573,7 +7573,7 @@ return value.</p>
       if (radius &lt; 3)
         {
           g_task_return_new_error (task, BAKER_ERROR, BAKER_ERROR_TOO_SMALL,
-                                   "`ucm` radius cakes are silly",
+                                   "%ucm radius cakes are silly",
                                    radius);
           g_object_unref (task);
           return;
@@ -7607,20 +7607,21 @@ return value.</p>
     }
 </code></pre>
 
-<p>&rdquo;` Chained asynchronous operations</p>
+<p>&ldquo;&rdquo; Chained asynchronous operations</p>
 
 <p><code>GTask</code> also tries to simplify asynchronous operations that
 internally chain together several smaller asynchronous
-operations. g_task_get_cancellable(), g_task_get_context(),
-and g_task_get_priority() allow you to get back the task&rsquo;s
+operations. <code>g_task_get_cancellable()</code>, <code>g_task_get_context()</code>,
+and <code>g_task_get_priority()</code> allow you to get back the task&rsquo;s
 <code>GCancellable</code>, <code>GMainContext</code>, and [I/O priority][io-priority]
 when starting a new subtask, so you don&rsquo;t have to keep track
-of them yourself. g_task_attach_source() simplifies the case
+of them yourself. <code>g_task_attach_source()</code> simplifies the case
 of waiting for a source to fire (automatically using the correct
 <code>GMainContext</code> and priority).</p>
 
-<p>Here is an example for chained asynchronous operations:
-  (C Language Example):</p>
+<p>Here is an example for chained asynchronous operations:</p>
+
+<p>(C Language Example):</p>
 <pre class="highlight plaintext"><code>    typedef struct {
       Cake *cake;
       CakeFrostingType frosting;
@@ -7703,7 +7704,7 @@ of waiting for a source to fire (automatically using the correct
           GSource *source;
 
           source = cake_decorator_wait_source_new (cake);
-          // Attach `source` to `task`'s GMainContext and have it call
+          // Attach @source to @task's GMainContext and have it call
           // decorator_ready() when it is ready.
           g_task_attach_source (task, source, decorator_ready);
           g_source_unref (source);
@@ -7746,16 +7747,17 @@ of waiting for a source to fire (automatically using the correct
     }
 </code></pre>
 
-<p>&ldquo;` Asynchronous operations from synchronous ones</p>
+<p>&ldquo;&rdquo; Asynchronous operations from synchronous ones</p>
 
-<p>You can use g_task_run_in_thread() to turn a synchronous
+<p>You can use <code>g_task_run_in_thread()</code> to turn a synchronous
 operation into an asynchronous one, by running it in a thread.
 When it completes, the result will be dispatched to the
 [thread-default main context][g-main-context-push-thread-default]
 where the <code>GTask</code> was created.</p>
 
-<p>Running a task in a thread:
-  (C Language Example):</p>
+<p>Running a task in a thread:</p>
+
+<p>(C Language Example):</p>
 <pre class="highlight plaintext"><code>    typedef struct {
       guint radius;
       CakeFlavor flavor;
@@ -7825,11 +7827,11 @@ where the <code>GTask</code> was created.</p>
     }
 </code></pre>
 
-<p>&rdquo;` Adding cancellability to uncancellable tasks</p>
+<p>&ldquo;&rdquo; Adding cancellability to uncancellable tasks</p>
 
-<p>Finally, g_task_run_in_thread() and g_task_run_in_thread_sync()
+<p>Finally, <code>g_task_run_in_thread()</code> and <code>g_task_run_in_thread_sync()</code>
 can be used to turn an uncancellable operation into a
-cancellable one. If you call g_task_set_return_on_cancel(),
+cancellable one. If you call <code>g_task_set_return_on_cancel()</code>,
 passing <code>true</code>, then if the task&rsquo;s <code>GCancellable</code> is cancelled,
 it will return control back to the caller immediately, while
 allowing the task thread to continue running in the background
@@ -7839,8 +7841,9 @@ locks and other externally-visible resources, this allows you
 to make <q>GLib-friendly</q> asynchronous and cancellable
 synchronous variants of blocking APIs.</p>
 
-<p>Cancelling a task:
-  (C Language Example):</p>
+<p>Cancelling a task:</p>
+
+<p>(C Language Example):</p>
 <pre class="highlight plaintext"><code>    static void
     bake_cake_thread (GTask         *task,
                       gpointer       source_object,
@@ -7864,8 +7867,8 @@ synchronous variants of blocking APIs.</p>
       // If the task has already been cancelled, then we don't want to add
       // the cake to the cake cache. Likewise, we don't  want to have the
       // task get cancelled in the middle of updating the cache.
-      // g_task_set_return_on_cancel() will return `true` here if it managed
-      // to disable return-on-cancel, or `false` if the task was cancelled
+      // g_task_set_return_on_cancel() will return %TRUE here if it managed
+      // to disable return-on-cancel, or %FALSE if the task was cancelled
       // before it could.
       if (g_task_set_return_on_cancel (task, FALSE))
         {
@@ -7931,35 +7934,35 @@ synchronous variants of blocking APIs.</p>
     }
 </code></pre>
 
-<p>&ldquo;` Porting from GSimpleAsyncResult</p>
+<p>&ldquo;&rdquo; Porting from GSimpleAsyncResult</p>
 
 <p><code>GTask</code>&lsquo;s API attempts to be simpler than <code>GSimpleAsyncResult</code>&rsquo;s
 in several ways:</p>
 
 <ul>
-<li>You can save task-specific data with g_task_set_task_data(), and
-retrieve it later with g_task_get_task_data(). This replaces the
-abuse of g_simple_async_result_set_op_res_gpointer() for the same
+<li>You can save task-specific data with <code>g_task_set_task_data()</code>, and
+retrieve it later with <code>g_task_get_task_data()</code>. This replaces the
+abuse of <code>g_simple_async_result_set_op_res_gpointer()</code> for the same
 purpose with <code>GSimpleAsyncResult</code>.</li>
 <li>In addition to the task data, <code>GTask</code> also keeps track of the
 [priority][io-priority], <code>GCancellable</code>, and
 <code>GMainContext</code> associated with the task, so tasks that consist of
 a chain of simpler asynchronous operations will have easy access
 to those values when starting each sub-task.</li>
-<li>g_task_return_error_if_cancelled() provides simplified
+<li><code>g_task_return_error_if_cancelled()</code> provides simplified
 handling for cancellation. In addition, cancellation
 overrides any other <code>GTask</code> return value by default, like
 <code>GSimpleAsyncResult</code> does when
-g_simple_async_result_set_check_cancellable() is called.
-(You can use g_task_set_check_cancellable() to turn off that
-behavior.) On the other hand, g_task_run_in_thread()
+<code>g_simple_async_result_set_check_cancellable()</code> is called.
+(You can use <code>g_task_set_check_cancellable()</code> to turn off that
+behavior.) On the other hand, <code>g_task_run_in_thread()</code>
 guarantees that it will always run your
 <code>task_func</code>, even if the task&rsquo;s <code>GCancellable</code>
 is already cancelled before the task gets a chance to run;
 you can start your <code>task_func</code> with a
-g_task_return_error_if_cancelled() check if you need the
+<code>g_task_return_error_if_cancelled()</code> check if you need the
 old behavior.</li>
-<li>The <q>return</q> methods (eg, g_task_return_pointer())
+<li>The <q>return</q> methods (eg, <code>g_task_return_pointer()</code>)
 automatically cause the task to be <q>completed</q> as well, and
 there is no need to worry about the <q>complete</q> vs <q>complete
 in idle</q> distinction. (<code>GTask</code> automatically figures out
@@ -7968,12 +7971,12 @@ if it needs to be sent to another <code>GMainContext</code>, or delayed
 until the next iteration of the current <code>GMainContext</code>.)</li>
 <li>The <q>finish</q> functions for <code>GTask</code> based operations are generally
 much simpler than <code>GSimpleAsyncResult</code> ones, normally consisting
-of only a single call to g_task_propagate_pointer() or the like.
-Since g_task_propagate_pointer() <q>steals</q> the return value from
+of only a single call to <code>g_task_propagate_pointer()</code> or the like.
+Since <code>g_task_propagate_pointer()</code> <q>steals</q> the return value from
 the <code>GTask</code>, it is not necessary to juggle pointers around to
 prevent it from being freed twice.</li>
 <li>With <code>GSimpleAsyncResult</code>, it was common to call
-g_simple_async_result_propagate_error() from the
+<code>g_simple_async_result_propagate_error()</code> from the
 <code>_finish()</code> wrapper function, and have
 virtual method implementations only deal with successful
 returns. This behavior is deprecated, because it makes it
@@ -7982,12 +7985,12 @@ methods. Instead, the wrapper function should just be a
 simple wrapper, and the virtual method should call an
 appropriate <code>g_task_propagate_</code> function.
 Note that wrapper methods can now use
-g_async_result_legacy_propagate_error() to do old-style
+<code>g_async_result_legacy_propagate_error()</code> to do old-style
 <code>GSimpleAsyncResult</code> error-returning behavior, and
-g_async_result_is_tagged() to check if a result is tagged as
+<code>g_async_result_is_tagged()</code> to check if a result is tagged as
 having come from the <code>_async()</code> wrapper
 function (for <q>short-circuit</q> results, such as when passing
-0 to g_input_stream_read_async()).</li>
+0 to <code>g_input_stream_read_async()</code>).</li>
 </ul>
 
           </div>
@@ -8022,7 +8025,7 @@ function (for <q>short-circuit</q> results, such as when passing
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11844">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11785">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8060,7 +8063,7 @@ function (for <q>short-circuit</q> results, such as when passing
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11847">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L11788">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8188,7 +8191,7 @@ function (for <q>short-circuit</q> results, such as when passing
                         <p>binding reference or <code>nil</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13016-L13040">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L12955-L12979">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8280,7 +8283,7 @@ function (for <q>short-circuit</q> results, such as when passing
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13088-L13107">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13026-L13045">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8318,7 +8321,7 @@ to wait for a <code>GSource</code> to trigger. Attaches <code>source</code> to <
 callback to <code>callback</code>, with <code>task</code> as the callback&rsquo;s <code>user_data</code>.</p>
 
 <p>It will set the <code>source</code>’s name to the task’s name (as set with
-g_task_set_name()), if one has been set.</p>
+<code>g_task_set_name()</code>), if one has been set.</p>
 
 <p>This takes a reference on <code>task</code> until <code>source</code> is destroyed.</p>
 
@@ -8332,7 +8335,7 @@ g_task_set_name()), if one has been set.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13123-L13126">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13061-L13064">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8365,7 +8368,7 @@ g_task_set_name()), if one has been set.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13129-L13132">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13067-L13070">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8387,7 +8390,7 @@ g_task_set_name()), if one has been set.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets <code>task</code>&lsquo;s check-cancellable flag. See
-g_task_set_check_cancellable() for more details.</p>
+<code>g_task_set_check_cancellable()</code> for more details.</p>
 
                       </div>
                       <div class="declaration">
@@ -8399,7 +8402,7 @@ g_task_set_check_cancellable() for more details.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13136-L13139">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13074-L13077">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8420,7 +8423,7 @@ g_task_set_check_cancellable() for more details.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the value of <code>GTask</code>:completed. This changes from <code>false</code> to <code>true</code> after
+                        <p>Gets the value of <code>GTask:completed</code>. This changes from <code>false</code> to <code>true</code> after
 the task’s callback is invoked, and will return <code>false</code> if called from inside
 the callback.</p>
 
@@ -8434,7 +8437,7 @@ the callback.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13144-L13147">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13082-L13085">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8461,7 +8464,7 @@ is, the context that was the
 at the point when <code>task</code> was created).</p>
 
 <p>This will always return a non-<code>nil</code> value, even if the task&rsquo;s
-context is the default <code>GMainContext</code>.</p>
+context is the default <code>GMainContext.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8473,7 +8476,7 @@ context is the default <code>GMainContext</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13156-L13159">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13094-L13097">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8494,7 +8497,7 @@ context is the default <code>GMainContext</code>.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets <code>task</code>’s name. See g_task_set_name().</p>
+                        <p>Gets <code>task</code>’s name. See <code>g_task_set_name()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8506,7 +8509,7 @@ context is the default <code>GMainContext</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13162-L13165">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13100-L13103">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8539,7 +8542,7 @@ context is the default <code>GMainContext</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13168-L13171">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13106-L13109">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8561,7 +8564,7 @@ context is the default <code>GMainContext</code>.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets <code>task</code>&lsquo;s return-on-cancel flag. See
-g_task_set_return_on_cancel() for more details.</p>
+<code>g_task_set_return_on_cancel()</code> for more details.</p>
 
                       </div>
                       <div class="declaration">
@@ -8573,7 +8576,7 @@ g_task_set_return_on_cancel() for more details.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13175-L13178">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13113-L13116">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8595,7 +8598,7 @@ g_task_set_return_on_cancel() for more details.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the source object from <code>task</code>. Like
-g_async_result_get_source_object(), but does not ref the object.</p>
+<code>g_async_result_get_source_object()</code>, but does not ref the object.</p>
 
                       </div>
                       <div class="declaration">
@@ -8607,7 +8610,7 @@ g_async_result_get_source_object(), but does not ref the object.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13182-L13185">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13120-L13123">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8628,7 +8631,7 @@ g_async_result_get_source_object(), but does not ref the object.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets <code>task</code>&lsquo;s source tag. See g_task_set_source_tag().</p>
+                        <p>Gets <code>task</code>&lsquo;s source tag. See <code>g_task_set_source_tag()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8640,7 +8643,7 @@ g_async_result_get_source_object(), but does not ref the object.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13188-L13191">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13126-L13129">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8673,7 +8676,7 @@ g_async_result_get_source_object(), but does not ref the object.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13194-L13197">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13132-L13135">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8706,7 +8709,7 @@ g_async_result_get_source_object(), but does not ref the object.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13200-L13203">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13138-L13141">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8745,7 +8748,7 @@ error) to the caller, you may only call it once.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13212-L13219">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13150-L13157">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8784,7 +8787,7 @@ error) to the caller, you may only call it once.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13228-L13235">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13166-L13173">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8824,7 +8827,7 @@ error) to the caller, you may only call it once.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13245-L13252">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13183-L13190">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8846,7 +8849,7 @@ error) to the caller, you may only call it once.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Sets <code>task</code>&lsquo;s result to <code>result</code> and completes the task (see
-g_task_return_pointer() for more discussion of exactly what this
+<code>g_task_return_pointer()</code> for more discussion of exactly what this
 means).</p>
 
                       </div>
@@ -8859,7 +8862,7 @@ means).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13257-L13260">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13195-L13198">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8881,16 +8884,16 @@ means).</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Sets <code>task</code>&lsquo;s result to <code>error</code> (which <code>task</code> assumes ownership of)
-and completes the task (see g_task_return_pointer() for more
+and completes the task (see <code>g_task_return_pointer()</code> for more
 discussion of exactly what this means).</p>
 
 <p>Note that since the task takes ownership of <code>error</code>, and since the
-task may be completed before returning from g_task_return_error(),
+task may be completed before returning from <code>g_task_return_error()</code>,
 you cannot assume that <code>error</code> is still valid after calling this.
-Call g_error_copy() on the error if you need to keep a local copy
+Call <code>g_error_copy()</code> on the error if you need to keep a local copy
 as well.</p>
 
-<p>See also g_task_return_new_error().</p>
+<p>See also <code>g_task_return_new_error()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8902,7 +8905,7 @@ as well.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13273-L13276">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13211-L13214">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8925,7 +8928,7 @@ as well.</p>
                       <div class="abstract">
                         <p>Checks if <code>task</code>&lsquo;s <code>GCancellable</code> has been cancelled, and if so, sets
 <code>task</code>&rsquo;s error accordingly and completes the task (see
-g_task_return_pointer() for more discussion of exactly what this
+<code>g_task_return_pointer()</code> for more discussion of exactly what this
 means).</p>
 
                       </div>
@@ -8938,7 +8941,7 @@ means).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13282-L13285">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13220-L13223">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8960,7 +8963,7 @@ means).</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Sets <code>task</code>&lsquo;s result to <code>result</code> and completes the task (see
-g_task_return_pointer() for more discussion of exactly what this
+<code>g_task_return_pointer()</code> for more discussion of exactly what this
 means).</p>
 
                       </div>
@@ -8973,7 +8976,7 @@ means).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13290-L13293">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13228-L13231">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8997,19 +9000,19 @@ means).</p>
                         <p>Sets <code>task</code>&lsquo;s result to <code>result</code> and completes the task. If <code>result</code>
 is not <code>nil</code>, then <code>result_destroy</code> will be used to free <code>result</code> if
 the caller does not take ownership of it with
-g_task_propagate_pointer().</p>
+<code>g_task_propagate_pointer()</code>.</p>
 
 <p><q>Completes the task</q> means that for an ordinary asynchronous task
 it will either invoke the task&rsquo;s callback, or else queue that
 callback to be invoked in the proper <code>GMainContext</code>, or in the next
 iteration of the current <code>GMainContext</code>. For a task run via
-g_task_run_in_thread() or g_task_run_in_thread_sync(), calling this
+<code>g_task_run_in_thread()</code> or <code>g_task_run_in_thread_sync()</code>, calling this
 method will save <code>result</code> to be returned to the caller later, but
 the task will not actually be completed until the <code>GTaskThreadFunc</code>
 exits.</p>
 
 <p>Note that since the task may be completed before returning from
-g_task_return_pointer(), you cannot assume that <code>result</code> is still
+<code>g_task_return_pointer()</code>, you cannot assume that <code>result</code> is still
 valid after calling this, unless you are still holding another
 reference on it.</p>
 
@@ -9023,7 +9026,7 @@ reference on it.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13317-L13320">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13255-L13258">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9052,7 +9055,7 @@ reference on it.</p>
 <p>See <code>GTaskThreadFunc</code> for more details about how <code>task_func</code> is handled.</p>
 
 <p>Although GLib currently rate-limits the tasks queued via
-g_task_run_in_thread(), you should not assume that it will always
+<code>g_task_run_in_thread()</code>, you should not assume that it will always
 do this. If you have a very large number of tasks to run, but don&rsquo;t
 want them to all run at once, you should only queue a limited
 number of them at a time.</p>
@@ -9067,7 +9070,7 @@ number of them at a time.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13334-L13337">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13272-L13275">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9089,7 +9092,7 @@ number of them at a time.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Runs <code>task_func</code> in another thread, and waits for it to return or be
-cancelled. You can use g_task_propagate_pointer(), etc, afterward
+cancelled. You can use <code>g_task_propagate_pointer()</code>, etc, afterward
 to get the result of <code>task_func</code>.</p>
 
 <p>See <code>GTaskThreadFunc</code> for more details about how <code>task_func</code> is handled.</p>
@@ -9097,10 +9100,10 @@ to get the result of <code>task_func</code>.</p>
 <p>Normally this is used with tasks created with a <code>nil</code>
 <code>callback</code>, but note that even if the task does
 have a callback, it will not be invoked when <code>task_func</code> returns.
-<code>GTask</code>:completed will be set to <code>true</code> just before this function returns.</p>
+<code>GTask:completed</code> will be set to <code>true</code> just before this function returns.</p>
 
 <p>Although GLib currently rate-limits the tasks queued via
-g_task_run_in_thread_sync(), you should not assume that it will
+<code>g_task_run_in_thread_sync()</code>, you should not assume that it will
 always do this. If you have a very large number of tasks to run,
 but don&rsquo;t want them to all run at once, you should only queue a
 limited number of them at a time.</p>
@@ -9115,7 +9118,7 @@ limited number of them at a time.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13355-L13358">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13293-L13296">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9137,8 +9140,8 @@ limited number of them at a time.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Sets or clears <code>task</code>&lsquo;s check-cancellable flag. If this is <code>true</code>
-(the default), then g_task_propagate_pointer(), etc, and
-g_task_had_error() will check the task&rsquo;s <code>GCancellable</code> first, and
+(the default), then <code>g_task_propagate_pointer()</code>, etc, and
+<code>g_task_had_error()</code> will check the task&rsquo;s <code>GCancellable</code> first, and
 if it has been cancelled, then they will consider the task to have
 returned an <q>Operation was cancelled</q> error
 (<code>G_IO_ERROR_CANCELLED</code>), regardless of any other error or return
@@ -9146,9 +9149,9 @@ value the task may have had.</p>
 
 <p>If <code>check_cancellable</code> is <code>false</code>, then the <code>GTask</code> will not check the
 cancellable itself, and it is up to <code>task</code>&rsquo;s owner to do this (eg,
-via g_task_return_error_if_cancelled()).</p>
+via <code>g_task_return_error_if_cancelled()</code>).</p>
 
-<p>If you are using g_task_set_return_on_cancel() as well, then
+<p>If you are using <code>g_task_set_return_on_cancel()</code> as well, then
 you must leave check-cancellable set <code>true</code>.</p>
 
                       </div>
@@ -9161,7 +9164,7 @@ you must leave check-cancellable set <code>true</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13374-L13377">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13312-L13315">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9202,7 +9205,7 @@ other than the one it was constructed in.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13388-L13391">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13326-L13329">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9227,9 +9230,9 @@ other than the one it was constructed in.</p>
 <code>G_PRIORITY_DEFAULT</code>.</p>
 
 <p>This will affect the priority of <code>GSources</code> created with
-g_task_attach_source() and the scheduling of tasks run in threads,
+<code>g_task_attach_source()</code> and the scheduling of tasks run in threads,
 and can also be explicitly retrieved later via
-g_task_get_priority().</p>
+<code>g_task_get_priority()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -9241,7 +9244,7 @@ g_task_get_priority().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13400-L13403">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13338-L13341">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9263,31 +9266,31 @@ g_task_get_priority().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Sets or clears <code>task</code>&lsquo;s return-on-cancel flag. This is only
-meaningful for tasks run via g_task_run_in_thread() or
-g_task_run_in_thread_sync().</p>
+meaningful for tasks run via <code>g_task_run_in_thread()</code> or
+<code>g_task_run_in_thread_sync()</code>.</p>
 
 <p>If <code>return_on_cancel</code> is <code>true</code>, then cancelling <code>task</code>&rsquo;s
 <code>GCancellable</code> will immediately cause it to return, as though the
 task&rsquo;s <code>GTaskThreadFunc</code> had called
-g_task_return_error_if_cancelled() and then returned.</p>
+<code>g_task_return_error_if_cancelled()</code> and then returned.</p>
 
 <p>This allows you to create a cancellable wrapper around an
 uninterruptable function. The <code>GTaskThreadFunc</code> just needs to be
 careful that it does not modify any externally-visible state after
 it has been cancelled. To do that, the thread should call
-g_task_set_return_on_cancel() again to (atomically) set
+<code>g_task_set_return_on_cancel()</code> again to (atomically) set
 return-on-cancel <code>false</code> before making externally-visible changes;
 if the task gets cancelled before the return-on-cancel flag could
-be changed, g_task_set_return_on_cancel() will indicate this by
+be changed, <code>g_task_set_return_on_cancel()</code> will indicate this by
 returning <code>false</code>.</p>
 
 <p>You can disable and re-enable this flag multiple times if you wish.
 If the task&rsquo;s <code>GCancellable</code> is cancelled while return-on-cancel is
-<code>false</code>, then calling g_task_set_return_on_cancel() to set it <code>true</code>
+<code>false</code>, then calling <code>g_task_set_return_on_cancel()</code> to set it <code>true</code>
 again will cause the task to be cancelled at that point.</p>
 
 <p>If the task&rsquo;s <code>GCancellable</code> is already cancelled before you call
-g_task_run_in_thread()/g_task_run_in_thread_sync(), then the
+<code>g_task_run_in_thread()</code><code>/g_task_run_in_thread_sync()</code>, then the
 <code>GTaskThreadFunc</code> will still be run (for consistency), but the task
 will also be completed right away.</p>
 
@@ -9301,7 +9304,7 @@ will also be completed right away.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13433-L13436">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13371-L13374">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9325,7 +9328,7 @@ will also be completed right away.</p>
                         <p>Sets <code>task</code>&lsquo;s source tag. You can use this to tag a task return
 value with a particular pointer (usually a pointer to the function
 doing the tagging) and then later check it using
-g_task_get_source_tag() (or g_async_result_is_tagged()) in the
+<code>g_task_get_source_tag()</code> (or <code>g_async_result_is_tagged()</code>) in the
 task&rsquo;s <q>finish</q> function, to figure out if the response came from a
 particular place.</p>
 
@@ -9339,7 +9342,7 @@ particular place.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13444-L13447">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13382-L13385">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9372,7 +9375,7 @@ particular place.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13450-L13453">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13388-L13391">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9405,7 +9408,7 @@ particular place.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13455-L13461">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13393-L13399">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9427,7 +9430,7 @@ particular place.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets <code>task</code>&lsquo;s check-cancellable flag. See
-g_task_set_check_cancellable() for more details.</p>
+<code>g_task_set_check_cancellable()</code> for more details.</p>
 
                       </div>
                       <div class="declaration">
@@ -9439,7 +9442,7 @@ g_task_set_check_cancellable() for more details.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13465-L13489">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13403-L13427">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9461,13 +9464,13 @@ g_task_set_check_cancellable() for more details.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Whether the task has completed, meaning its callback (if set) has been
-invoked. This can only happen after g_task_return_pointer(),
-g_task_return_error() or one of the other return functions have been called
+invoked. This can only happen after <code>g_task_return_pointer()</code>,
+<code>g_task_return_error()</code> or one of the other return functions have been called
 on the task.</p>
 
 <p>This property is guaranteed to change from <code>false</code> to <code>true</code> exactly once.</p>
 
-<p>The <code>GObject</code>::notify signal for this change is emitted in the same main
+<p>The <code>GObject::notify</code> signal for this change is emitted in the same main
 context as the task’s callback, immediately after that callback is invoked.</p>
 
                       </div>
@@ -9480,7 +9483,7 @@ context as the task’s callback, immediately after that callback is invoked.</p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13500-L13508">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13438-L13446">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9507,7 +9510,7 @@ is, the context that was the
 at the point when <code>task</code> was created).</p>
 
 <p>This will always return a non-<code>nil</code> value, even if the task&rsquo;s
-context is the default <code>GMainContext</code>.</p>
+context is the default <code>GMainContext.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -9519,7 +9522,7 @@ context is the default <code>GMainContext</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13517-L13529">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13455-L13467">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9540,7 +9543,7 @@ context is the default <code>GMainContext</code>.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets <code>task</code>’s name. See g_task_set_name().</p>
+                        <p>Gets <code>task</code>’s name. See <code>g_task_set_name()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -9552,7 +9555,7 @@ context is the default <code>GMainContext</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13532-L13550">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13470-L13488">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9585,7 +9588,7 @@ context is the default <code>GMainContext</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13553-L13569">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13491-L13507">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9607,7 +9610,7 @@ context is the default <code>GMainContext</code>.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets <code>task</code>&lsquo;s return-on-cancel flag. See
-g_task_set_return_on_cancel() for more details.</p>
+<code>g_task_set_return_on_cancel()</code> for more details.</p>
 
                       </div>
                       <div class="declaration">
@@ -9619,7 +9622,7 @@ g_task_set_return_on_cancel() for more details.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13573-L13611">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13511-L13549">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9641,7 +9644,7 @@ g_task_set_return_on_cancel() for more details.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the source object from <code>task</code>. Like
-g_async_result_get_source_object(), but does not ref the object.</p>
+<code>g_async_result_get_source_object()</code>, but does not ref the object.</p>
 
                       </div>
                       <div class="declaration">
@@ -9653,7 +9656,7 @@ g_async_result_get_source_object(), but does not ref the object.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13615-L13622">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13553-L13560">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9674,7 +9677,7 @@ g_async_result_get_source_object(), but does not ref the object.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets <code>task</code>&lsquo;s source tag. See g_task_set_source_tag().</p>
+                        <p>Gets <code>task</code>&lsquo;s source tag. See <code>g_task_set_source_tag()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -9686,7 +9689,7 @@ g_async_result_get_source_object(), but does not ref the object.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13625-L13640">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13563-L13578">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9719,7 +9722,7 @@ g_async_result_get_source_object(), but does not ref the object.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13643-L13649">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L13581-L13587">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9732,7 +9735,7 @@ g_async_result_get_source_object(), but does not ref the object.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

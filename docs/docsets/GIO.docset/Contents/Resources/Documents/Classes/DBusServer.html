@@ -7497,7 +7497,7 @@ A server instance provided in this way will not perform message routing or
 implement the org.freedesktop.DBus interface.</p>
 
 <p>To just export an object on a well-known name on a message bus, such as the
-session or system bus, you should instead use g_bus_own_name().</p>
+session or system bus, you should instead use <code>g_bus_own_name()</code>.</p>
 
 <p>An example of peer-to-peer communication with G-DBus can be found
 in <a href="https://git.gnome.org/browse/glib/tree/gio/tests/gdbus-example-peer.c">gdbus-example-peer.c</a>.</p>
@@ -7505,7 +7505,7 @@ in <a href="https://git.gnome.org/browse/glib/tree/gio/tests/gdbus-example-peer.
 <p>Note that a minimal <code>GDBusServer</code> will accept connections from any
 peer. In many use-cases it will be necessary to add a <code>GDBusAuthObserver</code>
 that only accepts connections that have successfully authenticated
-as the same user that is running the <code>GDBusServer</code>.</p>
+as the same user that is running the <code>GDBusServer.</code></p>
 
           </div>
         </section>
@@ -7540,7 +7540,7 @@ Ownership is transferred to the <code>DBusServer</code> instance.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7139-L7141">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7118-L7120">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7566,12 +7566,12 @@ Will retain <code>GDBusServer</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DBusServerProtocol.html">DBusServerProtocol</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DBusServerProtocol.html">DBusServerProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7145-L7148">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7124-L7127">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7597,12 +7597,12 @@ Will retain <code>GDBusServer</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7152-L7154">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7131-L7133">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7628,12 +7628,12 @@ Will retain <code>GDBusServer</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7158-L7160">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7137-L7139">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7659,12 +7659,12 @@ Will retain <code>GDBusServer</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7164-L7166">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7143-L7145">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7690,12 +7690,12 @@ Will retain <code>GDBusServer</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7170-L7172">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7149-L7151">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7716,18 +7716,18 @@ Will retain <code>GDBusServer</code>.</p>
                         <p>Creates a new D-Bus server that listens on the first address in
 <code>address</code> that works.</p>
 
-<p>Once constructed, you can use g_dbus_server_get_client_address() to
+<p>Once constructed, you can use <code>g_dbus_server_get_client_address()</code> to
 get a D-Bus address string that clients can use to connect.</p>
 
 <p>To have control over the available authentication mechanisms and
 the users that are authorized to connect, it is strongly recommended
 to provide a non-<code>nil</code> <code>GDBusAuthObserver</code>.</p>
 
-<p>Connect to the <code>GDBusServer</code>::new-connection signal to handle
+<p>Connect to the <code>GDBusServer::new</code>-connection signal to handle
 incoming connections.</p>
 
 <p>The returned <code>GDBusServer</code> isn&rsquo;t active - you have to start it with
-g_dbus_server_start().</p>
+<code>g_dbus_server_start()</code>.</p>
 
 <p><code>GDBusServer</code> is used in this [example][gdbus-peer-to-peer].</p>
 
@@ -7739,12 +7739,12 @@ asynchronous version.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="n">sync</span> <span class="nv">address</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">flags</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO15DBusServerFlagsa">DBusServerFlags</a></span><span class="p">,</span> <span class="nv">guid</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">observer</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DBusAuthObserverProtocol.html">DBusAuthObserverProtocol</a></span><span class="p">,</span> <span class="nv">cancellable</span><span class="p">:</span> <span class="kt"><a href="../Protocols/CancellableProtocol.html">CancellableProtocol</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="n">sync</span> <span class="nv">address</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">flags</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO15DBusServerFlagsa">DBusServerFlags</a></span><span class="p">,</span> <span class="nv">guid</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">observer</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DBusAuthObserverProtocol.html">DBusAuthObserverProtocol</a></span><span class="p">,</span> <span class="nv">cancellable</span><span class="p">:</span> <span class="kt"><a href="../Protocols/CancellableProtocol.html">CancellableProtocol</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7194-L7201">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7173-L7180">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7765,18 +7765,18 @@ asynchronous version.</p>
                         <p>Creates a new D-Bus server that listens on the first address in
 <code>address</code> that works.</p>
 
-<p>Once constructed, you can use g_dbus_server_get_client_address() to
+<p>Once constructed, you can use <code>g_dbus_server_get_client_address()</code> to
 get a D-Bus address string that clients can use to connect.</p>
 
 <p>To have control over the available authentication mechanisms and
 the users that are authorized to connect, it is strongly recommended
 to provide a non-<code>nil</code> <code>GDBusAuthObserver</code>.</p>
 
-<p>Connect to the <code>GDBusServer</code>::new-connection signal to handle
+<p>Connect to the <code>GDBusServer::new</code>-connection signal to handle
 incoming connections.</p>
 
 <p>The returned <code>GDBusServer</code> isn&rsquo;t active - you have to start it with
-g_dbus_server_start().</p>
+<code>g_dbus_server_start()</code>.</p>
 
 <p><code>GDBusServer</code> is used in this [example][gdbus-peer-to-peer].</p>
 
@@ -7793,7 +7793,7 @@ asynchronous version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7223-L7230">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7202-L7209">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7806,7 +7806,7 @@ asynchronous version.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

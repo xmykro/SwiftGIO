@@ -7497,48 +7497,48 @@ lot of flexibility. For instance, it lets you establish a connection
 over any transport that can by represented as a <code>GIOStream</code>.</p>
 
 <p>This class is rarely used directly in D-Bus clients. If you are writing
-a D-Bus client, it is often easier to use the g_bus_own_name(),
-g_bus_watch_name() or g_dbus_proxy_new_for_bus() APIs.</p>
+a D-Bus client, it is often easier to use the <code>g_bus_own_name()</code>,
+<code>g_bus_watch_name()</code> or <code>g_dbus_proxy_new_for_bus()</code> APIs.</p>
 
 <p>As an exception to the usual GLib rule that a particular object must not
 be used by two threads at the same time, <code>GDBusConnection</code>&lsquo;s methods may be
-called from any thread. This is so that g_bus_get() and g_bus_get_sync()
+called from any thread. This is so that <code>g_bus_get()</code> and <code>g_bus_get_sync()</code>
 can safely return the same <code>GDBusConnection</code> when called from any thread.</p>
 
 <p>Most of the ways to obtain a <code>GDBusConnection</code> automatically initialize it
-(i.e. connect to D-Bus): for instance, g_dbus_connection_new() and
-g_bus_get(), and the synchronous versions of those methods, give you an
+(i.e. connect to D-Bus): for instance, <code>g_dbus_connection_new()</code> and
+<code>g_bus_get()</code>, and the synchronous versions of those methods, give you an
 initialized connection. Language bindings for GIO should use
-g_initable_new() or g_async_initable_new_async(), which also initialize the
+<code>g_initable_new()</code> or <code>g_async_initable_new_async()</code>, which also initialize the
 connection.</p>
 
 <p>If you construct an uninitialized <code>GDBusConnection</code>, such as via
-g_object_new(), you must initialize it via g_initable_init() or
-g_async_initable_init_async() before using its methods or properties.
+<code>g_object_new()</code>, you must initialize it via <code>g_initable_init()</code> or
+<code>g_async_initable_init_async()</code> before using its methods or properties.
 Calling methods or accessing properties on a <code>GDBusConnection</code> that has not
 completed initialization successfully is considered to be invalid, and leads
 to undefined behaviour. In particular, if initialization fails with a
 <code>GError</code>, the only valid thing you can do with that <code>GDBusConnection</code> is to
-free it with g_object_unref().</p>
+free it with <code>g_object_unref()</code>.</p>
 
-<p>`<code>An example D-Bus server</code> {<code>gdbus</code>-server}</p>
+<p>&ldquo;<code>An example D-Bus server</code> {<code>gdbus</code>-server}</p>
 
 <p>Here is an example for a D-Bus server:
 <a href="https://git.gnome.org/browse/glib/tree/gio/tests/gdbus-example-server.c">gdbus-example-server.c</a></p>
 
-<p>`<code>An example for exporting a subtree</code> {<code>gdbus</code>-subtree-server}</p>
+<p>&rdquo;<code>An example for exporting a subtree</code> {<code>gdbus</code>-subtree-server}</p>
 
 <p>Here is an example for exporting a subtree:
 <a href="https://git.gnome.org/browse/glib/tree/gio/tests/gdbus-example-subtree.c">gdbus-example-subtree.c</a></p>
 
-<p>`<code>An example for file descriptor passing</code> {<code>gdbus</code>-unix-fd-client}</p>
+<p>&ldquo;<code>An example for file descriptor passing</code> {<code>gdbus</code>-unix-fd-client}</p>
 
 <p>Here is an example for passing UNIX file descriptors:
 <a href="https://git.gnome.org/browse/glib/tree/gio/tests/gdbus-example-unix-fd-client.c">gdbus-unix-fd-client.c</a></p>
 
-<p>`<code>An example for exporting a GObject</code> {<code>gdbus</code>-export}</p>
+<p>&rdquo;<code>An example for exporting a GObject</code> {<code>gdbus</code>-export}</p>
 
-<p>Here is an example for exporting a <code>GObject</code>:
+<p>Here is an example for exporting a <code>GObject:</code>
 <a href="https://git.gnome.org/browse/glib/tree/gio/tests/gdbus-example-export.c">gdbus-example-export.c</a></p>
 
           </div>
@@ -7573,7 +7573,7 @@ free it with g_object_unref().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L462">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L458">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7611,7 +7611,7 @@ free it with g_object_unref().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L465">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L461">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7739,7 +7739,7 @@ free it with g_object_unref().</p>
                         <p>binding reference or <code>nil</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L993-L1017">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L989-L1013">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7831,7 +7831,7 @@ free it with g_object_unref().</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1117-L1136">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1112-L1131">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7874,13 +7874,13 @@ and even drop messages.</p>
 <p>Note that filters are run in a dedicated message handling thread so
 they can&rsquo;t block and, generally, can&rsquo;t do anything but signal a
 worker thread. Also note that filters are rarely needed - use API
-such as g_dbus_connection_send_message_with_reply(),
-g_dbus_connection_signal_subscribe() or g_dbus_connection_call() instead.</p>
+such as <code>g_dbus_connection_send_message_with_reply()</code>,
+<code>g_dbus_connection_signal_subscribe()</code> or <code>g_dbus_connection_call()</code> instead.</p>
 
 <p>If a filter consumes an incoming message the message is not
 dispatched anywhere else - not even the standard dispatch machinery
-(that API such as g_dbus_connection_signal_subscribe() and
-g_dbus_connection_send_message_with_reply() relies on) will see the
+(that API such as <code>g_dbus_connection_signal_subscribe()</code> and
+<code>g_dbus_connection_send_message_with_reply()</code> relies on) will see the
 message. Similarly, if a filter consumes an outgoing message, the
 message will not be sent to the other peer.</p>
 
@@ -7901,7 +7901,7 @@ destroyed.)</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1170-L1173">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1165-L1168">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7939,7 +7939,7 @@ then any non-<code>nil</code> return value will be of this type. Unless it’s
 values.</p>
 
 <p>If the <code>parameters</code> <code>GVariant</code> is floating, it is consumed. This allows
-convenient &lsquo;inline&rsquo; use of g_variant_new(), e.g.:
+convenient &lsquo;inline&rsquo; use of <code>g_variant_new()</code>, e.g.:
 (C Language Example):</p>
 <pre class="highlight plaintext"><code> g_dbus_connection_call (connection,
                          "org.freedesktop.StringThings",
@@ -7961,8 +7961,8 @@ convenient &lsquo;inline&rsquo; use of g_variant_new(), e.g.:
 <code>callback</code> will be invoked in the
 [thread-default main context][g-main-context-push-thread-default]
 of the thread you are calling this method from. You can then call
-g_dbus_connection_call_finish() to get the result of the operation.
-See g_dbus_connection_call_sync() for the synchronous version of this
+<code>g_dbus_connection_call_finish()</code> to get the result of the operation.
+See <code>g_dbus_connection_call_sync()</code> for the synchronous version of this
 function.</p>
 
 <p>If <code>callback</code> is <code>nil</code> then the D-Bus method call message will be sent with
@@ -7978,7 +7978,7 @@ the <code>G_DBUS_MESSAGE_FLAGS_NO_REPLY_EXPECTED</code> flag set.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1222-L1225">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1216-L1219">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7999,7 +7999,7 @@ the <code>G_DBUS_MESSAGE_FLAGS_NO_REPLY_EXPECTED</code> flag set.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes an operation started with g_dbus_connection_call().</p>
+                        <p>Finishes an operation started with <code>g_dbus_connection_call()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8011,7 +8011,7 @@ the <code>G_DBUS_MESSAGE_FLAGS_NO_REPLY_EXPECTED</code> flag set.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1228-L1235">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1222-L1229">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8048,7 +8048,7 @@ another way, if you give a <code>reply_type</code> then any non-<code>nil</code>
 value will be of this type.</p>
 
 <p>If the <code>parameters</code> <code>GVariant</code> is floating, it is consumed.
-This allows convenient &lsquo;inline&rsquo; use of g_variant_new(), e.g.:
+This allows convenient &lsquo;inline&rsquo; use of <code>g_variant_new()</code>, e.g.:
 (C Language Example):</p>
 <pre class="highlight plaintext"><code> g_dbus_connection_call_sync (connection,
                               "org.freedesktop.StringThings",
@@ -8066,7 +8066,7 @@ This allows convenient &lsquo;inline&rsquo; use of g_variant_new(), e.g.:
 </code></pre>
 
 <p>The calling thread is blocked until a reply is received. See
-g_dbus_connection_call() for the asynchronous version of
+<code>g_dbus_connection_call()</code> for the asynchronous version of
 this method.</p>
 
                       </div>
@@ -8079,7 +8079,7 @@ this method.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1275-L1282">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1268-L1275">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8100,7 +8100,7 @@ this method.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Like g_dbus_connection_call() but also takes a <code>GUnixFDList</code> object.</p>
+                        <p>Like <code>g_dbus_connection_call()</code> but also takes a <code>GUnixFDList</code> object.</p>
 
 <p>This method is only available on UNIX.</p>
 
@@ -8114,7 +8114,7 @@ this method.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1287-L1290">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1280-L1283">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8135,7 +8135,7 @@ this method.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes an operation started with g_dbus_connection_call_with_unix_fd_list().</p>
+                        <p>Finishes an operation started with <code>g_dbus_connection_call_with_unix_fd_list()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8147,7 +8147,7 @@ this method.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1293-L1300">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1286-L1293">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8168,7 +8168,7 @@ this method.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Like g_dbus_connection_call_sync() but also takes and returns <code>GUnixFDList</code> objects.</p>
+                        <p>Like <code>g_dbus_connection_call_sync()</code> but also takes and returns <code>GUnixFDList</code> objects.</p>
 
 <p>This method is only available on UNIX.</p>
 
@@ -8182,7 +8182,7 @@ this method.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1305-L1312">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1298-L1305">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8205,17 +8205,17 @@ this method.</p>
                       <div class="abstract">
                         <p>Closes <code>connection</code>. Note that this never causes the process to
 exit (this might only happen if the other end of a shared message
-bus connection disconnects, see <code>GDBusConnection</code>:exit-on-close).</p>
+bus connection disconnects, see <code>GDBusConnection:exit</code>-on-close).</p>
 
 <p>Once the connection is closed, operations such as sending a message
 will return with the error <code>G_IO_ERROR_CLOSED</code>. Closing a connection
 will not automatically flush the connection so queued messages may
-be lost. Use g_dbus_connection_flush() if you need such guarantees.</p>
+be lost. Use <code>g_dbus_connection_flush()</code> if you need such guarantees.</p>
 
 <p>If <code>connection</code> is already closed, this method fails with
 <code>G_IO_ERROR_CLOSED</code>.</p>
 
-<p>When <code>connection</code> has been closed, the <code>GDBusConnection</code>::closed
+<p>When <code>connection</code> has been closed, the <code>GDBusConnection::closed</code>
 signal is emitted in the
 [thread-default main context][g-main-context-push-thread-default]
 of the thread that <code>connection</code> was constructed in.</p>
@@ -8224,8 +8224,8 @@ of the thread that <code>connection</code> was constructed in.</p>
 <code>callback</code> will be invoked in the
 [thread-default main context][g-main-context-push-thread-default]
 of the thread you are calling this method from. You can
-then call g_dbus_connection_close_finish() to get the result of the
-operation. See g_dbus_connection_close_sync() for the synchronous
+then call <code>g_dbus_connection_close_finish()</code> to get the result of the
+operation. See <code>g_dbus_connection_close_sync()</code> for the synchronous
 version.</p>
 
                       </div>
@@ -8238,7 +8238,7 @@ version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1338-L1341">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1331-L1334">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8259,7 +8259,7 @@ version.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes an operation started with g_dbus_connection_close().</p>
+                        <p>Finishes an operation started with <code>g_dbus_connection_close()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8271,7 +8271,7 @@ version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1344-L1351">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1337-L1344">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8293,7 +8293,7 @@ version.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Synchronously closes <code>connection</code>. The calling thread is blocked
-until this is done. See g_dbus_connection_close() for the
+until this is done. See <code>g_dbus_connection_close()</code> for the
 asynchronous version of this method and more details about what it
 does.</p>
 
@@ -8307,7 +8307,7 @@ does.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1357-L1364">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1350-L1357">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8346,7 +8346,7 @@ does.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1373-L1380">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1366-L1373">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8377,7 +8377,7 @@ If this constraint is violated, the export will fail and 0 will be
 returned (with <code>error</code> set accordingly).</p>
 
 <p>You can unexport the action group using
-g_dbus_connection_unexport_action_group() with the return value of
+<code>g_dbus_connection_unexport_action_group()</code> with the return value of
 this function.</p>
 
 <p>The thread default main context is taken at the time of this call.
@@ -8399,7 +8399,7 @@ context.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1403-L1410">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1396-L1403">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8430,7 +8430,7 @@ constraint is violated, the export will fail and 0 will be
 returned (with <code>error</code> set accordingly).</p>
 
 <p>You can unexport the menu model using
-g_dbus_connection_unexport_menu_model() with the return value of
+<code>g_dbus_connection_unexport_menu_model()</code> with the return value of
 this function.</p>
 
                       </div>
@@ -8443,7 +8443,7 @@ this function.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1424-L1431">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1417-L1424">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8466,7 +8466,7 @@ this function.</p>
                       <div class="abstract">
                         <p>Asynchronously flushes <code>connection</code>, that is, writes all queued
 outgoing message to the transport and then flushes the transport
-(using g_output_stream_flush_async()). This is useful in programs
+(using <code>g_output_stream_flush_async()</code>). This is useful in programs
 that wants to emit a D-Bus signal and then exit immediately. Without
 flushing the connection, there is no guaranteed that the message has
 been sent to the networking buffers in the OS kernel.</p>
@@ -8475,8 +8475,8 @@ been sent to the networking buffers in the OS kernel.</p>
 <code>callback</code> will be invoked in the
 [thread-default main context][g-main-context-push-thread-default]
 of the thread you are calling this method from. You can
-then call g_dbus_connection_flush_finish() to get the result of the
-operation. See g_dbus_connection_flush_sync() for the synchronous
+then call <code>g_dbus_connection_flush_finish()</code> to get the result of the
+operation. See <code>g_dbus_connection_flush_sync()</code> for the synchronous
 version.</p>
 
                       </div>
@@ -8489,7 +8489,7 @@ version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1447-L1450">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1440-L1443">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8510,7 +8510,7 @@ version.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes an operation started with g_dbus_connection_flush().</p>
+                        <p>Finishes an operation started with <code>g_dbus_connection_flush()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8522,7 +8522,7 @@ version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1453-L1460">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1446-L1453">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8544,7 +8544,7 @@ version.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Synchronously flushes <code>connection</code>. The calling thread is blocked
-until this is done. See g_dbus_connection_flush() for the
+until this is done. See <code>g_dbus_connection_flush()</code> for the
 asynchronous version of this method and more details about what it
 does.</p>
 
@@ -8558,7 +8558,7 @@ does.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1466-L1473">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1459-L1466">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8591,7 +8591,7 @@ does.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1476-L1479">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1469-L1472">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8614,7 +8614,7 @@ does.</p>
                       <div class="abstract">
                         <p>Gets whether the process is terminated when <code>connection</code> is
 closed by the remote peer. See
-<code>GDBusConnection</code>:exit-on-close for more details.</p>
+<code>GDBusConnection:exit</code>-on-close for more details.</p>
 
                       </div>
                       <div class="declaration">
@@ -8626,7 +8626,7 @@ closed by the remote peer. See
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1484-L1487">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1477-L1480">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8659,7 +8659,7 @@ closed by the remote peer. See
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1490-L1493">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1483-L1486">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8681,7 +8681,7 @@ closed by the remote peer. See
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The GUID of the peer performing the role of server when
-authenticating. See <code>GDBusConnection</code>:guid for more details.</p>
+authenticating. See <code>GDBusConnection:guid</code> for more details.</p>
 
                       </div>
                       <div class="declaration">
@@ -8693,7 +8693,7 @@ authenticating. See <code>GDBusConnection</code>:guid for more details.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1497-L1500">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1490-L1493">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8716,9 +8716,9 @@ authenticating. See <code>GDBusConnection</code>:guid for more details.</p>
                       <div class="abstract">
                         <p>Retrieves the last serial number assigned to a <code>GDBusMessage</code> on
 the current thread. This includes messages sent via both low-level
-API such as g_dbus_connection_send_message() as well as
-high-level API such as g_dbus_connection_emit_signal(),
-g_dbus_connection_call() or g_dbus_proxy_call().</p>
+API such as <code>g_dbus_connection_send_message()</code> as well as
+high-level API such as <code>g_dbus_connection_emit_signal()</code>,
+<code>g_dbus_connection_call()</code> or <code>g_dbus_proxy_call()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8730,7 +8730,7 @@ g_dbus_connection_call() or g_dbus_proxy_call().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1507-L1510">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1500-L1503">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8771,7 +8771,7 @@ each application is a client. So this method will always return
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1521-L1524">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1514-L1517">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8808,7 +8808,7 @@ the stream directly.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1531-L1534">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1524-L1527">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8843,7 +8843,7 @@ message bus connection.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1539-L1542">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1532-L1535">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8898,7 +8898,7 @@ yourself, e.g. to handle getting and setting of properties asynchronously.</p>
 
 <p>Note that the reference count on <code>interface_info</code> will be
 incremented by 1 (unless allocated statically, e.g. if the
-reference count is -1, see g_dbus_interface_info_ref()) for as long
+reference count is -1, see <code>g_dbus_interface_info_ref()</code>) for as long
 as the object is exported. Also note that <code>vtable</code> will be copied.</p>
 
 <p>See this [server][gdbus-server] for an example of how to use this method.</p>
@@ -8913,7 +8913,7 @@ as the object is exported. Also note that <code>vtable</code> will be copied.</p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1582-L1589">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1575-L1582">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8934,7 +8934,7 @@ as the object is exported. Also note that <code>vtable</code> will be copied.</p
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Version of g_dbus_connection_register_object() using closures instead of a
+                        <p>Version of <code>g_dbus_connection_register_object()</code> using closures instead of a
 <code>GDBusInterfaceVTable</code> for easier binding in other languages.</p>
 
                       </div>
@@ -8947,7 +8947,7 @@ as the object is exported. Also note that <code>vtable</code> will be copied.</p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1593-L1600">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1586-L1593">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8991,11 +8991,11 @@ of the thread you are calling this method from.</p>
 then <code>error</code> is set to <code>G_IO_ERROR_EXISTS</code>.</p>
 
 <p>Note that it is valid to register regular objects (using
-g_dbus_connection_register_object()) in a subtree registered with
-g_dbus_connection_register_subtree() - if so, the subtree handler
+<code>g_dbus_connection_register_object()</code>) in a subtree registered with
+<code>g_dbus_connection_register_subtree()</code> - if so, the subtree handler
 is tried as the last resort. One way to think about a subtree
 handler is to consider it a fallback handler for object paths not
-registered via g_dbus_connection_register_object() or other bindings.</p>
+registered via <code>g_dbus_connection_register_object()</code> or other bindings.</p>
 
 <p>Note that <code>vtable</code> will be copied so you cannot change it after
 registration.</p>
@@ -9013,7 +9013,7 @@ this method.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1636-L1643">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1629-L1636">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9038,9 +9038,9 @@ this method.</p>
 
 <p>Note that since filters run in a different thread, there is a race
 condition where it is possible that the filter will be running even
-after calling g_dbus_connection_remove_filter(), so you cannot just
+after calling <code>g_dbus_connection_remove_filter()</code>, so you cannot just
 free data that the filter might be using. Instead, you should pass
-a <code>GDestroyNotify</code> to g_dbus_connection_add_filter(), which will be
+a <code>GDestroyNotify</code> to <code>g_dbus_connection_add_filter()</code>, which will be
 called when it is guaranteed that the data is no longer needed.</p>
 
                       </div>
@@ -9053,7 +9053,7 @@ called when it is guaranteed that the data is no longer needed.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1653-L1656">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1646-L1649">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9079,7 +9079,7 @@ called when it is guaranteed that the data is no longer needed.</p>
 <p>Unless <code><a href="../Protocols/DBusConnectionProtocol.html#/s:3GIO22DBusConnectionProtocolPAAE5flagsSo05GDBusC5Flagsavp">flags</a></code> contain the
 <code>G_DBUS_SEND_MESSAGE_FLAGS_PRESERVE_SERIAL</code> flag, the serial number
 will be assigned by <code>connection</code> and set on <code>message</code> via
-g_dbus_message_set_serial(). If <code>out_serial</code> is not <code>nil</code>, then the
+<code>g_dbus_message_set_serial()</code>. If <code>out_serial</code> is not <code>nil</code>, then the
 serial number used will be written to this location prior to
 submitting the message to the underlying transport.</p>
 
@@ -9104,7 +9104,7 @@ UNIX file descriptors.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1677-L1684">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1670-L1677">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9130,7 +9130,7 @@ UNIX file descriptors.</p>
 <p>Unless <code><a href="../Protocols/DBusConnectionProtocol.html#/s:3GIO22DBusConnectionProtocolPAAE5flagsSo05GDBusC5Flagsavp">flags</a></code> contain the
 <code>G_DBUS_SEND_MESSAGE_FLAGS_PRESERVE_SERIAL</code> flag, the serial number
 will be assigned by <code>connection</code> and set on <code>message</code> via
-g_dbus_message_set_serial(). If <code>out_serial</code> is not <code>nil</code>, then the
+<code>g_dbus_message_set_serial()</code>. If <code>out_serial</code> is not <code>nil</code>, then the
 serial number used will be written to this location prior to
 submitting the message to the underlying transport.</p>
 
@@ -9143,8 +9143,8 @@ the operation fails with <code>G_IO_ERROR_INVALID_ARGUMENT</code>.</p>
 will be invoked in the
 [thread-default main context][g-main-context-push-thread-default]
 of the thread you are calling this method from. You can then call
-g_dbus_connection_send_message_with_reply_finish() to get the result of the operation.
-See g_dbus_connection_send_message_with_reply_sync() for the synchronous version.</p>
+<code>g_dbus_connection_send_message_with_reply_finish()</code> to get the result of the operation.
+See <code>g_dbus_connection_send_message_with_reply_sync()</code> for the synchronous version.</p>
 
 <p>Note that <code>message</code> must be unlocked, unless <code><a href="../Protocols/DBusConnectionProtocol.html#/s:3GIO22DBusConnectionProtocolPAAE5flagsSo05GDBusC5Flagsavp">flags</a></code> contain the
 <code>G_DBUS_SEND_MESSAGE_FLAGS_PRESERVE_SERIAL</code> flag.</p>
@@ -9163,7 +9163,7 @@ UNIX file descriptors.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1713-L1716">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1706-L1709">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9184,12 +9184,12 @@ UNIX file descriptors.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes an operation started with g_dbus_connection_send_message_with_reply().</p>
+                        <p>Finishes an operation started with <code>g_dbus_connection_send_message_with_reply()</code>.</p>
 
 <p>Note that <code>error</code> is only set if a local in-process error
 occurred. That is to say that the returned <code>GDBusMessage</code> object may
 be of type <code>G_DBUS_MESSAGE_TYPE_ERROR</code>. Use
-g_dbus_message_to_gerror() to transcode this to a <code>GError</code>.</p>
+<code>g_dbus_message_to_gerror()</code> to transcode this to a <code>GError</code>.</p>
 
 <p>See this [server][gdbus-server] and [client][gdbus-unix-fd-client]
 for an example of how to use this low-level API to send and receive
@@ -9205,7 +9205,7 @@ UNIX file descriptors.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1728-L1735">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1721-L1728">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9228,13 +9228,13 @@ UNIX file descriptors.</p>
                       <div class="abstract">
                         <p>Synchronously sends <code>message</code> to the peer represented by <code>connection</code>
 and blocks the calling thread until a reply is received or the
-timeout is reached. See g_dbus_connection_send_message_with_reply()
+timeout is reached. See <code>g_dbus_connection_send_message_with_reply()</code>
 for the asynchronous version of this method.</p>
 
 <p>Unless <code><a href="../Protocols/DBusConnectionProtocol.html#/s:3GIO22DBusConnectionProtocolPAAE5flagsSo05GDBusC5Flagsavp">flags</a></code> contain the
 <code>G_DBUS_SEND_MESSAGE_FLAGS_PRESERVE_SERIAL</code> flag, the serial number
 will be assigned by <code>connection</code> and set on <code>message</code> via
-g_dbus_message_set_serial(). If <code>out_serial</code> is not <code>nil</code>, then the
+<code>g_dbus_message_set_serial()</code>. If <code>out_serial</code> is not <code>nil</code>, then the
 serial number used will be written to this location prior to
 submitting the message to the underlying transport.</p>
 
@@ -9246,7 +9246,7 @@ the operation fails with <code>G_IO_ERROR_INVALID_ARGUMENT</code>.</p>
 <p>Note that <code>error</code> is only set if a local in-process error
 occurred. That is to say that the returned <code>GDBusMessage</code> object may
 be of type <code>G_DBUS_MESSAGE_TYPE_ERROR</code>. Use
-g_dbus_message_to_gerror() to transcode this to a <code>GError</code>.</p>
+<code>g_dbus_message_to_gerror()</code> to transcode this to a <code>GError</code>.</p>
 
 <p>See this [server][gdbus-server] and [client][gdbus-unix-fd-client]
 for an example of how to use this low-level API to send and receive
@@ -9265,7 +9265,7 @@ UNIX file descriptors.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1765-L1772">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1758-L1765">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9287,7 +9287,7 @@ UNIX file descriptors.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Sets whether the process should be terminated when <code>connection</code> is
-closed by the remote peer. See <code>GDBusConnection</code>:exit-on-close for
+closed by the remote peer. See <code>GDBusConnection:exit</code>-on-close for
 more details.</p>
 
 <p>Note that this function should be used with care. Most modern UNIX
@@ -9307,7 +9307,7 @@ when the user session ends.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1784-L1787">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1777-L1780">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9370,7 +9370,7 @@ to never be zero.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1820-L1823">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1813-L1816">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9403,7 +9403,7 @@ to never be zero.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1826-L1829">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1819-L1822">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9439,7 +9439,7 @@ created with this flag or if the method has already been called.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1835-L1838">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1828-L1831">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9461,10 +9461,10 @@ created with this flag or if the method has already been called.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Reverses the effect of a previous call to
-g_dbus_connection_export_action_group().</p>
+<code>g_dbus_connection_export_action_group()</code>.</p>
 
 <p>It is an error to call this function with an ID that wasn&rsquo;t returned
-from g_dbus_connection_export_action_group() or to call it with the
+from <code>g_dbus_connection_export_action_group()</code> or to call it with the
 same ID more than once.</p>
 
                       </div>
@@ -9477,7 +9477,7 @@ same ID more than once.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1846-L1849">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1839-L1842">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9499,10 +9499,10 @@ same ID more than once.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Reverses the effect of a previous call to
-g_dbus_connection_export_menu_model().</p>
+<code>g_dbus_connection_export_menu_model()</code>.</p>
 
 <p>It is an error to call this function with an ID that wasn&rsquo;t returned
-from g_dbus_connection_export_menu_model() or to call it with the
+from <code>g_dbus_connection_export_menu_model()</code> or to call it with the
 same ID more than once.</p>
 
                       </div>
@@ -9515,7 +9515,7 @@ same ID more than once.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1857-L1860">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1850-L1853">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9548,7 +9548,7 @@ same ID more than once.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1863-L1866">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1856-L1859">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9581,7 +9581,7 @@ same ID more than once.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1869-L1872">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1862-L1865">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9602,8 +9602,8 @@ same ID more than once.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Like g_bus_own_name() but takes a <code>GDBusConnection</code> instead of a
-<code>GBusType</code>.</p>
+                        <p>Like <code>g_bus_own_name()</code> but takes a <code>GDBusConnection</code> instead of a
+<code>GBusType.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -9615,7 +9615,7 @@ same ID more than once.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1876-L1879">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1869-L1872">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9636,7 +9636,7 @@ same ID more than once.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Version of g_bus_own_name_on_connection() using closures instead of
+                        <p>Version of <code>g_bus_own_name_on_connection()</code> using closures instead of
 callbacks for easier binding in other languages.</p>
 
                       </div>
@@ -9649,7 +9649,7 @@ callbacks for easier binding in other languages.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1883-L1886">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1876-L1879">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9670,8 +9670,8 @@ callbacks for easier binding in other languages.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Like g_bus_watch_name() but takes a <code>GDBusConnection</code> instead of a
-<code>GBusType</code>.</p>
+                        <p>Like <code>g_bus_watch_name()</code> but takes a <code>GDBusConnection</code> instead of a
+<code>GBusType.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -9683,7 +9683,7 @@ callbacks for easier binding in other languages.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1890-L1893">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1883-L1886">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9704,7 +9704,7 @@ callbacks for easier binding in other languages.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Version of g_bus_watch_name_on_connection() using closures instead of callbacks for
+                        <p>Version of <code>g_bus_watch_name_on_connection()</code> using closures instead of callbacks for
 easier binding in other languages.</p>
 
                       </div>
@@ -9717,7 +9717,7 @@ easier binding in other languages.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1897-L1900">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1890-L1893">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9751,7 +9751,7 @@ representing connection features negotiated with the other peer.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1903-L1909">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1896-L1902">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9774,7 +9774,7 @@ representing connection features negotiated with the other peer.</p>
                       <div class="abstract">
                         <p>Gets whether the process is terminated when <code>connection</code> is
 closed by the remote peer. See
-<code>GDBusConnection</code>:exit-on-close for more details.</p>
+<code>GDBusConnection:exit</code>-on-close for more details.</p>
 
                       </div>
                       <div class="declaration">
@@ -9786,7 +9786,7 @@ closed by the remote peer. See
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1914-L1935">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1907-L1928">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9819,7 +9819,7 @@ closed by the remote peer. See
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1938-L1944">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1931-L1937">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9845,12 +9845,12 @@ authenticating.</p>
 
 <p>If you are constructing a <code>GDBusConnection</code> and pass
 <code>G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_SERVER</code> in the
-<code>GDBusConnection</code>:flags property then you MUST also set this
+<code>GDBusConnection:flags</code> property then you MUST also set this
 property to a valid guid.</p>
 
 <p>If you are constructing a <code>GDBusConnection</code> and pass
 <code>G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_CLIENT</code> in the
-<code>GDBusConnection</code>:flags property you will be able to read the GUID
+<code>GDBusConnection:flags</code> property you will be able to read the GUID
 of the other peer here after the connection has been successfully
 initialized.</p>
 
@@ -9864,7 +9864,7 @@ initialized.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1959-L1966">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1952-L1959">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9897,7 +9897,7 @@ initialized.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1969-L1975">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1962-L1968">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9920,9 +9920,9 @@ initialized.</p>
                       <div class="abstract">
                         <p>Retrieves the last serial number assigned to a <code>GDBusMessage</code> on
 the current thread. This includes messages sent via both low-level
-API such as g_dbus_connection_send_message() as well as
-high-level API such as g_dbus_connection_emit_signal(),
-g_dbus_connection_call() or g_dbus_proxy_call().</p>
+API such as <code>g_dbus_connection_send_message()</code> as well as
+high-level API such as <code>g_dbus_connection_emit_signal()</code>,
+<code>g_dbus_connection_call()</code> or <code>g_dbus_proxy_call()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -9934,7 +9934,7 @@ g_dbus_connection_call() or g_dbus_proxy_call().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1982-L1992">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1975-L1985">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9975,7 +9975,7 @@ each application is a client. So this method will always return
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L2003-L2017">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L1996-L2010">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -10015,7 +10015,7 @@ the stream directly.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L2027-L2037">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L2020-L2030">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -10050,7 +10050,7 @@ message bus connection.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L2042-L2050">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L2035-L2043">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -10063,7 +10063,7 @@ message bus connection.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

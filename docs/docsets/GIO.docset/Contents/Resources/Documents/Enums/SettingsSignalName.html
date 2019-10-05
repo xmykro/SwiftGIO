@@ -7534,7 +7534,7 @@ for each affected key.  If any other connected handler returns
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L1395">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L1356">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7553,15 +7553,15 @@ for each affected key.  If any other connected handler returns
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The <q>changed</q> signal is emitted when a key has potentially changed.
-You should call one of the g_settings_get() calls to check the new
+You should call one of the <code>g_settings_get()</code> calls to check the new
 value.</p>
 
 <p>This signal supports detailed connections.  You can connect to the
-detailed signal <q>changed::x</q> in order to only receive callbacks
+detailed signal <q>changed`x`</q> in order to only receive callbacks
 when key <q>x</q> changes.</p>
 
 <p>Note that <code>settings</code> only emits this signal if you have read <code>key</code> at
-least once while a signal handler was already connected for <code>key</code>.</p>
+least once while a signal handler was already connected for <code>key.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7573,7 +7573,7 @@ least once while a signal handler was already connected for <code>key</code>.</p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L1406">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L1367">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7592,20 +7592,20 @@ least once while a signal handler was already connected for <code>key</code>.</p
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The notify signal is emitted on an object when one of its properties has
-its value set through g_object_set_property(), g_object_set(), et al.</p>
+its value set through <code>g_object_set_property()</code>, <code>g_object_set()</code>, et al.</p>
 
 <p>Note that getting this signal doesn’t itself guarantee that the value of
 the property has actually changed. When it is emitted is determined by the
 derived GObject class. If the implementor did not create the property with
-<code>G_PARAM_EXPLICIT_NOTIFY</code>, then any call to g_object_set_property() results
-in ::notify being emitted, even if the new value is the same as the old.
+<code>G_PARAM_EXPLICIT_NOTIFY</code>, then any call to <code>g_object_set_property()</code> results
+in <code>notify</code> being emitted, even if the new value is the same as the old.
 If they did pass <code>G_PARAM_EXPLICIT_NOTIFY</code>, then this signal is emitted only
-when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+when they explicitly call <code>g_object_notify()</code> or <code>g_object_notify_by_pspec()</code>,
 and common practice is to do that only when the value has actually changed.</p>
 
 <p>This signal is typically used to obtain change notification for a
 single property, by specifying the property name as a detail in the
-g_signal_connect() call, like this:
+<code>g_signal_connect()</code> call, like this:
 (C Language Example):</p>
 <pre class="highlight plaintext"><code>g_signal_connect (text_view-&gt;buffer, "notify::paste-target-list",
                   G_CALLBACK (gtk_text_view_target_list_notify),
@@ -7626,7 +7626,7 @@ detail strings for the notify signal.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L1432">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L1392">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7673,7 +7673,7 @@ will be suppressed.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L1451">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L1411">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7693,10 +7693,10 @@ will be suppressed.</p>
                       <div class="abstract">
                         <p>The <q>writable-changed</q> signal is emitted when the writability of a
 key has potentially changed.  You should call
-g_settings_is_writable() in order to determine the new status.</p>
+<code>g_settings_is_writable()</code> in order to determine the new status.</p>
 
 <p>This signal supports detailed connections.  You can connect to the
-detailed signal <q>writable-changed::x</q> in order to only receive
+detailed signal <q>writable-changed`x`</q> in order to only receive
 callbacks when the writability of <q>x</q> changes.</p>
 
                       </div>
@@ -7709,7 +7709,7 @@ callbacks when the writability of <q>x</q> changes.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L1459">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L1419">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7739,7 +7739,7 @@ callbacks when the writability of <q>x</q> changes.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L1461">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L1421">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7758,7 +7758,7 @@ callbacks when the writability of <q>x</q> changes.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Whether the <code>GSettings</code> object is in &lsquo;delay-apply&rsquo; mode. See
-g_settings_delay() for details.</p>
+<code>g_settings_delay()</code> for details.</p>
 
                       </div>
                       <div class="declaration">
@@ -7770,7 +7770,7 @@ g_settings_delay() for details.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L1464">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L1424">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7789,7 +7789,7 @@ g_settings_delay() for details.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>If this property is <code>true</code>, the <code>GSettings</code> object has outstanding
-changes that will be applied when g_settings_apply() is called.</p>
+changes that will be applied when <code>g_settings_apply()</code> is called.</p>
 
                       </div>
                       <div class="declaration">
@@ -7801,7 +7801,7 @@ changes that will be applied when g_settings_apply() is called.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L1467">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L1427">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7831,7 +7831,7 @@ changes that will be applied when g_settings_apply() is called.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L1469">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L1429">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7857,7 +7857,7 @@ for this <code>GSettings</code> object.</p>
 unfortunately this name was used in previous versions to refer to
 the schema ID rather than the schema itself.  Take care to use the
 &lsquo;settings-schema&rsquo; property if you wish to pass in a
-<code>GSettingsSchema</code>.</p>
+<code>GSettingsSchema.</code></p>
 
 <p><strong>schema is deprecated:</strong>
 Use the &lsquo;schema-id&rsquo; property instead.  In a future
@@ -7873,7 +7873,7 @@ version, this property may instead refer to a #GSettingsSchema.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L1483">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L1443">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7904,7 +7904,7 @@ for this <code>GSettings</code> object.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L1486">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L1446">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7940,7 +7940,7 @@ than the schema itself.  Take care.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L1494">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L1454">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7953,7 +7953,7 @@ than the schema itself.  Take care.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

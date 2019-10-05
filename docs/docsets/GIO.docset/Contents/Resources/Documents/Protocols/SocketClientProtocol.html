@@ -7537,7 +7537,7 @@ can just create a new one any time you need one.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7454">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7403">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7575,7 +7575,7 @@ can just create a new one any time you need one.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7457">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7406">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7703,7 +7703,7 @@ can just create a new one any time you need one.</p>
                         <p>binding reference or <code>nil</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7616-L7640">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7565-L7589">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7795,7 +7795,7 @@ can just create a new one any time you need one.</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7738-L7757">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7686-L7705">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7832,7 +7832,7 @@ indicated proxy protocol is returned by the <code>GProxyResolver</code>,
 <code>GSocketClient</code> will consider this protocol as supported but will
 not try to find a <code>GProxy</code> instance to handle handshaking. The
 application must check for this case by calling
-g_socket_connection_get_remote_address() on the returned
+<code>g_socket_connection_get_remote_address()</code> on the returned
 <code>GSocketConnection</code>, and seeing if it&rsquo;s a <code>GProxyAddress</code> of the
 appropriate type, to determine whether or not it needs to handle
 the proxy handshaking itself.</p>
@@ -7857,7 +7857,7 @@ specific handshake.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7783-L7786">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7731-L7734">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7889,12 +7889,12 @@ the underlying socket that is used. For instance, for a TCP/IP connection
 it will be a <code>GTcpConnection</code>.</p>
 
 <p>The socket created will be the same family as the address that the
-<code>connectable</code> resolves to, unless family is set with g_socket_client_set_family()
-or indirectly via g_socket_client_set_local_address(). The socket type
+<code>connectable</code> resolves to, unless family is set with <code>g_socket_client_set_family()</code>
+or indirectly via <code>g_socket_client_set_local_address()</code>. The socket type
 defaults to <code>G_SOCKET_TYPE_STREAM</code> but can be set with
-g_socket_client_set_socket_type().</p>
+<code>g_socket_client_set_socket_type()</code>.</p>
 
-<p>If a local address is specified with g_socket_client_set_local_address() the
+<p>If a local address is specified with <code>g_socket_client_set_local_address()</code> the
 socket will be bound to this address before connecting.</p>
 
                       </div>
@@ -7907,7 +7907,7 @@ socket will be bound to this address before connecting.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7806-L7813">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7754-L7761">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7928,10 +7928,10 @@ socket will be bound to this address before connecting.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This is the asynchronous version of g_socket_client_connect().</p>
+                        <p>This is the asynchronous version of <code>g_socket_client_connect()</code>.</p>
 
 <p>When the operation is finished <code>callback</code> will be
-called. You can then call g_socket_client_connect_finish() to get
+called. You can then call <code>g_socket_client_connect_finish()</code> to get
 the result of the operation.</p>
 
                       </div>
@@ -7944,7 +7944,7 @@ the result of the operation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7820-L7823">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7768-L7771">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7965,7 +7965,7 @@ the result of the operation.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes an async connect operation. See g_socket_client_connect_async()</p>
+                        <p>Finishes an async connect operation. See <code>g_socket_client_connect_async()</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7977,7 +7977,7 @@ the result of the operation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7826-L7833">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7774-L7781">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7998,7 +7998,7 @@ the result of the operation.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This is a helper function for g_socket_client_connect().</p>
+                        <p>This is a helper function for <code>g_socket_client_connect()</code>.</p>
 
 <p>Attempts to create a TCP connection to the named host.</p>
 
@@ -8039,7 +8039,7 @@ accordingly.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7865-L7872">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7813-L7820">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8060,10 +8060,10 @@ accordingly.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This is the asynchronous version of g_socket_client_connect_to_host().</p>
+                        <p>This is the asynchronous version of <code>g_socket_client_connect_to_host()</code>.</p>
 
 <p>When the operation is finished <code>callback</code> will be
-called. You can then call g_socket_client_connect_to_host_finish() to get
+called. You can then call <code>g_socket_client_connect_to_host_finish()</code> to get
 the result of the operation.</p>
 
                       </div>
@@ -8076,7 +8076,7 @@ the result of the operation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7879-L7882">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7827-L7830">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8097,7 +8097,7 @@ the result of the operation.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes an async connect operation. See g_socket_client_connect_to_host_async()</p>
+                        <p>Finishes an async connect operation. See <code>g_socket_client_connect_to_host_async()</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8109,7 +8109,7 @@ the result of the operation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7885-L7892">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7833-L7840">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8155,7 +8155,7 @@ accordingly.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7908-L7915">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7856-L7863">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8177,7 +8177,7 @@ accordingly.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>This is the asynchronous version of
-g_socket_client_connect_to_service().</p>
+<code>g_socket_client_connect_to_service()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8189,7 +8189,7 @@ g_socket_client_connect_to_service().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7919-L7922">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7867-L7870">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8210,7 +8210,7 @@ g_socket_client_connect_to_service().</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes an async connect operation. See g_socket_client_connect_to_service_async()</p>
+                        <p>Finishes an async connect operation. See <code>g_socket_client_connect_to_service_async()</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8222,7 +8222,7 @@ g_socket_client_connect_to_service().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7925-L7932">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7873-L7880">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8243,18 +8243,18 @@ g_socket_client_connect_to_service().</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This is a helper function for g_socket_client_connect().</p>
+                        <p>This is a helper function for <code>g_socket_client_connect()</code>.</p>
 
 <p>Attempts to create a TCP connection with a network URI.</p>
 
 <p><code>uri</code> may be any valid URI containing an <q>authority</q> (hostname/port)
 component. If a port is not specified in the URI, <code>default_port</code>
-will be used. TLS will be negotiated if <code>GSocketClient</code>:tls is <code>true</code>.
+will be used. TLS will be negotiated if <code>GSocketClient:tls</code> is <code>true</code>.
 (<code>GSocketClient</code> does not know to automatically assume TLS for
 certain URI schemes.)</p>
 
-<p>Using this rather than g_socket_client_connect() or
-g_socket_client_connect_to_host() allows <code>GSocketClient</code> to
+<p>Using this rather than <code>g_socket_client_connect()</code> or
+<code>g_socket_client_connect_to_host()</code> allows <code>GSocketClient</code> to
 determine when to use application-specific proxy protocols.</p>
 
 <p>Upon a successful connection, a new <code>GSocketConnection</code> is constructed
@@ -8275,7 +8275,7 @@ accordingly.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7955-L7962">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7903-L7910">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8296,10 +8296,10 @@ accordingly.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This is the asynchronous version of g_socket_client_connect_to_uri().</p>
+                        <p>This is the asynchronous version of <code>g_socket_client_connect_to_uri()</code>.</p>
 
 <p>When the operation is finished <code>callback</code> will be
-called. You can then call g_socket_client_connect_to_uri_finish() to get
+called. You can then call <code>g_socket_client_connect_to_uri_finish()</code> to get
 the result of the operation.</p>
 
                       </div>
@@ -8312,7 +8312,7 @@ the result of the operation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7969-L7972">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7917-L7920">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8333,7 +8333,7 @@ the result of the operation.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes an async connect operation. See g_socket_client_connect_to_uri_async()</p>
+                        <p>Finishes an async connect operation. See <code>g_socket_client_connect_to_uri_async()</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8345,7 +8345,7 @@ the result of the operation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7975-L7982">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7923-L7930">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8366,7 +8366,7 @@ the result of the operation.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the proxy enable state; see g_socket_client_set_enable_proxy()</p>
+                        <p>Gets the proxy enable state; see <code>g_socket_client_set_enable_proxy()</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8378,7 +8378,7 @@ the result of the operation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7985-L7988">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7933-L7936">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8401,7 +8401,7 @@ the result of the operation.</p>
                       <div class="abstract">
                         <p>Gets the socket family of the socket client.</p>
 
-<p>See g_socket_client_set_family() for details.</p>
+<p>See <code>g_socket_client_set_family()</code> for details.</p>
 
                       </div>
                       <div class="declaration">
@@ -8413,7 +8413,7 @@ the result of the operation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7993-L7996">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7941-L7944">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8436,7 +8436,7 @@ the result of the operation.</p>
                       <div class="abstract">
                         <p>Gets the local address of the socket client.</p>
 
-<p>See g_socket_client_set_local_address() for details.</p>
+<p>See <code>g_socket_client_set_local_address()</code> for details.</p>
 
                       </div>
                       <div class="declaration">
@@ -8448,7 +8448,7 @@ the result of the operation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8001-L8004">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7949-L7952">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8471,7 +8471,7 @@ the result of the operation.</p>
                       <div class="abstract">
                         <p>Gets the protocol name type of the socket client.</p>
 
-<p>See g_socket_client_set_protocol() for details.</p>
+<p>See <code>g_socket_client_set_protocol()</code> for details.</p>
 
                       </div>
                       <div class="declaration">
@@ -8483,7 +8483,7 @@ the result of the operation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8009-L8012">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7957-L7960">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8505,8 +8505,8 @@ the result of the operation.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the <code>GProxyResolver</code> being used by <code>client</code>. Normally, this will
-be the resolver returned by g_proxy_resolver_get_default(), but you
-can override it with g_socket_client_set_proxy_resolver().</p>
+be the resolver returned by <code>g_proxy_resolver_get_default()</code>, but you
+can override it with <code>g_socket_client_set_proxy_resolver()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8518,7 +8518,7 @@ can override it with g_socket_client_set_proxy_resolver().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8017-L8020">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7965-L7968">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8541,7 +8541,7 @@ can override it with g_socket_client_set_proxy_resolver().</p>
                       <div class="abstract">
                         <p>Gets the socket type of the socket client.</p>
 
-<p>See g_socket_client_set_socket_type() for details.</p>
+<p>See <code>g_socket_client_set_socket_type()</code> for details.</p>
 
                       </div>
                       <div class="declaration">
@@ -8553,7 +8553,7 @@ can override it with g_socket_client_set_proxy_resolver().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8025-L8028">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7973-L7976">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8576,7 +8576,7 @@ can override it with g_socket_client_set_proxy_resolver().</p>
                       <div class="abstract">
                         <p>Gets the I/O timeout time for sockets created by <code>client</code>.</p>
 
-<p>See g_socket_client_set_timeout() for details.</p>
+<p>See <code>g_socket_client_set_timeout()</code> for details.</p>
 
                       </div>
                       <div class="declaration">
@@ -8588,7 +8588,7 @@ can override it with g_socket_client_set_proxy_resolver().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8033-L8036">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7981-L7984">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8610,7 +8610,7 @@ can override it with g_socket_client_set_proxy_resolver().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets whether <code>client</code> creates TLS connections. See
-g_socket_client_set_tls() for details.</p>
+<code>g_socket_client_set_tls()</code> for details.</p>
 
                       </div>
                       <div class="declaration">
@@ -8622,7 +8622,7 @@ g_socket_client_set_tls() for details.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8040-L8043">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7988-L7991">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8644,7 +8644,7 @@ g_socket_client_set_tls() for details.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the TLS validation flags used creating TLS connections via
-<code>client</code>.</p>
+<code>client.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8656,7 +8656,7 @@ g_socket_client_set_tls() for details.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8047-L8050">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7995-L7998">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8682,7 +8682,7 @@ proxy server. When enabled (the default), <code>GSocketClient</code> will use a
 <code>GProxyResolver</code> to determine if a proxy protocol such as SOCKS is
 needed, and automatically do the necessary proxy negotiation.</p>
 
-<p>See also g_socket_client_set_proxy_resolver().</p>
+<p>See also <code>g_socket_client_set_proxy_resolver()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8694,7 +8694,7 @@ needed, and automatically do the necessary proxy negotiation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8058-L8061">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8006-L8009">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8734,7 +8734,7 @@ be an ipv6 mapped to ipv4 address.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8071-L8074">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8019-L8022">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8773,7 +8773,7 @@ a specific interface.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8083-L8086">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8031-L8034">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8811,7 +8811,7 @@ protocol for the socket family and type.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8094-L8097">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8042-L8045">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8837,7 +8837,7 @@ you want to use specific proxies, rather than using the system
 default proxy settings.</p>
 
 <p>Note that whether or not the proxy resolver is actually used
-depends on the setting of <code>GSocketClient</code>:enable-proxy, which is not
+depends on the setting of <code>GSocketClient:enable</code>-proxy, which is not
 changed by this function (but which is <code>true</code> by default)</p>
 
                       </div>
@@ -8850,7 +8850,7 @@ changed by this function (but which is <code>true</code> by default)</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8106-L8109">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8054-L8057">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8888,7 +8888,7 @@ as GSocketClient is used for connection oriented services.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8117-L8120">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8065-L8068">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8913,8 +8913,8 @@ as GSocketClient is used for connection oriented services.</p>
 time in seconds, or 0 for no timeout (the default).</p>
 
 <p>The timeout value affects the initial connection attempt as well,
-so setting this may cause calls to g_socket_client_connect(), etc,
-to fail with <code>G_IO_ERROR_TIMED_OUT</code>.</p>
+so setting this may cause calls to <code>g_socket_client_connect()</code>, etc,
+to fail with <code>G_IO_ERROR_TIMED_OUT.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8926,7 +8926,7 @@ to fail with <code>G_IO_ERROR_TIMED_OUT</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8128-L8131">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8076-L8079">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8955,13 +8955,13 @@ and perform a TLS handshake when connecting.</p>
 but <code>GTlsClientConnection</code> is not a <code>GSocketConnection</code>, this
 actually wraps the resulting <code>GTlsClientConnection</code> in a
 <code>GTcpWrapperConnection</code> when returning it. You can use
-g_tcp_wrapper_connection_get_base_io_stream() on the return value
+<code>g_tcp_wrapper_connection_get_base_io_stream()</code> on the return value
 to extract the <code>GTlsClientConnection</code>.</p>
 
 <p>If you need to modify the behavior of the TLS handshake (eg, by
 setting a client-side certificate to use, or connecting to the
-<code>GTlsConnection</code>::accept-certificate signal), you can connect to
-<code>client</code>&lsquo;s <code>GSocketClient</code>::event signal and wait for it to be
+<code>GTlsConnection::accept</code>-certificate signal), you can connect to
+<code>client</code>&lsquo;s <code>GSocketClient::event</code> signal and wait for it to be
 emitted with <code>G_SOCKET_CLIENT_TLS_HANDSHAKING</code>, which will give you
 a chance to see the <code>GTlsClientConnection</code> before the handshake
 starts.</p>
@@ -8976,7 +8976,7 @@ starts.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8151-L8154">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8099-L8102">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8998,7 +8998,7 @@ starts.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Sets the TLS validation flags used when creating TLS connections
-via <code>client</code>. The default value is <code>G_TLS_CERTIFICATE_VALIDATE_ALL</code>.</p>
+via <code>client</code>. The default value is <code>G_TLS_CERTIFICATE_VALIDATE_ALL.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -9010,7 +9010,7 @@ via <code>client</code>. The default value is <code>G_TLS_CERTIFICATE_VALIDATE_A
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8158-L8161">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8106-L8109">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9031,7 +9031,7 @@ via <code>client</code>. The default value is <code>G_TLS_CERTIFICATE_VALIDATE_A
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the proxy enable state; see g_socket_client_set_enable_proxy()</p>
+                        <p>Gets the proxy enable state; see <code>g_socket_client_set_enable_proxy()</code></p>
 
                       </div>
                       <div class="declaration">
@@ -9043,7 +9043,7 @@ via <code>client</code>. The default value is <code>G_TLS_CERTIFICATE_VALIDATE_A
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8163-L8178">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8111-L8126">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9076,7 +9076,7 @@ via <code>client</code>. The default value is <code>G_TLS_CERTIFICATE_VALIDATE_A
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8180-L8199">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8128-L8147">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9099,7 +9099,7 @@ via <code>client</code>. The default value is <code>G_TLS_CERTIFICATE_VALIDATE_A
                       <div class="abstract">
                         <p>Gets the local address of the socket client.</p>
 
-<p>See g_socket_client_set_local_address() for details.</p>
+<p>See <code>g_socket_client_set_local_address()</code> for details.</p>
 
                       </div>
                       <div class="declaration">
@@ -9111,7 +9111,7 @@ via <code>client</code>. The default value is <code>G_TLS_CERTIFICATE_VALIDATE_A
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8204-L8222">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8152-L8170">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9144,7 +9144,7 @@ via <code>client</code>. The default value is <code>G_TLS_CERTIFICATE_VALIDATE_A
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8224-L8241">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8172-L8189">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9166,8 +9166,8 @@ via <code>client</code>. The default value is <code>G_TLS_CERTIFICATE_VALIDATE_A
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the <code>GProxyResolver</code> being used by <code>client</code>. Normally, this will
-be the resolver returned by g_proxy_resolver_get_default(), but you
-can override it with g_socket_client_set_proxy_resolver().</p>
+be the resolver returned by <code>g_proxy_resolver_get_default()</code>, but you
+can override it with <code>g_socket_client_set_proxy_resolver()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -9179,7 +9179,7 @@ can override it with g_socket_client_set_proxy_resolver().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8246-L8264">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8194-L8212">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9202,7 +9202,7 @@ can override it with g_socket_client_set_proxy_resolver().</p>
                       <div class="abstract">
                         <p>Gets the socket type of the socket client.</p>
 
-<p>See g_socket_client_set_socket_type() for details.</p>
+<p>See <code>g_socket_client_set_socket_type()</code> for details.</p>
 
                       </div>
                       <div class="declaration">
@@ -9214,7 +9214,7 @@ can override it with g_socket_client_set_proxy_resolver().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8269-L8286">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8217-L8234">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9247,7 +9247,7 @@ can override it with g_socket_client_set_proxy_resolver().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8288-L8305">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8236-L8253">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9280,7 +9280,7 @@ can override it with g_socket_client_set_proxy_resolver().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8307-L8335">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8255-L8283">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9302,7 +9302,7 @@ can override it with g_socket_client_set_proxy_resolver().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the TLS validation flags used creating TLS connections via
-<code>client</code>.</p>
+<code>client.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -9314,7 +9314,7 @@ can override it with g_socket_client_set_proxy_resolver().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8339-L8351">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L8287-L8299">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9327,7 +9327,7 @@ can override it with g_socket_client_set_proxy_resolver().</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

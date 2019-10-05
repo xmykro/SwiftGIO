@@ -7509,20 +7509,20 @@
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The notify signal is emitted on an object when one of its properties has
-its value set through g_object_set_property(), g_object_set(), et al.</p>
+its value set through <code>g_object_set_property()</code>, <code>g_object_set()</code>, et al.</p>
 
 <p>Note that getting this signal doesn’t itself guarantee that the value of
 the property has actually changed. When it is emitted is determined by the
 derived GObject class. If the implementor did not create the property with
-<code>G_PARAM_EXPLICIT_NOTIFY</code>, then any call to g_object_set_property() results
-in ::notify being emitted, even if the new value is the same as the old.
+<code>G_PARAM_EXPLICIT_NOTIFY</code>, then any call to <code>g_object_set_property()</code> results
+in <code>notify</code> being emitted, even if the new value is the same as the old.
 If they did pass <code>G_PARAM_EXPLICIT_NOTIFY</code>, then this signal is emitted only
-when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+when they explicitly call <code>g_object_notify()</code> or <code>g_object_notify_by_pspec()</code>,
 and common practice is to do that only when the value has actually changed.</p>
 
 <p>This signal is typically used to obtain change notification for a
 single property, by specifying the property name as a detail in the
-g_signal_connect() call, like this:
+<code>g_signal_connect()</code> call, like this:
 (C Language Example):</p>
 <pre class="highlight plaintext"><code>g_signal_connect (text_view-&gt;buffer, "notify::paste-target-list",
                   G_CALLBACK (gtk_text_view_target_list_notify),
@@ -7543,7 +7543,7 @@ detail strings for the notify signal.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L388">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L387">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7563,8 +7563,8 @@ detail strings for the notify signal.</p>
                       <div class="abstract">
                         <p>If <code>action</code> is currently enabled.</p>
 
-<p>If the action is disabled then calls to g_action_activate() and
-g_action_change_state() have no effect.</p>
+<p>If the action is disabled then calls to <code>g_action_activate()</code> and
+<code>g_action_change_state()</code> have no effect.</p>
 
                       </div>
                       <div class="declaration">
@@ -7576,7 +7576,7 @@ g_action_change_state() have no effect.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L393">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L392">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7607,7 +7607,7 @@ property value, provided the property is boolean.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L396">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L395">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7626,7 +7626,7 @@ property value, provided the property is boolean.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The name of the action.  This is mostly meaningful for identifying
-the action once it has been added to a <code>GActionMap</code>.</p>
+the action once it has been added to a <code>GActionMap.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7638,7 +7638,7 @@ the action once it has been added to a <code>GActionMap</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L399">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L398">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7670,7 +7670,7 @@ the action once it has been added to a <code>GActionMap</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L403">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L402">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7701,7 +7701,7 @@ action.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L406">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L405">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7734,7 +7734,7 @@ readable and writable (and not construct-only).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L411">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L410">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7764,7 +7764,7 @@ readable and writable (and not construct-only).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L413">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L412">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7795,7 +7795,7 @@ action is stateless.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L416">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L415">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7808,7 +7808,7 @@ action is stateless.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

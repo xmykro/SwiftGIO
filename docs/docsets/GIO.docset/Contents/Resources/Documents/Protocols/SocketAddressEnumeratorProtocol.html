@@ -7493,16 +7493,16 @@ Alternatively, use <code><a href="../Structs/SocketAddressEnumeratorRef.html">So
 
 <p><code>GSocketAddressEnumerator</code> is an enumerator type for <code>GSocketAddress</code>
 instances. It is returned by enumeration functions such as
-g_socket_connectable_enumerate(), which returns a <code>GSocketAddressEnumerator</code>
+<code>g_socket_connectable_enumerate()</code>, which returns a <code>GSocketAddressEnumerator</code>
 to list each <code>GSocketAddress</code> which could be used to connect to that
 <code>GSocketConnectable</code>.</p>
 
 <p>Enumeration is typically a blocking operation, so the asynchronous methods
-g_socket_address_enumerator_next_async() and
-g_socket_address_enumerator_next_finish() should be used where possible.</p>
+<code>g_socket_address_enumerator_next_async()</code> and
+<code>g_socket_address_enumerator_next_finish()</code> should be used where possible.</p>
 
 <p>Each <code>GSocketAddressEnumerator</code> can only be enumerated once. Once
-g_socket_address_enumerator_next() has returned <code>nil</code> (and no error), further
+<code>g_socket_address_enumerator_next()</code> has returned <code>nil</code> (and no error), further
 enumeration with that <code>GSocketAddressEnumerator</code> is not possible, and it can
 be unreffed.</p>
 
@@ -7538,7 +7538,7 @@ be unreffed.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7188">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7138">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7576,7 +7576,7 @@ be unreffed.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7191">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7141">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7668,7 +7668,7 @@ be unreffed.</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7358-L7377">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7307-L7326">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7703,14 +7703,14 @@ be unreffed.</p>
                         <p>Retrieves the next <code>GSocketAddress</code> from <code>enumerator</code>. Note that this
 may block for some amount of time. (Eg, a <code>GNetworkAddress</code> may need
 to do a DNS lookup before it can return an address.) Use
-g_socket_address_enumerator_next_async() if you need to avoid
+<code>g_socket_address_enumerator_next_async()</code> if you need to avoid
 blocking.</p>
 
 <p>If <code>enumerator</code> is expected to yield addresses, but for some reason
 is unable to (eg, because of a DNS error), then the first call to
-g_socket_address_enumerator_next() will return an appropriate error
+<code>g_socket_address_enumerator_next()</code> will return an appropriate error
 in *<code>error</code>. However, if the first call to
-g_socket_address_enumerator_next() succeeds, then any further
+<code>g_socket_address_enumerator_next()</code> succeeds, then any further
 internal errors (other than <code>cancellable</code> being triggered) will be
 ignored.</p>
 
@@ -7724,7 +7724,7 @@ ignored.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7397-L7404">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7346-L7353">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7747,7 +7747,7 @@ ignored.</p>
                       <div class="abstract">
                         <p>Asynchronously retrieves the next <code>GSocketAddress</code> from <code>enumerator</code>
 and then calls <code>callback</code>, which must call
-g_socket_address_enumerator_next_finish() to get the result.</p>
+<code>g_socket_address_enumerator_next_finish()</code> to get the result.</p>
 
 <p>It is an error to call this multiple times before the previous callback has finished.</p>
 
@@ -7761,7 +7761,7 @@ g_socket_address_enumerator_next_finish() to get the result.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7411-L7414">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7360-L7363">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7783,8 +7783,8 @@ g_socket_address_enumerator_next_finish() to get the result.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Retrieves the result of a completed call to
-g_socket_address_enumerator_next_async(). See
-g_socket_address_enumerator_next() for more information about
+<code>g_socket_address_enumerator_next_async()</code>. See
+<code>g_socket_address_enumerator_next()</code> for more information about
 error handling.</p>
 
                       </div>
@@ -7797,7 +7797,7 @@ error handling.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7420-L7427">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7369-L7376">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7810,7 +7810,7 @@ error handling.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

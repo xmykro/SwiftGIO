@@ -7527,7 +7527,7 @@ asynchronous operations.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L620">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L618">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7565,7 +7565,7 @@ asynchronous operations.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L623">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L621">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7657,7 +7657,7 @@ asynchronous operations.</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L856-L875">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L852-L871">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7690,7 +7690,7 @@ asynchronous operations.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Will set <code>cancellable</code> to cancelled, and will emit the
-<code>GCancellable</code>::cancelled signal. (However, see the warning about
+<code>GCancellable::cancelled</code> signal. (However, see the warning about
 race conditions in the documentation for that signal if you are
 planning to connect to it.)</p>
 
@@ -7716,7 +7716,7 @@ the application returns to the main loop.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L898-L901">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L894-L897">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7737,7 +7737,7 @@ the application returns to the main loop.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Convenience function to connect to the <code>GCancellable</code>::cancelled
+                        <p>Convenience function to connect to the <code>GCancellable::cancelled</code>
 signal. Also handles the race condition that may happen
 if the cancellable is cancelled right before connecting.</p>
 
@@ -7749,12 +7749,12 @@ or when <code>cancellable</code> is cancelled in some thread.</p>
 disconnected, or immediately if the cancellable is already
 cancelled.</p>
 
-<p>See <code>GCancellable</code>::cancelled for details on how to use this.</p>
+<p>See <code>GCancellable::cancelled</code> for details on how to use this.</p>
 
 <p>Since GLib 2.40, the lock protecting <code>cancellable</code> is not held when
 <code>callback</code> is invoked.  This lifts a restriction in place for
 earlier GLib versions which now makes it easier to write cleanup
-code that unconditionally invokes e.g. g_cancellable_cancel().</p>
+code that unconditionally invokes e.g. <code>g_cancellable_cancel()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7766,7 +7766,7 @@ code that unconditionally invokes e.g. g_cancellable_cancel().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L921-L924">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L917-L920">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7788,15 +7788,15 @@ code that unconditionally invokes e.g. g_cancellable_cancel().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Disconnects a handler from a cancellable instance similar to
-g_signal_handler_disconnect().  Additionally, in the event that a
+<code>g_signal_handler_disconnect()</code>.  Additionally, in the event that a
 signal handler is currently running, this call will block until the
 handler has finished.  Calling this function from a
-<code>GCancellable</code>::cancelled signal handler will therefore result in a
+<code>GCancellable::cancelled</code> signal handler will therefore result in a
 deadlock.</p>
 
 <p>This avoids a race condition where a thread cancels at the
 same time as the cancellable operation is finished and the
-signal handler is removed. See <code>GCancellable</code>::cancelled for
+signal handler is removed. See <code>GCancellable::cancelled</code> for
 details on how to use this.</p>
 
 <p>If <code>cancellable</code> is <code>nil</code> or <code>handler_id</code> is <code>0</code> this function does
@@ -7812,7 +7812,7 @@ nothing.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L940-L943">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L936-L939">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7839,13 +7839,13 @@ turn readable when <code>cancellable</code> is cancelled.</p>
 
 <p>You are not supposed to read from the fd yourself, just check for
 readable status. Reading to unset the readable status is done
-with g_cancellable_reset().</p>
+with <code>g_cancellable_reset()</code>.</p>
 
 <p>After a successful return from this function, you should use
-g_cancellable_release_fd() to free up resources allocated for
+<code>g_cancellable_release_fd()</code> to free up resources allocated for
 the returned file descriptor.</p>
 
-<p>See also g_cancellable_make_pollfd().</p>
+<p>See also <code>g_cancellable_make_pollfd()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7857,7 +7857,7 @@ the returned file descriptor.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L958-L961">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L954-L957">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7879,13 +7879,13 @@ the returned file descriptor.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Creates a <code>GPollFD</code> corresponding to <code>cancellable</code>; this can be passed
-to g_poll() and used to poll for cancellation. This is useful both
+to <code>g_poll()</code> and used to poll for cancellation. This is useful both
 for unix systems without a native poll and for portability to
 windows.</p>
 
 <p>When this function returns <code>true</code>, you should use
-g_cancellable_release_fd() to free up resources allocated for the
-<code>pollfd</code>. After a <code>false</code> return, do not call g_cancellable_release_fd().</p>
+<code>g_cancellable_release_fd()</code> to free up resources allocated for the
+<code>pollfd</code>. After a <code>false</code> return, do not call <code>g_cancellable_release_fd()</code>.</p>
 
 <p>If this function returns <code>false</code>, either no <code>cancellable</code> was given or
 resource limits prevent this function from allocating the necessary
@@ -7895,7 +7895,7 @@ these cases is to ignore the <code>cancellable</code>.</p>
 
 <p>You are not supposed to read from the fd yourself, just check for
 readable status. Reading to unset the readable status is done
-with g_cancellable_reset().</p>
+with <code>g_cancellable_reset()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7907,7 +7907,7 @@ with g_cancellable_reset().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L981-L984">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L977-L980">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7941,7 +7941,7 @@ is on the top of the stack).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L988-L991">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L984-L987">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7963,7 +7963,7 @@ is on the top of the stack).</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Pushes <code>cancellable</code> onto the cancellable stack. The current
-cancellable can then be received using g_cancellable_get_current().</p>
+cancellable can then be received using <code>g_cancellable_get_current()</code>.</p>
 
 <p>This is useful when implementing cancellable operations in
 code that does not allow you to pass down the cancellable object.</p>
@@ -7981,7 +7981,7 @@ so you rarely have to call this yourself.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1001-L1004">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L997-L1000">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8002,8 +8002,8 @@ so you rarely have to call this yourself.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Releases a resources previously allocated by g_cancellable_get_fd()
-or g_cancellable_make_pollfd().</p>
+                        <p>Releases a resources previously allocated by <code>g_cancellable_get_fd()</code>
+or <code>g_cancellable_make_pollfd()</code>.</p>
 
 <p>For compatibility reasons with older releases, calling this function
 is not strictly required, the resources will be automatically freed
@@ -8022,7 +8022,7 @@ descriptors when many <code>GCancellables</code> are used at the same time.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1015-L1018">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1011-L1014">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8065,7 +8065,7 @@ create a fresh cancellable for further async operations.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1031-L1034">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1027-L1030">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8099,7 +8099,7 @@ that the operation was cancelled.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1038-L1045">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1034-L1041">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8123,12 +8123,12 @@ that the operation was cancelled.</p>
                         <p>Creates a source that triggers if <code>cancellable</code> is cancelled and
 calls its callback of type <code>GCancellableSourceFunc</code>. This is
 primarily useful for attaching to another (non-cancellable) source
-with g_source_add_child_source() to add cancellability to it.</p>
+with <code>g_source_add_child_source()</code> to add cancellability to it.</p>
 
 <p>For convenience, you can call this with a <code>nil</code> <code>GCancellable</code>,
 in which case the source will never trigger.</p>
 
-<p>The new <code>GSource</code> will hold a reference to the <code>GCancellable</code>.</p>
+<p>The new <code>GSource</code> will hold a reference to the <code>GCancellable.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8140,7 +8140,7 @@ in which case the source will never trigger.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1056-L1059">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1052-L1055">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8161,7 +8161,7 @@ in which case the source will never trigger.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Async version of g_app_info_launch_default_for_uri().</p>
+                        <p>Async version of <code>g_app_info_launch_default_for_uri()</code>.</p>
 
 <p>This version is useful if you are interested in receiving
 error information in the case where the application is
@@ -8182,7 +8182,7 @@ in receiving error information from their activation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1071-L1074">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1067-L1070">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8204,10 +8204,10 @@ in receiving error information from their activation.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Helper function for constructing <code>GAsyncInitable</code> object. This is
-similar to g_object_newv() but also initializes the object asynchronously.</p>
+similar to <code>g_object_newv()</code> but also initializes the object asynchronously.</p>
 
 <p>When the initialization is finished, <code>callback</code> will be called. You can
-then call g_async_initable_new_finish() to get the new object and check
+then call <code>g_async_initable_new_finish()</code> to get the new object and check
 for any errors.</p>
 
 <p><strong>async_initable_newv_async is deprecated:</strong>
@@ -8219,13 +8219,13 @@ g_async_initable_init_async() instead. See #GParameter for more information.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">func</span> <span class="nf">asyncInitableNewvAsync</span><span class="p">(</span><span class="n">objectType</span> <span class="nv">object_type</span><span class="p">:</span> <span class="kt">GType</span><span class="p">,</span> <span class="n">nParameters</span> <span class="nv">n_parameters</span><span class="p">:</span> <span class="kt">CUnsignedInt</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="kt">ParameterProtocol</span><span class="p">,</span> <span class="n">ioPriority</span> <span class="nv">io_priority</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO18AsyncReadyCallbacka">AsyncReadyCallback</a></span><span class="p">,</span> <span class="n">userData</span> <span class="nv">user_data</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1086-L1089">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1082-L1085">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8249,9 +8249,9 @@ g_async_initable_init_async() instead. See #GParameter for more information.</p>
                         <p>Asynchronously connects to the message bus specified by <code>bus_type</code>.</p>
 
 <p>When the operation is finished, <code>callback</code> will be invoked. You can
-then call g_bus_get_finish() to get the result of the operation.</p>
+then call <code>g_bus_get_finish()</code> to get the result of the operation.</p>
 
-<p>This is an asynchronous failable function. See g_bus_get_sync() for
+<p>This is an asynchronous failable function. See <code>g_bus_get_sync()</code> for
 the synchronous version.</p>
 
                       </div>
@@ -8264,7 +8264,7 @@ the synchronous version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1098-L1101">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1094-L1097">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8290,17 +8290,17 @@ Note that the returned object may shared with other callers,
 e.g. if two separate parts of a process calls this function with
 the same <code>bus_type</code>, they will share the same object.</p>
 
-<p>This is a synchronous failable function. See g_bus_get() and
-g_bus_get_finish() for the asynchronous version.</p>
+<p>This is a synchronous failable function. See <code>g_bus_get()</code> and
+<code>g_bus_get_finish()</code> for the asynchronous version.</p>
 
 <p>The returned object is a singleton, that is, shared with other
-callers of g_bus_get() and g_bus_get_sync() for <code>bus_type</code>. In the
+callers of <code>g_bus_get()</code> and <code>g_bus_get_sync()</code> for <code>bus_type</code>. In the
 event that you need a private message bus connection, use
-g_dbus_address_get_for_bus_sync() and
-g_dbus_connection_new_for_address().</p>
+<code>g_dbus_address_get_for_bus_sync()</code> and
+<code>g_dbus_connection_new_for_address()</code>.</p>
 
 <p>Note that the returned <code>GDBusConnection</code> object will (usually) have
-the <code>GDBusConnection</code>:exit-on-close property set to <code>true</code>.</p>
+the <code>GDBusConnection:exit</code>-on-close property set to <code>true</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8312,7 +8312,7 @@ the <code>GDBusConnection</code>:exit-on-close property set to <code>true</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1119-L1126">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1115-L1122">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8350,7 +8350,7 @@ platform specific mechanisms.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1134-L1141">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1130-L1137">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8377,11 +8377,11 @@ of the D-Bus authentication conversation. <code>address</code> must be in the
 <a href="https://dbus.freedesktop.org/doc/dbus-specification.html%60addresses%60">D-Bus address format</a>.</p>
 
 <p>When the operation is finished, <code>callback</code> will be invoked. You can
-then call g_dbus_address_get_stream_finish() to get the result of
+then call <code>g_dbus_address_get_stream_finish()</code> to get the result of
 the operation.</p>
 
 <p>This is an asynchronous failable function. See
-g_dbus_address_get_stream_sync() for the synchronous version.</p>
+<code>g_dbus_address_get_stream_sync()</code> for the synchronous version.</p>
 
                       </div>
                       <div class="declaration">
@@ -8393,7 +8393,7 @@ g_dbus_address_get_stream_sync() for the synchronous version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1154-L1157">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1150-L1153">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8420,7 +8420,7 @@ of the D-Bus authentication conversation. <code>address</code> must be in the
 <a href="https://dbus.freedesktop.org/doc/dbus-specification.html%60addresses%60">D-Bus address format</a>.</p>
 
 <p>This is a synchronous failable function. See
-g_dbus_address_get_stream() for the asynchronous version.</p>
+<code>g_dbus_address_get_stream()</code> for the asynchronous version.</p>
 
                       </div>
                       <div class="declaration">
@@ -8432,7 +8432,7 @@ g_dbus_address_get_stream() for the asynchronous version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1166-L1173">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1162-L1169">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8454,7 +8454,7 @@ g_dbus_address_get_stream() for the asynchronous version.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Helper function for constructing <code>GInitable</code> object. This is
-similar to g_object_newv() but also initializes the object
+similar to <code>g_object_newv()</code> but also initializes the object
 and returns <code>nil</code>, setting an error on failure.</p>
 
 <p><strong>initable_newv is deprecated:</strong>
@@ -8466,13 +8466,13 @@ g_initable_init() instead. See #GParameter for more information.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">func</span> <span class="nf">initableNewv</span><span class="p">(</span><span class="n">objectType</span> <span class="nv">object_type</span><span class="p">:</span> <span class="kt">GType</span><span class="p">,</span> <span class="n">nParameters</span> <span class="nv">n_parameters</span><span class="p">:</span> <span class="kt">CUnsignedInt</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">GParameter</span><span class="o">&gt;</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1182-L1189">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1178-L1185">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8499,8 +8499,8 @@ g_initable_init() instead. See #GParameter for more information.</p>
 regardless whether the job was cancelled or has run to completion.</p>
 
 <p>If <code>cancellable</code> is not <code>nil</code>, it can be used to cancel the I/O job
-by calling g_cancellable_cancel() or by calling
-g_io_scheduler_cancel_all_jobs().</p>
+by calling <code>g_cancellable_cancel()</code> or by calling
+<code>g_io_scheduler_cancel_all_jobs()</code>.</p>
 
 <p><strong>io_scheduler_push_job is deprecated:</strong>
 use #GThreadPool or g_task_run_in_thread()</p>
@@ -8510,13 +8510,13 @@ use #GThreadPool or g_task_run_in_thread()</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">func</span> <span class="nf">ioSchedulerPushJob</span><span class="p">(</span><span class="n">jobFunc</span> <span class="nv">job_func</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO18IOSchedulerJobFunca">IOSchedulerJobFunc</a></span><span class="p">,</span> <span class="n">userData</span> <span class="nv">user_data</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">,</span> <span class="nv">notify</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">GLib</span><span class="o">.</span><span class="kt">DestroyNotify</span><span class="p">,</span> <span class="n">ioPriority</span> <span class="nv">io_priority</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1202-L1205">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1198-L1201">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8539,7 +8539,7 @@ use #GThreadPool or g_task_run_in_thread()</p>
                       <div class="abstract">
                         <p>Utility method for <code>GPollableInputStream</code> and <code>GPollableOutputStream</code>
 implementations. Creates a new <code>GSource</code>, as with
-g_pollable_source_new(), but also attaching <code>child_source</code> (with a
+<code>g_pollable_source_new()</code>, but also attaching <code>child_source</code> (with a
 dummy callback), and <code>cancellable</code>, if they are non-<code>nil</code>.</p>
 
                       </div>
@@ -8552,7 +8552,7 @@ dummy callback), and <code>cancellable</code>, if they are non-<code>nil</code>.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1211-L1214">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1207-L1210">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8573,15 +8573,15 @@ dummy callback), and <code>cancellable</code>, if they are non-<code>nil</code>.
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Tries to read from <code>stream</code>, as with g_input_stream_read() (if
-<code>blocking</code> is <code>true</code>) or g_pollable_input_stream_read_nonblocking()
+                        <p>Tries to read from <code>stream</code>, as with <code>g_input_stream_read()</code> (if
+<code>blocking</code> is <code>true</code>) or <code>g_pollable_input_stream_read_nonblocking()</code>
 (if <code>blocking</code> is <code>false</code>). This can be used to more easily share
 code between blocking and non-blocking implementations of a method.</p>
 
 <p>If <code>blocking</code> is <code>false</code>, then <code>stream</code> must be a
-<code>GPollableInputStream</code> for which g_pollable_input_stream_can_poll()
+<code>GPollableInputStream</code> for which <code>g_pollable_input_stream_can_poll()</code>
 returns <code>true</code>, or else the behavior is undefined. If <code>blocking</code> is
-<code>true</code>, then <code>stream</code> does not need to be a <code>GPollableInputStream</code>.</p>
+<code>true</code>, then <code>stream</code> does not need to be a <code>GPollableInputStream.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8593,7 +8593,7 @@ returns <code>true</code>, or else the behavior is undefined. If <code>blocking<
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1225-L1232">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1221-L1228">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8614,16 +8614,16 @@ returns <code>true</code>, or else the behavior is undefined. If <code>blocking<
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Tries to write to <code>stream</code>, as with g_output_stream_write() (if
-<code>blocking</code> is <code>true</code>) or g_pollable_output_stream_write_nonblocking()
+                        <p>Tries to write to <code>stream</code>, as with <code>g_output_stream_write()</code> (if
+<code>blocking</code> is <code>true</code>) or <code>g_pollable_output_stream_write_nonblocking()</code>
 (if <code>blocking</code> is <code>false</code>). This can be used to more easily share
 code between blocking and non-blocking implementations of a method.</p>
 
 <p>If <code>blocking</code> is <code>false</code>, then <code>stream</code> must be a
 <code>GPollableOutputStream</code> for which
-g_pollable_output_stream_can_poll() returns <code>true</code> or else the
+<code>g_pollable_output_stream_can_poll()</code> returns <code>true</code> or else the
 behavior is undefined. If <code>blocking</code> is <code>true</code>, then <code>stream</code> does not
-need to be a <code>GPollableOutputStream</code>.</p>
+need to be a <code>GPollableOutputStream.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8635,7 +8635,7 @@ need to be a <code>GPollableOutputStream</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1244-L1251">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1240-L1247">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8657,8 +8657,8 @@ need to be a <code>GPollableOutputStream</code>.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Tries to write <code>count</code> bytes to <code>stream</code>, as with
-g_output_stream_write_all(), but using g_pollable_stream_write()
-rather than g_output_stream_write().</p>
+<code>g_output_stream_write_all()</code>, but using <code>g_pollable_stream_write()</code>
+rather than <code>g_output_stream_write()</code>.</p>
 
 <p>On a successful write of <code>count</code> bytes, <code>true</code> is returned, and
 <code>bytes_written</code> is set to <code>count</code>.</p>
@@ -8669,11 +8669,11 @@ returned and <code>error</code> is set to indicate the error status,
 <code>bytes_written</code> is updated to contain the number of bytes written
 into the stream before the error occurred.</p>
 
-<p>As with g_pollable_stream_write(), if <code>blocking</code> is <code>false</code>, then
+<p>As with <code>g_pollable_stream_write()</code>, if <code>blocking</code> is <code>false</code>, then
 <code>stream</code> must be a <code>GPollableOutputStream</code> for which
-g_pollable_output_stream_can_poll() returns <code>true</code> or else the
+<code>g_pollable_output_stream_can_poll()</code> returns <code>true</code> or else the
 behavior is undefined. If <code>blocking</code> is <code>true</code>, then <code>stream</code> does not
-need to be a <code>GPollableOutputStream</code>.</p>
+need to be a <code>GPollableOutputStream.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8685,7 +8685,7 @@ need to be a <code>GPollableOutputStream</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1271-L1278">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1267-L1274">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8712,13 +8712,13 @@ turn readable when <code>cancellable</code> is cancelled.</p>
 
 <p>You are not supposed to read from the fd yourself, just check for
 readable status. Reading to unset the readable status is done
-with g_cancellable_reset().</p>
+with <code>g_cancellable_reset()</code>.</p>
 
 <p>After a successful return from this function, you should use
-g_cancellable_release_fd() to free up resources allocated for
+<code>g_cancellable_release_fd()</code> to free up resources allocated for
 the returned file descriptor.</p>
 
-<p>See also g_cancellable_make_pollfd().</p>
+<p>See also <code>g_cancellable_make_pollfd()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8730,7 +8730,7 @@ the returned file descriptor.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1292-L1310">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1288-L1306">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8763,7 +8763,7 @@ the returned file descriptor.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1313-L1319">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-BufferedOutputStream-Cancellable.swift#L1309-L1315">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8830,7 +8830,7 @@ code that unconditionally invokes e.g. g_cancellable_cancel().</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

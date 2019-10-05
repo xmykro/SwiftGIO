@@ -7493,13 +7493,13 @@ Use <code>TestDBusRef</code> only as an <code>unowned</code> reference to an exi
 <p>A helper class for testing code which uses D-Bus without touching the user&rsquo;s
 session bus.</p>
 
-<p>Note that <code>GTestDBus</code> modifies the user’s environment, calling setenv().
+<p>Note that <code>GTestDBus</code> modifies the user’s environment, calling <code>setenv()</code>.
 This is not thread-safe, so all <code>GTestDBus</code> calls should be completed before
 threads are spawned, or should have appropriate locking to ensure no access
 conflicts to environment variables shared between <code>GTestDBus</code> and other
 threads.</p>
 
-<p>&ldquo;` Creating unit tests using GTestDBus</p>
+<p>&ldquo;&rdquo; Creating unit tests using GTestDBus</p>
 
 <p>Testing of D-Bus services can be tricky because normally we only ever run
 D-Bus services over an existing instance of the D-Bus daemon thus we
@@ -7519,14 +7519,14 @@ achieve this by adding a file such as <code>my-server.service.in</code> in the s
 directory and have it processed by configure.</p>
 <pre class="highlight swift"><code>    <span class="p">[</span><span class="kt">D</span><span class="o">-</span><span class="kt">BUS</span> <span class="kt">Service</span><span class="p">]</span>
     <span class="kt">Name</span><span class="o">=</span><span class="n">org</span><span class="o">.</span><span class="n">gtk</span><span class="o">.</span><span class="kt">GDBus</span><span class="o">.</span><span class="kt">Examples</span><span class="o">.</span><span class="kt">ObjectManager</span>
-    <span class="kt">Exec</span><span class="o">=</span><span class="err">`</span><span class="n">abs_top_builddir</span><span class="err">``</span><span class="o">/</span><span class="n">gio</span><span class="o">/</span><span class="n">tests</span><span class="o">/</span><span class="n">gdbus</span><span class="o">-</span><span class="n">example</span><span class="o">-</span><span class="n">objectmanager</span><span class="o">-</span><span class="n">server</span>
+    <span class="kt">Exec</span><span class="o">=</span><span class="kd">@abs_top_builddir</span><span class="err">@</span><span class="o">/</span><span class="n">gio</span><span class="o">/</span><span class="n">tests</span><span class="o">/</span><span class="n">gdbus</span><span class="o">-</span><span class="n">example</span><span class="o">-</span><span class="n">objectmanager</span><span class="o">-</span><span class="n">server</span>
 </code></pre>
 
 <p>You will also need to indicate this service directory in your test
 fixtures, so you will need to pass the path while compiling your
 test cases. Typically this is done with autotools with an added
 preprocessor flag specified to compile your tests such as:</p>
-<pre class="highlight swift"><code>    <span class="o">-</span><span class="kt">DTEST_SERVICES</span><span class="o">=</span><span class="err">\</span><span class="s">""</span><span class="err">$</span><span class="p">(</span><span class="n">abs_top_builddir</span><span class="p">)</span><span class="o">/</span><span class="n">tests</span><span class="o">/</span><span class="n">services</span><span class="s">"</span><span class="se">\"</span><span class="s">
+<pre class="highlight swift"><code>    <span class="o">-</span><span class="kt">DTEST_SERVICES</span><span class="o">=</span><span class="p">\</span><span class="s">""</span><span class="err">$</span><span class="p">(</span><span class="n">abs_top_builddir</span><span class="p">)</span><span class="o">/</span><span class="n">tests</span><span class="o">/</span><span class="n">services</span><span class="s">"</span><span class="se">\"</span><span class="s">
 </span></code></pre>
 <pre class="highlight swift"><code><span class="kt">Once</span> <span class="n">you</span> <span class="n">have</span> <span class="n">a</span> <span class="n">service</span> <span class="n">definition</span> <span class="n">file</span> <span class="n">which</span> <span class="k">is</span> <span class="n">local</span> <span class="n">to</span> <span class="n">your</span> <span class="n">source</span> <span class="n">tree</span><span class="p">,</span>
 </code></pre>
@@ -7552,7 +7552,7 @@ D-Bus daemon activates, using the setup routine for your fixture is
 a practical place to help sandbox your runtime environment. For the
 rather typical GSettings case we can work around this by setting
 <code>GSETTINGS_SCHEMA_DIR</code> to the in tree directory holding your schemas
-in the above fixture_setup() routine.</p>
+in the above <code>fixture_setup()</code> routine.</p>
 
 <p>The GSettings schemas need to be locally pre-compiled for this to work. This can be achieved
 by compiling the schemas locally as a step before running test cases, an autotools setup might
@@ -7596,7 +7596,7 @@ For type-safe access, use the generated, typed pointer <code>test_dbus_ptr</code
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L719">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L713">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7637,7 +7637,7 @@ For type-safe access, use the generated, typed pointer <code>test_dbus_ptr</code
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L724-L725">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L718-L719">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7667,7 +7667,7 @@ For type-safe access, use the generated, typed pointer <code>test_dbus_ptr</code
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L728-L730">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L722-L724">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7698,7 +7698,7 @@ For type-safe access, use the generated, typed pointer <code>test_dbus_ptr</code
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L734-L736">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L728-L730">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7729,7 +7729,7 @@ For type-safe access, use the generated, typed pointer <code>test_dbus_ptr</code
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L740-L742">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L734-L736">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7760,7 +7760,7 @@ For type-safe access, use the generated, typed pointer <code>test_dbus_ptr</code
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L746-L748">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L740-L742">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7791,7 +7791,7 @@ For type-safe access, use the generated, typed pointer <code>test_dbus_ptr</code
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L752-L754">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L746-L748">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7822,7 +7822,7 @@ For type-safe access, use the generated, typed pointer <code>test_dbus_ptr</code
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L758-L760">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L752-L754">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7852,7 +7852,7 @@ For type-safe access, use the generated, typed pointer <code>test_dbus_ptr</code
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L763-L766">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L757-L760">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7865,7 +7865,7 @@ For type-safe access, use the generated, typed pointer <code>test_dbus_ptr</code
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

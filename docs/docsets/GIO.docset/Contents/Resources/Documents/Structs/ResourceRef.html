@@ -7559,17 +7559,17 @@ are combined into a binary resource bundle.</p>
 path prefixes (like in the above example) to avoid conflicts.</p>
 
 <p>You can then use [glib-compile-resources][glib-compile-resources] to compile the XML to a
-binary bundle that you can load with g_resource_load(). However, its more common to use the &ndash;generate-source and
+binary bundle that you can load with <code>g_resource_load()</code>. However, its more common to use the &ndash;generate-source and
 &ndash;generate-header arguments to create a source file and header to link directly into your application.
 This will generate <code>get_resource()</code>, <code>register_resource()</code> and
 <code>unregister_resource()</code> functions, prefixed by the <code>--c-name</code> argument passed
 to [glib-compile-resources][glib-compile-resources]. <code>get_resource()</code> returns
 the generated <code>GResource</code> object. The register and unregister functions
 register the resource so its files can be accessed using
-g_resources_lookup_data().</p>
+<code>g_resources_lookup_data()</code>.</p>
 
 <p>Once a <code>GResource</code> has been created and registered all the data in it can be accessed globally in the process by
-using API calls like g_resources_open_stream() to stream the data or g_resources_lookup_data() to get a direct pointer
+using API calls like <code>g_resources_open_stream()</code> to stream the data or <code>g_resources_lookup_data()</code> to get a direct pointer
 to the data. You can also use URIs like <q>resource:///org/gtk/Example/data/splashscreen.png</q> with <code>GFile</code> to access
 the resource data.</p>
 
@@ -7645,7 +7645,7 @@ For type-safe access, use the generated, typed pointer <code>resource_ptr</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L559">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L553">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7686,7 +7686,7 @@ For type-safe access, use the generated, typed pointer <code>resource_ptr</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L564-L565">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L558-L559">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7716,7 +7716,7 @@ For type-safe access, use the generated, typed pointer <code>resource_ptr</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L568-L570">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L562-L564">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7747,7 +7747,7 @@ For type-safe access, use the generated, typed pointer <code>resource_ptr</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L574-L576">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L568-L570">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7778,7 +7778,7 @@ For type-safe access, use the generated, typed pointer <code>resource_ptr</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L580-L582">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L574-L576">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7809,7 +7809,7 @@ For type-safe access, use the generated, typed pointer <code>resource_ptr</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L586-L588">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L580-L582">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7840,7 +7840,7 @@ For type-safe access, use the generated, typed pointer <code>resource_ptr</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L592-L594">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L586-L588">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7871,7 +7871,7 @@ For type-safe access, use the generated, typed pointer <code>resource_ptr</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L598-L600">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L592-L594">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7896,7 +7896,7 @@ For type-safe access, use the generated, typed pointer <code>resource_ptr</code>
 the data should not be modified or freed.</p>
 
 <p>If you want to use this resource in the global resource namespace you need
-to register it with g_resources_register().</p>
+to register it with <code>g_resources_register()</code>.</p>
 
 <p>Note: <code>data</code> must be backed by memory that is at least pointer aligned.
 Otherwise this function will internally create a copy of the memory since
@@ -7914,7 +7914,7 @@ GLib 2.56, or in older versions fail and exit the process.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L614-L621">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L608-L615">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7937,7 +7937,7 @@ This will keep a reference to <code>data</code> while the resource lives, so
 the data should not be modified or freed.</p>
 
 <p>If you want to use this resource in the global resource namespace you need
-to register it with g_resources_register().</p>
+to register it with <code>g_resources_register()</code>.</p>
 
 <p>Note: <code>data</code> must be backed by memory that is at least pointer aligned.
 Otherwise this function will internally create a copy of the memory since
@@ -7955,7 +7955,7 @@ GLib 2.56, or in older versions fail and exit the process.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L634-L641">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L628-L635">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7977,11 +7977,11 @@ GLib 2.56, or in older versions fail and exit the process.</p>
 you to query it for data.</p>
 
 <p>If you want to use this resource in the global resource namespace you need
-to register it with g_resources_register().</p>
+to register it with <code>g_resources_register()</code>.</p>
 
 <p>If <code>filename</code> is empty or the data in it is corrupt,
 <code>G_RESOURCE_ERROR_INTERNAL</code> will be returned. If <code>filename</code> doesn’t exist, or
-there is an error in reading it, an error from g_mapped_file_new() will be
+there is an error in reading it, an error from <code>g_mapped_file_new()</code> will be
 returned.</p>
 
                       </div>
@@ -7994,7 +7994,7 @@ returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L653-L660">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L647-L654">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8007,7 +8007,7 @@ returned.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

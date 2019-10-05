@@ -7560,17 +7560,17 @@ are combined into a binary resource bundle.</p>
 path prefixes (like in the above example) to avoid conflicts.</p>
 
 <p>You can then use [glib-compile-resources][glib-compile-resources] to compile the XML to a
-binary bundle that you can load with g_resource_load(). However, its more common to use the &ndash;generate-source and
+binary bundle that you can load with <code>g_resource_load()</code>. However, its more common to use the &ndash;generate-source and
 &ndash;generate-header arguments to create a source file and header to link directly into your application.
 This will generate <code>get_resource()</code>, <code>register_resource()</code> and
 <code>unregister_resource()</code> functions, prefixed by the <code>--c-name</code> argument passed
 to [glib-compile-resources][glib-compile-resources]. <code>get_resource()</code> returns
 the generated <code>GResource</code> object. The register and unregister functions
 register the resource so its files can be accessed using
-g_resources_lookup_data().</p>
+<code>g_resources_lookup_data()</code>.</p>
 
 <p>Once a <code>GResource</code> has been created and registered all the data in it can be accessed globally in the process by
-using API calls like g_resources_open_stream() to stream the data or g_resources_lookup_data() to get a direct pointer
+using API calls like <code>g_resources_open_stream()</code> to stream the data or <code>g_resources_lookup_data()</code> to get a direct pointer
 to the data. You can also use URIs like <q>resource:///org/gtk/Example/data/splashscreen.png</q> with <code>GFile</code> to access
 the resource data.</p>
 
@@ -7645,7 +7645,7 @@ location of a single resource with an individual file.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L418">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L415">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7683,7 +7683,7 @@ location of a single resource with an individual file.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L421">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L418">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7717,7 +7717,7 @@ location of a single resource with an individual file.</p>
                       <div class="abstract">
                         <p>Registers the resource with the process-global set of resources.
 Once a resource is registered the files in it can be accessed
-with the global resource lookup functions like g_resources_lookup_data().</p>
+with the global resource lookup functions like <code>g_resources_lookup_data()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7729,7 +7729,7 @@ with the global resource lookup functions like g_resources_lookup_data().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L917-L920">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L908-L911">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7762,7 +7762,7 @@ with the global resource lookup functions like g_resources_lookup_data().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L923-L926">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L914-L917">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7785,7 +7785,7 @@ with the global resource lookup functions like g_resources_lookup_data().</p>
                       <div class="abstract">
                         <p>Returns all the names of children at the specified <code>path</code> in the resource.
 The return result is a <code>nil</code> terminated list of strings which should
-be released with g_strfreev().</p>
+be released with <code>g_strfreev()</code>.</p>
 
 <p>If <code>path</code> is invalid or does not exist in the <code>GResource</code>,
 <code>G_RESOURCE_ERROR_NOT_FOUND</code> will be returned.</p>
@@ -7802,7 +7802,7 @@ be released with g_strfreev().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L936-L943">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L927-L934">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7838,7 +7838,7 @@ if found returns information about it.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L949-L956">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L940-L947">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7884,7 +7884,7 @@ the heap and automatically uncompress the data.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L972-L979">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L963-L970">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7920,7 +7920,7 @@ returns a <code>GInputStream</code> that lets you read the data.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L985-L992">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L976-L983">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7954,7 +7954,7 @@ function is MT-safe and may be called from any thread.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L996-L999">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L987-L990">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7990,7 +7990,7 @@ thread.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L1005-L1008">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L996-L999">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8013,7 +8013,7 @@ thread.</p>
                       <div class="abstract">
                         <p>Registers the resource with the process-global set of resources.
 Once a resource is registered the files in it can be accessed
-with the global resource lookup functions like g_resources_lookup_data().</p>
+with the global resource lookup functions like <code>g_resources_lookup_data()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8025,7 +8025,7 @@ with the global resource lookup functions like g_resources_lookup_data().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L1013-L1016">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L1004-L1007">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8058,7 +8058,7 @@ with the global resource lookup functions like g_resources_lookup_data().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L1019-L1022">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-ResolverClass-SeekableIface.swift#L1010-L1013">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8071,7 +8071,7 @@ with the global resource lookup functions like g_resources_lookup_data().</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

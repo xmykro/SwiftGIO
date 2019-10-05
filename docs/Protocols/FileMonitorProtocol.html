@@ -7494,11 +7494,11 @@ Alternatively, use <code><a href="../Structs/FileMonitorRef.html">FileMonitorRef
 <p>Monitors a file or directory for changes.</p>
 
 <p>To obtain a <code>GFileMonitor</code> for a file or directory, use
-g_file_monitor(), g_file_monitor_file(), or
-g_file_monitor_directory().</p>
+<code>g_file_monitor()</code>, <code>g_file_monitor_file()</code>, or
+<code>g_file_monitor_directory()</code>.</p>
 
 <p>To get informed about changes to the file or directory you are
-monitoring, connect to the <code>GFileMonitor</code>::changed signal. The
+monitoring, connect to the <code>GFileMonitor::changed</code> signal. The
 signal will be emitted in the
 [thread-default main context][g-main-context-push-thread-default]
 of the thread that the monitor was created in
@@ -7538,7 +7538,7 @@ context is still running).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1824">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1820">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7576,7 +7576,7 @@ context is still running).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1827">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1823">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7704,7 +7704,7 @@ context is still running).</p>
                         <p>binding reference or <code>nil</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1970-L1994">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1966-L1990">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7796,7 +7796,7 @@ context is still running).</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L2063-L2082">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L2058-L2077">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7840,7 +7840,7 @@ context is still running).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L2090-L2093">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L2085-L2088">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7861,7 +7861,7 @@ context is still running).</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Emits the <code>GFileMonitor</code>::changed signal if a change
+                        <p>Emits the <code>GFileMonitor::changed</code> signal if a change
 has taken place. Should be called from file monitor
 implementations only.</p>
 
@@ -7879,7 +7879,7 @@ thread that the monitor was created in.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L2102-L2105">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L2097-L2100">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7913,7 +7913,7 @@ consecutive change events to the same file.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L2109-L2112">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L2104-L2107">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7946,7 +7946,7 @@ consecutive change events to the same file.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L2114-L2120">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L2109-L2115">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7959,7 +7959,7 @@ consecutive change events to the same file.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

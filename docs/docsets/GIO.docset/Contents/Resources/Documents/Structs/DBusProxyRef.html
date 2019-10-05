@@ -7502,7 +7502,7 @@ well-known name, the property cache is flushed when the name owner
 vanishes and reloaded when a name owner appears.</p>
 
 <p>The unique name owner of the proxy&rsquo;s name is tracked and can be read from
-<code>GDBusProxy</code>:g-name-owner. Connect to the <code>GObject</code>::notify signal to
+<code>GDBusProxy:g</code>-name-owner. Connect to the <code>GObject::notify</code> signal to
 get notified of changes. Additionally, only signals and property
 changes emitted from the current name owner are considered and
 calls are always sent to the current name owner. This avoids a
@@ -7512,16 +7512,16 @@ then calls will be sent to the well-known name which may result in
 the message bus launching an owner (unless
 <code>G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START</code> is set).</p>
 
-<p>The generic <code>GDBusProxy</code>::g-properties-changed and
-<code>GDBusProxy</code>::g-signal signals are not very convenient to work with.
+<p>The generic <code>GDBusProxy::g</code>-properties-changed and
+<code>GDBusProxy::g</code>-signal signals are not very convenient to work with.
 Therefore, the recommended way of working with proxies is to subclass
 <code>GDBusProxy</code>, and have more natural properties and signals in your derived
 class. This [example][gdbus-example-gdbus-codegen] shows how this can
 easily be done using the [gdbus-codegen][gdbus-codegen] tool.</p>
 
 <p>A <code>GDBusProxy</code> instance can be used from multiple threads but note
-that all signals (e.g. <code>GDBusProxy</code>::g-signal, <code>GDBusProxy</code>::g-properties-changed
-and <code>GObject</code>::notify) are emitted in the
+that all signals (e.g. <code>GDBusProxy::g</code>-signal, <code>GDBusProxy::g</code>-properties-changed
+and <code>GObject::notify</code>) are emitted in the
 [thread-default main context][g-main-context-push-thread-default]
 of the thread where the instance was constructed.</p>
 
@@ -7561,7 +7561,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_proxy_ptr</cod
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L5983">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L5966">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7602,7 +7602,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_proxy_ptr</cod
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L5988-L5989">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L5971-L5972">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7632,7 +7632,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_proxy_ptr</cod
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L5992-L5994">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L5975-L5977">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7663,7 +7663,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_proxy_ptr</cod
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L5998-L6000">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L5981-L5983">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7694,7 +7694,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_proxy_ptr</cod
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6004-L6006">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L5987-L5989">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7725,7 +7725,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_proxy_ptr</cod
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6010-L6012">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L5993-L5995">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7756,7 +7756,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_proxy_ptr</cod
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6016-L6018">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L5999-L6001">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7787,7 +7787,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_proxy_ptr</cod
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6022-L6024">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6005-L6007">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7805,7 +7805,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_proxy_ptr</cod
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes creating a <code>GDBusProxy</code>.</p>
+                        <p>Finishes creating a <code>GDBusProxy.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7817,7 +7817,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_proxy_ptr</cod
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6027-L6034">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6010-L6017">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7835,7 +7835,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_proxy_ptr</cod
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes creating a <code>GDBusProxy</code>.</p>
+                        <p>Finishes creating a <code>GDBusProxy.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7847,7 +7847,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_proxy_ptr</cod
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6037-L6044">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6020-L6027">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7865,7 +7865,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_proxy_ptr</cod
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Like g_dbus_proxy_new_sync() but takes a <code>GBusType</code> instead of a <code>GDBusConnection</code>.</p>
+                        <p>Like <code>g_dbus_proxy_new_sync()</code> but takes a <code>GBusType</code> instead of a <code>GDBusConnection</code>.</p>
 
 <p><code>GDBusProxy</code> is used in this [example][gdbus-wellknown-proxy].</p>
 
@@ -7879,7 +7879,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_proxy_ptr</cod
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6049-L6056">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6032-L6039">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7903,7 +7903,7 @@ loads D-Bus properties unless the
 <code>G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES</code> flag is used.</p>
 
 <p>If the <code>G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS</code> flag is not set, also sets up
-match rules for signals. Connect to the <code>GDBusProxy</code>::g-signal signal
+match rules for signals. Connect to the <code>GDBusProxy::g</code>-signal signal
 to handle signals from the remote object.</p>
 
 <p>If both <code>G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES</code> and
@@ -7915,8 +7915,8 @@ guaranteed to return immediately without blocking.</p>
 flags aren&rsquo;t set and no name owner currently exists, the message bus
 will be requested to launch a name owner for the name.</p>
 
-<p>This is a synchronous failable constructor. See g_dbus_proxy_new()
-and g_dbus_proxy_new_finish() for the asynchronous version.</p>
+<p>This is a synchronous failable constructor. See <code>g_dbus_proxy_new()</code>
+and <code>g_dbus_proxy_new_finish()</code> for the asynchronous version.</p>
 
 <p><code>GDBusProxy</code> is used in this [example][gdbus-wellknown-proxy].</p>
 
@@ -7930,7 +7930,7 @@ and g_dbus_proxy_new_finish() for the asynchronous version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6080-L6087">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6063-L6070">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7948,7 +7948,7 @@ and g_dbus_proxy_new_finish() for the asynchronous version.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes creating a <code>GDBusProxy</code>.</p>
+                        <p>Finishes creating a <code>GDBusProxy.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7960,7 +7960,7 @@ and g_dbus_proxy_new_finish() for the asynchronous version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6089-L6096">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6072-L6079">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7978,7 +7978,7 @@ and g_dbus_proxy_new_finish() for the asynchronous version.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes creating a <code>GDBusProxy</code>.</p>
+                        <p>Finishes creating a <code>GDBusProxy.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7990,7 +7990,7 @@ and g_dbus_proxy_new_finish() for the asynchronous version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6099-L6106">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6082-L6089">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8008,7 +8008,7 @@ and g_dbus_proxy_new_finish() for the asynchronous version.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Like g_dbus_proxy_new_sync() but takes a <code>GBusType</code> instead of a <code>GDBusConnection</code>.</p>
+                        <p>Like <code>g_dbus_proxy_new_sync()</code> but takes a <code>GBusType</code> instead of a <code>GDBusConnection</code>.</p>
 
 <p><code>GDBusProxy</code> is used in this [example][gdbus-wellknown-proxy].</p>
 
@@ -8022,7 +8022,7 @@ and g_dbus_proxy_new_finish() for the asynchronous version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6111-L6118">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6094-L6101">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8046,7 +8046,7 @@ loads D-Bus properties unless the
 <code>G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES</code> flag is used.</p>
 
 <p>If the <code>G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS</code> flag is not set, also sets up
-match rules for signals. Connect to the <code>GDBusProxy</code>::g-signal signal
+match rules for signals. Connect to the <code>GDBusProxy::g</code>-signal signal
 to handle signals from the remote object.</p>
 
 <p>If both <code>G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES</code> and
@@ -8058,8 +8058,8 @@ guaranteed to return immediately without blocking.</p>
 flags aren&rsquo;t set and no name owner currently exists, the message bus
 will be requested to launch a name owner for the name.</p>
 
-<p>This is a synchronous failable constructor. See g_dbus_proxy_new()
-and g_dbus_proxy_new_finish() for the asynchronous version.</p>
+<p>This is a synchronous failable constructor. See <code>g_dbus_proxy_new()</code>
+and <code>g_dbus_proxy_new_finish()</code> for the asynchronous version.</p>
 
 <p><code>GDBusProxy</code> is used in this [example][gdbus-wellknown-proxy].</p>
 
@@ -8073,7 +8073,7 @@ and g_dbus_proxy_new_finish() for the asynchronous version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6142-L6149">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L6125-L6132">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8086,7 +8086,7 @@ and g_dbus_proxy_new_finish() for the asynchronous version.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

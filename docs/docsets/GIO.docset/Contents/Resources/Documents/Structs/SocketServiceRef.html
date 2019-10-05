@@ -7492,7 +7492,7 @@ Use <code>SocketServiceRef</code> only as an <code>unowned</code> reference to a
 
 <p>A <code>GSocketService</code> is an object that represents a service that
 is provided to the network or over local sockets.  When a new
-connection is made to the service the <code>GSocketService</code>::incoming
+connection is made to the service the <code>GSocketService::incoming</code>
 signal is emitted.</p>
 
 <p>A <code>GSocketService</code> is a subclass of <code>GSocketListener</code> and you need
@@ -7501,7 +7501,7 @@ to add the addresses you want to accept connections on with the
 
 <p>There are two options for implementing a network service based on
 <code>GSocketService</code>. The first is to create the service using
-g_socket_service_new() and to connect to the <code>GSocketService</code>::incoming
+<code>g_socket_service_new()</code> and to connect to the <code>GSocketService::incoming</code>
 signal. The second is to subclass <code>GSocketService</code> and override the
 default signal handler implementation.</p>
 
@@ -7550,7 +7550,7 @@ For type-safe access, use the generated, typed pointer <code>socket_service_ptr<
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9586">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9531">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7591,7 +7591,7 @@ For type-safe access, use the generated, typed pointer <code>socket_service_ptr<
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9591-L9592">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9536-L9537">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7621,7 +7621,7 @@ For type-safe access, use the generated, typed pointer <code>socket_service_ptr<
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9595-L9597">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9540-L9542">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7652,7 +7652,7 @@ For type-safe access, use the generated, typed pointer <code>socket_service_ptr<
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9601-L9603">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9546-L9548">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7683,7 +7683,7 @@ For type-safe access, use the generated, typed pointer <code>socket_service_ptr<
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9607-L9609">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9552-L9554">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7714,7 +7714,7 @@ For type-safe access, use the generated, typed pointer <code>socket_service_ptr<
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9613-L9615">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9558-L9560">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7745,7 +7745,7 @@ For type-safe access, use the generated, typed pointer <code>socket_service_ptr<
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9619-L9621">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9564-L9566">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7776,7 +7776,7 @@ For type-safe access, use the generated, typed pointer <code>socket_service_ptr<
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9625-L9627">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9570-L9572">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7794,14 +7794,14 @@ For type-safe access, use the generated, typed pointer <code>socket_service_ptr<
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <pre class="highlight swift"><code><span class="kt">Creates</span> <span class="n">a</span> <span class="k">new</span> <span class="err">`</span><span class="kt">GSocketService</span><span class="err">`</span> <span class="n">with</span> <span class="n">no</span> <span class="n">sockets</span> <span class="n">to</span> <span class="n">listen</span> <span class="k">for</span><span class="o">.</span>
+                        <pre class="highlight swift"><code><span class="kt">Creates</span> <span class="n">a</span> <span class="k">new</span> <span class="p">`</span><span class="nv">GSocketService</span><span class="p">`</span> <span class="n">with</span> <span class="n">no</span> <span class="n">sockets</span> <span class="n">to</span> <span class="n">listen</span> <span class="k">for</span><span class="o">.</span>
 </code></pre>
 
-<p>New listeners can be added with e.g. g_socket_listener_add_address()
-or g_socket_listener_add_inet_port().</p>
+<p>New listeners can be added with e.g. <code>g_socket_listener_add_address()</code>
+or <code>g_socket_listener_add_inet_port()</code>.</p>
 
 <p>New services are created active, there is no need to call
-g_socket_service_start(), unless g_socket_service_stop() has been
+<code>g_socket_service_start()</code>, unless <code>g_socket_service_stop()</code> has been
 called before.</p>
 
                       </div>
@@ -7814,7 +7814,7 @@ called before.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9636-L9639">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L9581-L9584">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7827,7 +7827,7 @@ called before.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

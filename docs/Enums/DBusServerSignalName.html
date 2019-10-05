@@ -7509,17 +7509,17 @@
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Emitted when a new authenticated connection has been made. Use
-g_dbus_connection_get_peer_credentials() to figure out what
+<code>g_dbus_connection_get_peer_credentials()</code> to figure out what
 identity (if any), was authenticated.</p>
 
 <p>If you want to accept the connection, take a reference to the
 <code>connection</code> object and return <code>true</code>. When you are done with the
-connection call g_dbus_connection_close() and give up your
+connection call <code>g_dbus_connection_close()</code> and give up your
 reference. Note that the other peer may disconnect at any time -
 a typical thing to do when accepting a connection is to listen to
-the <code>GDBusConnection</code>::closed signal.</p>
+the <code>GDBusConnection::closed</code> signal.</p>
 
-<p>If <code>GDBusServer</code>:flags contains <code>G_DBUS_SERVER_FLAGS_RUN_IN_THREAD</code>
+<p>If <code>GDBusServer:flags</code> contains <code>G_DBUS_SERVER_FLAGS_RUN_IN_THREAD</code>
 then the signal is emitted in a new thread dedicated to the
 connection. Otherwise the signal is emitted in the
 [thread-default main context][g-main-context-push-thread-default]
@@ -7527,7 +7527,7 @@ of the thread that <code>server</code> was constructed in.</p>
 
 <p>You are guaranteed that signal handlers for this signal runs
 before incoming messages on <code>connection</code> are processed. This means
-that it&rsquo;s suitable to call g_dbus_connection_register_object() or
+that it&rsquo;s suitable to call <code>g_dbus_connection_register_object()</code> or
 similar from the signal handler.</p>
 
                       </div>
@@ -7540,7 +7540,7 @@ similar from the signal handler.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7307">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7286">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7559,20 +7559,20 @@ similar from the signal handler.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The notify signal is emitted on an object when one of its properties has
-its value set through g_object_set_property(), g_object_set(), et al.</p>
+its value set through <code>g_object_set_property()</code>, <code>g_object_set()</code>, et al.</p>
 
 <p>Note that getting this signal doesn’t itself guarantee that the value of
 the property has actually changed. When it is emitted is determined by the
 derived GObject class. If the implementor did not create the property with
-<code>G_PARAM_EXPLICIT_NOTIFY</code>, then any call to g_object_set_property() results
-in ::notify being emitted, even if the new value is the same as the old.
+<code>G_PARAM_EXPLICIT_NOTIFY</code>, then any call to <code>g_object_set_property()</code> results
+in <code>notify</code> being emitted, even if the new value is the same as the old.
 If they did pass <code>G_PARAM_EXPLICIT_NOTIFY</code>, then this signal is emitted only
-when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+when they explicitly call <code>g_object_notify()</code> or <code>g_object_notify_by_pspec()</code>,
 and common practice is to do that only when the value has actually changed.</p>
 
 <p>This signal is typically used to obtain change notification for a
 single property, by specifying the property name as a detail in the
-g_signal_connect() call, like this:
+<code>g_signal_connect()</code> call, like this:
 (C Language Example):</p>
 <pre class="highlight plaintext"><code>g_signal_connect (text_view-&gt;buffer, "notify::paste-target-list",
                   G_CALLBACK (gtk_text_view_target_list_notify),
@@ -7593,7 +7593,7 @@ detail strings for the notify signal.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7333">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7311">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7623,7 +7623,7 @@ detail strings for the notify signal.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7335">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7313">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7653,7 +7653,7 @@ detail strings for the notify signal.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7337">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7315">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7683,7 +7683,7 @@ detail strings for the notify signal.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7339">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7317">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7713,7 +7713,7 @@ detail strings for the notify signal.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7341">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7319">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7743,7 +7743,7 @@ detail strings for the notify signal.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7343">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7321">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7773,7 +7773,7 @@ detail strings for the notify signal.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7345">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L7323">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7786,7 +7786,7 @@ detail strings for the notify signal.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

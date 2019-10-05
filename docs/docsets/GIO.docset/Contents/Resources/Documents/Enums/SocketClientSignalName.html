@@ -7514,29 +7514,29 @@ information about a network connection in the UI. The meanings of
 the different <code>event</code> values are as follows:</p>
 
 <ul>
-<li><p><code>G_SOCKET_CLIENT_RESOLVING</code>: <code>client</code> is about to look up <code>connectable</code>
+<li><p><code>G_SOCKET_CLIENT_RESOLVING:</code> <code>client</code> is about to look up <code>connectable</code>
 in DNS. <code>connection</code> will be <code>nil</code>.</p></li>
-<li><p><code>G_SOCKET_CLIENT_RESOLVED</code>:  <code>client</code> has successfully resolved
+<li><p><code>G_SOCKET_CLIENT_RESOLVED:</code>  <code>client</code> has successfully resolved
 <code>connectable</code> in DNS. <code>connection</code> will be <code>nil</code>.</p></li>
-<li><p><code>G_SOCKET_CLIENT_CONNECTING</code>: <code>client</code> is about to make a connection
+<li><p><code>G_SOCKET_CLIENT_CONNECTING:</code> <code>client</code> is about to make a connection
 to a remote host; either a proxy server or the destination server
 itself. <code>connection</code> is the <code>GSocketConnection</code>, which is not yet
 connected.  Since GLib 2.40, you can access the remote
-address via g_socket_connection_get_remote_address().</p></li>
-<li><p><code>G_SOCKET_CLIENT_CONNECTED</code>: <code>client</code> has successfully connected
+address via <code>g_socket_connection_get_remote_address()</code>.</p></li>
+<li><p><code>G_SOCKET_CLIENT_CONNECTED:</code> <code>client</code> has successfully connected
 to a remote host. <code>connection</code> is the connected <code>GSocketConnection</code>.</p></li>
-<li><p><code>G_SOCKET_CLIENT_PROXY_NEGOTIATING</code>: <code>client</code> is about to negotiate
+<li><p><code>G_SOCKET_CLIENT_PROXY_NEGOTIATING:</code> <code>client</code> is about to negotiate
 with a proxy to get it to connect to <code>connectable</code>. <code>connection</code> is
 the <code>GSocketConnection</code> to the proxy server.</p></li>
-<li><p><code>G_SOCKET_CLIENT_PROXY_NEGOTIATED</code>: <code>client</code> has negotiated a
+<li><p><code>G_SOCKET_CLIENT_PROXY_NEGOTIATED:</code> <code>client</code> has negotiated a
 connection to <code>connectable</code> through a proxy server. <code>connection</code> is
-the stream returned from g_proxy_connect(), which may or may not
+the stream returned from <code>g_proxy_connect()</code>, which may or may not
 be a <code>GSocketConnection</code>.</p></li>
-<li><p><code>G_SOCKET_CLIENT_TLS_HANDSHAKING</code>: <code>client</code> is about to begin a TLS
+<li><p><code>G_SOCKET_CLIENT_TLS_HANDSHAKING:</code> <code>client</code> is about to begin a TLS
 handshake. <code>connection</code> is a <code>GTlsClientConnection</code>.</p></li>
-<li><p><code>G_SOCKET_CLIENT_TLS_HANDSHAKED</code>: <code>client</code> has successfully completed
+<li><p><code>G_SOCKET_CLIENT_TLS_HANDSHAKED:</code> <code>client</code> has successfully completed
 the TLS handshake. <code>connection</code> is a <code>GTlsClientConnection</code>.</p></li>
-<li><p><code>G_SOCKET_CLIENT_COMPLETE</code>: <code>client</code> has either successfully connected
+<li><p><code>G_SOCKET_CLIENT_COMPLETE:</code> <code>client</code> has either successfully connected
 to <code>connectable</code> (in which case <code>connection</code> is the <code>GSocketConnection</code>
 that it will be returning to the caller) or has failed (in which
 case <code>connection</code> is <code>nil</code> and the client is about to return an error).</p></li>
@@ -7545,7 +7545,7 @@ case <code>connection</code> is <code>nil</code> and the client is about to retu
 <p>Each event except <code>G_SOCKET_CLIENT_COMPLETE</code> may be emitted
 multiple times (or not at all) for a given connectable (in
 particular, if <code>client</code> ends up attempting to connect to more than
-one address). However, if <code>client</code> emits the <code>GSocketClient</code>::event
+one address). However, if <code>client</code> emits the <code>GSocketClient::event</code>
 signal at all for a given connectable, that it will always emit
 it with <code>G_SOCKET_CLIENT_COMPLETE</code> when it is done.</p>
 
@@ -7562,7 +7562,7 @@ the future; unrecognized <code>event</code> values should be ignored.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7693">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7642">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7581,20 +7581,20 @@ the future; unrecognized <code>event</code> values should be ignored.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The notify signal is emitted on an object when one of its properties has
-its value set through g_object_set_property(), g_object_set(), et al.</p>
+its value set through <code>g_object_set_property()</code>, <code>g_object_set()</code>, et al.</p>
 
 <p>Note that getting this signal doesn’t itself guarantee that the value of
 the property has actually changed. When it is emitted is determined by the
 derived GObject class. If the implementor did not create the property with
-<code>G_PARAM_EXPLICIT_NOTIFY</code>, then any call to g_object_set_property() results
-in ::notify being emitted, even if the new value is the same as the old.
+<code>G_PARAM_EXPLICIT_NOTIFY</code>, then any call to <code>g_object_set_property()</code> results
+in <code>notify</code> being emitted, even if the new value is the same as the old.
 If they did pass <code>G_PARAM_EXPLICIT_NOTIFY</code>, then this signal is emitted only
-when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+when they explicitly call <code>g_object_notify()</code> or <code>g_object_notify_by_pspec()</code>,
 and common practice is to do that only when the value has actually changed.</p>
 
 <p>This signal is typically used to obtain change notification for a
 single property, by specifying the property name as a detail in the
-g_signal_connect() call, like this:
+<code>g_signal_connect()</code> call, like this:
 (C Language Example):</p>
 <pre class="highlight plaintext"><code>g_signal_connect (text_view-&gt;buffer, "notify::paste-target-list",
                   G_CALLBACK (gtk_text_view_target_list_notify),
@@ -7615,7 +7615,7 @@ detail strings for the notify signal.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7719">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7667">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7765,7 +7765,7 @@ detail strings for the notify signal.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7725">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L7673">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7898,7 +7898,7 @@ detail strings for the notify signal.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

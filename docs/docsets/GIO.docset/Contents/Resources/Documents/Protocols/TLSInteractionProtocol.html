@@ -7495,13 +7495,13 @@ Alternatively, use <code><a href="../Structs/TLSInteractionRef.html">TLSInteract
 code to interact with the user. It can be used to ask the user for passwords.</p>
 
 <p>To use a <code>GTlsInteraction</code> with a TLS connection use
-g_tls_connection_set_interaction().</p>
+<code>g_tls_connection_set_interaction()</code>.</p>
 
 <p>Callers should instantiate a derived class that implements the various
 interaction methods to show the required dialogs.</p>
 
 <p>Callers should use the &lsquo;invoke&rsquo; functions like
-g_tls_interaction_invoke_ask_password() to run interaction methods. These
+<code>g_tls_interaction_invoke_ask_password()</code> to run interaction methods. These
 functions make sure that the interaction is invoked in the main loop
 and not in the current thread, if the current thread is not running the
 main loop.</p>
@@ -7544,7 +7544,7 @@ it must also implement the corresponding finish method.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3792">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3778">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7582,7 +7582,7 @@ it must also implement the corresponding finish method.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3795">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3781">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7674,7 +7674,7 @@ it must also implement the corresponding finish method.</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3974-L3993">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3959-L3978">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7707,7 +7707,7 @@ it must also implement the corresponding finish method.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Run synchronous interaction to ask the user for a password. In general,
-g_tls_interaction_invoke_ask_password() should be used instead of this
+<code>g_tls_interaction_invoke_ask_password()</code> should be used instead of this
 function.</p>
 
 <p>Derived subclasses usually implement a password prompt, although they may
@@ -7730,7 +7730,7 @@ not support immediate cancellation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L4013-L4020">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3998-L4005">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7752,7 +7752,7 @@ not support immediate cancellation.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Run asynchronous interaction to ask the user for a password. In general,
-g_tls_interaction_invoke_ask_password() should be used instead of this
+<code>g_tls_interaction_invoke_ask_password()</code> should be used instead of this
 function.</p>
 
 <p>Derived subclasses usually implement a password prompt, although they may
@@ -7777,7 +7777,7 @@ not support immediate cancellation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L4037-L4040">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L4022-L4025">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7799,10 +7799,10 @@ not support immediate cancellation.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Complete an ask password user interaction request. This should be once
-the g_tls_interaction_ask_password_async() completion callback is called.</p>
+the <code>g_tls_interaction_ask_password_async()</code> completion callback is called.</p>
 
 <p>If <code>G_TLS_INTERACTION_HANDLED</code> is returned, then the <code>GTlsPassword</code> passed
-to g_tls_interaction_ask_password() will have its password filled in.</p>
+to <code>g_tls_interaction_ask_password()</code> will have its password filled in.</p>
 
 <p>If the interaction is cancelled by the cancellation object, or by the
 user then <code>G_TLS_INTERACTION_FAILED</code> will be returned with an error that
@@ -7818,7 +7818,7 @@ contains a <code>G_IO_ERROR_CANCELLED</code> error code.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L4051-L4058">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L4036-L4043">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7841,7 +7841,7 @@ contains a <code>G_IO_ERROR_CANCELLED</code> error code.</p>
                       <div class="abstract">
                         <p>Invoke the interaction to ask the user for a password. It invokes this
 interaction in the main loop, specifically the <code>GMainContext</code> returned by
-g_main_context_get_thread_default() when the interaction is created. This
+<code>g_main_context_get_thread_default()</code> when the interaction is created. This
 is called by called by <code>GTlsConnection</code> or <code>GTlsDatabase</code> to ask the user
 for a password.</p>
 
@@ -7869,7 +7869,7 @@ not support immediate cancellation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L4079-L4086">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L4064-L4071">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7893,7 +7893,7 @@ not support immediate cancellation.</p>
                         <p>Invoke the interaction to ask the user to choose a certificate to
 use with the connection. It invokes this interaction in the main
 loop, specifically the <code>GMainContext</code> returned by
-g_main_context_get_thread_default() when the interaction is
+<code>g_main_context_get_thread_default()</code> when the interaction is
 created. This is called by called by <code>GTlsConnection</code> when the peer
 requests a certificate during the handshake.</p>
 
@@ -7921,7 +7921,7 @@ not support immediate cancellation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L4108-L4115">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L4093-L4100">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7943,7 +7943,7 @@ not support immediate cancellation.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Run synchronous interaction to ask the user to choose a certificate to use
-with the connection. In general, g_tls_interaction_invoke_request_certificate()
+with the connection. In general, <code>g_tls_interaction_invoke_request_certificate()</code>
 should be used instead of this function.</p>
 
 <p>Derived subclasses usually implement a certificate selector, although they may
@@ -7951,8 +7951,8 @@ also choose to provide a certificate from elsewhere. Alternatively the user may
 abort this certificate request, which will usually abort the TLS connection.</p>
 
 <p>If <code>G_TLS_INTERACTION_HANDLED</code> is returned, then the <code>GTlsConnection</code>
-passed to g_tls_interaction_request_certificate() will have had its
-<code>GTlsConnection</code>:certificate filled in.</p>
+passed to <code>g_tls_interaction_request_certificate()</code> will have had its
+<code>GTlsConnection:certificate</code> filled in.</p>
 
 <p>If the interaction is cancelled by the cancellation object, or by the
 user then <code>G_TLS_INTERACTION_FAILED</code> will be returned with an error that
@@ -7969,7 +7969,7 @@ not support immediate cancellation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L4133-L4140">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L4118-L4125">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7991,7 +7991,7 @@ not support immediate cancellation.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Run asynchronous interaction to ask the user for a certificate to use with
-the connection. In general, g_tls_interaction_invoke_request_certificate() should
+the connection. In general, <code>g_tls_interaction_invoke_request_certificate()</code> should
 be used instead of this function.</p>
 
 <p>Derived subclasses usually implement a certificate selector, although they may
@@ -8009,7 +8009,7 @@ request, which will usually abort the TLS connection.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L4150-L4153">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L4135-L4138">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8031,11 +8031,11 @@ request, which will usually abort the TLS connection.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Complete an request certificate user interaction request. This should be once
-the g_tls_interaction_request_certificate_async() completion callback is called.</p>
+the <code>g_tls_interaction_request_certificate_async()</code> completion callback is called.</p>
 
 <p>If <code>G_TLS_INTERACTION_HANDLED</code> is returned, then the <code>GTlsConnection</code>
-passed to g_tls_interaction_request_certificate_async() will have had its
-<code>GTlsConnection</code>:certificate filled in.</p>
+passed to <code>g_tls_interaction_request_certificate_async()</code> will have had its
+<code>GTlsConnection:certificate</code> filled in.</p>
 
 <p>If the interaction is cancelled by the cancellation object, or by the
 user then <code>G_TLS_INTERACTION_FAILED</code> will be returned with an error that
@@ -8051,7 +8051,7 @@ contains a <code>G_IO_ERROR_CANCELLED</code> error code.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L4165-L4172">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L4150-L4157">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8064,7 +8064,7 @@ contains a <code>G_IO_ERROR_CANCELLED</code> error code.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

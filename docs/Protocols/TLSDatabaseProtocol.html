@@ -7499,7 +7499,7 @@ TLS library specific subtypes override.</p>
 All implementations are required to be fully thread-safe.</p>
 
 <p>Most common client applications will not directly interact with
-<code>GTlsDatabase</code>. It is used internally by <code>GTlsConnection</code>.</p>
+<code>GTlsDatabase</code>. It is used internally by <code>GTlsConnection.</code></p>
 
           </div>
         </section>
@@ -7533,7 +7533,7 @@ All implementations are required to be fully thread-safe.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3379">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3366">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7571,7 +7571,7 @@ All implementations are required to be fully thread-safe.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3382">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3369">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7663,7 +7663,7 @@ All implementations are required to be fully thread-safe.</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3539-L3558">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3525-L3544">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7714,7 +7714,7 @@ then it is not guaranteed that this handle will continue to point to it.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3573-L3576">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3559-L3562">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7738,14 +7738,14 @@ then it is not guaranteed that this handle will continue to point to it.</p>
                         <p>Look up a certificate by its handle.</p>
 
 <p>The handle should have been created by calling
-g_tls_database_create_certificate_handle() on a <code>GTlsDatabase</code> object of
+<code>g_tls_database_create_certificate_handle()</code> on a <code>GTlsDatabase</code> object of
 the same TLS backend. The handle is designed to remain valid across
 instantiations of the database.</p>
 
 <p>If the handle is no longer valid, or does not point to a certificate in
 this database, then <code>nil</code> will be returned.</p>
 
-<p>This function can block, use g_tls_database_lookup_certificate_for_handle_async() to perform
+<p>This function can block, use <code>g_tls_database_lookup_certificate_for_handle_async()</code> to perform
 the lookup operation asynchronously.</p>
 
                       </div>
@@ -7758,7 +7758,7 @@ the lookup operation asynchronously.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3590-L3597">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3576-L3583">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7780,7 +7780,7 @@ the lookup operation asynchronously.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Asynchronously look up a certificate by its handle in the database. See
-g_tls_database_lookup_certificate_for_handle() for more information.</p>
+<code>g_tls_database_lookup_certificate_for_handle()</code> for more information.</p>
 
                       </div>
                       <div class="declaration">
@@ -7792,7 +7792,7 @@ g_tls_database_lookup_certificate_for_handle() for more information.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3601-L3604">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3587-L3590">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7814,7 +7814,7 @@ g_tls_database_lookup_certificate_for_handle() for more information.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Finish an asynchronous lookup of a certificate by its handle. See
-g_tls_database_lookup_certificate_for_handle() for more information.</p>
+<code>g_tls_database_lookup_certificate_for_handle()</code> for more information.</p>
 
 <p>If the handle is no longer valid, or does not point to a certificate in
 this database, then <code>nil</code> will be returned.</p>
@@ -7829,7 +7829,7 @@ this database, then <code>nil</code> will be returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3611-L3618">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3597-L3604">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7852,11 +7852,11 @@ this database, then <code>nil</code> will be returned.</p>
                       <div class="abstract">
                         <p>Look up the issuer of <code>certificate</code> in the database.</p>
 
-<p>The <code>GTlsCertificate</code>:issuer property
+<p>The <code>GTlsCertificate:issuer</code> property
 of <code>certificate</code> is not modified, and the two certificates are not hooked
 into a chain.</p>
 
-<p>This function can block, use g_tls_database_lookup_certificate_issuer_async() to perform
+<p>This function can block, use <code>g_tls_database_lookup_certificate_issuer_async()</code> to perform
 the lookup operation asynchronously.</p>
 
                       </div>
@@ -7869,7 +7869,7 @@ the lookup operation asynchronously.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3628-L3635">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3614-L3621">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7891,7 +7891,7 @@ the lookup operation asynchronously.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Asynchronously look up the issuer of <code>certificate</code> in the database. See
-g_tls_database_lookup_certificate_issuer() for more information.</p>
+<code>g_tls_database_lookup_certificate_issuer()</code> for more information.</p>
 
                       </div>
                       <div class="declaration">
@@ -7903,7 +7903,7 @@ g_tls_database_lookup_certificate_issuer() for more information.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3639-L3642">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3625-L3628">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7925,7 +7925,7 @@ g_tls_database_lookup_certificate_issuer() for more information.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Finish an asynchronous lookup issuer operation. See
-g_tls_database_lookup_certificate_issuer() for more information.</p>
+<code>g_tls_database_lookup_certificate_issuer()</code> for more information.</p>
 
                       </div>
                       <div class="declaration">
@@ -7937,7 +7937,7 @@ g_tls_database_lookup_certificate_issuer() for more information.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3646-L3653">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3632-L3639">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7960,7 +7960,7 @@ g_tls_database_lookup_certificate_issuer() for more information.</p>
                       <div class="abstract">
                         <p>Look up certificates issued by this issuer in the database.</p>
 
-<p>This function can block, use g_tls_database_lookup_certificates_issued_by_async() to perform
+<p>This function can block, use <code>g_tls_database_lookup_certificates_issued_by_async()</code> to perform
 the lookup operation asynchronously.</p>
 
                       </div>
@@ -7973,7 +7973,7 @@ the lookup operation asynchronously.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3659-L3666">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3645-L3652">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7995,7 +7995,7 @@ the lookup operation asynchronously.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Asynchronously look up certificates issued by this issuer in the database. See
-g_tls_database_lookup_certificates_issued_by() for more information.</p>
+<code>g_tls_database_lookup_certificates_issued_by()</code> for more information.</p>
 
 <p>The database may choose to hold a reference to the issuer byte array for the duration
 of of this asynchronous operation. The byte array should not be modified during
@@ -8011,7 +8011,7 @@ this time.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3674-L3677">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3660-L3663">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8033,7 +8033,7 @@ this time.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Finish an asynchronous lookup of certificates. See
-g_tls_database_lookup_certificates_issued_by() for more information.</p>
+<code>g_tls_database_lookup_certificates_issued_by()</code> for more information.</p>
 
                       </div>
                       <div class="declaration">
@@ -8045,7 +8045,7 @@ g_tls_database_lookup_certificates_issued_by() for more information.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3681-L3688">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3667-L3674">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8070,7 +8070,7 @@ g_tls_database_lookup_certificates_issued_by() for more information.</p>
 adding any missing certificates to the chain.</p>
 
 <p><code>chain</code> is a chain of <code>GTlsCertificate</code> objects each pointing to the next
-certificate in the chain by its <code>GTlsCertificate</code>:issuer property. The chain may initially
+certificate in the chain by its <code>GTlsCertificate:issuer</code> property. The chain may initially
 consist of one or more certificates. After the verification process is
 complete, <code>chain</code> may be modified by adding missing certificates, or removing
 extra certificates. If a certificate anchor was found, then it is added to
@@ -8097,7 +8097,7 @@ before it completes) then the return value will be
 accordingly. <code>error</code> is not set when <code>chain</code> is successfully analyzed
 but found to be invalid.</p>
 
-<p>This function can block, use g_tls_database_verify_chain_async() to perform
+<p>This function can block, use <code>g_tls_database_verify_chain_async()</code> to perform
 the verification operation asynchronously.</p>
 
                       </div>
@@ -8110,7 +8110,7 @@ the verification operation asynchronously.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3723-L3730">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3709-L3716">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8133,7 +8133,7 @@ the verification operation asynchronously.</p>
                       <div class="abstract">
                         <p>Asynchronously determines the validity of a certificate chain after
 looking up and adding any missing certificates to the chain. See
-g_tls_database_verify_chain() for more information.</p>
+<code>g_tls_database_verify_chain()</code> for more information.</p>
 
                       </div>
                       <div class="declaration">
@@ -8145,7 +8145,7 @@ g_tls_database_verify_chain() for more information.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3735-L3738">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3721-L3724">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8167,7 +8167,7 @@ g_tls_database_verify_chain() for more information.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Finish an asynchronous verify chain operation. See
-g_tls_database_verify_chain() for more information.</p>
+<code>g_tls_database_verify_chain()</code> for more information.</p>
 
 <p>If <code>chain</code> is found to be valid, then the return value will be 0. If
 <code>chain</code> is found to be invalid, then the return value will indicate
@@ -8188,7 +8188,7 @@ but found to be invalid.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3751-L3758">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L3737-L3744">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8201,7 +8201,7 @@ but found to be invalid.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

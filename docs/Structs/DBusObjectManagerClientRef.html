@@ -7497,10 +7497,10 @@ code implementing the
 interface).</p>
 
 <p>Once an instance of this type has been created, you can connect to
-the <code>GDBusObjectManager</code>::object-added and
-<code>GDBusObjectManager</code>::object-removed signals and inspect the
+the <code>GDBusObjectManager::object</code>-added and
+<code>GDBusObjectManager::object</code>-removed signals and inspect the
 <code>GDBusObjectProxy</code> objects returned by
-g_dbus_object_manager_get_objects().</p>
+<code>g_dbus_object_manager_get_objects()</code>.</p>
 
 <p>If the name for a <code>GDBusObjectManagerClient</code> is not owned by anyone at
 object construction time, the default behavior is to request the
@@ -7511,34 +7511,34 @@ interest is activatable in the first place. E.g. in some cases it
 is not possible to launch an owner for the requested name. In this
 case, <code>GDBusObjectManagerClient</code> object construction still succeeds but
 there will be no object proxies
-(e.g. g_dbus_object_manager_get_objects() returns the empty list) and
-the <code>GDBusObjectManagerClient</code>:name-owner property is <code>nil</code>.</p>
+(e.g. <code>g_dbus_object_manager_get_objects()</code> returns the empty list) and
+the <code>GDBusObjectManagerClient:name</code>-owner property is <code>nil</code>.</p>
 
 <p>The owner of the requested name can come and go (for example
 consider a system service being restarted) – <code>GDBusObjectManagerClient</code>
-handles this case too; simply connect to the <code>GObject</code>::notify
-signal to watch for changes on the <code>GDBusObjectManagerClient</code>:name-owner
+handles this case too; simply connect to the <code>GObject::notify</code>
+signal to watch for changes on the <code>GDBusObjectManagerClient:name</code>-owner
 property. When the name owner vanishes, the behavior is that
-<code>GDBusObjectManagerClient</code>:name-owner is set to <code>nil</code> (this includes
-emission of the <code>GObject</code>::notify signal) and then
-<code>GDBusObjectManager</code>::object-removed signals are synthesized
+<code>GDBusObjectManagerClient:name</code>-owner is set to <code>nil</code> (this includes
+emission of the <code>GObject::notify</code> signal) and then
+<code>GDBusObjectManager::object</code>-removed signals are synthesized
 for all currently existing object proxies. Since
-<code>GDBusObjectManagerClient</code>:name-owner is <code>nil</code> when this happens, you can
+<code>GDBusObjectManagerClient:name</code>-owner is <code>nil</code> when this happens, you can
 use this information to disambiguate a synthesized signal from a
 genuine signal caused by object removal on the remote
 <code>GDBusObjectManager</code>. Similarly, when a new name owner appears,
-<code>GDBusObjectManager</code>::object-added signals are synthesized
-while <code>GDBusObjectManagerClient</code>:name-owner is still <code>nil</code>. Only when all
-object proxies have been added, the <code>GDBusObjectManagerClient</code>:name-owner
+<code>GDBusObjectManager::object</code>-added signals are synthesized
+while <code>GDBusObjectManagerClient:name</code>-owner is still <code>nil</code>. Only when all
+object proxies have been added, the <code>GDBusObjectManagerClient:name</code>-owner
 is set to the new name owner (this includes emission of the
-<code>GObject</code>::notify signal).  Furthermore, you are guaranteed that
-<code>GDBusObjectManagerClient</code>:name-owner will alternate between a name owner
+<code>GObject::notify</code> signal).  Furthermore, you are guaranteed that
+<code>GDBusObjectManagerClient:name</code>-owner will alternate between a name owner
 (e.g. <code>:1.42</code>) and <code>nil</code> even in the case where
 the name of interest is atomically replaced</p>
 
 <p>Ultimately, <code>GDBusObjectManagerClient</code> is used to obtain <code>GDBusProxy</code>
 instances. All signals (including the
-org.freedesktop.DBus.Properties::PropertiesChanged signal)
+org.freedesktop.DBus.Properties<code>PropertiesChanged</code> signal)
 delivered to <code>GDBusProxy</code> instances are guaranteed to originate
 from the name owner. This guarantee along with the behavior
 described above, means that certain race conditions including the
@@ -7547,16 +7547,16 @@ the new owner</q> problem cannot happen.</p>
 
 <p>To avoid having the application connect to signals on the returned
 <code>GDBusObjectProxy</code> and <code>GDBusProxy</code> objects, the
-<code>GDBusObject</code>::interface-added,
-<code>GDBusObject</code>::interface-removed,
-<code>GDBusProxy</code>::g-properties-changed and
-<code>GDBusProxy</code>::g-signal signals
+<code>GDBusObject::interface</code>-added,
+<code>GDBusObject::interface</code>-removed,
+<code>GDBusProxy::g</code>-properties-changed and
+<code>GDBusProxy::g</code>-signal signals
 are also emitted on the <code>GDBusObjectManagerClient</code> instance managing these
 objects. The signals emitted are
-<code>GDBusObjectManager</code>::interface-added,
-<code>GDBusObjectManager</code>::interface-removed,
-<code>GDBusObjectManagerClient</code>::interface-proxy-properties-changed and
-<code>GDBusObjectManagerClient</code>::interface-proxy-signal.</p>
+<code>GDBusObjectManager::interface</code>-added,
+<code>GDBusObjectManager::interface</code>-removed,
+<code>GDBusObjectManagerClient::interface</code>-proxy-properties-changed and
+<code>GDBusObjectManagerClient::interface</code>-proxy-signal.</p>
 
 <p>Note that all callbacks and signals are emitted in the
 [thread-default main context][g-main-context-push-thread-default]
@@ -7599,7 +7599,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_object_manager
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4352">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4339">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7640,7 +7640,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_object_manager
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4357-L4358">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4344-L4345">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7670,7 +7670,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_object_manager
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4361-L4363">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4348-L4350">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7701,7 +7701,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_object_manager
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4367-L4369">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4354-L4356">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7732,7 +7732,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_object_manager
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4373-L4375">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4360-L4362">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7763,7 +7763,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_object_manager
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4379-L4381">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4366-L4368">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7794,7 +7794,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_object_manager
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4385-L4387">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4372-L4374">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7825,7 +7825,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_object_manager
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4391-L4393">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4378-L4380">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7843,7 +7843,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_object_manager
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes an operation started with g_dbus_object_manager_client_new().</p>
+                        <p>Finishes an operation started with <code>g_dbus_object_manager_client_new()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7855,7 +7855,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_object_manager
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4396-L4403">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4383-L4390">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7873,7 +7873,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_object_manager
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes an operation started with g_dbus_object_manager_client_new_for_bus().</p>
+                        <p>Finishes an operation started with <code>g_dbus_object_manager_client_new_for_bus()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7885,7 +7885,7 @@ For type-safe access, use the generated, typed pointer <code>dbus_object_manager
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4406-L4413">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4393-L4400">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7903,11 +7903,11 @@ For type-safe access, use the generated, typed pointer <code>dbus_object_manager
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Like g_dbus_object_manager_client_new_sync() but takes a <code>GBusType</code> instead
+                        <p>Like <code>g_dbus_object_manager_client_new_sync()</code> but takes a <code>GBusType</code> instead
 of a <code>GDBusConnection</code>.</p>
 
 <p>This is a synchronous failable constructor - the calling thread is
-blocked until a reply is received. See g_dbus_object_manager_client_new_for_bus()
+blocked until a reply is received. See <code>g_dbus_object_manager_client_new_for_bus()</code>
 for the asynchronous version.</p>
 
                       </div>
@@ -7920,7 +7920,7 @@ for the asynchronous version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4421-L4428">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4408-L4415">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7941,7 +7941,7 @@ for the asynchronous version.</p>
                         <p>Creates a new <code>GDBusObjectManagerClient</code> object.</p>
 
 <p>This is a synchronous failable constructor - the calling thread is
-blocked until a reply is received. See g_dbus_object_manager_client_new()
+blocked until a reply is received. See <code>g_dbus_object_manager_client_new()</code>
 for the asynchronous version.</p>
 
                       </div>
@@ -7954,7 +7954,7 @@ for the asynchronous version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4435-L4442">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4422-L4429">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7972,7 +7972,7 @@ for the asynchronous version.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes an operation started with g_dbus_object_manager_client_new().</p>
+                        <p>Finishes an operation started with <code>g_dbus_object_manager_client_new()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7984,7 +7984,7 @@ for the asynchronous version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4444-L4451">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4431-L4438">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8002,7 +8002,7 @@ for the asynchronous version.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes an operation started with g_dbus_object_manager_client_new_for_bus().</p>
+                        <p>Finishes an operation started with <code>g_dbus_object_manager_client_new_for_bus()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8014,7 +8014,7 @@ for the asynchronous version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4454-L4461">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4441-L4448">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8032,11 +8032,11 @@ for the asynchronous version.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Like g_dbus_object_manager_client_new_sync() but takes a <code>GBusType</code> instead
+                        <p>Like <code>g_dbus_object_manager_client_new_sync()</code> but takes a <code>GBusType</code> instead
 of a <code>GDBusConnection</code>.</p>
 
 <p>This is a synchronous failable constructor - the calling thread is
-blocked until a reply is received. See g_dbus_object_manager_client_new_for_bus()
+blocked until a reply is received. See <code>g_dbus_object_manager_client_new_for_bus()</code>
 for the asynchronous version.</p>
 
                       </div>
@@ -8049,7 +8049,7 @@ for the asynchronous version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4469-L4476">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4456-L4463">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8070,7 +8070,7 @@ for the asynchronous version.</p>
                         <p>Creates a new <code>GDBusObjectManagerClient</code> object.</p>
 
 <p>This is a synchronous failable constructor - the calling thread is
-blocked until a reply is received. See g_dbus_object_manager_client_new()
+blocked until a reply is received. See <code>g_dbus_object_manager_client_new()</code>
 for the asynchronous version.</p>
 
                       </div>
@@ -8083,7 +8083,7 @@ for the asynchronous version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4483-L4490">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4470-L4477">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8096,7 +8096,7 @@ for the asynchronous version.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

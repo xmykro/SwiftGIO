@@ -7494,13 +7494,13 @@ Alternatively, use <code><a href="../Structs/ActionRef.html">ActionRef</a></code
 <p><code>GAction</code> represents a single named action.</p>
 
 <p>The main interface to an action is that it can be activated with
-g_action_activate().  This results in the &lsquo;activate&rsquo; signal being
+<code>g_action_activate()</code>.  This results in the &lsquo;activate&rsquo; signal being
 emitted.  An activation has a <code>GVariant</code> parameter (which may be
 <code>nil</code>).  The correct type for the parameter is determined by a static
 parameter type (which is given at construction time).</p>
 
 <p>An action may optionally have a state, in which case the state may be
-set with g_action_change_state().  This call takes a <code>GVariant</code>.  The
+set with <code>g_action_change_state()</code>.  This call takes a <code>GVariant</code>.  The
 correct type for the state is determined by a static state type
 (which is given at construction time).</p>
 
@@ -7515,11 +7515,11 @@ described above.  Various implementations of actions exist, including
 name of the action, the parameter type, the enabled state, the
 optional state type and the state and emitting the appropriate
 signals when these change.  The implementor is responsible for filtering
-calls to g_action_activate() and g_action_change_state() for type
+calls to <code>g_action_activate()</code> and <code>g_action_change_state()</code> for type
 safety and for the state being enabled.</p>
 
 <p>Probably the only useful thing to do with a <code>GAction</code> is to put it
-inside of a <code>GSimpleActionGroup</code>.</p>
+inside of a <code>GSimpleActionGroup.</code></p>
 
           </div>
         </section>
@@ -7885,11 +7885,11 @@ type was <code>nil</code> then <code>parameter</code> must also be <code>nil</co
                         <p>Request for the state of <code>action</code> to be changed to <code>value</code>.</p>
 
 <p>The action must be stateful and <code>value</code> must be of the correct type.
-See g_action_get_state_type().</p>
+See <code>g_action_get_state_type()</code>.</p>
 
 <p>This call merely requests a change.  The action may refuse to change
 its state or may change its state to something other than <code>value</code>.
-See g_action_get_state_hint().</p>
+See <code>g_action_get_state_hint()</code>.</p>
 
 <p>If the <code>value</code> GVariant is floating, it is consumed.</p>
 
@@ -7960,7 +7960,7 @@ have its state changed from outside callers.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Queries the name of <code>action</code>.</p>
+                        <p>Queries the name of <code>action.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7996,7 +7996,7 @@ have its state changed from outside callers.</p>
                         <p>Queries the type of the parameter that must be given when activating
 <code>action</code>.</p>
 
-<p>When activating the action using g_action_activate(), the <code>GVariant</code>
+<p>When activating the action using <code>g_action_activate()</code>, the <code>GVariant</code>
 given to that function must be of the type returned by this function.</p>
 
 <p>In the case that this function returns <code>nil</code>, you must not give any
@@ -8037,10 +8037,10 @@ given to that function must be of the type returned by this function.</p>
 
 <p>If the action is not stateful then <code>nil</code> will be returned.  If the
 action is stateful then the type of the return value is the type
-given by g_action_get_state_type().</p>
+given by <code>g_action_get_state_type()</code>.</p>
 
 <p>The return value (if non-<code>nil</code>) should be freed with
-g_variant_unref() when it is no longer required.</p>
+<code>g_variant_unref()</code> when it is no longer required.</p>
 
                       </div>
                       <div class="declaration">
@@ -8090,7 +8090,7 @@ have a state value outside of the hinted range and setting a value
 within the range may fail.</p>
 
 <p>The return value (if non-<code>nil</code>) should be freed with
-g_variant_unref() when it is no longer required.</p>
+<code>g_variant_unref()</code> when it is no longer required.</p>
 
                       </div>
                       <div class="declaration">
@@ -8126,15 +8126,15 @@ g_variant_unref() when it is no longer required.</p>
                         <p>Queries the type of the state of <code>action</code>.</p>
 
 <p>If the action is stateful (e.g. created with
-g_simple_action_new_stateful()) then this function returns the
+<code>g_simple_action_new_stateful()</code>) then this function returns the
 <code>GVariantType</code> of the state.  This is the type of the initial value
-given as the state. All calls to g_action_change_state() must give a
-<code>GVariant</code> of this type and g_action_get_state() will return a
+given as the state. All calls to <code>g_action_change_state()</code> must give a
+<code>GVariant</code> of this type and <code>g_action_get_state()</code> will return a
 <code>GVariant</code> of the same type.</p>
 
-<p>If the action is not stateful (e.g. created with g_simple_action_new())
-then this function will return <code>nil</code>. In that case, g_action_get_state()
-will return <code>nil</code> and you must not call g_action_change_state().</p>
+<p>If the action is not stateful (e.g. created with <code>g_simple_action_new()</code>)
+then this function will return <code>nil</code>. In that case, <code>g_action_get_state()</code>
+will return <code>nil</code> and you must not call <code>g_action_change_state()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8169,8 +8169,8 @@ will return <code>nil</code> and you must not call g_action_change_state().</p>
                       <div class="abstract">
                         <p>If <code>action</code> is currently enabled.</p>
 
-<p>If the action is disabled then calls to g_action_activate() and
-g_action_change_state() have no effect.</p>
+<p>If the action is disabled then calls to <code>g_action_activate()</code> and
+<code>g_action_change_state()</code> have no effect.</p>
 
                       </div>
                       <div class="declaration">
@@ -8240,7 +8240,7 @@ the action once it has been added to a <code>GActionGroup</code>. It is immutabl
                         <p>Queries the type of the parameter that must be given when activating
 <code>action</code>.</p>
 
-<p>When activating the action using g_action_activate(), the <code>GVariant</code>
+<p>When activating the action using <code>g_action_activate()</code>, the <code>GVariant</code>
 given to that function must be of the type returned by this function.</p>
 
 <p>In the case that this function returns <code>nil</code>, you must not give any
@@ -8327,7 +8327,7 @@ have a state value outside of the hinted range and setting a value
 within the range may fail.</p>
 
 <p>The return value (if non-<code>nil</code>) should be freed with
-g_variant_unref() when it is no longer required.</p>
+<code>g_variant_unref()</code> when it is no longer required.</p>
 
                       </div>
                       <div class="declaration">
@@ -8363,15 +8363,15 @@ g_variant_unref() when it is no longer required.</p>
                         <p>Queries the type of the state of <code>action</code>.</p>
 
 <p>If the action is stateful (e.g. created with
-g_simple_action_new_stateful()) then this function returns the
+<code>g_simple_action_new_stateful()</code>) then this function returns the
 <code>GVariantType</code> of the state.  This is the type of the initial value
-given as the state. All calls to g_action_change_state() must give a
-<code>GVariant</code> of this type and g_action_get_state() will return a
+given as the state. All calls to <code>g_action_change_state()</code> must give a
+<code>GVariant</code> of this type and <code>g_action_get_state()</code> will return a
 <code>GVariant</code> of the same type.</p>
 
-<p>If the action is not stateful (e.g. created with g_simple_action_new())
-then this function will return <code>nil</code>. In that case, g_action_get_state()
-will return <code>nil</code> and you must not call g_action_change_state().</p>
+<p>If the action is not stateful (e.g. created with <code>g_simple_action_new()</code>)
+then this function will return <code>nil</code>. In that case, <code>g_action_get_state()</code>
+will return <code>nil</code> and you must not call <code>g_action_change_state()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8396,7 +8396,7 @@ will return <code>nil</code> and you must not call g_action_change_state().</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

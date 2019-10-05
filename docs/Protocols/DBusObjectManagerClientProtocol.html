@@ -7498,10 +7498,10 @@ code implementing the
 interface).</p>
 
 <p>Once an instance of this type has been created, you can connect to
-the <code>GDBusObjectManager</code>::object-added and
-<code>GDBusObjectManager</code>::object-removed signals and inspect the
+the <code>GDBusObjectManager::object</code>-added and
+<code>GDBusObjectManager::object</code>-removed signals and inspect the
 <code>GDBusObjectProxy</code> objects returned by
-g_dbus_object_manager_get_objects().</p>
+<code>g_dbus_object_manager_get_objects()</code>.</p>
 
 <p>If the name for a <code>GDBusObjectManagerClient</code> is not owned by anyone at
 object construction time, the default behavior is to request the
@@ -7512,34 +7512,34 @@ interest is activatable in the first place. E.g. in some cases it
 is not possible to launch an owner for the requested name. In this
 case, <code>GDBusObjectManagerClient</code> object construction still succeeds but
 there will be no object proxies
-(e.g. g_dbus_object_manager_get_objects() returns the empty list) and
-the <code>GDBusObjectManagerClient</code>:name-owner property is <code>nil</code>.</p>
+(e.g. <code>g_dbus_object_manager_get_objects()</code> returns the empty list) and
+the <code>GDBusObjectManagerClient:name</code>-owner property is <code>nil</code>.</p>
 
 <p>The owner of the requested name can come and go (for example
 consider a system service being restarted) – <code>GDBusObjectManagerClient</code>
-handles this case too; simply connect to the <code>GObject</code>::notify
-signal to watch for changes on the <code>GDBusObjectManagerClient</code>:name-owner
+handles this case too; simply connect to the <code>GObject::notify</code>
+signal to watch for changes on the <code>GDBusObjectManagerClient:name</code>-owner
 property. When the name owner vanishes, the behavior is that
-<code>GDBusObjectManagerClient</code>:name-owner is set to <code>nil</code> (this includes
-emission of the <code>GObject</code>::notify signal) and then
-<code>GDBusObjectManager</code>::object-removed signals are synthesized
+<code>GDBusObjectManagerClient:name</code>-owner is set to <code>nil</code> (this includes
+emission of the <code>GObject::notify</code> signal) and then
+<code>GDBusObjectManager::object</code>-removed signals are synthesized
 for all currently existing object proxies. Since
-<code>GDBusObjectManagerClient</code>:name-owner is <code>nil</code> when this happens, you can
+<code>GDBusObjectManagerClient:name</code>-owner is <code>nil</code> when this happens, you can
 use this information to disambiguate a synthesized signal from a
 genuine signal caused by object removal on the remote
 <code>GDBusObjectManager</code>. Similarly, when a new name owner appears,
-<code>GDBusObjectManager</code>::object-added signals are synthesized
-while <code>GDBusObjectManagerClient</code>:name-owner is still <code>nil</code>. Only when all
-object proxies have been added, the <code>GDBusObjectManagerClient</code>:name-owner
+<code>GDBusObjectManager::object</code>-added signals are synthesized
+while <code>GDBusObjectManagerClient:name</code>-owner is still <code>nil</code>. Only when all
+object proxies have been added, the <code>GDBusObjectManagerClient:name</code>-owner
 is set to the new name owner (this includes emission of the
-<code>GObject</code>::notify signal).  Furthermore, you are guaranteed that
-<code>GDBusObjectManagerClient</code>:name-owner will alternate between a name owner
+<code>GObject::notify</code> signal).  Furthermore, you are guaranteed that
+<code>GDBusObjectManagerClient:name</code>-owner will alternate between a name owner
 (e.g. <code>:1.42</code>) and <code>nil</code> even in the case where
 the name of interest is atomically replaced</p>
 
 <p>Ultimately, <code>GDBusObjectManagerClient</code> is used to obtain <code>GDBusProxy</code>
 instances. All signals (including the
-org.freedesktop.DBus.Properties::PropertiesChanged signal)
+org.freedesktop.DBus.Properties<code>PropertiesChanged</code> signal)
 delivered to <code>GDBusProxy</code> instances are guaranteed to originate
 from the name owner. This guarantee along with the behavior
 described above, means that certain race conditions including the
@@ -7548,16 +7548,16 @@ the new owner</q> problem cannot happen.</p>
 
 <p>To avoid having the application connect to signals on the returned
 <code>GDBusObjectProxy</code> and <code>GDBusProxy</code> objects, the
-<code>GDBusObject</code>::interface-added,
-<code>GDBusObject</code>::interface-removed,
-<code>GDBusProxy</code>::g-properties-changed and
-<code>GDBusProxy</code>::g-signal signals
+<code>GDBusObject::interface</code>-added,
+<code>GDBusObject::interface</code>-removed,
+<code>GDBusProxy::g</code>-properties-changed and
+<code>GDBusProxy::g</code>-signal signals
 are also emitted on the <code>GDBusObjectManagerClient</code> instance managing these
 objects. The signals emitted are
-<code>GDBusObjectManager</code>::interface-added,
-<code>GDBusObjectManager</code>::interface-removed,
-<code>GDBusObjectManagerClient</code>::interface-proxy-properties-changed and
-<code>GDBusObjectManagerClient</code>::interface-proxy-signal.</p>
+<code>GDBusObjectManager::interface</code>-added,
+<code>GDBusObjectManager::interface</code>-removed,
+<code>GDBusObjectManagerClient::interface</code>-proxy-properties-changed and
+<code>GDBusObjectManagerClient::interface</code>-proxy-signal.</p>
 
 <p>Note that all callbacks and signals are emitted in the
 [thread-default main context][g-main-context-push-thread-default]
@@ -7599,7 +7599,7 @@ same main loop.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4264">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4251">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7637,7 +7637,7 @@ same main loop.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4267">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4254">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7765,7 +7765,7 @@ same main loop.</p>
                         <p>binding reference or <code>nil</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4746-L4770">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4733-L4757">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7857,7 +7857,7 @@ same main loop.</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4853-L4872">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4839-L4858">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7889,7 +7889,7 @@ same main loop.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the <code>GDBusConnection</code> used by <code>manager</code>.</p>
+                        <p>Gets the <code>GDBusConnection</code> used by <code>manager.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7901,7 +7901,7 @@ same main loop.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4880-L4883">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4866-L4869">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7934,7 +7934,7 @@ same main loop.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4886-L4889">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4872-L4875">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7968,7 +7968,7 @@ connection.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4893-L4896">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4879-L4882">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7991,8 +7991,8 @@ connection.</p>
                       <div class="abstract">
                         <p>The unique name that owns the name that <code>manager</code> is for or <code>nil</code> if
 no-one currently owns that name. You can connect to the
-<code>GObject</code>::notify signal to track changes to the
-<code>GDBusObjectManagerClient</code>:name-owner property.</p>
+<code>GObject::notify</code> signal to track changes to the
+<code>GDBusObjectManagerClient:name</code>-owner property.</p>
 
                       </div>
                       <div class="declaration">
@@ -8004,7 +8004,7 @@ no-one currently owns that name. You can connect to the
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4902-L4905">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4888-L4891">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8037,7 +8037,7 @@ no-one currently owns that name. You can connect to the
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4907-L4913">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4893-L4899">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8070,7 +8070,7 @@ no-one currently owns that name. You can connect to the
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4916-L4922">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4902-L4908">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8103,7 +8103,7 @@ no-one currently owns that name. You can connect to the
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4925-L4932">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4911-L4918">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8126,8 +8126,8 @@ no-one currently owns that name. You can connect to the
                       <div class="abstract">
                         <p>The unique name that owns the name that <code>manager</code> is for or <code>nil</code> if
 no-one currently owns that name. You can connect to the
-<code>GObject</code>::notify signal to track changes to the
-<code>GDBusObjectManagerClient</code>:name-owner property.</p>
+<code>GObject::notify</code> signal to track changes to the
+<code>GDBusObjectManagerClient:name</code>-owner property.</p>
 
                       </div>
                       <div class="declaration">
@@ -8139,7 +8139,7 @@ no-one currently owns that name. You can connect to the
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4938-L4947">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L4924-L4933">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8152,7 +8152,7 @@ no-one currently owns that name. You can connect to the
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

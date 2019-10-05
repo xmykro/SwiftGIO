@@ -7495,7 +7495,7 @@ Alternatively, use <code><a href="../Structs/MemoryOutputStreamRef.html">MemoryO
 memory chunks as output for GIO streaming output operations.</p>
 
 <p>As of GLib 2.34, <code>GMemoryOutputStream</code> trivially implements
-<code>GPollableOutputStream</code>: it always polls as ready.</p>
+<code>GPollableOutputStream:</code> it always polls as ready.</p>
 
           </div>
         </section>
@@ -7529,7 +7529,7 @@ memory chunks as output for GIO streaming output operations.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L282">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L281">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7567,7 +7567,7 @@ memory chunks as output for GIO streaming output operations.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L285">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L284">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7695,7 +7695,7 @@ memory chunks as output for GIO streaming output operations.</p>
                         <p>binding reference or <code>nil</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L524-L548">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L523-L547">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7787,7 +7787,7 @@ memory chunks as output for GIO streaming output operations.</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L596-L615">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L594-L613">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7834,7 +7834,7 @@ write or truncate operation on the stream.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L626-L629">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L624-L627">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7868,7 +7868,7 @@ byte written in the stream that has not been truncated away.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L633-L636">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L631-L634">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7890,20 +7890,20 @@ byte written in the stream that has not been truncated away.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the size of the currently allocated data area (available from
-g_memory_output_stream_get_data()).</p>
+<code>g_memory_output_stream_get_data()</code>).</p>
 
 <p>You probably don&rsquo;t want to use this function on resizable streams.
-See g_memory_output_stream_get_data_size() instead.  For resizable
+See <code>g_memory_output_stream_get_data_size()</code> instead.  For resizable
 streams the size returned by this function is an implementation
 detail and may be change at any time in response to operations on the
 stream.</p>
 
 <p>If the stream is fixed-sized (ie: no realloc was passed to
-g_memory_output_stream_new()) then this is the maximum size of the
+<code>g_memory_output_stream_new()</code>) then this is the maximum size of the
 stream and further writes will return <code>G_IO_ERROR_NO_SPACE</code>.</p>
 
 <p>In any case, if you want the number of bytes currently written to the
-stream, use g_memory_output_stream_get_data_size().</p>
+stream, use <code>g_memory_output_stream_get_data_size()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7915,7 +7915,7 @@ stream, use g_memory_output_stream_get_data_size().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L653-L656">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L651-L654">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7949,7 +7949,7 @@ closed before calling this function.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L660-L663">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L658-L661">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7973,7 +7973,7 @@ closed before calling this function.</p>
                         <p>Gets any loaded data from the <code>ostream</code>. Ownership of the data
 is transferred to the caller; when no longer needed it must be
 freed using the free function set in <code>ostream</code>&lsquo;s
-<code>GMemoryOutputStream</code>:destroy-function property.</p>
+<code>GMemoryOutputStream:destroy</code>-function property.</p>
 
 <p><code>ostream</code> must be closed before calling this function.</p>
 
@@ -7987,7 +7987,7 @@ freed using the free function set in <code>ostream</code>&lsquo;s
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L671-L674">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L669-L672">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8020,7 +8020,7 @@ freed using the free function set in <code>ostream</code>&lsquo;s
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L676-L685">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L674-L683">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8054,7 +8054,7 @@ byte written in the stream that has not been truncated away.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L689-L696">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L687-L694">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8087,7 +8087,7 @@ byte written in the stream that has not been truncated away.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L699-L719">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L697-L717">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8100,7 +8100,7 @@ byte written in the stream that has not been truncated away.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

@@ -7491,12 +7491,12 @@ The default implementation of these can be found in the protocol extension below
 For a concrete class that implements these methods and properties, see <code><a href="../Classes/InputStream.html">InputStream</a></code>.
 Alternatively, use <code><a href="../Structs/InputStreamRef.html">InputStreamRef</a></code> as a lighweight, <code>unowned</code> reference if you already have an instance you just want to use.</p>
 
-<p><code>GInputStream</code> has functions to read from a stream (g_input_stream_read()),
-to close a stream (g_input_stream_close()) and to skip some content
-(g_input_stream_skip()).</p>
+<p><code>GInputStream</code> has functions to read from a stream (<code>g_input_stream_read()</code>),
+to close a stream (<code>g_input_stream_close()</code>) and to skip some content
+(<code>g_input_stream_skip()</code>).</p>
 
 <p>To copy the content of an input stream to an output stream without
-manually handling the reads and writes, use g_output_stream_splice().</p>
+manually handling the reads and writes, use <code>g_output_stream_splice()</code>.</p>
 
 <p>See the documentation for <code>GIOStream</code> for details of thread safety of
 streaming APIs.</p>
@@ -7535,7 +7535,7 @@ streaming APIs.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L1894">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L1890">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7573,7 +7573,7 @@ streaming APIs.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L1897">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L1893">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7665,7 +7665,7 @@ streaming APIs.</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2058-L2077">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2053-L2072">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7697,7 +7697,7 @@ streaming APIs.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Clears the pending flag on <code>stream</code>.</p>
+                        <p>Clears the pending flag on <code>stream.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7709,7 +7709,7 @@ streaming APIs.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2085-L2088">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2080-L2083">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7764,7 +7764,7 @@ can use a faster close that doesn&rsquo;t block to e.g. check errors.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2113-L2120">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2108-L2115">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7787,10 +7787,10 @@ can use a faster close that doesn&rsquo;t block to e.g. check errors.</p>
                       <div class="abstract">
                         <p>Requests an asynchronous closes of the stream, releasing resources related to it.
 When the operation is finished <code>callback</code> will be called.
-You can then call g_input_stream_close_finish() to get the result of the
+You can then call <code>g_input_stream_close_finish()</code> to get the result of the
 operation.</p>
 
-<p>For behaviour details see g_input_stream_close().</p>
+<p>For behaviour details see <code>g_input_stream_close()</code>.</p>
 
 <p>The asynchronous methods have a default fallback that uses threads to implement
 asynchronicity, so they are optional for inheriting classes. However, if you
@@ -7806,7 +7806,7 @@ override one you must override all.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2132-L2135">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2127-L2130">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7827,7 +7827,7 @@ override one you must override all.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Finishes closing a stream asynchronously, started from g_input_stream_close_async().</p>
+                        <p>Finishes closing a stream asynchronously, started from <code>g_input_stream_close_async()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7839,7 +7839,7 @@ override one you must override all.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2138-L2145">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2133-L2140">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7872,7 +7872,7 @@ override one you must override all.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2148-L2151">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2143-L2146">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7925,7 +7925,7 @@ partial result will be returned, without an error.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2174-L2181">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2169-L2176">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7949,7 +7949,7 @@ partial result will be returned, without an error.</p>
                         <p>Tries to read <code>count</code> bytes from the stream into the buffer starting at
 <code>buffer</code>. Will block during this read.</p>
 
-<p>This function is similar to g_input_stream_read(), except it tries to
+<p>This function is similar to <code>g_input_stream_read()</code>, except it tries to
 read as many bytes as requested, only stopping on an error or end of stream.</p>
 
 <p>On a successful read of <code>count</code> bytes, or if we reached the end of the
@@ -7964,7 +7964,7 @@ use <code>GError</code>, if this function returns <code>false</code> (and sets <
 <code>bytes_read</code> will be set to the number of bytes that were successfully
 read before the error was encountered.  This functionality is only
 available from C.  If you need it from another language then you must
-write your own loop around g_input_stream_read().</p>
+write your own loop around <code>g_input_stream_read()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7976,7 +7976,7 @@ write your own loop around g_input_stream_read().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2202-L2209">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2197-L2204">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8000,13 +8000,13 @@ write your own loop around g_input_stream_read().</p>
                         <p>Request an asynchronous read of <code>count</code> bytes from the stream into the
 buffer starting at <code>buffer</code>.</p>
 
-<p>This is the asynchronous equivalent of g_input_stream_read_all().</p>
+<p>This is the asynchronous equivalent of <code>g_input_stream_read_all()</code>.</p>
 
-<p>Call g_input_stream_read_all_finish() to collect the result.</p>
+<p>Call <code>g_input_stream_read_all_finish()</code> to collect the result.</p>
 
 <p>Any outstanding I/O request with higher priority (lower numerical
 value) will be executed before an outstanding request with lower
-priority. Default priority is <code>G_PRIORITY_DEFAULT</code>.</p>
+priority. Default priority is <code>G_PRIORITY_DEFAULT.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8018,7 +8018,7 @@ priority. Default priority is <code>G_PRIORITY_DEFAULT</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2221-L2224">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2216-L2219">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8040,14 +8040,14 @@ priority. Default priority is <code>G_PRIORITY_DEFAULT</code>.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Finishes an asynchronous stream read operation started with
-g_input_stream_read_all_async().</p>
+<code>g_input_stream_read_all_async()</code>.</p>
 
 <p>As a special exception to the normal conventions for functions that
 use <code>GError</code>, if this function returns <code>false</code> (and sets <code>error</code>) then
 <code>bytes_read</code> will be set to the number of bytes that were successfully
 read before the error was encountered.  This functionality is only
 available from C.  If you need it from another language then you must
-write your own loop around g_input_stream_read_async().</p>
+write your own loop around <code>g_input_stream_read_async()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8059,7 +8059,7 @@ write your own loop around g_input_stream_read_async().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2235-L2242">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2230-L2237">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8082,7 +8082,7 @@ write your own loop around g_input_stream_read_async().</p>
                       <div class="abstract">
                         <p>Request an asynchronous read of <code>count</code> bytes from the stream into the buffer
 starting at <code>buffer</code>. When the operation is finished <code>callback</code> will be called.
-You can then call g_input_stream_read_finish() to get the result of the
+You can then call <code>g_input_stream_read_finish()</code> to get the result of the
 operation.</p>
 
 <p>During an async request no other sync and async calls are allowed on <code>stream</code>, and will
@@ -8114,7 +8114,7 @@ override one you must override all.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2267-L2270">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2262-L2265">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8135,7 +8135,7 @@ override one you must override all.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Like g_input_stream_read(), this tries to read <code>count</code> bytes from
+                        <p>Like <code>g_input_stream_read()</code>, this tries to read <code>count</code> bytes from
 the stream in a blocking fashion. However, rather than reading into
 a user-supplied buffer, this will create a new <code>GBytes</code> containing
 the data that was read. This may be easier to use from language
@@ -8169,7 +8169,7 @@ partial result will be returned, without an error.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2295-L2302">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2290-L2297">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8192,7 +8192,7 @@ partial result will be returned, without an error.</p>
                       <div class="abstract">
                         <p>Request an asynchronous read of <code>count</code> bytes from the stream into a
 new <code>GBytes</code>. When the operation is finished <code>callback</code> will be
-called. You can then call g_input_stream_read_bytes_finish() to get the
+called. You can then call <code>g_input_stream_read_bytes_finish()</code> to get the
 result of the operation.</p>
 
 <p>During an async request no other sync and async calls are allowed
@@ -8209,7 +8209,7 @@ many bytes as requested. Zero is returned on end of file (or if
 
 <p>Any outstanding I/O request with higher priority (lower numerical
 value) will be executed before an outstanding request with lower
-priority. Default priority is <code>G_PRIORITY_DEFAULT</code>.</p>
+priority. Default priority is <code>G_PRIORITY_DEFAULT.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8221,7 +8221,7 @@ priority. Default priority is <code>G_PRIORITY_DEFAULT</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2324-L2327">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2319-L2322">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8254,7 +8254,7 @@ priority. Default priority is <code>G_PRIORITY_DEFAULT</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2330-L2337">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2325-L2332">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8287,7 +8287,7 @@ priority. Default priority is <code>G_PRIORITY_DEFAULT</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2340-L2347">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2335-L2342">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8310,7 +8310,7 @@ priority. Default priority is <code>G_PRIORITY_DEFAULT</code>.</p>
                       <div class="abstract">
                         <p>Sets <code>stream</code> to have actions pending. If the pending flag is
 already set or <code>stream</code> is closed, it will return <code>false</code> and set
-<code>error</code>.</p>
+<code>error.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8322,7 +8322,7 @@ already set or <code>stream</code> is closed, it will return <code>false</code> 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2352-L2359">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2347-L2354">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8345,7 +8345,7 @@ already set or <code>stream</code> is closed, it will return <code>false</code> 
                       <div class="abstract">
                         <p>Tries to skip <code>count</code> bytes from the stream. Will block during the operation.</p>
 
-<p>This is identical to g_input_stream_read(), from a behaviour standpoint,
+<p>This is identical to <code>g_input_stream_read()</code>, from a behaviour standpoint,
 but the bytes that are skipped are not returned to the user. Some
 streams have an implementation that is more efficient than reading the data.</p>
 
@@ -8368,7 +8368,7 @@ partial result will be returned, without an error.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2375-L2382">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2370-L2377">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8391,7 +8391,7 @@ partial result will be returned, without an error.</p>
                       <div class="abstract">
                         <p>Request an asynchronous skip of <code>count</code> bytes from the stream.
 When the operation is finished <code>callback</code> will be called.
-You can then call g_input_stream_skip_finish() to get the result
+You can then call <code>g_input_stream_skip_finish()</code> to get the result
 of the operation.</p>
 
 <p>During an async request no other sync and async calls are allowed,
@@ -8423,7 +8423,7 @@ However, if you override one, you must override all.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2407-L2410">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2402-L2405">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8456,7 +8456,7 @@ However, if you override one, you must override all.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2413-L2420">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2408-L2415">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8477,15 +8477,15 @@ However, if you override one, you must override all.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Tries to read from <code>stream</code>, as with g_input_stream_read() (if
-<code>blocking</code> is <code>true</code>) or g_pollable_input_stream_read_nonblocking()
+                        <p>Tries to read from <code>stream</code>, as with <code>g_input_stream_read()</code> (if
+<code>blocking</code> is <code>true</code>) or <code>g_pollable_input_stream_read_nonblocking()</code>
 (if <code>blocking</code> is <code>false</code>). This can be used to more easily share
 code between blocking and non-blocking implementations of a method.</p>
 
 <p>If <code>blocking</code> is <code>false</code>, then <code>stream</code> must be a
-<code>GPollableInputStream</code> for which g_pollable_input_stream_can_poll()
+<code>GPollableInputStream</code> for which <code>g_pollable_input_stream_can_poll()</code>
 returns <code>true</code>, or else the behavior is undefined. If <code>blocking</code> is
-<code>true</code>, then <code>stream</code> does not need to be a <code>GPollableInputStream</code>.</p>
+<code>true</code>, then <code>stream</code> does not need to be a <code>GPollableInputStream.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8497,7 +8497,7 @@ returns <code>true</code>, or else the behavior is undefined. If <code>blocking<
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2431-L2438">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2426-L2433">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8530,7 +8530,7 @@ returns <code>true</code>, or else the behavior is undefined. If <code>blocking<
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2440-L2446">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L2435-L2441">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8543,7 +8543,7 @@ returns <code>true</code>, or else the behavior is undefined. If <code>blocking<
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

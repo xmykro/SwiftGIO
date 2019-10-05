@@ -7495,14 +7495,14 @@ for buffered reads.</p>
 
 <p>By default, <code>GBufferedInputStream</code>&lsquo;s buffer size is set at 4 kilobytes.</p>
 
-<p>To create a buffered input stream, use g_buffered_input_stream_new(),
-or g_buffered_input_stream_new_sized() to specify the buffer&rsquo;s size at
+<p>To create a buffered input stream, use <code>g_buffered_input_stream_new()</code>,
+or <code>g_buffered_input_stream_new_sized()</code> to specify the buffer&rsquo;s size at
 construction.</p>
 
 <p>To get the size of a buffer within a buffered input stream, use
-g_buffered_input_stream_get_buffer_size(). To change the size of a
+<code>g_buffered_input_stream_get_buffer_size()</code>. To change the size of a
 buffered input stream&rsquo;s buffer, use
-g_buffered_input_stream_set_buffer_size(). Note that the buffer&rsquo;s size
+<code>g_buffered_input_stream_set_buffer_size()</code>. Note that the buffer&rsquo;s size
 cannot be reduced below the size of the data within the buffer.</p>
 
           </div>
@@ -7538,7 +7538,7 @@ Ownership is transferred to the <code>BufferedInputStream</code> instance.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3289-L3291">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3276-L3278">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7564,12 +7564,12 @@ Will retain <code>GBufferedInputStream</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/BufferedInputStreamProtocol.html">BufferedInputStreamProtocol</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/BufferedInputStreamProtocol.html">BufferedInputStreamProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3295-L3298">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3282-L3285">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7595,12 +7595,12 @@ Will retain <code>GBufferedInputStream</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3302-L3304">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3289-L3291">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7626,12 +7626,12 @@ Will retain <code>GBufferedInputStream</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3308-L3310">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3295-L3297">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7657,12 +7657,12 @@ Will retain <code>GBufferedInputStream</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3314-L3316">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3301-L3303">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7688,12 +7688,12 @@ Will retain <code>GBufferedInputStream</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3320-L3322">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3307-L3309">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7719,12 +7719,12 @@ a buffer set to the default size (4 kilobytes).</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">base_stream</span><span class="p">:</span> <span class="kt"><a href="../Protocols/InputStreamProtocol.html">InputStreamProtocol</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">base_stream</span><span class="p">:</span> <span class="kt"><a href="../Protocols/InputStreamProtocol.html">InputStreamProtocol</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3326-L3329">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3313-L3316">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7743,19 +7743,19 @@ a buffer set to the default size (4 kilobytes).</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Creates a new <code>GBufferedInputStream</code> from the given <code>base_stream</code>,
-with a buffer set to <code>size</code>.</p>
+with a buffer set to <code>size.</code></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="n">sized</span> <span class="nv">base_stream</span><span class="p">:</span> <span class="kt"><a href="../Protocols/InputStreamProtocol.html">InputStreamProtocol</a></span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="n">sized</span> <span class="nv">base_stream</span><span class="p">:</span> <span class="kt"><a href="../Protocols/InputStreamProtocol.html">InputStreamProtocol</a></span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3333-L3336">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3320-L3323">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7774,7 +7774,7 @@ with a buffer set to <code>size</code>.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Creates a new <code>GBufferedInputStream</code> from the given <code>base_stream</code>,
-with a buffer set to <code>size</code>.</p>
+with a buffer set to <code>size.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7786,7 +7786,7 @@ with a buffer set to <code>size</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3340-L3343">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L3327-L3330">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7799,7 +7799,7 @@ with a buffer set to <code>size</code>.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

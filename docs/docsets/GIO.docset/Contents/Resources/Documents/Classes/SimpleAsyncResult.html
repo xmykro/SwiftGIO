@@ -7515,45 +7515,45 @@ are completed, it is important to understand this functionality.</p>
 that asynchronous functions and their finishing functions are used
 together correctly.</p>
 
-<p>To create a new <code>GSimpleAsyncResult</code>, call g_simple_async_result_new().
+<p>To create a new <code>GSimpleAsyncResult</code>, call <code>g_simple_async_result_new()</code>.
 If the result needs to be created for a <code>GError</code>, use
-g_simple_async_result_new_from_error() or
-g_simple_async_result_new_take_error(). If a <code>GError</code> is not available
+<code>g_simple_async_result_new_from_error()</code> or
+<code>g_simple_async_result_new_take_error()</code>. If a <code>GError</code> is not available
 (e.g. the asynchronous operation&rsquo;s doesn&rsquo;t take a <code>GError</code> argument),
 but the result still needs to be created for an error condition, use
-g_simple_async_result_new_error() (or g_simple_async_result_set_error_va()
+<code>g_simple_async_result_new_error()</code> (or <code>g_simple_async_result_set_error_va()</code>
 if your application or binding requires passing a variable argument list
 directly), and the error can then be propagated through the use of
-g_simple_async_result_propagate_error().</p>
+<code>g_simple_async_result_propagate_error()</code>.</p>
 
 <p>An asynchronous operation can be made to ignore a cancellation event by
-calling g_simple_async_result_set_handle_cancellation() with a
+calling <code>g_simple_async_result_set_handle_cancellation()</code> with a
 <code>GSimpleAsyncResult</code> for the operation and <code>false</code>. This is useful for
 operations that are dangerous to cancel, such as close (which would
 cause a leak if cancelled before being run).</p>
 
 <p>GSimpleAsyncResult can integrate into GLib&rsquo;s event loop, <code>GMainLoop</code>,
 or it can use <code>GThreads</code>.
-g_simple_async_result_complete() will finish an I/O task directly
-from the point where it is called. g_simple_async_result_complete_in_idle()
+<code>g_simple_async_result_complete()</code> will finish an I/O task directly
+from the point where it is called. <code>g_simple_async_result_complete_in_idle()</code>
 will finish it from an idle handler in the
 [thread-default main context][g-main-context-push-thread-default]
 where the <code>GSimpleAsyncResult</code> was created.
-g_simple_async_result_run_in_thread() will run the job in a
+<code>g_simple_async_result_run_in_thread()</code> will run the job in a
 separate thread and then use
-g_simple_async_result_complete_in_idle() to deliver the result.</p>
+<code>g_simple_async_result_complete_in_idle()</code> to deliver the result.</p>
 
 <p>To set the results of an asynchronous function,
-g_simple_async_result_set_op_res_gpointer(),
-g_simple_async_result_set_op_res_gboolean(), and
-g_simple_async_result_set_op_res_gssize()
+<code>g_simple_async_result_set_op_res_gpointer()</code>,
+<code>g_simple_async_result_set_op_res_gboolean()</code>, and
+<code>g_simple_async_result_set_op_res_gssize()</code>
 are provided, setting the operation&rsquo;s result to a gpointer, gboolean, or
 gssize, respectively.</p>
 
 <p>Likewise, to get the result of an asynchronous function,
-g_simple_async_result_get_op_res_gpointer(),
-g_simple_async_result_get_op_res_gboolean(), and
-g_simple_async_result_get_op_res_gssize() are
+<code>g_simple_async_result_get_op_res_gpointer()</code>,
+<code>g_simple_async_result_get_op_res_gboolean()</code>, and
+<code>g_simple_async_result_get_op_res_gssize()</code> are
 provided, getting the operation&rsquo;s result as a gpointer, gboolean, and
 gssize, respectively.</p>
 
@@ -7606,7 +7606,7 @@ baker_bake_cake_async (Baker              *self,
                                            user_data,
                                            BAKER_ERRORS,
                                            BAKER_ERROR_TOO_SMALL,
-                                           "`ucm` radius cakes are silly",
+                                           "%ucm radius cakes are silly",
                                            radius);
       return;
     }
@@ -7689,7 +7689,7 @@ Ownership is transferred to the <code>SimpleAsyncResult</code> instance.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L3752-L3754">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L3708-L3710">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7715,12 +7715,12 @@ Will retain <code>GSimpleAsyncResult</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/SimpleAsyncResultProtocol.html">SimpleAsyncResultProtocol</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/SimpleAsyncResultProtocol.html">SimpleAsyncResultProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L3758-L3761">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L3714-L3717">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7746,12 +7746,12 @@ Will retain <code>GSimpleAsyncResult</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L3765-L3767">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L3721-L3723">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7777,12 +7777,12 @@ Will retain <code>GSimpleAsyncResult</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L3771-L3773">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L3727-L3729">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7808,12 +7808,12 @@ Will retain <code>GSimpleAsyncResult</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L3777-L3779">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L3733-L3735">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7839,12 +7839,12 @@ Will retain <code>GSimpleAsyncResult</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L3783-L3785">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L3739-L3741">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7870,7 +7870,7 @@ function as the <code>source_tag</code>.</p>
 
 <p>If your operation supports cancellation with <code>GCancellable</code> (which it
 probably should) then you should provide the user&rsquo;s cancellable to
-g_simple_async_result_set_check_cancellable() immediately after
+<code>g_simple_async_result_set_check_cancellable()</code> immediately after
 this function returns.</p>
 
 <p><strong>new is deprecated:</strong>
@@ -7881,13 +7881,13 @@ Use g_task_new() instead.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
-<span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span> <span class="nv">source_object</span><span class="p">:</span> <span class="kt">ObjectProtocol</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO18AsyncReadyCallbacka">AsyncReadyCallback</a></span><span class="p">,</span> <span class="n">userData</span> <span class="nv">user_data</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">,</span> <span class="n">sourceTag</span> <span class="nv">source_tag</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span> <span class="nv">source_object</span><span class="p">:</span> <span class="kt">ObjectProtocol</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO18AsyncReadyCallbacka">AsyncReadyCallback</a></span><span class="p">,</span> <span class="n">userData</span> <span class="nv">user_data</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">,</span> <span class="n">sourceTag</span> <span class="nv">source_tag</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L3800-L3803">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L3756-L3759">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7915,13 +7915,13 @@ Use g_task_new() and g_task_return_error() instead.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
-<span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="n">error</span> <span class="nv">source_object</span><span class="p">:</span> <span class="kt">ObjectProtocol</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO18AsyncReadyCallbacka">AsyncReadyCallback</a></span><span class="p">,</span> <span class="n">userData</span> <span class="nv">user_data</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">ErrorTypeProtocol</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="n">error</span> <span class="nv">source_object</span><span class="p">:</span> <span class="kt">ObjectProtocol</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO18AsyncReadyCallbacka">AsyncReadyCallback</a></span><span class="p">,</span> <span class="n">userData</span> <span class="nv">user_data</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">ErrorTypeProtocol</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L3813-L3816">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L3769-L3772">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7950,13 +7950,13 @@ Use g_task_new() and g_task_return_error() instead.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
-<span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="n">take_error</span> <span class="nv">source_object</span><span class="p">:</span> <span class="kt">ObjectProtocol</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO18AsyncReadyCallbacka">AsyncReadyCallback</a></span><span class="p">,</span> <span class="n">userData</span> <span class="nv">user_data</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">ErrorTypeProtocol</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="n">take_error</span> <span class="nv">source_object</span><span class="p">:</span> <span class="kt">ObjectProtocol</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO18AsyncReadyCallbacka">AsyncReadyCallback</a></span><span class="p">,</span> <span class="n">userData</span> <span class="nv">user_data</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">ErrorTypeProtocol</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L3823-L3826">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L3779-L3782">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7984,13 +7984,13 @@ Use g_task_new() and g_task_return_error() instead.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">newFrom</span><span class="p">(</span><span class="n">error</span> <span class="nv">source_object</span><span class="p">:</span> <span class="kt">ObjectProtocol</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO18AsyncReadyCallbacka">AsyncReadyCallback</a></span><span class="p">,</span> <span class="n">userData</span> <span class="nv">user_data</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">ErrorTypeProtocol</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">SimpleAsyncResult</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L3836-L3839">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L3792-L3795">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8019,13 +8019,13 @@ Use g_task_new() and g_task_return_error() instead.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">newTakeError</span><span class="p">(</span><span class="n">take_error</span> <span class="nv">source_object</span><span class="p">:</span> <span class="kt">ObjectProtocol</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO18AsyncReadyCallbacka">AsyncReadyCallback</a></span><span class="p">,</span> <span class="n">userData</span> <span class="nv">user_data</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">ErrorTypeProtocol</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">SimpleAsyncResult</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L3846-L3849">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L3802-L3805">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8038,7 +8038,7 @@ Use g_task_new() and g_task_return_error() instead.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

@@ -7493,13 +7493,13 @@ Use <code>TestDBus</code> as a strong reference or owner of a <code>GTestDBus</c
 <p>A helper class for testing code which uses D-Bus without touching the user&rsquo;s
 session bus.</p>
 
-<p>Note that <code>GTestDBus</code> modifies the user’s environment, calling setenv().
+<p>Note that <code>GTestDBus</code> modifies the user’s environment, calling <code>setenv()</code>.
 This is not thread-safe, so all <code>GTestDBus</code> calls should be completed before
 threads are spawned, or should have appropriate locking to ensure no access
 conflicts to environment variables shared between <code>GTestDBus</code> and other
 threads.</p>
 
-<p>&ldquo;` Creating unit tests using GTestDBus</p>
+<p>&ldquo;&rdquo; Creating unit tests using GTestDBus</p>
 
 <p>Testing of D-Bus services can be tricky because normally we only ever run
 D-Bus services over an existing instance of the D-Bus daemon thus we
@@ -7519,14 +7519,14 @@ achieve this by adding a file such as <code>my-server.service.in</code> in the s
 directory and have it processed by configure.</p>
 <pre class="highlight swift"><code>    <span class="p">[</span><span class="kt">D</span><span class="o">-</span><span class="kt">BUS</span> <span class="kt">Service</span><span class="p">]</span>
     <span class="kt">Name</span><span class="o">=</span><span class="n">org</span><span class="o">.</span><span class="n">gtk</span><span class="o">.</span><span class="kt">GDBus</span><span class="o">.</span><span class="kt">Examples</span><span class="o">.</span><span class="kt">ObjectManager</span>
-    <span class="kt">Exec</span><span class="o">=</span><span class="err">`</span><span class="n">abs_top_builddir</span><span class="err">``</span><span class="o">/</span><span class="n">gio</span><span class="o">/</span><span class="n">tests</span><span class="o">/</span><span class="n">gdbus</span><span class="o">-</span><span class="n">example</span><span class="o">-</span><span class="n">objectmanager</span><span class="o">-</span><span class="n">server</span>
+    <span class="kt">Exec</span><span class="o">=</span><span class="kd">@abs_top_builddir</span><span class="err">@</span><span class="o">/</span><span class="n">gio</span><span class="o">/</span><span class="n">tests</span><span class="o">/</span><span class="n">gdbus</span><span class="o">-</span><span class="n">example</span><span class="o">-</span><span class="n">objectmanager</span><span class="o">-</span><span class="n">server</span>
 </code></pre>
 
 <p>You will also need to indicate this service directory in your test
 fixtures, so you will need to pass the path while compiling your
 test cases. Typically this is done with autotools with an added
 preprocessor flag specified to compile your tests such as:</p>
-<pre class="highlight swift"><code>    <span class="o">-</span><span class="kt">DTEST_SERVICES</span><span class="o">=</span><span class="err">\</span><span class="s">""</span><span class="err">$</span><span class="p">(</span><span class="n">abs_top_builddir</span><span class="p">)</span><span class="o">/</span><span class="n">tests</span><span class="o">/</span><span class="n">services</span><span class="s">"</span><span class="se">\"</span><span class="s">
+<pre class="highlight swift"><code>    <span class="o">-</span><span class="kt">DTEST_SERVICES</span><span class="o">=</span><span class="p">\</span><span class="s">""</span><span class="err">$</span><span class="p">(</span><span class="n">abs_top_builddir</span><span class="p">)</span><span class="o">/</span><span class="n">tests</span><span class="o">/</span><span class="n">services</span><span class="s">"</span><span class="se">\"</span><span class="s">
 </span></code></pre>
 <pre class="highlight swift"><code><span class="kt">Once</span> <span class="n">you</span> <span class="n">have</span> <span class="n">a</span> <span class="n">service</span> <span class="n">definition</span> <span class="n">file</span> <span class="n">which</span> <span class="k">is</span> <span class="n">local</span> <span class="n">to</span> <span class="n">your</span> <span class="n">source</span> <span class="n">tree</span><span class="p">,</span>
 </code></pre>
@@ -7552,7 +7552,7 @@ D-Bus daemon activates, using the setup routine for your fixture is
 a practical place to help sandbox your runtime environment. For the
 rather typical GSettings case we can work around this by setting
 <code>GSETTINGS_SCHEMA_DIR</code> to the in tree directory holding your schemas
-in the above fixture_setup() routine.</p>
+in the above <code>fixture_setup()</code> routine.</p>
 
 <p>The GSettings schemas need to be locally pre-compiled for this to work. This can be achieved
 by compiling the schemas locally as a step before running test cases, an autotools setup might
@@ -7596,7 +7596,7 @@ Ownership is transferred to the <code>TestDBus</code> instance.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L851-L853">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L843-L845">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7622,12 +7622,12 @@ Will retain <code>GTestDBus</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/TestDBusProtocol.html">TestDBusProtocol</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/TestDBusProtocol.html">TestDBusProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L857-L860">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L849-L852">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7653,12 +7653,12 @@ Will retain <code>GTestDBus</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L864-L866">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L856-L858">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7684,12 +7684,12 @@ Will retain <code>GTestDBus</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L870-L872">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L862-L864">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7715,12 +7715,12 @@ Will retain <code>GTestDBus</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L876-L878">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L868-L870">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7746,12 +7746,12 @@ Will retain <code>GTestDBus</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L882-L884">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L874-L876">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7776,12 +7776,12 @@ Will retain <code>GTestDBus</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">flags</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO13TestDBusFlagsa">TestDBusFlags</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">flags</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO13TestDBusFlagsa">TestDBusFlags</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L887-L890">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-TcpConnection-UnixConnection.swift#L879-L882">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7794,7 +7794,7 @@ Will retain <code>GTestDBus</code>.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

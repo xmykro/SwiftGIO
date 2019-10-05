@@ -7491,10 +7491,10 @@ It exposes methods that can operate on this data type through <code><a href="../
 Use <code>InetAddressRef</code> only as an <code>unowned</code> reference to an existing <code>GInetAddress</code> instance.</p>
 
 <p><code>GInetAddress</code> represents an IPv4 or IPv6 internet address. Use
-g_resolver_lookup_by_name() or g_resolver_lookup_by_name_async() to
+<code>g_resolver_lookup_by_name()</code> or <code>g_resolver_lookup_by_name_async()</code> to
 look up the <code>GInetAddress</code> for a hostname. Use
-g_resolver_lookup_by_address() or
-g_resolver_lookup_by_address_async() to look up the hostname for a
+<code>g_resolver_lookup_by_address()</code> or
+<code>g_resolver_lookup_by_address_async()</code> to look up the hostname for a
 <code>GInetAddress</code>.</p>
 
 <p>To actually connect to a remote host, you will need a
@@ -7534,7 +7534,7 @@ For type-safe access, use the generated, typed pointer <code>inet_address_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L585">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L584">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7575,7 +7575,7 @@ For type-safe access, use the generated, typed pointer <code>inet_address_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L590-L591">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L589-L590">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7605,7 +7605,7 @@ For type-safe access, use the generated, typed pointer <code>inet_address_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L594-L596">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L593-L595">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7636,7 +7636,7 @@ For type-safe access, use the generated, typed pointer <code>inet_address_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L600-L602">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L599-L601">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7667,7 +7667,7 @@ For type-safe access, use the generated, typed pointer <code>inet_address_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L606-L608">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L605-L607">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7698,7 +7698,7 @@ For type-safe access, use the generated, typed pointer <code>inet_address_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L612-L614">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L611-L613">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7729,7 +7729,7 @@ For type-safe access, use the generated, typed pointer <code>inet_address_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L618-L620">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L617-L619">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7760,7 +7760,7 @@ For type-safe access, use the generated, typed pointer <code>inet_address_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L624-L626">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L623-L625">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7778,10 +7778,10 @@ For type-safe access, use the generated, typed pointer <code>inet_address_ptr</c
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <pre class="highlight swift"><code><span class="kt">Creates</span> <span class="n">a</span> <span class="err">`</span><span class="kt">GInetAddress</span><span class="err">`</span> <span class="k">for</span> <span class="n">the</span> <span class="s">"any"</span> <span class="nf">address</span> <span class="p">(</span><span class="n">unassigned</span><span class="o">/</span><span class="s">"don't
+                        <pre class="highlight swift"><code><span class="kt">Creates</span> <span class="n">a</span> <span class="p">`</span><span class="nv">GInetAddress</span><span class="p">`</span> <span class="k">for</span> <span class="n">the</span> <span class="s">"any"</span> <span class="nf">address</span> <span class="p">(</span><span class="n">unassigned</span><span class="o">/</span><span class="s">"don't
 </span></code></pre>
 
-<p>care&quot;) for <code>family</code>.</p>
+<p>care&quot;) for <code>family.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7793,7 +7793,7 @@ For type-safe access, use the generated, typed pointer <code>inet_address_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L630-L633">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L629-L632">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7813,7 +7813,7 @@ For type-safe access, use the generated, typed pointer <code>inet_address_ptr</c
                       <div class="abstract">
                         <p>Creates a new <code>GInetAddress</code> from the given <code>family</code> and <code>bytes</code>.
 <code>bytes</code> should be 4 bytes for <code>G_SOCKET_FAMILY_IPV4</code> and 16 bytes for
-<code>G_SOCKET_FAMILY_IPV6</code>.</p>
+<code>G_SOCKET_FAMILY_IPV6.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7825,7 +7825,7 @@ For type-safe access, use the generated, typed pointer <code>inet_address_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L638-L641">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L637-L640">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7843,7 +7843,7 @@ For type-safe access, use the generated, typed pointer <code>inet_address_ptr</c
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Parses <code>string</code> as an IP address and creates a new <code>GInetAddress</code>.</p>
+                        <p>Parses <code>string</code> as an IP address and creates a new <code>GInetAddress.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7855,7 +7855,7 @@ For type-safe access, use the generated, typed pointer <code>inet_address_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L644-L647">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L643-L646">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7873,7 +7873,7 @@ For type-safe access, use the generated, typed pointer <code>inet_address_ptr</c
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Creates a <code>GInetAddress</code> for the loopback address for <code>family</code>.</p>
+                        <p>Creates a <code>GInetAddress</code> for the loopback address for <code>family.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7885,7 +7885,7 @@ For type-safe access, use the generated, typed pointer <code>inet_address_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L650-L653">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L649-L652">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7904,7 +7904,7 @@ For type-safe access, use the generated, typed pointer <code>inet_address_ptr</c
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Creates a <code>GInetAddress</code> for the <q>any</q> address (unassigned/<q>don&rsquo;t
-care</q>) for <code>family</code>.</p>
+care</q>) for <code>family.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7916,7 +7916,7 @@ care</q>) for <code>family</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L656-L659">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L655-L658">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7936,7 +7936,7 @@ care</q>) for <code>family</code>.</p>
                       <div class="abstract">
                         <p>Creates a new <code>GInetAddress</code> from the given <code>family</code> and <code>bytes</code>.
 <code>bytes</code> should be 4 bytes for <code>G_SOCKET_FAMILY_IPV4</code> and 16 bytes for
-<code>G_SOCKET_FAMILY_IPV6</code>.</p>
+<code>G_SOCKET_FAMILY_IPV6.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7948,7 +7948,7 @@ care</q>) for <code>family</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L664-L667">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L663-L666">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7966,7 +7966,7 @@ care</q>) for <code>family</code>.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Parses <code>string</code> as an IP address and creates a new <code>GInetAddress</code>.</p>
+                        <p>Parses <code>string</code> as an IP address and creates a new <code>GInetAddress.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7978,7 +7978,7 @@ care</q>) for <code>family</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L670-L673">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L669-L672">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7996,7 +7996,7 @@ care</q>) for <code>family</code>.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Creates a <code>GInetAddress</code> for the loopback address for <code>family</code>.</p>
+                        <p>Creates a <code>GInetAddress</code> for the loopback address for <code>family.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8008,7 +8008,7 @@ care</q>) for <code>family</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L676-L679">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L675-L678">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8021,7 +8021,7 @@ care</q>) for <code>family</code>.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

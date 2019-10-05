@@ -7501,7 +7501,7 @@ a two-way network connection; and <code>GFileIOStream</code>, which represents a
 file handle opened in read-write mode.</p>
 
 <p>To do the actual reading and writing you need to get the substreams
-with g_io_stream_get_input_stream() and g_io_stream_get_output_stream().</p>
+with <code>g_io_stream_get_input_stream()</code> and <code>g_io_stream_get_output_stream()</code>.</p>
 
 <p>The <code>GIOStream</code> object owns the input and the output streams, not the other
 way around, so keeping the substreams alive will not keep the <code>GIOStream</code>
@@ -7509,7 +7509,7 @@ object alive. If the <code>GIOStream</code> object is freed it will be closed, t
 closing the substreams, so even if the substreams stay alive they will
 always return <code>G_IO_ERROR_CLOSED</code> for all operations.</p>
 
-<p>To close a stream use g_io_stream_close() which will close the common
+<p>To close a stream use <code>g_io_stream_close()</code> which will close the common
 stream object and also the individual substreams. You can also close
 the substreams themselves. In most cases this only marks the
 substream as closed, so further I/O on it fails but common state in the
@@ -7828,7 +7828,7 @@ stream in (though they are guaranteed not to crash).</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L336-L355">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L335-L354">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7860,7 +7860,7 @@ stream in (though they are guaranteed not to crash).</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Clears the pending flag on <code>stream</code>.</p>
+                        <p>Clears the pending flag on <code>stream.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7872,7 +7872,7 @@ stream in (though they are guaranteed not to crash).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L363-L366">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L362-L365">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7937,7 +7937,7 @@ individual input/output streams.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L401-L408">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L400-L407">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7960,10 +7960,10 @@ individual input/output streams.</p>
                       <div class="abstract">
                         <p>Requests an asynchronous close of the stream, releasing resources
 related to it. When the operation is finished <code>callback</code> will be
-called. You can then call g_io_stream_close_finish() to get
+called. You can then call <code>g_io_stream_close_finish()</code> to get
 the result of the operation.</p>
 
-<p>For behaviour details see g_io_stream_close().</p>
+<p>For behaviour details see <code>g_io_stream_close()</code>.</p>
 
 <p>The asynchronous methods have a default fallback that uses threads
 to implement asynchronicity, so they are optional for inheriting
@@ -7979,7 +7979,7 @@ classes. However, if you override one you must override all.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L420-L423">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L419-L422">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8012,7 +8012,7 @@ classes. However, if you override one you must override all.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L426-L433">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L425-L432">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8046,7 +8046,7 @@ for reading.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L437-L440">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L436-L439">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8080,7 +8080,7 @@ writing.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L444-L447">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L443-L446">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8113,7 +8113,7 @@ writing.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L450-L453">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L449-L452">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8136,7 +8136,7 @@ writing.</p>
                       <div class="abstract">
                         <p>Sets <code>stream</code> to have actions pending. If the pending flag is
 already set or <code>stream</code> is closed, it will return <code>false</code> and set
-<code>error</code>.</p>
+<code>error.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8148,7 +8148,7 @@ already set or <code>stream</code> is closed, it will return <code>false</code> 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L458-L465">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L457-L464">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8174,7 +8174,7 @@ already set or <code>stream</code> is closed, it will return <code>false</code> 
 <code>stream1</code>.</p>
 
 <p>When the operation is finished <code>callback</code> will be called.
-You can then call g_io_stream_splice_finish() to get the
+You can then call <code>g_io_stream_splice_finish()</code> to get the
 result of the operation.</p>
 
                       </div>
@@ -8187,7 +8187,7 @@ result of the operation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L474-L477">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L473-L476">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8212,7 +8212,7 @@ result of the operation.</p>
 must have pollable input and output streams) which is assumed to
 communicate with the server identified by <code>server_identity</code>.</p>
 
-<p>See the documentation for <code>GTlsConnection</code>:base-io-stream for restrictions
+<p>See the documentation for <code>GTlsConnection:base</code>-io-stream for restrictions
 on when application code can run operations on the <code>base_io_stream</code> after
 this function has returned.</p>
 
@@ -8226,7 +8226,7 @@ this function has returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L486-L493">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L485-L492">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8250,7 +8250,7 @@ this function has returned.</p>
                         <p>Creates a new <code>GTlsServerConnection</code> wrapping <code>base_io_stream</code> (which
 must have pollable input and output streams).</p>
 
-<p>See the documentation for <code>GTlsConnection</code>:base-io-stream for restrictions
+<p>See the documentation for <code>GTlsConnection:base</code>-io-stream for restrictions
 on when application code can run operations on the <code>base_io_stream</code> after
 this function has returned.</p>
 
@@ -8264,7 +8264,7 @@ this function has returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L501-L508">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L500-L507">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8298,7 +8298,7 @@ for reading.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L511-L518">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L510-L517">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8331,7 +8331,7 @@ for reading.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L521-L527">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L520-L526">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8365,7 +8365,7 @@ writing.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L531-L538">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-IOStream-ListStore.swift#L530-L537">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8378,7 +8378,7 @@ writing.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

@@ -7498,7 +7498,7 @@ this class outside of a higher level framework.</p>
 
 <p>GApplication provides convenient life cycle management by maintaining
 a <q>use count</q> for the primary application instance. The use count can
-be changed using g_application_hold() and g_application_release(). If
+be changed using <code>g_application_hold()</code> and <code>g_application_release()</code>. If
 it drops to zero, the application exits. Higher-level classes such as
 <code>GtkApplication</code> employ the use count to ensure that the application
 stays alive as long as it has any opened windows.</p>
@@ -7518,14 +7518,14 @@ is used for communication.</p>
 <p>The use of <code>GApplication</code> differs from some other commonly-used
 uniqueness libraries (such as libunique) in important ways. The
 application is not expected to manually register itself and check
-if it is the primary instance. Instead, the main() function of a
+if it is the primary instance. Instead, the <code>main()</code> function of a
 <code>GApplication</code> should do very little more than instantiating the
 application instance, possibly connecting signal handlers, then
-calling g_application_run(). All checks for uniqueness are done
+calling <code>g_application_run()</code>. All checks for uniqueness are done
 internally. If the application is the primary instance then the
 startup signal is emitted and the mainloop runs. If the application
 is not the primary instance then a signal is sent to the primary
-instance and g_application_run() promptly returns. See the code
+instance and <code>g_application_run()</code> promptly returns. See the code
 examples below.</p>
 
 <p>If used, the expected form of an application identifier is the same as
@@ -7533,7 +7533,7 @@ that of of a
 <a href="https://dbus.freedesktop.org/doc/dbus-specification.html%60message%60-protocol-names-bus">D-Bus well-known bus name</a>.
 Examples include: <code>com.example.MyApp</code>, <code>org.example.internal_apps.Calculator</code>,
 <code>org._7_zip.Archiver</code>.
-For details on valid application identifiers, see g_application_id_is_valid().</p>
+For details on valid application identifiers, see <code>g_application_id_is_valid()</code>.</p>
 
 <p>On Linux, the application identifier is claimed as a well-known bus name
 on the user&rsquo;s session bus.  This means that the uniqueness of your
@@ -7545,13 +7545,13 @@ internal architecture of GDBus, method calls can be dispatched at any time
 (even if a main loop is not running).  For this reason, you must ensure that
 any object paths that you wish to register are registered before <code>GApplication</code>
 attempts to acquire the bus name of your application (which happens in
-g_application_register()).  Unfortunately, this means that you cannot use
-g_application_get_is_remote() to decide if you want to register object paths.</p>
+<code>g_application_register()</code>).  Unfortunately, this means that you cannot use
+<code>g_application_get_is_remote()</code> to decide if you want to register object paths.</p>
 
 <p>GApplication also implements the <code>GActionGroup</code> and <code>GActionMap</code>
 interfaces and lets you easily export actions by adding them with
-g_action_map_add_action(). When invoking an action by calling
-g_action_group_activate_action() on the application, it is always
+<code>g_action_map_add_action()</code>. When invoking an action by calling
+<code>g_action_group_activate_action()</code> on the application, it is always
 invoked in the primary instance. The actions are also exported on
 the session bus, and GIO provides the <code>GDBusActionGroup</code> wrapper to
 conveniently access them remotely. GIO provides a <code>GDBusMenuModel</code> wrapper
@@ -7566,7 +7566,7 @@ for remote access to exported <code>GMenuModels</code>.</p>
 <li><p>via activating an action</p></li>
 </ul>
 
-<p>The <code>GApplication</code>::startup signal lets you handle the application
+<p>The <code>GApplication::startup</code> signal lets you handle the application
 initialization for all of these in a single place.</p>
 
 <p>Regardless of which of these entry points is used to start the
@@ -7576,9 +7576,9 @@ launching instance to the primary instance, in the form of a
 data, override the <code>before_emit</code> or <code>after_emit</code> virtual functions
 in your <code>GApplication</code> subclass. When dealing with
 <code>GApplicationCommandLine</code> objects, the platform data is
-directly available via g_application_command_line_get_cwd(),
-g_application_command_line_get_environ() and
-g_application_command_line_get_platform_data().</p>
+directly available via <code>g_application_command_line_get_cwd()</code>,
+<code>g_application_command_line_get_environ()</code> and
+<code>g_application_command_line_get_platform_data()</code>.</p>
 
 <p>As the name indicates, the platform data may vary depending on the
 operating system, but it always includes the current directory (key
@@ -7591,7 +7591,7 @@ virtual function. For instance, <code>GtkApplication</code> adds startup notific
 data in this way.</p>
 
 <p>To parse commandline arguments you may handle the
-<code>GApplication</code>::command-line signal or override the local_command_line()
+<code>GApplication::command</code>-line signal or override the <code>local_command_line()</code>
 vfunc, to parse them in either the primary instance or the local instance,
 respectively.</p>
 
@@ -7637,7 +7637,7 @@ For type-safe access, use the generated, typed pointer <code>application_ptr</co
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L821">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L819">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7678,7 +7678,7 @@ For type-safe access, use the generated, typed pointer <code>application_ptr</co
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L826-L827">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L824-L825">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7708,7 +7708,7 @@ For type-safe access, use the generated, typed pointer <code>application_ptr</co
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L830-L832">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L828-L830">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7739,7 +7739,7 @@ For type-safe access, use the generated, typed pointer <code>application_ptr</co
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L836-L838">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L834-L836">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7770,7 +7770,7 @@ For type-safe access, use the generated, typed pointer <code>application_ptr</co
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L842-L844">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L840-L842">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7801,7 +7801,7 @@ For type-safe access, use the generated, typed pointer <code>application_ptr</co
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L848-L850">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L846-L848">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7832,7 +7832,7 @@ For type-safe access, use the generated, typed pointer <code>application_ptr</co
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L854-L856">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L852-L854">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7863,7 +7863,7 @@ For type-safe access, use the generated, typed pointer <code>application_ptr</co
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L860-L862">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L858-L860">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7881,11 +7881,11 @@ For type-safe access, use the generated, typed pointer <code>application_ptr</co
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <pre class="highlight swift"><code><span class="kt">Creates</span> <span class="n">a</span> <span class="k">new</span> <span class="err">`</span><span class="kt">GApplication</span><span class="err">`</span> <span class="n">instance</span><span class="o">.</span>
+                        <pre class="highlight swift"><code><span class="kt">Creates</span> <span class="n">a</span> <span class="k">new</span> <span class="p">`</span><span class="nv">GApplication</span><span class="p">`</span> <span class="n">instance</span><span class="o">.</span>
 </code></pre>
 
 <p>If non-<code>nil</code>, the application id must be valid.  See
-g_application_id_is_valid().</p>
+<code>g_application_id_is_valid()</code>.</p>
 
 <p>If no application ID is given then some features of <code>GApplication</code>
 (most notably application uniqueness) will be disabled.</p>
@@ -7900,7 +7900,7 @@ g_application_id_is_valid().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L871-L874">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L869-L872">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7922,7 +7922,7 @@ g_application_id_is_valid().</p>
 
 <p>Normally there is only one <code>GApplication</code> per process and it becomes
 the default when it is created.  You can exercise more control over
-this by using g_application_set_default().</p>
+this by using <code>g_application_set_default()</code>.</p>
 
 <p>If there is no default application then <code>nil</code> is returned.</p>
 
@@ -7936,7 +7936,7 @@ this by using g_application_set_default().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L882-L885">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-AppInfoMonitor-BufferedInputStream.swift#L880-L883">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7949,7 +7949,7 @@ this by using g_application_set_default().</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

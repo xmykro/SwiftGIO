@@ -7493,11 +7493,11 @@ Use <code>FileMonitorRef</code> only as an <code>unowned</code> reference to an 
 <p>Monitors a file or directory for changes.</p>
 
 <p>To obtain a <code>GFileMonitor</code> for a file or directory, use
-g_file_monitor(), g_file_monitor_file(), or
-g_file_monitor_directory().</p>
+<code>g_file_monitor()</code>, <code>g_file_monitor_file()</code>, or
+<code>g_file_monitor_directory()</code>.</p>
 
 <p>To get informed about changes to the file or directory you are
-monitoring, connect to the <code>GFileMonitor</code>::changed signal. The
+monitoring, connect to the <code>GFileMonitor::changed</code> signal. The
 signal will be emitted in the
 [thread-default main context][g-main-context-push-thread-default]
 of the thread that the monitor was created in
@@ -7538,7 +7538,7 @@ For type-safe access, use the generated, typed pointer <code>file_monitor_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1851">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1847">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7579,7 +7579,7 @@ For type-safe access, use the generated, typed pointer <code>file_monitor_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1856-L1857">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1852-L1853">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7609,7 +7609,7 @@ For type-safe access, use the generated, typed pointer <code>file_monitor_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1860-L1862">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1856-L1858">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7640,7 +7640,7 @@ For type-safe access, use the generated, typed pointer <code>file_monitor_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1866-L1868">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1862-L1864">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7671,7 +7671,7 @@ For type-safe access, use the generated, typed pointer <code>file_monitor_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1872-L1874">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1868-L1870">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7702,7 +7702,7 @@ For type-safe access, use the generated, typed pointer <code>file_monitor_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1878-L1880">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1874-L1876">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7733,7 +7733,7 @@ For type-safe access, use the generated, typed pointer <code>file_monitor_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1884-L1886">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1880-L1882">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7764,7 +7764,7 @@ For type-safe access, use the generated, typed pointer <code>file_monitor_ptr</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1890-L1892">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1886-L1888">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7777,7 +7777,7 @@ For type-safe access, use the generated, typed pointer <code>file_monitor_ptr</c
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

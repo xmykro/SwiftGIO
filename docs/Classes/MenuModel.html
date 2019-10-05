@@ -7507,7 +7507,7 @@ in which it is used).</p>
 
 <p>As an example, consider the visible portions of this menu:</p>
 
-<p>`<code>An example menu</code> {<code>menu</code>-example}</p>
+<p>&ldquo;<code>An example menu</code> {<code>menu</code>-example}</p>
 
 <p><img src="menu-example.png" alt=""></p>
 
@@ -7530,7 +7530,7 @@ these 8 menus. Each large block in the figure represents a menu and the
 smaller blocks within the large block represent items in that menu. Some
 items contain references to other menus.</p>
 
-<p>`<code>A menu example</code> {<code>menu</code>-model}</p>
+<p>&rdquo;<code>A menu example</code> {<code>menu</code>-model}</p>
 
 <p><img src="menu-model.png" alt=""></p>
 
@@ -7553,8 +7553,8 @@ make use of the exported information are <code>GDBusActionGroup</code> and
 <code>GDBusMenuModel</code>.</p>
 
 <p>The API of <code>GMenuModel</code> is very generic, with iterators for the
-attributes and links of an item, see g_menu_model_iterate_item_attributes()
-and g_menu_model_iterate_item_links(). The &lsquo;standard&rsquo; attributes and
+attributes and links of an item, see <code>g_menu_model_iterate_item_attributes()</code>
+and <code>g_menu_model_iterate_item_links()</code>. The &lsquo;standard&rsquo; attributes and
 link types have predefined names: <code>G_MENU_ATTRIBUTE_LABEL</code>,
 <code>G_MENU_ATTRIBUTE_ACTION</code>, <code>G_MENU_ATTRIBUTE_TARGET</code>, <code>G_MENU_LINK_SECTION</code>
 and <code>G_MENU_LINK_SUBMENU</code>.</p>
@@ -7563,7 +7563,7 @@ and <code>G_MENU_LINK_SUBMENU</code>.</p>
 an action that can get activated when the user interacts with the
 menu item. The reference to the action is encoded by the string id
 in the <code>G_MENU_ATTRIBUTE_ACTION</code> attribute. An action id uniquely
-identifies an action in an action group. Which action group(s) provide
+identifies an action in an action group. Which action <code>group(s)</code> provide
 actions depends on the context in which the menu model is used.
 E.g. when the model is exported as the application menu of a
 <code>GtkApplication</code>, actions can be application-wide or window-specific
@@ -7585,7 +7585,7 @@ A stateless action typically corresponds to an ordinary menu item.
 
 Selecting such a menu item will activate the action (with no parameter).
 
-``` Boolean State
+```` Boolean State
 
 An action with a boolean state will most typically be used with a "toggle"
 or "switch" menu item. The state can be set directly, but activating the
@@ -7594,7 +7594,7 @@ action (with no parameter) results in the state being toggled.
 Selecting a toggle menu item will activate the action. The menu item should
 be rendered as "checked" when the state is true.
 
-``` String Parameter and State
+```` String Parameter and State
 
 Actions with string parameters and state will most typically be used to
 represent an enumerated choice over the items available for a group of
@@ -7641,7 +7641,7 @@ Ownership is transferred to the <code>MenuModel</code> instance.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2769-L2771">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2759-L2761">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7667,12 +7667,12 @@ Will retain <code>GMenuModel</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/MenuModelProtocol.html">MenuModelProtocol</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/MenuModelProtocol.html">MenuModelProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2775-L2778">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2765-L2768">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7698,12 +7698,12 @@ Will retain <code>GMenuModel</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2782-L2784">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2772-L2774">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7729,12 +7729,12 @@ Will retain <code>GMenuModel</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2788-L2790">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2778-L2780">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7760,12 +7760,12 @@ Will retain <code>GMenuModel</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2794-L2796">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2784-L2786">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7791,12 +7791,12 @@ Will retain <code>GMenuModel</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2800-L2802">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2790-L2792">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7809,7 +7809,7 @@ Will retain <code>GMenuModel</code>.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

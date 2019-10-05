@@ -7492,7 +7492,7 @@ Use <code>UnixInputStreamRef</code> only as an <code>unowned</code> reference to
 
 <p><code>GUnixInputStream</code> implements <code>GInputStream</code> for reading from a UNIX
 file descriptor, including asynchronous operations. (If the file
-descriptor refers to a socket or pipe, this will use poll() to do
+descriptor refers to a socket or pipe, this will use <code>poll()</code> to do
 asynchronous I/O. If it refers to a regular file, it will fall back
 to doing asynchronous I/O in another thread.)</p>
 
@@ -7533,7 +7533,7 @@ For type-safe access, use the generated, typed pointer <code>unix_input_stream_p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L1064">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L1061">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7574,7 +7574,7 @@ For type-safe access, use the generated, typed pointer <code>unix_input_stream_p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L1069-L1070">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L1066-L1067">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7604,7 +7604,7 @@ For type-safe access, use the generated, typed pointer <code>unix_input_stream_p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L1073-L1075">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L1070-L1072">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7635,7 +7635,7 @@ For type-safe access, use the generated, typed pointer <code>unix_input_stream_p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L1079-L1081">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L1076-L1078">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7666,7 +7666,7 @@ For type-safe access, use the generated, typed pointer <code>unix_input_stream_p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L1085-L1087">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L1082-L1084">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7697,7 +7697,7 @@ For type-safe access, use the generated, typed pointer <code>unix_input_stream_p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L1091-L1093">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L1088-L1090">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7728,7 +7728,7 @@ For type-safe access, use the generated, typed pointer <code>unix_input_stream_p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L1097-L1099">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L1094-L1096">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7759,7 +7759,7 @@ For type-safe access, use the generated, typed pointer <code>unix_input_stream_p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L1103-L1105">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L1100-L1102">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7777,7 +7777,7 @@ For type-safe access, use the generated, typed pointer <code>unix_input_stream_p
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <pre class="highlight swift"><code><span class="kt">Creates</span> <span class="n">a</span> <span class="k">new</span> <span class="err">`</span><span class="kt">GUnixInputStream</span><span class="err">`</span> <span class="k">for</span> <span class="n">the</span> <span class="n">given</span> <span class="err">`</span><span class="n">fd</span><span class="err">`</span><span class="o">.</span>
+                        <pre class="highlight swift"><code><span class="kt">Creates</span> <span class="n">a</span> <span class="k">new</span> <span class="p">`</span><span class="nv">GUnixInputStream</span><span class="p">`</span> <span class="k">for</span> <span class="n">the</span> <span class="n">given</span> <span class="p">`</span><span class="nv">fd</span><span class="p">`</span><span class="o">.</span>
 </code></pre>
 
 <p>If <code>close_fd</code> is <code>true</code>, the file descriptor will be closed
@@ -7793,7 +7793,7 @@ when the stream is closed.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L1111-L1114">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-UnixCredentialsMessage-Vfs.swift#L1108-L1111">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7806,7 +7806,7 @@ when the stream is closed.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

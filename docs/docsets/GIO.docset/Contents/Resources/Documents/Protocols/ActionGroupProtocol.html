@@ -7499,17 +7499,17 @@ representation data for displaying the actions to the user, e.g. in
 a menu.</p>
 
 <p>The main way to interact with the actions in a GActionGroup is to
-activate them with g_action_group_activate_action(). Activating an
+activate them with <code>g_action_group_activate_action()</code>. Activating an
 action may require a <code>GVariant</code> parameter. The required type of the
-parameter can be inquired with g_action_group_get_action_parameter_type().
-Actions may be disabled, see g_action_group_get_action_enabled().
+parameter can be inquired with <code>g_action_group_get_action_parameter_type()</code>.
+Actions may be disabled, see <code>g_action_group_get_action_enabled()</code>.
 Activating a disabled action has no effect.</p>
 
 <p>Actions may optionally have a state in the form of a <code>GVariant</code>. The
 current state of an action can be inquired with
-g_action_group_get_action_state(). Activating a stateful action may
+<code>g_action_group_get_action_state()</code>. Activating a stateful action may
 change its state, but it is also possible to set the state by calling
-g_action_group_change_action_state().</p>
+<code>g_action_group_change_action_state()</code>.</p>
 
 <p>As typical example, consider a text editing application which has an
 option to change the current font to &lsquo;bold&rsquo;. A good way to represent
@@ -7517,7 +7517,7 @@ this would be a stateful action, with a boolean state. Activating the
 action would toggle the state.</p>
 
 <p>Each action in the group has a unique name (which is a string).  All
-method calls, except g_action_group_list_actions() take the name of
+method calls, except <code>g_action_group_list_actions()</code> take the name of
 an action as an argument.</p>
 
 <p>The <code>GActionGroup</code> API is meant to be the &lsquo;public&rsquo; API to the action
@@ -7525,17 +7525,17 @@ group.  The calls here are exactly the interaction that &lsquo;external
 forces&rsquo; (eg: UI, incoming D-Bus messages, etc.) are supposed to have
 with actions.  &lsquo;Internal&rsquo; APIs (ie: ones meant only to be accessed by
 the action group implementation) are found on subclasses.  This is
-why you will find - for example - g_action_group_get_action_enabled()
-but not an equivalent set() call.</p>
+why you will find - for example - <code>g_action_group_get_action_enabled()</code>
+but not an equivalent <code>set()</code> call.</p>
 
 <p>Signals are emitted on the action group in response to state changes
 on individual actions.</p>
 
 <p>Implementations of <code>GActionGroup</code> should provide implementations for
-the virtual functions g_action_group_list_actions() and
-g_action_group_query_action().  The other virtual functions should
+the virtual functions <code>g_action_group_list_actions()</code> and
+<code>g_action_group_query_action()</code>.  The other virtual functions should
 not be implemented - their <q>wrappers</q> are actually implemented with
-calls to g_action_group_query_action().</p>
+calls to <code>g_action_group_query_action()</code>.</p>
 
           </div>
         </section>
@@ -7731,7 +7731,7 @@ calls to g_action_group_query_action().</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Emits the <code>GActionGroup</code>::action-added signal on <code>action_group</code>.</p>
+                        <p>Emits the <code>GActionGroup::action</code>-added signal on <code>action_group</code>.</p>
 
 <p>This function should only be called by <code>GActionGroup</code> implementations.</p>
 
@@ -7766,7 +7766,7 @@ calls to g_action_group_query_action().</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Emits the <code>GActionGroup</code>::action-enabled-changed signal on <code>action_group</code>.</p>
+                        <p>Emits the <code>GActionGroup::action</code>-enabled-changed signal on <code>action_group</code>.</p>
 
 <p>This function should only be called by <code>GActionGroup</code> implementations.</p>
 
@@ -7801,7 +7801,7 @@ calls to g_action_group_query_action().</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Emits the <code>GActionGroup</code>::action-removed signal on <code>action_group</code>.</p>
+                        <p>Emits the <code>GActionGroup::action</code>-removed signal on <code>action_group</code>.</p>
 
 <p>This function should only be called by <code>GActionGroup</code> implementations.</p>
 
@@ -7836,7 +7836,7 @@ calls to g_action_group_query_action().</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Emits the <code>GActionGroup</code>::action-state-changed signal on <code>action_group</code>.</p>
+                        <p>Emits the <code>GActionGroup::action</code>-state-changed signal on <code>action_group</code>.</p>
 
 <p>This function should only be called by <code>GActionGroup</code> implementations.</p>
 
@@ -7876,7 +7876,7 @@ calls to g_action_group_query_action().</p>
 <p>If the action is expecting a parameter, then the correct type of
 parameter must be given as <code>parameter</code>.  If the action is expecting no
 parameters then <code>parameter</code> must be <code>nil</code>.  See
-g_action_group_get_action_parameter_type().</p>
+<code>g_action_group_get_action_parameter_type()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7913,11 +7913,11 @@ g_action_group_get_action_parameter_type().</p>
 changed to <code>value</code>.</p>
 
 <p>The action must be stateful and <code>value</code> must be of the correct type.
-See g_action_group_get_action_state_type().</p>
+See <code>g_action_group_get_action_state_type()</code>.</p>
 
 <p>This call merely requests a change.  The action may refuse to change
 its state or may change its state to something other than <code>value</code>.
-See g_action_group_get_action_state_hint().</p>
+See <code>g_action_group_get_action_state_hint()</code>.</p>
 
 <p>If the <code>value</code> GVariant is floating, it is consumed.</p>
 
@@ -7991,7 +7991,7 @@ have its state changed from outside callers.</p>
                         <p>Queries the type of the parameter that must be given when activating
 the named action within <code>action_group</code>.</p>
 
-<p>When activating the action using g_action_group_activate_action(),
+<p>When activating the action using <code>g_action_group_activate_action()</code>,
 the <code>GVariant</code> given to that function must be of the type returned
 by this function.</p>
 
@@ -8037,10 +8037,10 @@ with the same name but a different parameter type.</p>
 
 <p>If the action is not stateful then <code>nil</code> will be returned.  If the
 action is stateful then the type of the return value is the type
-given by g_action_group_get_action_state_type().</p>
+given by <code>g_action_group_get_action_state_type()</code>.</p>
 
 <p>The return value (if non-<code>nil</code>) should be freed with
-g_variant_unref() when it is no longer required.</p>
+<code>g_variant_unref()</code> when it is no longer required.</p>
 
                       </div>
                       <div class="declaration">
@@ -8090,7 +8090,7 @@ have a state value outside of the hinted range and setting a value
 within the range may fail.</p>
 
 <p>The return value (if non-<code>nil</code>) should be freed with
-g_variant_unref() when it is no longer required.</p>
+<code>g_variant_unref()</code> when it is no longer required.</p>
 
                       </div>
                       <div class="declaration">
@@ -8128,13 +8128,13 @@ g_variant_unref() when it is no longer required.</p>
 
 <p>If the action is stateful then this function returns the
 <code>GVariantType</code> of the state.  All calls to
-g_action_group_change_action_state() must give a <code>GVariant</code> of this
-type and g_action_group_get_action_state() will return a <code>GVariant</code>
+<code>g_action_group_change_action_state()</code> must give a <code>GVariant</code> of this
+type and <code>g_action_group_get_action_state()</code> will return a <code>GVariant</code>
 of the same type.</p>
 
 <p>If the action is not stateful then this function will return <code>nil</code>.
-In that case, g_action_group_get_action_state() will return <code>nil</code>
-and you must not call g_action_group_change_action_state().</p>
+In that case, <code>g_action_group_get_action_state()</code> will return <code>nil</code>
+and you must not call <code>g_action_group_change_action_state()</code>.</p>
 
 <p>The state type of a particular action will never change but it is
 possible for an action to be removed and for a new action to be added
@@ -8171,7 +8171,7 @@ with the same name but a different state type.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Checks if the named action exists within <code>action_group</code>.</p>
+                        <p>Checks if the named action exists within <code>action_group.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8206,7 +8206,7 @@ with the same name but a different state type.</p>
                       <div class="abstract">
                         <p>Lists the actions contained within <code>action_group</code>.</p>
 
-<p>The caller is responsible for freeing the list with g_strfreev() when
+<p>The caller is responsible for freeing the list with <code>g_strfreev()</code> when
 it is no longer required.</p>
 
                       </div>
@@ -8243,11 +8243,11 @@ it is no longer required.</p>
                         <p>Queries all aspects of the named action within an <code>action_group</code>.</p>
 
 <p>This function acquires the information available from
-g_action_group_has_action(), g_action_group_get_action_enabled(),
-g_action_group_get_action_parameter_type(),
-g_action_group_get_action_state_type(),
-g_action_group_get_action_state_hint() and
-g_action_group_get_action_state() with a single function call.</p>
+<code>g_action_group_has_action()</code>, <code>g_action_group_get_action_enabled()</code>,
+<code>g_action_group_get_action_parameter_type()</code>,
+<code>g_action_group_get_action_state_type()</code>,
+<code>g_action_group_get_action_state_hint()</code> and
+<code>g_action_group_get_action_state()</code> with a single function call.</p>
 
 <p>This provides two main benefits.</p>
 
@@ -8291,7 +8291,7 @@ fields may or may not have been modified.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

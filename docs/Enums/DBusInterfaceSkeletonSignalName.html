@@ -7514,7 +7514,7 @@ determine if the method call is authorized.</p>
 <p>Note that this signal is emitted in a thread dedicated to
 handling the method call so handlers are allowed to perform
 blocking IO. This means that it is appropriate to call e.g.
-<a href="http://hal.freedesktop.org/docs/polkit/PolkitAuthority.html%60polkit%60-authority-check-authorization-sync">polkit_authority_check_authorization_sync()</a>
+<code>[polkit_authority_check_authorization_sync()</code>](<a href="http://hal.freedesktop.org/docs/polkit/PolkitAuthority.html%60polkit%60-authority-check-authorization-sync">http://hal.freedesktop.org/docs/polkit/PolkitAuthority.html`polkit`-authority-check-authorization-sync</a>)
 with the
 <a href="http://hal.freedesktop.org/docs/polkit/PolkitAuthority.html%60POLKIT%60-CHECK-AUTHORIZATION-FLAGS-ALLOW-USER-INTERACTION:CAPS">POLKIT_CHECK_AUTHORIZATION_FLAGS_ALLOW_USER_INTERACTION</a>
 flag set.</p>
@@ -7522,12 +7522,12 @@ flag set.</p>
 <p>If <code>false</code> is returned then no further handlers are run and the
 signal handler must take a reference to <code>invocation</code> and finish
 handling the call (e.g. return an error via
-g_dbus_method_invocation_return_error()).</p>
+<code>g_dbus_method_invocation_return_error()</code>).</p>
 
 <p>Otherwise, if <code>true</code> is returned, signal emission continues. If no
 handlers return <code>false</code>, then the method is dispatched. If
 <code>interface</code> has an enclosing <code>GDBusObjectSkeleton</code>, then the
-<code>GDBusObjectSkeleton</code>::authorize-method signal handlers run before
+<code>GDBusObjectSkeleton::authorize</code>-method signal handlers run before
 the handlers for this signal.</p>
 
 <p>The default class handler just returns <code>true</code>.</p>
@@ -7535,7 +7535,7 @@ the handlers for this signal.</p>
 <p>Please note that the common case is optimized: if no signals
 handlers are connected and the default class handler isn&rsquo;t
 overridden (for both <code>interface</code> and the enclosing
-<code>GDBusObjectSkeleton</code>, if any) and <code>GDBusInterfaceSkeleton</code>:g-flags does
+<code>GDBusObjectSkeleton</code>, if any) and <code>GDBusInterfaceSkeleton:g</code>-flags does
 not have the
 <code>G_DBUS_INTERFACE_SKELETON_FLAGS_HANDLE_METHOD_INVOCATIONS_IN_THREAD</code>
 flags set, no dedicated thread is ever used and the call will be
@@ -7552,7 +7552,7 @@ to was exported in.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L2246">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L2239">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7571,20 +7571,20 @@ to was exported in.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The notify signal is emitted on an object when one of its properties has
-its value set through g_object_set_property(), g_object_set(), et al.</p>
+its value set through <code>g_object_set_property()</code>, <code>g_object_set()</code>, et al.</p>
 
 <p>Note that getting this signal doesn’t itself guarantee that the value of
 the property has actually changed. When it is emitted is determined by the
 derived GObject class. If the implementor did not create the property with
-<code>G_PARAM_EXPLICIT_NOTIFY</code>, then any call to g_object_set_property() results
-in ::notify being emitted, even if the new value is the same as the old.
+<code>G_PARAM_EXPLICIT_NOTIFY</code>, then any call to <code>g_object_set_property()</code> results
+in <code>notify</code> being emitted, even if the new value is the same as the old.
 If they did pass <code>G_PARAM_EXPLICIT_NOTIFY</code>, then this signal is emitted only
-when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+when they explicitly call <code>g_object_notify()</code> or <code>g_object_notify_by_pspec()</code>,
 and common practice is to do that only when the value has actually changed.</p>
 
 <p>This signal is typically used to obtain change notification for a
 single property, by specifying the property name as a detail in the
-g_signal_connect() call, like this:
+<code>g_signal_connect()</code> call, like this:
 (C Language Example):</p>
 <pre class="highlight plaintext"><code>g_signal_connect (text_view-&gt;buffer, "notify::paste-target-list",
                   G_CALLBACK (gtk_text_view_target_list_notify),
@@ -7605,7 +7605,7 @@ detail strings for the notify signal.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L2272">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L2264">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7635,7 +7635,7 @@ detail strings for the notify signal.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L2274">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-DBusAuthObserver-Emblem.swift#L2266">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7648,7 +7648,7 @@ detail strings for the notify signal.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

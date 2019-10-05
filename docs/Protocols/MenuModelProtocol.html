@@ -7508,7 +7508,7 @@ in which it is used).</p>
 
 <p>As an example, consider the visible portions of this menu:</p>
 
-<p>`<code>An example menu</code> {<code>menu</code>-example}</p>
+<p>&ldquo;<code>An example menu</code> {<code>menu</code>-example}</p>
 
 <p><img src="menu-example.png" alt=""></p>
 
@@ -7531,7 +7531,7 @@ these 8 menus. Each large block in the figure represents a menu and the
 smaller blocks within the large block represent items in that menu. Some
 items contain references to other menus.</p>
 
-<p>`<code>A menu example</code> {<code>menu</code>-model}</p>
+<p>&rdquo;<code>A menu example</code> {<code>menu</code>-model}</p>
 
 <p><img src="menu-model.png" alt=""></p>
 
@@ -7554,8 +7554,8 @@ make use of the exported information are <code>GDBusActionGroup</code> and
 <code>GDBusMenuModel</code>.</p>
 
 <p>The API of <code>GMenuModel</code> is very generic, with iterators for the
-attributes and links of an item, see g_menu_model_iterate_item_attributes()
-and g_menu_model_iterate_item_links(). The &lsquo;standard&rsquo; attributes and
+attributes and links of an item, see <code>g_menu_model_iterate_item_attributes()</code>
+and <code>g_menu_model_iterate_item_links()</code>. The &lsquo;standard&rsquo; attributes and
 link types have predefined names: <code>G_MENU_ATTRIBUTE_LABEL</code>,
 <code>G_MENU_ATTRIBUTE_ACTION</code>, <code>G_MENU_ATTRIBUTE_TARGET</code>, <code>G_MENU_LINK_SECTION</code>
 and <code>G_MENU_LINK_SUBMENU</code>.</p>
@@ -7564,7 +7564,7 @@ and <code>G_MENU_LINK_SUBMENU</code>.</p>
 an action that can get activated when the user interacts with the
 menu item. The reference to the action is encoded by the string id
 in the <code>G_MENU_ATTRIBUTE_ACTION</code> attribute. An action id uniquely
-identifies an action in an action group. Which action group(s) provide
+identifies an action in an action group. Which action <code>group(s)</code> provide
 actions depends on the context in which the menu model is used.
 E.g. when the model is exported as the application menu of a
 <code>GtkApplication</code>, actions can be application-wide or window-specific
@@ -7586,7 +7586,7 @@ A stateless action typically corresponds to an ordinary menu item.
 
 Selecting such a menu item will activate the action (with no parameter).
 
-``` Boolean State
+```` Boolean State
 
 An action with a boolean state will most typically be used with a "toggle"
 or "switch" menu item. The state can be set directly, but activating the
@@ -7595,7 +7595,7 @@ action (with no parameter) results in the state being toggled.
 Selecting a toggle menu item will activate the action. The menu item should
 be rendered as "checked" when the state is true.
 
-``` String Parameter and State
+```` String Parameter and State
 
 Actions with string parameters and state will most typically be used to
 represent an enumerated choice over the items available for a group of
@@ -7641,7 +7641,7 @@ target value of the menu item.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2478">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2468">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7679,7 +7679,7 @@ target value of the menu item.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2481">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2471">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7771,7 +7771,7 @@ target value of the menu item.
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2867-L2886">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2856-L2875">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7825,7 +7825,7 @@ then <code>nil</code> is returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2908-L2911">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2897-L2900">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7862,7 +7862,7 @@ does not exist, <code>nil</code> is returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2918-L2921">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2907-L2910">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7883,7 +7883,7 @@ does not exist, <code>nil</code> is returned.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Query the number of items in <code>model</code>.</p>
+                        <p>Query the number of items in <code>model.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7895,7 +7895,7 @@ does not exist, <code>nil</code> is returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2924-L2927">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2913-L2916">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7916,7 +7916,7 @@ does not exist, <code>nil</code> is returned.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Requests emission of the <code>GMenuModel</code>::items-changed signal on <code>model</code>.</p>
+                        <p>Requests emission of the <code>GMenuModel::items</code>-changed signal on <code>model</code>.</p>
 
 <p>This function should never be called except by <code>GMenuModel</code>
 subclasses.  Any other calls to this function will very likely lead
@@ -7942,7 +7942,7 @@ user code is running without returning to the mainloop.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2944-L2947">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2933-L2936">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7966,7 +7966,7 @@ user code is running without returning to the mainloop.</p>
                         <p>Creates a <code>GMenuAttributeIter</code> to iterate over the attributes of
 the item at position <code>item_index</code> in <code>model</code>.</p>
 
-<p>You must free the iterator with g_object_unref() when you are done.</p>
+<p>You must free the iterator with <code>g_object_unref()</code> when you are done.</p>
 
                       </div>
                       <div class="declaration">
@@ -7978,7 +7978,7 @@ the item at position <code>item_index</code> in <code>model</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2953-L2956">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2942-L2945">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8002,7 +8002,7 @@ the item at position <code>item_index</code> in <code>model</code>.</p>
                         <p>Creates a <code>GMenuLinkIter</code> to iterate over the links of the item at
 position <code>item_index</code> in <code>model</code>.</p>
 
-<p>You must free the iterator with g_object_unref() when you are done.</p>
+<p>You must free the iterator with <code>g_object_unref()</code> when you are done.</p>
 
                       </div>
                       <div class="declaration">
@@ -8014,7 +8014,7 @@ position <code>item_index</code> in <code>model</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2962-L2965">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2951-L2954">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8037,7 +8037,7 @@ position <code>item_index</code> in <code>model</code>.</p>
                       <div class="abstract">
                         <p>Queries if <code>model</code> is mutable.</p>
 
-<p>An immutable <code>GMenuModel</code> will never emit the <code>GMenuModel</code>::items-changed
+<p>An immutable <code>GMenuModel</code> will never emit the <code>GMenuModel::items</code>-changed
 signal. Consumers of the model may make optimisations accordingly.</p>
 
                       </div>
@@ -8050,7 +8050,7 @@ signal. Consumers of the model may make optimisations accordingly.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2970-L2979">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2959-L2968">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8071,7 +8071,7 @@ signal. Consumers of the model may make optimisations accordingly.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Query the number of items in <code>model</code>.</p>
+                        <p>Query the number of items in <code>model.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8083,7 +8083,7 @@ signal. Consumers of the model may make optimisations accordingly.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2982-L2988">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-MemoryInputStream-NativeSocketAddress.swift#L2971-L2977">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8096,7 +8096,7 @@ signal. Consumers of the model may make optimisations accordingly.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

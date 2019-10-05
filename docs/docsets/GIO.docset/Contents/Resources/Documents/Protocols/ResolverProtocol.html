@@ -7492,9 +7492,9 @@ For a concrete class that implements these methods and properties, see <code><a 
 Alternatively, use <code><a href="../Structs/ResolverRef.html">ResolverRef</a></code> as a lighweight, <code>unowned</code> reference if you already have an instance you just want to use.</p>
 
 <p><code>GResolver</code> provides cancellable synchronous and asynchronous DNS
-resolution, for hostnames (g_resolver_lookup_by_address(),
-g_resolver_lookup_by_name() and their async variants) and SRV
-(service) records (g_resolver_lookup_service()).</p>
+resolution, for hostnames (<code>g_resolver_lookup_by_address()</code>,
+<code>g_resolver_lookup_by_name()</code> and their async variants) and SRV
+(service) records (<code>g_resolver_lookup_service()</code>).</p>
 
 <p><code>GNetworkAddress</code> and <code>GNetworkService</code> provide wrappers around
 <code>GResolver</code> functionality that also implement <code>GSocketConnectable</code>,
@@ -7532,7 +7532,7 @@ making it easy to connect to a remote host/service.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1120">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1117">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7570,7 +7570,7 @@ making it easy to connect to a remote host/service.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1123">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1120">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7662,7 +7662,7 @@ making it easy to connect to a remote host/service.</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1295-L1314">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1291-L1310">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7702,7 +7702,7 @@ a value from <code>GResolverError</code>.</p>
 
 <p>If <code>cancellable</code> is non-<code>nil</code>, it can be used to cancel the
 operation, in which case <code>error</code> (if non-<code>nil</code>) will be set to
-<code>G_IO_ERROR_CANCELLED</code>.</p>
+<code>G_IO_ERROR_CANCELLED.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7714,7 +7714,7 @@ operation, in which case <code>error</code> (if non-<code>nil</code>) will be se
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1330-L1337">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1326-L1333">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7737,7 +7737,7 @@ operation, in which case <code>error</code> (if non-<code>nil</code>) will be se
                       <div class="abstract">
                         <p>Begins asynchronously reverse-resolving <code>address</code> to determine its
 associated hostname, and eventually calls <code>callback</code>, which must
-call g_resolver_lookup_by_address_finish() to get the final result.</p>
+call <code>g_resolver_lookup_by_address_finish()</code> to get the final result.</p>
 
                       </div>
                       <div class="declaration">
@@ -7749,7 +7749,7 @@ call g_resolver_lookup_by_address_finish() to get the final result.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1342-L1345">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1338-L1341">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7771,11 +7771,11 @@ call g_resolver_lookup_by_address_finish() to get the final result.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Retrieves the result of a previous call to
-g_resolver_lookup_by_address_async().</p>
+<code>g_resolver_lookup_by_address_async()</code>.</p>
 
 <p>If the DNS resolution failed, <code>error</code> (if non-<code>nil</code>) will be set to
 a value from <code>GResolverError</code>. If the operation was cancelled,
-<code>error</code> will be set to <code>G_IO_ERROR_CANCELLED</code>.</p>
+<code>error</code> will be set to <code>G_IO_ERROR_CANCELLED.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7787,7 +7787,7 @@ a value from <code>GResolverError</code>. If the operation was cancelled,
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1353-L1360">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1349-L1356">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7809,17 +7809,17 @@ a value from <code>GResolverError</code>. If the operation was cancelled,
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Synchronously resolves <code>hostname</code> to determine its associated IP
-address(es). <code>hostname</code> may be an ASCII-only or UTF-8 hostname, or
+<code>address(es)</code>. <code>hostname</code> may be an ASCII-only or UTF-8 hostname, or
 the textual form of an IP address (in which case this just becomes
-a wrapper around g_inet_address_new_from_string()).</p>
+a wrapper around <code>g_inet_address_new_from_string()</code>).</p>
 
-<p>On success, g_resolver_lookup_by_name() will return a non-empty <code>GList</code> of
+<p>On success, <code>g_resolver_lookup_by_name()</code> will return a non-empty <code>GList</code> of
 <code>GInetAddress</code>, sorted in order of preference and guaranteed to not
 contain duplicates. That is, if using the result to connect to
 <code>hostname</code>, you should attempt to connect to the first address
 first, then the second if the first fails, etc. If you are using
 the result to listen on a socket, it is appropriate to add each
-result using e.g. g_socket_listener_add_address().</p>
+result using e.g. <code>g_socket_listener_add_address()</code>.</p>
 
 <p>If the DNS resolution fails, <code>error</code> (if non-<code>nil</code>) will be set to a
 value from <code>GResolverError</code> and <code>nil</code> will be returned.</p>
@@ -7842,7 +7842,7 @@ address, it may be easier to create a <code>GNetworkAddress</code> and use its
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1385-L1392">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1381-L1388">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7864,9 +7864,9 @@ address, it may be easier to create a <code>GNetworkAddress</code> and use its
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Begins asynchronously resolving <code>hostname</code> to determine its
-associated IP address(es), and eventually calls <code>callback</code>, which
-must call g_resolver_lookup_by_name_finish() to get the result.
-See g_resolver_lookup_by_name() for more details.</p>
+associated IP <code>address(es)</code>, and eventually calls <code>callback</code>, which
+must call <code>g_resolver_lookup_by_name_finish()</code> to get the result.
+See <code>g_resolver_lookup_by_name()</code> for more details.</p>
 
                       </div>
                       <div class="declaration">
@@ -7878,7 +7878,7 @@ See g_resolver_lookup_by_name() for more details.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1398-L1401">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1394-L1397">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7900,11 +7900,11 @@ See g_resolver_lookup_by_name() for more details.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Retrieves the result of a call to
-g_resolver_lookup_by_name_async().</p>
+<code>g_resolver_lookup_by_name_async()</code>.</p>
 
 <p>If the DNS resolution failed, <code>error</code> (if non-<code>nil</code>) will be set to
 a value from <code>GResolverError</code>. If the operation was cancelled,
-<code>error</code> will be set to <code>G_IO_ERROR_CANCELLED</code>.</p>
+<code>error</code> will be set to <code>G_IO_ERROR_CANCELLED.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7916,7 +7916,7 @@ a value from <code>GResolverError</code>. If the operation was cancelled,
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1409-L1416">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1405-L1412">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7937,9 +7937,9 @@ a value from <code>GResolverError</code>. If the operation was cancelled,
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This differs from g_resolver_lookup_by_name() in that you can modify
+                        <p>This differs from <code>g_resolver_lookup_by_name()</code> in that you can modify
 the lookup behavior with <code>flags</code>. For example this can be used to limit
-results with <code>G_RESOLVER_NAME_LOOKUP_FLAGS_IPV4_ONLY</code>.</p>
+results with <code>G_RESOLVER_NAME_LOOKUP_FLAGS_IPV4_ONLY.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7951,7 +7951,7 @@ results with <code>G_RESOLVER_NAME_LOOKUP_FLAGS_IPV4_ONLY</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1421-L1428">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1417-L1424">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7973,9 +7973,9 @@ results with <code>G_RESOLVER_NAME_LOOKUP_FLAGS_IPV4_ONLY</code>.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Begins asynchronously resolving <code>hostname</code> to determine its
-associated IP address(es), and eventually calls <code>callback</code>, which
-must call g_resolver_lookup_by_name_with_flags_finish() to get the result.
-See g_resolver_lookup_by_name() for more details.</p>
+associated IP <code>address(es)</code>, and eventually calls <code>callback</code>, which
+must call <code>g_resolver_lookup_by_name_with_flags_finish()</code> to get the result.
+See <code>g_resolver_lookup_by_name()</code> for more details.</p>
 
                       </div>
                       <div class="declaration">
@@ -7987,7 +7987,7 @@ See g_resolver_lookup_by_name() for more details.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1434-L1437">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1430-L1433">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8009,11 +8009,11 @@ See g_resolver_lookup_by_name() for more details.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Retrieves the result of a call to
-g_resolver_lookup_by_name_with_flags_async().</p>
+<code>g_resolver_lookup_by_name_with_flags_async()</code>.</p>
 
 <p>If the DNS resolution failed, <code>error</code> (if non-<code>nil</code>) will be set to
 a value from <code>GResolverError</code>. If the operation was cancelled,
-<code>error</code> will be set to <code>G_IO_ERROR_CANCELLED</code>.</p>
+<code>error</code> will be set to <code>G_IO_ERROR_CANCELLED.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8025,7 +8025,7 @@ a value from <code>GResolverError</code>. If the operation was cancelled,
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1445-L1452">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1441-L1448">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8055,7 +8055,7 @@ a value from <code>GResolverError</code> and <code>nil</code> will be returned.<
 
 <p>If <code>cancellable</code> is non-<code>nil</code>, it can be used to cancel the
 operation, in which case <code>error</code> (if non-<code>nil</code>) will be set to
-<code>G_IO_ERROR_CANCELLED</code>.</p>
+<code>G_IO_ERROR_CANCELLED.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8067,7 +8067,7 @@ operation, in which case <code>error</code> (if non-<code>nil</code>) will be se
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1464-L1471">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1460-L1467">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8090,8 +8090,8 @@ operation, in which case <code>error</code> (if non-<code>nil</code>) will be se
                       <div class="abstract">
                         <p>Begins asynchronously performing a DNS lookup for the given
 <code>rrname</code>, and eventually calls <code>callback</code>, which must call
-g_resolver_lookup_records_finish() to get the final result. See
-g_resolver_lookup_records() for more details.</p>
+<code>g_resolver_lookup_records_finish()</code> to get the final result. See
+<code>g_resolver_lookup_records()</code> for more details.</p>
 
                       </div>
                       <div class="declaration">
@@ -8103,7 +8103,7 @@ g_resolver_lookup_records() for more details.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1477-L1480">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1473-L1476">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8125,13 +8125,13 @@ g_resolver_lookup_records() for more details.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Retrieves the result of a previous call to
-g_resolver_lookup_records_async(). Returns a non-empty list of records as
+<code>g_resolver_lookup_records_async()</code>. Returns a non-empty list of records as
 <code>GVariant</code> tuples. See <code>GResolverRecordType</code> for information on what the
 records contain.</p>
 
 <p>If the DNS resolution failed, <code>error</code> (if non-<code>nil</code>) will be set to
 a value from <code>GResolverError</code>. If the operation was cancelled,
-<code>error</code> will be set to <code>G_IO_ERROR_CANCELLED</code>.</p>
+<code>error</code> will be set to <code>G_IO_ERROR_CANCELLED.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8143,7 +8143,7 @@ a value from <code>GResolverError</code>. If the operation was cancelled,
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1490-L1497">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1486-L1493">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8170,7 +8170,7 @@ a value from <code>GResolverError</code>. If the operation was cancelled,
 <code>service</code> and <code>protocol</code> arguments do not include the leading underscore
 that appears in the actual DNS entry.</p>
 
-<p>On success, g_resolver_lookup_service() will return a non-empty <code>GList</code> of
+<p>On success, <code>g_resolver_lookup_service()</code> will return a non-empty <code>GList</code> of
 <code>GSrvTarget</code>, sorted in order of preference. (That is, you should
 attempt to connect to the first target first, then the second if
 the first fails, etc.)</p>
@@ -8196,7 +8196,7 @@ interface.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1520-L1527">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1516-L1523">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8219,8 +8219,8 @@ interface.</p>
                       <div class="abstract">
                         <p>Begins asynchronously performing a DNS SRV lookup for the given
 <code>service</code> and <code>protocol</code> in the given <code>domain</code>, and eventually calls
-<code>callback</code>, which must call g_resolver_lookup_service_finish() to
-get the final result. See g_resolver_lookup_service() for more
+<code>callback</code>, which must call <code>g_resolver_lookup_service_finish()</code> to
+get the final result. See <code>g_resolver_lookup_service()</code> for more
 details.</p>
 
                       </div>
@@ -8233,7 +8233,7 @@ details.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1534-L1537">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1530-L1533">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8255,11 +8255,11 @@ details.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Retrieves the result of a previous call to
-g_resolver_lookup_service_async().</p>
+<code>g_resolver_lookup_service_async()</code>.</p>
 
 <p>If the DNS resolution failed, <code>error</code> (if non-<code>nil</code>) will be set to
 a value from <code>GResolverError</code>. If the operation was cancelled,
-<code>error</code> will be set to <code>G_IO_ERROR_CANCELLED</code>.</p>
+<code>error</code> will be set to <code>G_IO_ERROR_CANCELLED.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8271,7 +8271,7 @@ a value from <code>GResolverError</code>. If the operation was cancelled,
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1545-L1552">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1541-L1548">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8294,7 +8294,7 @@ a value from <code>GResolverError</code>. If the operation was cancelled,
                       <div class="abstract">
                         <p>Sets <code>resolver</code> to be the application&rsquo;s default resolver (reffing
 <code>resolver</code>, and unreffing the previous default resolver, if any).
-Future calls to g_resolver_get_default() will return this resolver.</p>
+Future calls to <code>g_resolver_get_default()</code> will return this resolver.</p>
 
 <p>This can be used if an application wants to perform any sort of DNS
 caching or <q>pinning</q>; it can implement its own <code>GResolver</code> that
@@ -8312,7 +8312,7 @@ itself as the default resolver for all later code to use.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1563-L1566">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L1559-L1562">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8325,7 +8325,7 @@ itself as the default resolver for all later code to use.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

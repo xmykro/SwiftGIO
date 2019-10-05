@@ -7501,9 +7501,9 @@ use it directly, but rather through classes like <code>GSocketClient</code>,
 direct use of <code>GSocket</code> is useful.</p>
 
 <p><code>GSocket</code> implements the <code>GInitable</code> interface, so if it is manually constructed
-by e.g. g_object_new() you must call g_initable_init() and check the
+by e.g. <code>g_object_new()</code> you must call <code>g_initable_init()</code> and check the
 results before using the object. This is done automatically in
-g_socket_new() and g_socket_new_from_fd(), so these functions can return
+<code>g_socket_new()</code> and <code>g_socket_new_from_fd()</code>, so these functions can return
 <code>nil</code>.</p>
 
 <p>Sockets operate in two general modes, blocking or non-blocking. When
@@ -7511,8 +7511,8 @@ in blocking mode all operations (which don’t take an explicit blocking
 parameter) block until the requested operation
 is finished or there is an error. In non-blocking mode all calls that
 would block return immediately with a <code>G_IO_ERROR_WOULD_BLOCK</code> error.
-To know when a call would successfully run you can call g_socket_condition_check(),
-or g_socket_condition_wait(). You can also use g_socket_create_source() and
+To know when a call would successfully run you can call <code>g_socket_condition_check()</code>,
+or <code>g_socket_condition_wait()</code>. You can also use <code>g_socket_create_source()</code> and
 attach it to a <code>GMainContext</code> to get callbacks when I/O is possible.
 Note that all sockets are always set to non blocking mode in the system, and
 blocking mode is emulated in GSocket.</p>
@@ -7575,7 +7575,7 @@ Ownership is transferred to the <code>Socket</code> instance.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L5361-L5363">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L5313-L5315">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7601,12 +7601,12 @@ Will retain <code>GSocket</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/SocketProtocol.html">SocketProtocol</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/SocketProtocol.html">SocketProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L5367-L5370">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L5319-L5322">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7632,12 +7632,12 @@ Will retain <code>GSocket</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L5374-L5376">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L5326-L5328">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7663,12 +7663,12 @@ Will retain <code>GSocket</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L5380-L5382">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L5332-L5334">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7694,12 +7694,12 @@ Will retain <code>GSocket</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L5386-L5388">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L5338-L5340">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7725,12 +7725,12 @@ Will retain <code>GSocket</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L5392-L5394">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L5344-L5346">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7767,12 +7767,12 @@ know the protocol number used for it.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">family</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO12SocketFamilya">SocketFamily</a></span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO10SocketTypea">SocketType</a></span><span class="p">,</span> <span class="nv">protocol_</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO15Socket_Protocola">Socket_Protocol</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">family</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO12SocketFamilya">SocketFamily</a></span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO10SocketTypea">SocketType</a></span><span class="p">,</span> <span class="nv">protocol_</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO15Socket_Protocola">Socket_Protocol</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L5409-L5416">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L5361-L5368">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7809,12 +7809,12 @@ descriptor.  Instead, a GError will be set with code <code>G_IO_ERROR_FAILED</co
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">fd</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">fd</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L5431-L5438">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L5383-L5390">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7856,7 +7856,7 @@ descriptor.  Instead, a GError will be set with code <code>G_IO_ERROR_FAILED</co
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L5453-L5460">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L5405-L5412">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7869,7 +7869,7 @@ descriptor.  Instead, a GError will be set with code <code>G_IO_ERROR_FAILED</co
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

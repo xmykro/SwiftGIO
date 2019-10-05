@@ -7493,10 +7493,10 @@ Use <code>ProxyAddressEnumeratorRef</code> only as an <code>unowned</code> refer
 <p><code>GProxyAddressEnumerator</code> is a wrapper around <code>GSocketAddressEnumerator</code> which
 takes the <code>GSocketAddress</code> instances returned by the <code>GSocketAddressEnumerator</code>
 and wraps them in <code>GProxyAddress</code> instances, using the given
-<code>GProxyAddressEnumerator</code>:proxy-resolver.</p>
+<code>GProxyAddressEnumerator:proxy</code>-resolver.</p>
 
 <p>This enumerator will be returned (for example, by
-g_socket_connectable_enumerate()) as appropriate when a proxy is configured;
+<code>g_socket_connectable_enumerate()</code>) as appropriate when a proxy is configured;
 there should be no need to manually wrap a <code>GSocketAddressEnumerator</code> instance
 with one.</p>
 
@@ -7533,7 +7533,7 @@ For type-safe access, use the generated, typed pointer <code>proxy_address_enume
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L885">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L883">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7574,7 +7574,7 @@ For type-safe access, use the generated, typed pointer <code>proxy_address_enume
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L890-L891">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L888-L889">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7604,7 +7604,7 @@ For type-safe access, use the generated, typed pointer <code>proxy_address_enume
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L894-L896">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L892-L894">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7635,7 +7635,7 @@ For type-safe access, use the generated, typed pointer <code>proxy_address_enume
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L900-L902">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L898-L900">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7666,7 +7666,7 @@ For type-safe access, use the generated, typed pointer <code>proxy_address_enume
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L906-L908">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L904-L906">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7697,7 +7697,7 @@ For type-safe access, use the generated, typed pointer <code>proxy_address_enume
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L912-L914">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L910-L912">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7728,7 +7728,7 @@ For type-safe access, use the generated, typed pointer <code>proxy_address_enume
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L918-L920">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L916-L918">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7759,7 +7759,7 @@ For type-safe access, use the generated, typed pointer <code>proxy_address_enume
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L924-L926">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-PropertyAction-Resolver.swift#L922-L924">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7772,7 +7772,7 @@ For type-safe access, use the generated, typed pointer <code>proxy_address_enume
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

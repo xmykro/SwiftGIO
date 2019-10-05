@@ -7516,10 +7516,10 @@ activating the action, this signal is not emitted.</p>
 
 <p>Since GLib 2.40, if no handler is connected to this signal then the
 default behaviour for boolean-stated actions with a <code>nil</code> parameter
-type is to toggle them via the <code>GSimpleAction</code>::change-state signal.
+type is to toggle them via the <code>GSimpleAction::change</code>-state signal.
 For stateful actions where the state type is equal to the parameter
 type, the default is to forward them directly to
-<code>GSimpleAction</code>::change-state.  This should allow almost all users
+<code>GSimpleAction::change</code>-state.  This should allow almost all users
 of <code>GSimpleAction</code> to connect only one handler or the other.</p>
 
                       </div>
@@ -7532,7 +7532,7 @@ of <code>GSimpleAction</code> to connect only one handler or the other.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2721">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2680">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7554,15 +7554,15 @@ of <code>GSimpleAction</code> to connect only one handler or the other.</p>
 state.</p>
 
 <p><code>value</code> will always be of the correct state type, i.e. the type of the
-initial state passed to g_simple_action_new_stateful(). If an incorrect
+initial state passed to <code>g_simple_action_new_stateful()</code>. If an incorrect
 type is given when requesting to change the state, this signal is not
 emitted.</p>
 
 <p>If no handler is connected to this signal then the default
-behaviour is to call g_simple_action_set_state() to set the state
+behaviour is to call <code>g_simple_action_set_state()</code> to set the state
 to the requested value. If you connect a signal handler then no
 default action is taken. If the state should change then you must
-call g_simple_action_set_state() from the handler.</p>
+call <code>g_simple_action_set_state()</code> from the handler.</p>
 
 <p>An example of a &lsquo;change-state&rsquo; handler:
 (C Language Example):</p>
@@ -7594,7 +7594,7 @@ It could set it to any value at all, or take some other action.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2757">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2715">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7613,20 +7613,20 @@ It could set it to any value at all, or take some other action.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The notify signal is emitted on an object when one of its properties has
-its value set through g_object_set_property(), g_object_set(), et al.</p>
+its value set through <code>g_object_set_property()</code>, <code>g_object_set()</code>, et al.</p>
 
 <p>Note that getting this signal doesn’t itself guarantee that the value of
 the property has actually changed. When it is emitted is determined by the
 derived GObject class. If the implementor did not create the property with
-<code>G_PARAM_EXPLICIT_NOTIFY</code>, then any call to g_object_set_property() results
-in ::notify being emitted, even if the new value is the same as the old.
+<code>G_PARAM_EXPLICIT_NOTIFY</code>, then any call to <code>g_object_set_property()</code> results
+in <code>notify</code> being emitted, even if the new value is the same as the old.
 If they did pass <code>G_PARAM_EXPLICIT_NOTIFY</code>, then this signal is emitted only
-when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+when they explicitly call <code>g_object_notify()</code> or <code>g_object_notify_by_pspec()</code>,
 and common practice is to do that only when the value has actually changed.</p>
 
 <p>This signal is typically used to obtain change notification for a
 single property, by specifying the property name as a detail in the
-g_signal_connect() call, like this:
+<code>g_signal_connect()</code> call, like this:
 (C Language Example):</p>
 <pre class="highlight plaintext"><code>g_signal_connect (text_view-&gt;buffer, "notify::paste-target-list",
                   G_CALLBACK (gtk_text_view_target_list_notify),
@@ -7647,7 +7647,7 @@ detail strings for the notify signal.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2783">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2740">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7667,8 +7667,8 @@ detail strings for the notify signal.</p>
                       <div class="abstract">
                         <p>If <code>action</code> is currently enabled.</p>
 
-<p>If the action is disabled then calls to g_action_activate() and
-g_action_change_state() have no effect.</p>
+<p>If the action is disabled then calls to <code>g_action_activate()</code> and
+<code>g_action_change_state()</code> have no effect.</p>
 
                       </div>
                       <div class="declaration">
@@ -7680,7 +7680,7 @@ g_action_change_state() have no effect.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2788">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2745">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7699,7 +7699,7 @@ g_action_change_state() have no effect.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The name of the action. This is mostly meaningful for identifying
-the action once it has been added to a <code>GSimpleActionGroup</code>.</p>
+the action once it has been added to a <code>GSimpleActionGroup.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7711,7 +7711,7 @@ the action once it has been added to a <code>GSimpleActionGroup</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2791">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2748">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7742,7 +7742,7 @@ action.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2794">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2751">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7772,7 +7772,7 @@ action.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2796">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2753">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7803,7 +7803,7 @@ action is stateless.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2799">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L2756">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7816,7 +7816,7 @@ action is stateless.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

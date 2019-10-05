@@ -7503,7 +7503,7 @@ race-free API for sending UNIX signals to a subprocess.</p>
 
 <p>One major advantage that GIO brings over the core GLib library is
 comprehensive API for asynchronous I/O, such
-g_output_stream_splice_async().  This makes GSubprocess
+<code>g_output_stream_splice_async()</code>.  This makes GSubprocess
 significantly more powerful and flexible than equivalent APIs in
 some other languages such as the <code>subprocess.py</code>
 included with Python.  For example, using <code>GSubprocess</code> one could
@@ -7511,20 +7511,20 @@ create two child processes, reading standard output from the first,
 processing it, and writing to the input stream of the second, all
 without blocking the main loop.</p>
 
-<p>A powerful g_subprocess_communicate() API is provided similar to the
+<p>A powerful <code>g_subprocess_communicate()</code> API is provided similar to the
 <code>communicate()</code> method of <code>subprocess.py</code>. This enables very easy
 interaction with a subprocess that has been opened with pipes.</p>
 
 <p><code>GSubprocess</code> defaults to tight control over the file descriptors open
 in the child process, avoiding dangling-fd issues that are caused by
-a simple fork()/exec().  The only open file descriptors in the
+a simple <code>fork()</code><code>/exec()</code>.  The only open file descriptors in the
 spawned process are ones that were explicitly specified by the
 <code>GSubprocess</code> API (unless <code>G_SUBPROCESS_FLAGS_INHERIT_FDS</code> was
 specified).</p>
 
 <p><code>GSubprocess</code> will quickly reap all child processes as they exit,
 avoiding <q>zombie processes</q> remaining around for long periods of
-time.  g_subprocess_wait() can be used to wait for this to happen,
+time.  <code>g_subprocess_wait()</code> can be used to wait for this to happen,
 but it will happen even without the call being explicitly made.</p>
 
 <p>As a matter of principle, <code>GSubprocess</code> has no API that accepts
@@ -7534,15 +7534,15 @@ not contain a directory separator in their name.</p>
 
 <p><code>GSubprocess</code> attempts to have a very simple API for most uses (ie:
 spawning a subprocess with arguments and support for most typical
-kinds of input and output redirection).  See g_subprocess_new(). The
+kinds of input and output redirection).  See <code>g_subprocess_new()</code>. The
 <code>GSubprocessLauncher</code> API is provided for more complicated cases
 (advanced types of redirection, environment variable manipulation,
 change of working directory, child setup functions, etc).</p>
 
 <p>A typical use of <code>GSubprocess</code> will involve calling
-g_subprocess_new(), followed by g_subprocess_wait_async() or
-g_subprocess_wait().  After the process exits, the status can be
-checked using functions such as g_subprocess_get_if_exited() (which
+<code>g_subprocess_new()</code>, followed by <code>g_subprocess_wait_async()</code> or
+<code>g_subprocess_wait()</code>.  After the process exits, the status can be
+checked using functions such as <code>g_subprocess_get_if_exited()</code> (which
 are similar to the familiar WIFEXITED-style POSIX macros).</p>
 
           </div>
@@ -7578,7 +7578,7 @@ Ownership is transferred to the <code>Subprocess</code> instance.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10155-L10157">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10099-L10101">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7604,12 +7604,12 @@ Will retain <code>GSubprocess</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/SubprocessProtocol.html">SubprocessProtocol</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/SubprocessProtocol.html">SubprocessProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10161-L10164">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10105-L10108">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7635,12 +7635,12 @@ Will retain <code>GSubprocess</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10168-L10170">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10112-L10114">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7666,12 +7666,12 @@ Will retain <code>GSubprocess</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10174-L10176">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10118-L10120">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7697,12 +7697,12 @@ Will retain <code>GSubprocess</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10180-L10182">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10124-L10126">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7728,12 +7728,12 @@ Will retain <code>GSubprocess</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10186-L10188">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10130-L10132">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7760,12 +7760,12 @@ Will retain <code>GSubprocess</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">argv</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;&gt;</span><span class="p">,</span> <span class="nv">flags</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO15SubprocessFlagsa">SubprocessFlags</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">argv</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;&gt;</span><span class="p">,</span> <span class="nv">flags</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:3GIO15SubprocessFlagsa">SubprocessFlags</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10197-L10204">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10141-L10148">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7797,7 +7797,7 @@ Will retain <code>GSubprocess</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10209-L10216">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-Settings-Task.swift#L10153-L10160">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7810,7 +7810,7 @@ Will retain <code>GSubprocess</code>.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

@@ -7497,9 +7497,9 @@ content from a file.</p>
 <p>GFileInputStream implements <code>GSeekable</code>, which allows the input
 stream to jump to arbitrary positions in the file, provided the
 filesystem of the file allows it. To find the position of a file
-input stream, use g_seekable_tell(). To find out if a file input
-stream supports seeking, use g_seekable_can_seek().
-To position a file input stream, use g_seekable_seek().</p>
+input stream, use <code>g_seekable_tell()</code>. To find out if a file input
+stream supports seeking, use <code>g_seekable_can_seek()</code>.
+To position a file input stream, use <code>g_seekable_seek()</code>.</p>
 
           </div>
         </section>
@@ -7533,7 +7533,7 @@ To position a file input stream, use g_seekable_seek().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1572">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1569">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7571,7 +7571,7 @@ To position a file input stream, use g_seekable_seek().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1575">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1572">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7663,7 +7663,7 @@ To position a file input stream, use g_seekable_seek().</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1732-L1751">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1728-L1747">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7697,9 +7697,9 @@ To position a file input stream, use g_seekable_seek().</p>
                       <div class="abstract">
                         <p>Queries a file input stream the given <code>attributes</code>. This function blocks
 while querying the stream. For the asynchronous (non-blocking) version
-of this function, see g_file_input_stream_query_info_async(). While the
+of this function, see <code>g_file_input_stream_query_info_async()</code>. While the
 stream is blocked, the stream will set the pending flag internally, and
-any other operations on the stream will fail with <code>G_IO_ERROR_PENDING</code>.</p>
+any other operations on the stream will fail with <code>G_IO_ERROR_PENDING.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7711,7 +7711,7 @@ any other operations on the stream will fail with <code>G_IO_ERROR_PENDING</code
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1763-L1770">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1759-L1766">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7734,11 +7734,11 @@ any other operations on the stream will fail with <code>G_IO_ERROR_PENDING</code
                       <div class="abstract">
                         <p>Queries the stream information asynchronously.
 When the operation is finished <code>callback</code> will be called.
-You can then call g_file_input_stream_query_info_finish()
+You can then call <code>g_file_input_stream_query_info_finish()</code>
 to get the result of the operation.</p>
 
 <p>For the synchronous version of this function,
-see g_file_input_stream_query_info().</p>
+see <code>g_file_input_stream_query_info()</code>.</p>
 
 <p>If <code>cancellable</code> is not <code>nil</code>, then the operation can be cancelled by
 triggering the cancellable object from another thread. If the operation
@@ -7754,7 +7754,7 @@ was cancelled, the error <code>G_IO_ERROR_CANCELLED</code> will be set</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1783-L1786">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1779-L1782">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7787,7 +7787,7 @@ was cancelled, the error <code>G_IO_ERROR_CANCELLED</code> will be set</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1789-L1796">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1785-L1792">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7800,7 +7800,7 @@ was cancelled, the error <code>G_IO_ERROR_CANCELLED</code> will be set</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

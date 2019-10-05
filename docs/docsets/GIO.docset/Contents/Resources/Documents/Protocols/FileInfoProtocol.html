@@ -7498,19 +7498,19 @@ contain, and allows for manipulation of extended attributes.</p>
 <p>See [GFileAttribute][gio-GFileAttribute] for more information on how
 GIO handles file attributes.</p>
 
-<p>To obtain a <code>GFileInfo</code> for a <code>GFile</code>, use g_file_query_info() (or its
+<p>To obtain a <code>GFileInfo</code> for a <code>GFile</code>, use <code>g_file_query_info()</code> (or its
 async variant). To obtain a <code>GFileInfo</code> for a file input or output
-stream, use g_file_input_stream_query_info() or
-g_file_output_stream_query_info() (or their async variants).</p>
+stream, use <code>g_file_input_stream_query_info()</code> or
+<code>g_file_output_stream_query_info()</code> (or their async variants).</p>
 
 <p>To change the actual attributes of a file, you should then set the
-attribute in the <code>GFileInfo</code> and call g_file_set_attributes_from_info()
-or g_file_set_attributes_async() on a GFile.</p>
+attribute in the <code>GFileInfo</code> and call <code>g_file_set_attributes_from_info()</code>
+or <code>g_file_set_attributes_async()</code> on a GFile.</p>
 
 <p>However, not all attributes can be changed in the file. For instance,
-the actual size of a file cannot be changed via g_file_info_set_size().
-You may call g_file_query_settable_attributes() and
-g_file_query_writable_namespaces() to discover the settable attributes
+the actual size of a file cannot be changed via <code>g_file_info_set_size()</code>.
+You may call <code>g_file_query_settable_attributes()</code> and
+<code>g_file_query_writable_namespaces()</code> to discover the settable attributes
 of a particular file at runtime.</p>
 
 <p><code>GFileAttributeMatcher</code> allows for searching through a <code>GFileInfo</code> for
@@ -7548,7 +7548,7 @@ attributes.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L657">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L655">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7586,7 +7586,7 @@ attributes.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L660">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L658">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7678,7 +7678,7 @@ attributes.</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L857-L876">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L854-L873">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7710,7 +7710,7 @@ attributes.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Clears the status information from <code>info</code>.</p>
+                        <p>Clears the status information from <code>info.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7722,7 +7722,7 @@ attributes.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L884-L887">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L881-L884">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7744,7 +7744,7 @@ attributes.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>First clears all of the [GFileAttribute][gio-GFileAttribute] of <code>dest_info</code>,
-and then copies all of the file attributes from <code>src_info</code> to <code>dest_info</code>.</p>
+and then copies all of the file attributes from <code>src_info</code> to <code>dest_info.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -7756,7 +7756,7 @@ and then copies all of the file attributes from <code>src_info</code> to <code>d
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L891-L894">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L888-L891">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7789,7 +7789,7 @@ and then copies all of the file attributes from <code>src_info</code> to <code>d
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L897-L900">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L894-L897">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7824,7 +7824,7 @@ UTF-8.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L905-L908">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L902-L905">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7858,7 +7858,7 @@ contain a boolean value, <code>false</code> will be returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L912-L915">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L909-L912">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7892,7 +7892,7 @@ not contain a byte string, <code>nil</code> will be returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L919-L922">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L916-L919">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7925,7 +7925,7 @@ not contain a byte string, <code>nil</code> will be returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L925-L928">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L922-L925">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7960,7 +7960,7 @@ attribute does not contain a signed 32-bit integer, or is invalid,
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L933-L936">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L930-L933">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -7995,7 +7995,7 @@ attribute does not contain an signed 64-bit integer, or is invalid,
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L941-L944">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L938-L941">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8029,7 +8029,7 @@ not contain a <code>GObject</code>, <code>nil</code> will be returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L948-L951">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L945-L948">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8062,7 +8062,7 @@ not contain a <code>GObject</code>, <code>nil</code> will be returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L954-L957">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L951-L954">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8096,7 +8096,7 @@ not contain a string, <code>nil</code> will be returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L961-L964">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L958-L961">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8130,7 +8130,7 @@ not contain a stringv, <code>nil</code> will be returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L968-L971">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L965-L968">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8163,7 +8163,7 @@ not contain a stringv, <code>nil</code> will be returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L974-L977">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L971-L974">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8198,7 +8198,7 @@ attribute does not contain an unsigned 32-bit integer, or is invalid,
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L982-L985">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L979-L982">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8233,7 +8233,7 @@ attribute does not contain an unsigned 64-bit integer, or is invalid,
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L990-L993">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L987-L990">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8266,7 +8266,7 @@ attribute does not contain an unsigned 64-bit integer, or is invalid,
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L996-L999">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L993-L996">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8301,7 +8301,7 @@ G_FILE_ATTRIBUTE_TRASH_DELETION_DATE attribute is unset, <code>nil</code> is ret
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1004-L1007">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1001-L1004">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8334,7 +8334,7 @@ G_FILE_ATTRIBUTE_TRASH_DELETION_DATE attribute is unset, <code>nil</code> is ret
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1010-L1013">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1007-L1010">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8367,7 +8367,7 @@ G_FILE_ATTRIBUTE_TRASH_DELETION_DATE attribute is unset, <code>nil</code> is ret
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1016-L1019">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1013-L1016">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8389,7 +8389,7 @@ G_FILE_ATTRIBUTE_TRASH_DELETION_DATE attribute is unset, <code>nil</code> is ret
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the [entity tag][gfile-etag] for a given
-<code>GFileInfo</code>. See <code>G_FILE_ATTRIBUTE_ETAG_VALUE</code>.</p>
+<code>GFileInfo</code>. See <code>G_FILE_ATTRIBUTE_ETAG_VALUE.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8401,7 +8401,7 @@ G_FILE_ATTRIBUTE_TRASH_DELETION_DATE attribute is unset, <code>nil</code> is ret
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1023-L1026">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1020-L1023">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8423,7 +8423,7 @@ G_FILE_ATTRIBUTE_TRASH_DELETION_DATE attribute is unset, <code>nil</code> is ret
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets a file&rsquo;s type (whether it is a regular file, symlink, etc).
-This is different from the file&rsquo;s content type, see g_file_info_get_content_type().</p>
+This is different from the file&rsquo;s content type, see <code>g_file_info_get_content_type()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8435,7 +8435,7 @@ This is different from the file&rsquo;s content type, see g_file_info_get_conten
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1030-L1033">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1027-L1030">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8468,7 +8468,7 @@ This is different from the file&rsquo;s content type, see g_file_info_get_conten
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1036-L1039">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1033-L1036">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8501,7 +8501,7 @@ This is different from the file&rsquo;s content type, see g_file_info_get_conten
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1042-L1045">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1039-L1042">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8534,7 +8534,7 @@ This is different from the file&rsquo;s content type, see g_file_info_get_conten
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1048-L1051">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1045-L1048">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8567,7 +8567,7 @@ This is different from the file&rsquo;s content type, see g_file_info_get_conten
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1054-L1057">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1051-L1054">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8589,7 +8589,7 @@ This is different from the file&rsquo;s content type, see g_file_info_get_conten
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the modification time of the current <code>info</code> and returns it as a
-<code>GDateTime</code>.</p>
+<code>GDateTime.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8601,7 +8601,7 @@ This is different from the file&rsquo;s content type, see g_file_info_get_conten
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1061-L1064">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1058-L1061">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8623,7 +8623,7 @@ This is different from the file&rsquo;s content type, see g_file_info_get_conten
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the modification time of the current <code>info</code> and sets it
-in <code>result</code>.</p>
+in <code>result.</code></p>
 
 <p><strong>get_modification_time is deprecated:</strong>
 Use g_file_info_get_modification_date_time() instead, as
@@ -8634,13 +8634,13 @@ Use g_file_info_get_modification_date_time() instead, as
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">func</span> <span class="nf">getModificationTime</span><span class="p">(</span><span class="nv">result</span><span class="p">:</span> <span class="kt">TimeValProtocol</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1072-L1075">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1069-L1072">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8673,7 +8673,7 @@ Use g_file_info_get_modification_date_time() instead, as
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1078-L1081">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1075-L1078">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8706,7 +8706,7 @@ Use g_file_info_get_modification_date_time() instead, as
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1084-L1087">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1081-L1084">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8728,7 +8728,7 @@ Use g_file_info_get_modification_date_time() instead, as
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the value of the sort_order attribute from the <code>GFileInfo</code>.
-See <code>G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER</code>.</p>
+See <code>G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8740,7 +8740,7 @@ See <code>G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1091-L1094">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1088-L1091">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8773,7 +8773,7 @@ See <code>G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1097-L1100">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1094-L1097">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8794,7 +8794,7 @@ See <code>G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER</code>.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the symlink target for a given <code>GFileInfo</code>.</p>
+                        <p>Gets the symlink target for a given <code>GFileInfo.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8806,7 +8806,7 @@ See <code>G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1103-L1106">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1100-L1103">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8827,7 +8827,7 @@ See <code>G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER</code>.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Checks if a file info structure has an attribute named <code>attribute</code>.</p>
+                        <p>Checks if a file info structure has an attribute named <code>attribute.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8839,7 +8839,7 @@ See <code>G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1109-L1112">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1106-L1109">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8861,7 +8861,7 @@ See <code>G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER</code>.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Checks if a file info structure has an attribute in the
-specified <code>name_space</code>.</p>
+specified <code>name_space.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8873,7 +8873,7 @@ specified <code>name_space</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1116-L1119">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1113-L1116">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8906,7 +8906,7 @@ specified <code>name_space</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1122-L1125">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1119-L1122">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8939,7 +8939,7 @@ specified <code>name_space</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1128-L1131">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1125-L1128">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -8961,7 +8961,7 @@ specified <code>name_space</code>.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Sets the <code>attribute</code> to contain the given value, if possible. To unset the
-attribute, use <code>G_FILE_ATTRIBUTE_TYPE_INVALID</code> for <code>type</code>.</p>
+attribute, use <code>G_FILE_ATTRIBUTE_TYPE_INVALID</code> for <code>type.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -8973,7 +8973,7 @@ attribute, use <code>G_FILE_ATTRIBUTE_TYPE_INVALID</code> for <code>type</code>.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1135-L1138">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1132-L1135">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9007,7 +9007,7 @@ if possible.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1142-L1145">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1139-L1142">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9041,7 +9041,7 @@ if possible.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1149-L1152">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1146-L1149">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9075,7 +9075,7 @@ if possible.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1156-L1159">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1153-L1156">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9109,7 +9109,7 @@ if possible.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1163-L1166">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1160-L1163">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9142,7 +9142,7 @@ if possible.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1169-L1172">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1166-L1169">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9176,7 +9176,7 @@ if possible.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1176-L1179">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1173-L1176">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9198,7 +9198,7 @@ if possible.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Sets the attribute status for an attribute key. This is only
-needed by external code that implement g_file_set_attributes_from_info()
+needed by external code that implement <code>g_file_set_attributes_from_info()</code>
 or similar functions.</p>
 
 <p>The attribute must exist in <code>info</code> for this to work. Otherwise <code>false</code>
@@ -9214,7 +9214,7 @@ is returned and <code>info</code> is unchanged.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1187-L1190">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1184-L1187">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9248,7 +9248,7 @@ if possible.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1194-L1197">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1191-L1194">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9284,7 +9284,7 @@ if possible.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1203-L1206">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1200-L1203">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9318,7 +9318,7 @@ if possible.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1210-L1213">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1207-L1210">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9352,7 +9352,7 @@ if possible.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1217-L1220">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1214-L1217">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9374,7 +9374,7 @@ if possible.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Sets the content type attribute for a given <code>GFileInfo</code>.
-See <code>G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE</code>.</p>
+See <code>G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -9386,7 +9386,7 @@ See <code>G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1224-L1227">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1221-L1224">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9408,7 +9408,7 @@ See <code>G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE</code>.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Sets the display name for the current <code>GFileInfo</code>.
-See <code>G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME</code>.</p>
+See <code>G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -9420,7 +9420,7 @@ See <code>G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1231-L1234">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1228-L1231">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9442,7 +9442,7 @@ See <code>G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME</code>.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Sets the edit name for the current file.
-See <code>G_FILE_ATTRIBUTE_STANDARD_EDIT_NAME</code>.</p>
+See <code>G_FILE_ATTRIBUTE_STANDARD_EDIT_NAME.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -9454,7 +9454,7 @@ See <code>G_FILE_ATTRIBUTE_STANDARD_EDIT_NAME</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1238-L1241">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1235-L1238">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9476,7 +9476,7 @@ See <code>G_FILE_ATTRIBUTE_STANDARD_EDIT_NAME</code>.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Sets the file type in a <code>GFileInfo</code> to <code>type</code>.
-See <code>G_FILE_ATTRIBUTE_STANDARD_TYPE</code>.</p>
+See <code>G_FILE_ATTRIBUTE_STANDARD_TYPE.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -9488,7 +9488,7 @@ See <code>G_FILE_ATTRIBUTE_STANDARD_TYPE</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1245-L1248">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1242-L1245">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9510,7 +9510,7 @@ See <code>G_FILE_ATTRIBUTE_STANDARD_TYPE</code>.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Sets the icon for a given <code>GFileInfo</code>.
-See <code>G_FILE_ATTRIBUTE_STANDARD_ICON</code>.</p>
+See <code>G_FILE_ATTRIBUTE_STANDARD_ICON.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -9522,7 +9522,7 @@ See <code>G_FILE_ATTRIBUTE_STANDARD_ICON</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1252-L1255">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1249-L1252">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9544,7 +9544,7 @@ See <code>G_FILE_ATTRIBUTE_STANDARD_ICON</code>.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Sets the <q>is_hidden</q> attribute in a <code>GFileInfo</code> according to <code>is_hidden</code>.
-See <code>G_FILE_ATTRIBUTE_STANDARD_IS_HIDDEN</code>.</p>
+See <code>G_FILE_ATTRIBUTE_STANDARD_IS_HIDDEN.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -9556,7 +9556,7 @@ See <code>G_FILE_ATTRIBUTE_STANDARD_IS_HIDDEN</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1259-L1262">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1256-L1259">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9578,7 +9578,7 @@ See <code>G_FILE_ATTRIBUTE_STANDARD_IS_HIDDEN</code>.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Sets the <q>is_symlink</q> attribute in a <code>GFileInfo</code> according to <code>is_symlink</code>.
-See <code>G_FILE_ATTRIBUTE_STANDARD_IS_SYMLINK</code>.</p>
+See <code>G_FILE_ATTRIBUTE_STANDARD_IS_SYMLINK.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -9590,7 +9590,7 @@ See <code>G_FILE_ATTRIBUTE_STANDARD_IS_SYMLINK</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1266-L1269">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1263-L1266">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9624,7 +9624,7 @@ info to the given date/time value.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1273-L1276">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1270-L1273">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9657,13 +9657,13 @@ Use g_file_info_set_modification_date_time() instead, as
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">func</span> <span class="nf">setModificationTime</span><span class="p">(</span><span class="nv">mtime</span><span class="p">:</span> <span class="kt">TimeValProtocol</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1284-L1287">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1281-L1284">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9685,7 +9685,7 @@ Use g_file_info_set_modification_date_time() instead, as
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Sets the name attribute for the current <code>GFileInfo</code>.
-See <code>G_FILE_ATTRIBUTE_STANDARD_NAME</code>.</p>
+See <code>G_FILE_ATTRIBUTE_STANDARD_NAME.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -9697,7 +9697,7 @@ See <code>G_FILE_ATTRIBUTE_STANDARD_NAME</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1291-L1294">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1288-L1291">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9731,7 +9731,7 @@ to the given size.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1298-L1301">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1295-L1298">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9753,7 +9753,7 @@ to the given size.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Sets the sort order attribute in the file info structure. See
-<code>G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER</code>.</p>
+<code>G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -9765,7 +9765,7 @@ to the given size.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1305-L1308">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1302-L1305">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9787,7 +9787,7 @@ to the given size.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Sets the symbolic icon for a given <code>GFileInfo</code>.
-See <code>G_FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON</code>.</p>
+See <code>G_FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -9799,7 +9799,7 @@ See <code>G_FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1312-L1315">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1309-L1312">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9833,7 +9833,7 @@ to the given symlink target.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1319-L1322">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1316-L1319">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9854,7 +9854,7 @@ to the given symlink target.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Unsets a mask set by g_file_info_set_attribute_mask(), if one
+                        <p>Unsets a mask set by <code>g_file_info_set_attribute_mask()</code>, if one
 is set.</p>
 
                       </div>
@@ -9867,7 +9867,7 @@ is set.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1326-L1329">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1323-L1326">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9900,7 +9900,7 @@ is set.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1331-L1342">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1328-L1339">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9935,7 +9935,7 @@ G_FILE_ATTRIBUTE_TRASH_DELETION_DATE attribute is unset, <code>nil</code> is ret
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1347-L1355">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1344-L1352">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -9968,7 +9968,7 @@ G_FILE_ATTRIBUTE_TRASH_DELETION_DATE attribute is unset, <code>nil</code> is ret
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1358-L1369">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1355-L1366">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -10001,7 +10001,7 @@ G_FILE_ATTRIBUTE_TRASH_DELETION_DATE attribute is unset, <code>nil</code> is ret
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1372-L1383">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1369-L1380">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -10023,7 +10023,7 @@ G_FILE_ATTRIBUTE_TRASH_DELETION_DATE attribute is unset, <code>nil</code> is ret
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the [entity tag][gfile-etag] for a given
-<code>GFileInfo</code>. See <code>G_FILE_ATTRIBUTE_ETAG_VALUE</code>.</p>
+<code>GFileInfo</code>. See <code>G_FILE_ATTRIBUTE_ETAG_VALUE.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -10035,7 +10035,7 @@ G_FILE_ATTRIBUTE_TRASH_DELETION_DATE attribute is unset, <code>nil</code> is ret
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1387-L1394">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1384-L1391">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -10057,7 +10057,7 @@ G_FILE_ATTRIBUTE_TRASH_DELETION_DATE attribute is unset, <code>nil</code> is ret
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets a file&rsquo;s type (whether it is a regular file, symlink, etc).
-This is different from the file&rsquo;s content type, see g_file_info_get_content_type().</p>
+This is different from the file&rsquo;s content type, see <code>g_file_info_get_content_type()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -10069,7 +10069,7 @@ This is different from the file&rsquo;s content type, see g_file_info_get_conten
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1398-L1410">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1395-L1407">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -10102,7 +10102,7 @@ This is different from the file&rsquo;s content type, see g_file_info_get_conten
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1413-L1424">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1410-L1421">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -10135,7 +10135,7 @@ This is different from the file&rsquo;s content type, see g_file_info_get_conten
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1427-L1433">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1424-L1430">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -10168,7 +10168,7 @@ This is different from the file&rsquo;s content type, see g_file_info_get_conten
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1436-L1447">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1433-L1444">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -10201,7 +10201,7 @@ This is different from the file&rsquo;s content type, see g_file_info_get_conten
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1450-L1461">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1447-L1458">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -10223,7 +10223,7 @@ This is different from the file&rsquo;s content type, see g_file_info_get_conten
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the modification time of the current <code>info</code> and returns it as a
-<code>GDateTime</code>.</p>
+<code>GDateTime.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -10235,7 +10235,7 @@ This is different from the file&rsquo;s content type, see g_file_info_get_conten
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1465-L1477">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1462-L1474">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -10268,7 +10268,7 @@ This is different from the file&rsquo;s content type, see g_file_info_get_conten
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1480-L1491">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1477-L1488">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -10301,7 +10301,7 @@ This is different from the file&rsquo;s content type, see g_file_info_get_conten
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1494-L1505">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1491-L1502">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -10323,7 +10323,7 @@ This is different from the file&rsquo;s content type, see g_file_info_get_conten
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the value of the sort_order attribute from the <code>GFileInfo</code>.
-See <code>G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER</code>.</p>
+See <code>G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -10335,7 +10335,7 @@ See <code>G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1509-L1521">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1506-L1518">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -10368,7 +10368,7 @@ See <code>G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1524-L1535">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1521-L1532">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -10389,7 +10389,7 @@ See <code>G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER</code>.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the symlink target for a given <code>GFileInfo</code>.</p>
+                        <p>Gets the symlink target for a given <code>GFileInfo.</code></p>
 
                       </div>
                       <div class="declaration">
@@ -10401,7 +10401,7 @@ See <code>G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1538-L1549">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGIO/tree/generated/Sources/GIO/Gio-2.0-FileIOStream-IOModule.swift#L1535-L1546">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -10414,7 +10414,7 @@ See <code>G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER</code>.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
