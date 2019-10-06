@@ -8214,7 +8214,7 @@ before <code>name</code> is requested from the bus.</p>
 <p>This behavior makes it very simple to write applications that wants
 to [own names][gdbus-owning-names] and export objects.
 Simply register objects to be exported in <code>bus_acquired_handler</code> and
-unregister the objects (if any) in <code>name_lost_handler.</code></p>
+unregister the objects (if any) in <code>name_lost_handler</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8245,7 +8245,7 @@ unregister the objects (if any) in <code>name_lost_handler.</code></p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Like <code>g_bus_own_name()</code> but takes a <code>GDBusConnection</code> instead of a
-<code>GBusType.</code></p>
+<code>GBusType</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8425,7 +8425,7 @@ will be <code>name_vanished_handler</code>. The reverse is also true.</p>
 to take action when a certain [name exists][gdbus-watching-names].
 Basically, the application should create object proxies in
 <code>name_appeared_handler</code> and destroy them again (if any) in
-<code>name_vanished_handler.</code></p>
+<code>name_vanished_handler</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8456,7 +8456,7 @@ Basically, the application should create object proxies in
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Like <code>g_bus_watch_name()</code> but takes a <code>GDBusConnection</code> instead of a
-<code>GBusType.</code></p>
+<code>GBusType</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8867,7 +8867,7 @@ specification for more on x-content types.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Determines if <code>type</code> is a subset of <code>supertype.</code></p>
+                        <p>Determines if <code>type</code> is a subset of <code>supertype</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -9247,7 +9247,7 @@ on the wire back to a <code>GError</code> using <code>g_dbus_error_new_for_dbus_
 <p>This function is guaranteed to return a D-Bus error name for all
 <code>GErrors</code> returned from functions handling remote method calls
 (e.g. <code>g_dbus_connection_call_finish()</code>) unless
-<code>g_dbus_error_strip_remote_error()</code> has been used on <code>error.</code></p>
+<code>g_dbus_error_strip_remote_error()</code> has been used on <code>error</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -9585,7 +9585,7 @@ returned (e.g. 0 for scalar types, the empty string for string types,
 &lsquo;/&rsquo; for object path types, the empty array for any array type and so on).</p>
 
 <p>See the <code>g_dbus_gvariant_to_gvalue()</code> function for how to convert a
-<code>GVariant</code> to a <code>GValue.</code></p>
+<code>GVariant</code> to a <code>GValue</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -9625,7 +9625,7 @@ variant, tuple, dict entry) will be converted to a <code>GValue</code> containin
 <code>GVariant</code>.</p>
 
 <p>The conversion never fails - a valid <code>GValue</code> is always returned in
-<code>out_gvalue.</code></p>
+<code>out_gvalue</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -9877,7 +9877,7 @@ are valid. See the specification of the
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Creates a new <code>GDtlsClientConnection</code> wrapping <code>base_socket</code> which is
-assumed to communicate with the server identified by <code>server_identity.</code></p>
+assumed to communicate with the server identified by <code>server_identity</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -9907,7 +9907,7 @@ assumed to communicate with the server identified by <code>server_identity.</cod
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Creates a new <code>GDtlsServerConnection</code> wrapping <code>base_socket.</code></p>
+                        <p>Creates a new <code>GDtlsServerConnection</code> wrapping <code>base_socket</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -9950,7 +9950,7 @@ to <code>main()</code>.  <code>g_win32_get_command_line()</code> will return a U
 the commandline.  <code>GApplication</code> also uses UTF-8 but
 <code>g_application_command_line_create_file_for_arg()</code> may be more useful
 for you there.  It is also always possible to use this function with
-<code>GOptionContext</code> arguments of type <code>G_OPTION_ARG_FILENAME.</code></p>
+<code>GOptionContext</code> arguments of type <code>G_OPTION_ARG_FILENAME</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -10956,7 +10956,7 @@ code between blocking and non-blocking implementations of a method.</p>
 <p>If <code>blocking</code> is <code>false</code>, then <code>stream</code> must be a
 <code>GPollableInputStream</code> for which <code>g_pollable_input_stream_can_poll()</code>
 returns <code>true</code>, or else the behavior is undefined. If <code>blocking</code> is
-<code>true</code>, then <code>stream</code> does not need to be a <code>GPollableInputStream.</code></p>
+<code>true</code>, then <code>stream</code> does not need to be a <code>GPollableInputStream</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -10995,7 +10995,7 @@ code between blocking and non-blocking implementations of a method.</p>
 <code>GPollableOutputStream</code> for which
 <code>g_pollable_output_stream_can_poll()</code> returns <code>true</code> or else the
 behavior is undefined. If <code>blocking</code> is <code>true</code>, then <code>stream</code> does not
-need to be a <code>GPollableOutputStream.</code></p>
+need to be a <code>GPollableOutputStream</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -11042,7 +11042,7 @@ into the stream before the error occurred.</p>
 <code>stream</code> must be a <code>GPollableOutputStream</code> for which
 <code>g_pollable_output_stream_can_poll()</code> returns <code>true</code> or else the
 behavior is undefined. If <code>blocking</code> is <code>true</code>, then <code>stream</code> does not
-need to be a <code>GPollableOutputStream.</code></p>
+need to be a <code>GPollableOutputStream</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -11917,7 +11917,7 @@ is returned.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Makes a copy of <code>mount_entry.</code></p>
+                        <p>Makes a copy of <code>mount_entry</code>.</p>
 
                       </div>
                       <div class="declaration">

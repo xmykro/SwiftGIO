@@ -7642,7 +7642,7 @@ have finished. The return value from the callback is ignored.</p>
 <p>Note that if you are passing the <code>user_data</code> from <code>g_io_scheduler_push_job()</code>
 on to this function you have to ensure that it is not freed before
 <code>func</code> is called, either by passing <code>nil</code> as <code>notify</code> to
-<code>g_io_scheduler_push_job()</code> or by using refcounting for <code>user_data.</code></p>
+<code>g_io_scheduler_push_job()</code> or by using refcounting for <code>user_data</code>.</p>
 
 <p><strong>send_to_mainloop_async is deprecated:</strong>
 Use g_main_context_invoke().</p>

@@ -9194,7 +9194,7 @@ RFC 3986 decodes the scheme as:</p>
 
 <p>If <code><a href="../Protocols/FileProtocol.html#/s:3GIO12FileProtocolPAAE6parentSpySo6_GFileVGSgvp">parent</a></code> is <code>nil</code> then this function returns <code>true</code> if <code>file</code> has any
 parent at all.  If <code><a href="../Protocols/FileProtocol.html#/s:3GIO12FileProtocolPAAE6parentSpySo6_GFileVGSgvp">parent</a></code> is non-<code>nil</code> then <code>true</code> is only returned
-if <code>file</code> is an immediate child of <code><a href="../Protocols/FileProtocol.html#/s:3GIO12FileProtocolPAAE6parentSpySo6_GFileVGSgvp">parent.</a></code></p>
+if <code>file</code> is an immediate child of <code><a href="../Protocols/FileProtocol.html#/s:3GIO12FileProtocolPAAE6parentSpySo6_GFileVGSgvp">parent</a></code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -9240,7 +9240,7 @@ equality, use <code>g_file_equal()</code>.</p>
 <p>This call does no I/O, as it works purely on names. As such it can
 sometimes return <code>false</code> even if <code>file</code> is inside a <code>prefix</code> (from a
 filesystem point of view), because the prefix of <code>file</code> is an alias
-of <code>prefix.</code></p>
+of <code>prefix</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -9558,7 +9558,7 @@ was cancelled, the error <code>G_IO_ERROR_CANCELLED</code> will be returned.</p>
 The contents are placed in <code>contents</code>, and <code>length</code> is set to the
 size of the <code>contents</code> string. The <code>content</code> should be freed with
 <code>g_free()</code> when no longer needed. If <code>etag_out</code> is present, it will be
-set to the new entity tag for the <code>file.</code></p>
+set to the new entity tag for the <code>file</code>.</p>
 
                       </div>
                       <div class="declaration">

@@ -7492,7 +7492,7 @@ For a concrete class that implements these methods and properties, see <code><a 
 Alternatively, use <code><a href="../Structs/DBusMessageRef.html">DBusMessageRef</a></code> as a lighweight, <code>unowned</code> reference if you already have an instance you just want to use.</p>
 
 <p>A type for representing D-Bus messages that can be sent or received
-on a <code>GDBusConnection.</code></p>
+on a <code>GDBusConnection</code>.</p>
 
           </div>
         </section>
@@ -7854,7 +7854,7 @@ and the per-process or system-wide open files limit is reached.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Convenience to get the first item in the body of <code>message.</code></p>
+                        <p>Convenience to get the first item in the body of <code>message</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7920,7 +7920,7 @@ and the per-process or system-wide open files limit is reached.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the byte order of <code>message.</code></p>
+                        <p>Gets the byte order of <code>message</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8019,7 +8019,7 @@ and the per-process or system-wide open files limit is reached.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the flags for <code>message.</code></p>
+                        <p>Gets the flags for <code>message</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8222,7 +8222,7 @@ on the <code>GDBusMessage:locked</code> property.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the type of <code>message.</code></p>
+                        <p>Gets the type of <code>message</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8387,7 +8387,7 @@ on the <code>GDBusMessage:locked</code> property.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the serial for <code>message.</code></p>
+                        <p>Gets the serial for <code>message</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8521,7 +8521,7 @@ on the <code>GDBusMessage:locked</code> property.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Creates a new <code>GDBusMessage</code> that is an error reply to <code>method_call_message.</code></p>
+                        <p>Creates a new <code>GDBusMessage</code> that is an error reply to <code>method_call_message</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8587,7 +8587,7 @@ on the <code>GDBusMessage:locked</code> property.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Creates a new <code>GDBusMessage</code> that is a reply to <code>method_call_message.</code></p>
+                        <p>Creates a new <code>GDBusMessage</code> that is a reply to <code>method_call_message</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8687,7 +8687,7 @@ looks something like this:</p>
 <code>G_DBUS_MESSAGE_HEADER_FIELD_SIGNATURE</code> header field is set to the
 type string of <code><a href="../Protocols/DBusMessageProtocol.html#/s:3GIO19DBusMessageProtocolPAAE4bodySpySo9_GVariantVGSgvp">body</a></code> (or cleared if <code><a href="../Protocols/DBusMessageProtocol.html#/s:3GIO19DBusMessageProtocolPAAE4bodySpySo9_GVariantVGSgvp">body</a></code> is <code>nil</code>).</p>
 
-<p>If <code><a href="../Protocols/DBusMessageProtocol.html#/s:3GIO19DBusMessageProtocolPAAE4bodySpySo9_GVariantVGSgvp">body</a></code> is floating, <code>message</code> assumes ownership of <code><a href="../Protocols/DBusMessageProtocol.html#/s:3GIO19DBusMessageProtocolPAAE4bodySpySo9_GVariantVGSgvp">body.</a></code></p>
+<p>If <code><a href="../Protocols/DBusMessageProtocol.html#/s:3GIO19DBusMessageProtocolPAAE4bodySpySo9_GVariantVGSgvp">body</a></code> is floating, <code>message</code> assumes ownership of <code><a href="../Protocols/DBusMessageProtocol.html#/s:3GIO19DBusMessageProtocolPAAE4bodySpySo9_GVariantVGSgvp">body</a></code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8720,7 +8720,7 @@ type string of <code><a href="../Protocols/DBusMessageProtocol.html#/s:3GIO19DBu
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Sets the byte order of <code>message.</code></p>
+                        <p>Sets the byte order of <code>message</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8819,7 +8819,7 @@ type string of <code><a href="../Protocols/DBusMessageProtocol.html#/s:3GIO19DBu
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Sets the flags to set on <code>message.</code></p>
+                        <p>Sets the flags to set on <code>message</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8854,7 +8854,7 @@ type string of <code><a href="../Protocols/DBusMessageProtocol.html#/s:3GIO19DBu
                       <div class="abstract">
                         <p>Sets a header field on <code>message</code>.</p>
 
-<p>If <code>value</code> is floating, <code>message</code> assumes ownership of <code>value.</code></p>
+<p>If <code>value</code> is floating, <code>message</code> assumes ownership of <code>value</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -8953,7 +8953,7 @@ type string of <code><a href="../Protocols/DBusMessageProtocol.html#/s:3GIO19DBu
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Sets <code>message</code> to be of <code>type.</code></p>
+                        <p>Sets <code>message</code> to be of <code>type</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -9118,7 +9118,7 @@ type string of <code><a href="../Protocols/DBusMessageProtocol.html#/s:3GIO19DBu
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Sets the serial for <code>message.</code></p>
+                        <p>Sets the serial for <code>message</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -9295,7 +9295,7 @@ well as the first string item in <code>message</code>&lsquo;s body.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Convenience to get the first item in the body of <code>message.</code></p>
+                        <p>Convenience to get the first item in the body of <code>message</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -9361,7 +9361,7 @@ well as the first string item in <code>message</code>&lsquo;s body.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the byte order of <code>message.</code></p>
+                        <p>Gets the byte order of <code>message</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -9460,7 +9460,7 @@ well as the first string item in <code>message</code>&lsquo;s body.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the flags for <code>message.</code></p>
+                        <p>Gets the flags for <code>message</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -9625,7 +9625,7 @@ well as the first string item in <code>message</code>&lsquo;s body.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the type of <code>message.</code></p>
+                        <p>Gets the type of <code>message</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -9790,7 +9790,7 @@ well as the first string item in <code>message</code>&lsquo;s body.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the serial for <code>message.</code></p>
+                        <p>Gets the serial for <code>message</code>.</p>
 
                       </div>
                       <div class="declaration">
