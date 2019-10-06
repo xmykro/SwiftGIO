@@ -7492,8 +7492,7 @@ For a concrete class that implements these methods and properties, see <code><a 
 Alternatively, use <code><a href="../Structs/TaskRef.html">TaskRef</a></code> as a lighweight, <code>unowned</code> reference if you already have an instance you just want to use.</p>
 
 <p>A <code>GTask</code> represents and manages a cancellable <q>task</q>.</p>
-
-<p>&ldquo;&rdquo; Asynchronous operations</p>
+<h2 id='asynchronous-operations' class='heading'>Asynchronous operations</h2>
 
 <p>The most common usage of <code>GTask</code> is as a <code>GAsyncResult</code>, to
 manage data during an asynchronous operation. You call
@@ -7505,7 +7504,7 @@ Eventually, you will call a method such as
 <code>g_task_return_pointer()</code> or <code>g_task_return_error()</code>, which will
 save the value you give it and then invoke the task&rsquo;s callback
 function in the
-[thread-default main context][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main context</a>
 where it was created (waiting until the next iteration of the main
 loop first, if necessary). The caller will pass the <code>GTask</code> back to
 the operation&rsquo;s finish function (as a <code>GAsyncResult</code>), and you can
@@ -7606,14 +7605,13 @@ return value.</p>
       return g_task_propagate_pointer (G_TASK (result), error);
     }
 </code></pre>
-
-<p>&ldquo;&rdquo; Chained asynchronous operations</p>
+<h2 id='chained-asynchronous-operations' class='heading'>Chained asynchronous operations</h2>
 
 <p><code>GTask</code> also tries to simplify asynchronous operations that
 internally chain together several smaller asynchronous
 operations. <code>g_task_get_cancellable()</code>, <code>g_task_get_context()</code>,
 and <code>g_task_get_priority()</code> allow you to get back the task&rsquo;s
-<code>GCancellable</code>, <code>GMainContext</code>, and [I/O priority][io-priority]
+<code>GCancellable</code>, <code>GMainContext</code>, and <a href="#io-priority">I/O priority</a>
 when starting a new subtask, so you don&rsquo;t have to keep track
 of them yourself. <code>g_task_attach_source()</code> simplifies the case
 of waiting for a source to fire (automatically using the correct
@@ -7746,13 +7744,12 @@ of waiting for a source to fire (automatically using the correct
       return g_task_propagate_pointer (G_TASK (result), error);
     }
 </code></pre>
-
-<p>&ldquo;&rdquo; Asynchronous operations from synchronous ones</p>
+<h2 id='asynchronous-operations-from-synchronous-ones' class='heading'>Asynchronous operations from synchronous ones</h2>
 
 <p>You can use <code>g_task_run_in_thread()</code> to turn a synchronous
 operation into an asynchronous one, by running it in a thread.
 When it completes, the result will be dispatched to the
-[thread-default main context][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main context</a>
 where the <code>GTask</code> was created.</p>
 
 <p>Running a task in a thread:</p>
@@ -7826,8 +7823,7 @@ where the <code>GTask</code> was created.</p>
       return g_task_propagate_pointer (G_TASK (result), error);
     }
 </code></pre>
-
-<p>&ldquo;&rdquo; Adding cancellability to uncancellable tasks</p>
+<h2 id='adding-cancellability-to-uncancellable-tasks' class='heading'>Adding cancellability to uncancellable tasks</h2>
 
 <p>Finally, <code>g_task_run_in_thread()</code> and <code>g_task_run_in_thread_sync()</code>
 can be used to turn an uncancellable operation into a
@@ -7933,8 +7929,7 @@ synchronous variants of blocking APIs.</p>
       return cake;
     }
 </code></pre>
-
-<p>&ldquo;&rdquo; Porting from GSimpleAsyncResult</p>
+<h2 id='porting-from-gsimpleasyncresult' class='heading'>Porting from GSimpleAsyncResult</h2>
 
 <p><code>GTask</code>&lsquo;s API attempts to be simpler than <code>GSimpleAsyncResult</code>&rsquo;s
 in several ways:</p>
@@ -7945,7 +7940,7 @@ retrieve it later with <code>g_task_get_task_data()</code>. This replaces the
 abuse of <code>g_simple_async_result_set_op_res_gpointer()</code> for the same
 purpose with <code>GSimpleAsyncResult</code>.</li>
 <li>In addition to the task data, <code>GTask</code> also keeps track of the
-[priority][io-priority], <code>GCancellable</code>, and
+<a href="#io-priority">priority</a>, <code>GCancellable</code>, and
 <code>GMainContext</code> associated with the task, so tasks that consist of
 a chain of simpler asynchronous operations will have easy access
 to those values when starting each sub-task.</li>
@@ -8317,7 +8312,7 @@ function (for <q>short-circuit</q> results, such as when passing
                       <div class="abstract">
                         <p>A utility function for dealing with async operations where you need
 to wait for a <code>GSource</code> to trigger. Attaches <code>source</code> to <code>task</code>&lsquo;s
-<code>GMainContext</code> with <code>task</code>&rsquo;s [priority][io-priority], and sets <code>source</code>&rsquo;s
+<code>GMainContext</code> with <code>task</code>&rsquo;s <a href="#io-priority">priority</a>, and sets <code>source</code>&rsquo;s
 callback to <code>callback</code>, with <code>task</code> as the callback&rsquo;s <code>user_data</code>.</p>
 
 <p>It will set the <code>source</code>’s name to the task’s name (as set with
@@ -8460,7 +8455,7 @@ the callback.</p>
                       <div class="abstract">
                         <p>Gets the <code>GMainContext</code> that <code>task</code> will return its result in (that
 is, the context that was the
-[thread-default main context][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main context</a>
 at the point when <code>task</code> was created).</p>
 
 <p>This will always return a non-<code>nil</code> value, even if the task&rsquo;s
@@ -9506,7 +9501,7 @@ context as the task’s callback, immediately after that callback is invoked.</p
                       <div class="abstract">
                         <p>Gets the <code>GMainContext</code> that <code>task</code> will return its result in (that
 is, the context that was the
-[thread-default main context][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main context</a>
 at the point when <code>task</code> was created).</p>
 
 <p>This will always return a non-<code>nil</code> value, even if the task&rsquo;s

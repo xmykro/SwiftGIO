@@ -7556,7 +7556,7 @@ function&rsquo;s matching <code>_finish()</code> operation.</p>
 shared main loop, such as in the main thread of an application. This avoids
 I/O operations blocking other sources on the main loop from being dispatched.
 Synchronous I/O operations should be performed from worker threads. See the
-[introduction to asynchronous programming section][async-programming] for
+<a href="#async-programming">introduction to asynchronous programming section</a> for
 more.</p>
 
 <p>Some <code>GFile</code> operations almost always take a noticeable amount of time, and
@@ -7567,8 +7567,7 @@ so do not have synchronous analogs. Notable cases include:</p>
 <li><code>g_file_unmount_mountable_with_operation()</code> to unmount a mountable file.</li>
 <li><code>g_file_eject_mountable_with_operation()</code> to eject a mountable file.</li>
 </ul>
-
-<p>&ldquo;<code>Entity Tags</code> {<code>gfile</code>-etag}</p>
+<h2 id='entity-tags-a-name-gfile-etag-a' class='heading'>Entity Tags # <a name="gfile-etag"></a></h2>
 
 <p>One notable feature of <code>GFiles</code> are entity tags, or <q>etags</q> for
 short. Entity tags are somewhat like a more abstract version of the

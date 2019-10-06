@@ -7972,7 +7972,7 @@ which are chained together by a <code>GAsyncReadyCallback</code>. To begin
 an asynchronous operation, provide a <code>GAsyncReadyCallback</code> to the
 asynchronous function. This callback will be triggered when the
 operation has completed, and must be run in a later iteration of
-the [thread-default main context][g-main-context-push-thread-default]
+the <a href="#g-main-context-push-thread-default">thread-default main context</a>
 from where the operation was initiated. It will be passed a
 <code>GAsyncResult</code> instance filled with the details of the operation&rsquo;s
 success or failure, the object the asynchronous function was
@@ -8039,8 +8039,7 @@ int main (int argc, void *argv[])
 <p>The callback for an asynchronous operation is called only once, and is
 always called, even in the case of a cancelled operation. On cancellation
 the result is a <code>G_IO_ERROR_CANCELLED</code> error.</p>
-
-<p>&ldquo;<code>I/O Priority</code> {<code>io</code>-priority}</p>
+<h2 id='i-o-priority-a-name-io-priority-a' class='heading'>I/O Priority # <a name="io-priority"></a></h2>
 
 <p>Many I/O-related asynchronous operations have a priority parameter,
 which is used in certain cases to determine the order in which
@@ -9072,7 +9071,7 @@ commandline to this process).</p>
 <p>The GApplicationCommandLine object can provide the <code>argc</code> and <code>argv</code>
 parameters for use with the <code>GOptionContext</code> command-line parsing API,
 with the <code>g_application_command_line_get_arguments()</code> function. See
-[gapplication-example-cmdline3.c][gapplication-example-cmdline3]
+<a href="#gapplication-example-cmdline3">gapplication-example-cmdline3.c</a>
 for an example.</p>
 
 <p>The exit status of the originally-invoked process may be set and
@@ -11915,8 +11914,7 @@ in how a <code>GDBusServer</code> (or a <code>GDBusConnection</code>) authentica
 peers. Simply instantiate a <code>GDBusAuthObserver</code> and connect to the
 signals you are interested in. Note that new signals may be added
 in the future</p>
-
-<p>&ldquo;&rdquo; Controlling Authentication Mechanisms</p>
+<h2 id='controlling-authentication-mechanisms' class='heading'>Controlling Authentication Mechanisms</h2>
 
 <p>By default, a <code>GDBusServer</code> or server-side <code>GDBusConnection</code> will allow
 any authentication mechanism to be used. If you only
@@ -11939,8 +11937,7 @@ on_allow_mechanism (GDBusAuthObserver *observer,
   return FALSE;
 }
 </code></pre>
-
-<p>&ldquo;<code>Controlling Authorization</code> {<code>auth</code>-observer}</p>
+<h2 id='controlling-authorization-a-name-auth-observer-a' class='heading'>Controlling Authorization # <a name="auth-observer"></a></h2>
 
 <p>By default, a <code>GDBusServer</code> or server-side <code>GDBusConnection</code> will accept
 connections from any successfully authenticated user (but not from
@@ -12044,23 +12041,19 @@ completed initialization successfully is considered to be invalid, and leads
 to undefined behaviour. In particular, if initialization fails with a
 <code>GError</code>, the only valid thing you can do with that <code>GDBusConnection</code> is to
 free it with <code>g_object_unref()</code>.</p>
-
-<p>&ldquo;<code>An example D-Bus server</code> {<code>gdbus</code>-server}</p>
+<h2 id='an-example-d-bus-server-a-name-gdbus-server-a' class='heading'>An example D-Bus server # <a name="gdbus-server"></a></h2>
 
 <p>Here is an example for a D-Bus server:
 <a href="https://git.gnome.org/browse/glib/tree/gio/tests/gdbus-example-server.c">gdbus-example-server.c</a></p>
-
-<p>&rdquo;<code>An example for exporting a subtree</code> {<code>gdbus</code>-subtree-server}</p>
+<h2 id='an-example-for-exporting-a-subtree-a-name-gdbus-subtree-server-a' class='heading'>An example for exporting a subtree # <a name="gdbus-subtree-server"></a></h2>
 
 <p>Here is an example for exporting a subtree:
 <a href="https://git.gnome.org/browse/glib/tree/gio/tests/gdbus-example-subtree.c">gdbus-example-subtree.c</a></p>
-
-<p>&ldquo;<code>An example for file descriptor passing</code> {<code>gdbus</code>-unix-fd-client}</p>
+<h2 id='an-example-for-file-descriptor-passing-a-name-gdbus-unix-fd-client-a' class='heading'>An example for file descriptor passing # <a name="gdbus-unix-fd-client"></a></h2>
 
 <p>Here is an example for passing UNIX file descriptors:
 <a href="https://git.gnome.org/browse/glib/tree/gio/tests/gdbus-example-unix-fd-client.c">gdbus-unix-fd-client.c</a></p>
-
-<p>&rdquo;<code>An example for exporting a GObject</code> {<code>gdbus</code>-export}</p>
+<h2 id='an-example-for-exporting-a-gobject-a-name-gdbus-export-a' class='heading'>An example for exporting a GObject # <a name="gdbus-export"></a></h2>
 
 <p>Here is an example for exporting a <code>GObject:</code>
 <a href="https://git.gnome.org/browse/glib/tree/gio/tests/gdbus-example-export.c">gdbus-example-export.c</a></p>
@@ -12371,7 +12364,7 @@ objects. The signals emitted are
 <code>GDBusObjectManagerClient::interface</code>-proxy-signal.</p>
 
 <p>Note that all callbacks and signals are emitted in the
-[thread-default main context][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main context</a>
 that the <code>GDBusObjectManagerClient</code> object was constructed
 in. Additionally, the <code>GDBusObjectProxy</code> and <code>GDBusProxy</code> objects
 originating from the <code>GDBusObjectManagerClient</code> object will be created in
@@ -12614,13 +12607,13 @@ the message bus launching an owner (unless
 <code>GDBusProxy::g</code>-signal signals are not very convenient to work with.
 Therefore, the recommended way of working with proxies is to subclass
 <code>GDBusProxy</code>, and have more natural properties and signals in your derived
-class. This [example][gdbus-example-gdbus-codegen] shows how this can
-easily be done using the [gdbus-codegen][gdbus-codegen] tool.</p>
+class. This <a href="#gdbus-example-gdbus-codegen">example</a> shows how this can
+easily be done using the <a href="#gdbus-codegen">gdbus-codegen</a> tool.</p>
 
 <p>A <code>GDBusProxy</code> instance can be used from multiple threads but note
 that all signals (e.g. <code>GDBusProxy::g</code>-signal, <code>GDBusProxy::g</code>-properties-changed
 and <code>GObject::notify</code>) are emitted in the
-[thread-default main context][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main context</a>
 of the thread where the instance was constructed.</p>
 
 <p>An example using a proxy for a well-known name can be found in
@@ -13412,7 +13405,7 @@ function&rsquo;s matching <code>_finish()</code> operation.</p>
 shared main loop, such as in the main thread of an application. This avoids
 I/O operations blocking other sources on the main loop from being dispatched.
 Synchronous I/O operations should be performed from worker threads. See the
-[introduction to asynchronous programming section][async-programming] for
+<a href="#async-programming">introduction to asynchronous programming section</a> for
 more.</p>
 
 <p>Some <code>GFile</code> operations almost always take a noticeable amount of time, and
@@ -13423,8 +13416,7 @@ so do not have synchronous analogs. Notable cases include:</p>
 <li><code>g_file_unmount_mountable_with_operation()</code> to unmount a mountable file.</li>
 <li><code>g_file_eject_mountable_with_operation()</code> to eject a mountable file.</li>
 </ul>
-
-<p>&ldquo;<code>Entity Tags</code> {<code>gfile</code>-etag}</p>
+<h2 id='entity-tags-a-name-gfile-etag-a' class='heading'>Entity Tags # <a name="gfile-etag"></a></h2>
 
 <p>One notable feature of <code>GFiles</code> are entity tags, or <q>etags</q> for
 short. Entity tags are somewhat like a more abstract version of the
@@ -14866,7 +14858,7 @@ Use <code>FileInfo</code> as a strong reference or owner of a <code>GFileInfo</c
 implements methods for getting information that all files should
 contain, and allows for manipulation of extended attributes.</p>
 
-<p>See [GFileAttribute][gio-GFileAttribute] for more information on how
+<p>See <a href="#gio-GFileAttribute">GFileAttribute</a> for more information on how
 GIO handles file attributes.</p>
 
 <p>To obtain a <code>GFileInfo</code> for a <code>GFile</code>, use <code>g_file_query_info()</code> (or its
@@ -14994,7 +14986,7 @@ Use <code>FileMonitor</code> as a strong reference or owner of a <code>GFileMoni
 <p>To get informed about changes to the file or directory you are
 monitoring, connect to the <code>GFileMonitor::changed</code> signal. The
 signal will be emitted in the
-[thread-default main context][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main context</a>
 of the thread that the monitor was created in
 (though if the global default main context is blocked, this may
 cause notifications to be blocked even if the thread-default
@@ -16684,7 +16676,7 @@ reduce the required number of signal connections at a given time.</p>
 <p>This interface is intended only to be used from a single thread.  The
 thread in which it is appropriate to use it depends on the particular
 implementation, but typically it will be from the thread that owns
-the [thread-default main context][g-main-context-push-thread-default]
+the <a href="#g-main-context-push-thread-default">thread-default main context</a>
 in effect at the time that the model was created.</p>
 
                         <a href="Classes/ListModel.html" class="slightly-smaller">See more</a>
@@ -17286,8 +17278,7 @@ it (or, in the case of the &lsquo;root&rsquo; menu, is defined by the context
 in which it is used).</p>
 
 <p>As an example, consider the visible portions of this menu:</p>
-
-<p>&ldquo;<code>An example menu</code> {<code>menu</code>-example}</p>
+<h2 id='an-example-menu-a-name-menu-example-a' class='heading'>An example menu # <a name="menu-example"></a></h2>
 
 <p><img src="menu-example.png" alt=""></p>
 
@@ -17305,17 +17296,16 @@ submenus and 5 sections:</p>
 <li>the Markup section (containing 2 items)</li>
 </ul>
 
-<p>The [example][menu-model] illustrates the conceptual connection between
+<p>The <a href="#menu-model">example</a> illustrates the conceptual connection between
 these 8 menus. Each large block in the figure represents a menu and the
 smaller blocks within the large block represent items in that menu. Some
 items contain references to other menus.</p>
-
-<p>&rdquo;<code>A menu example</code> {<code>menu</code>-model}</p>
+<h2 id='a-menu-example-a-name-menu-model-a' class='heading'>A menu example # <a name="menu-model"></a></h2>
 
 <p><img src="menu-model.png" alt=""></p>
 
-<p>Notice that the separators visible in the [example][menu-example]
-appear nowhere in the [menu model][menu-model]. This is because
+<p>Notice that the separators visible in the <a href="#menu-example">example</a>
+appear nowhere in the <a href="#menu-model">menu model</a>. This is because
 separators are not explicitly represented in the menu model. Instead,
 a separator is inserted between any two non-empty sections of a menu.
 Section items can have labels just like any other item. In that case,
@@ -17326,8 +17316,8 @@ that modern user interfaces tend to make these controls available
 outside the application. Examples include global menus, jumplists,
 dash boards, etc. To support such uses, it is necessary to &lsquo;export&rsquo;
 information about actions and their representation in menus, which
-is exactly what the [GActionGroup exporter][gio-GActionGroup-exporter]
-and the [GMenuModel exporter][gio-GMenuModel-exporter] do for
+is exactly what the <a href="#gio-GActionGroup-exporter">GActionGroup exporter</a>
+and the <a href="#gio-GMenuModel-exporter">GMenuModel exporter</a> do for
 <code>GActionGroup</code> and <code>GMenuModel</code>. The client-side counterparts to
 make use of the exported information are <code>GDBusActionGroup</code> and
 <code>GDBusMenuModel</code>.</p>
@@ -17360,33 +17350,31 @@ menu information:</p>
 <li>an action with no parameter type and boolean state</li>
 <li>an action with string parameter type and string state</li>
 </ul>
-<pre class="highlight plaintext"><code>
-A stateless action typically corresponds to an ordinary menu item.
+<h2 id='stateless' class='heading'>Stateless</h2>
 
-Selecting such a menu item will activate the action (with no parameter).
+<p>A stateless action typically corresponds to an ordinary menu item.</p>
 
-```` Boolean State
+<p>Selecting such a menu item will activate the action (with no parameter).</p>
+<h2 id='boolean-state' class='heading'>Boolean State</h2>
 
-An action with a boolean state will most typically be used with a "toggle"
-or "switch" menu item. The state can be set directly, but activating the
-action (with no parameter) results in the state being toggled.
+<p>An action with a boolean state will most typically be used with a <q>toggle</q>
+or <q>switch</q> menu item. The state can be set directly, but activating the
+action (with no parameter) results in the state being toggled.</p>
 
-Selecting a toggle menu item will activate the action. The menu item should
-be rendered as "checked" when the state is true.
+<p>Selecting a toggle menu item will activate the action. The menu item should
+be rendered as <q>checked</q> when the state is true.</p>
+<h2 id='string-parameter-and-state' class='heading'>String Parameter and State</h2>
 
-```` String Parameter and State
-
-Actions with string parameters and state will most typically be used to
+<p>Actions with string parameters and state will most typically be used to
 represent an enumerated choice over the items available for a group of
 radio menu items. Activating the action with a string parameter is
-equivalent to setting that parameter as the state.
+equivalent to setting that parameter as the state.</p>
 
-Radio menu items, in addition to being associated with the action, will
+<p>Radio menu items, in addition to being associated with the action, will
 have a target value. Selecting that menu item will result in activation
 of the action with the target value as the parameter. The menu item should
-be rendered as "selected" when the state of the action is equal to the
-target value of the menu item.
-</code></pre>
+be rendered as <q>selected</q> when the state of the action is equal to the
+target value of the menu item.</p>
 
                         <a href="Classes/MenuModel.html" class="slightly-smaller">See more</a>
                       </div>
@@ -20223,7 +20211,7 @@ really part of the application, rather than user data. For instance
 icons, etc. These are often shipped as files in <code>$datadir/appname</code>, or
 manually included as literal strings in the code.</p>
 
-<p>The <code>GResource</code> API and the [glib-compile-resources][glib-compile-resources] program
+<p>The <code>GResource</code> API and the <a href="#glib-compile-resources">glib-compile-resources</a> program
 provide a convenient and efficient alternative to this which has some nice properties. You
 maintain the files as normal files, so its easy to edit them, but during the build the files
 are combined into a binary bundle that is linked into the executable. This means that loading
@@ -20259,7 +20247,7 @@ different location in the resource namespace. Typically, this is used to
 include files from a different source directory without exposing the source
 directory in the resource namespace, as in the example below.</p>
 
-<p>Resource bundles are created by the [glib-compile-resources][glib-compile-resources] program
+<p>Resource bundles are created by the <a href="#glib-compile-resources">glib-compile-resources</a> program
 which takes an XML file that describes the bundle, and a set of files that the XML references. These
 are combined into a binary resource bundle.</p>
 
@@ -20285,12 +20273,12 @@ are combined into a binary resource bundle.</p>
 <p>Note that all resources in the process share the same namespace, so use Java-style
 path prefixes (like in the above example) to avoid conflicts.</p>
 
-<p>You can then use [glib-compile-resources][glib-compile-resources] to compile the XML to a
+<p>You can then use <a href="#glib-compile-resources">glib-compile-resources</a> to compile the XML to a
 binary bundle that you can load with <code>g_resource_load()</code>. However, its more common to use the &ndash;generate-source and
 &ndash;generate-header arguments to create a source file and header to link directly into your application.
 This will generate <code>get_resource()</code>, <code>register_resource()</code> and
 <code>unregister_resource()</code> functions, prefixed by the <code>--c-name</code> argument passed
-to [glib-compile-resources][glib-compile-resources]. <code>get_resource()</code> returns
+to <a href="#glib-compile-resources">glib-compile-resources</a>. <code>get_resource()</code> returns
 the generated <code>GResource</code> object. The register and unregister functions
 register the resource so its files can be accessed using
 <code>g_resources_lookup_data()</code>.</p>
@@ -20662,9 +20650,9 @@ values, as well as some other information.</p>
 
 <p>Normally, a schema has a fixed path that determines where the settings
 are stored in the conceptual global tree of settings. However, schemas
-can also be &lsquo;[relocatable][gsettings-relocatable]&rsquo;, i.e. not equipped with
+can also be &lsquo;<a href="#gsettings-relocatable">relocatable</a>&rsquo;, i.e. not equipped with
 a fixed path. This is
-useful e.g. when the schema describes an &lsquo;account&rsquo;, and you want to be
+useful e.g. when the schema describes an &#39;account&rsquo;, and you want to be
 able to store a arbitrary number of accounts.</p>
 
 <p>Paths must start with and end with a forward slash character (&lsquo;/&rsquo;)
@@ -20710,13 +20698,13 @@ defaults which use the same string.</p>
 errors will occur.</p>
 
 <p>GSettings uses schemas in a compact binary form that is created
-by the [glib-compile-schemas][glib-compile-schemas]
+by the <a href="#glib-compile-schemas">glib-compile-schemas</a>
 utility. The input is a schema description in an XML format.</p>
 
 <p>A DTD for the gschema XML format can be found here:
 <a href="https://git.gnome.org/browse/glib/tree/gio/gschema.dtd">gschema.dtd</a></p>
 
-<p>The [glib-compile-schemas][glib-compile-schemas] tool expects schema
+<p>The <a href="#glib-compile-schemas">glib-compile-schemas</a> tool expects schema
 files to have the extension <code>.gschema.xml</code>.</p>
 
 <p>At runtime, schemas are identified by their id (as specified in the
@@ -20731,7 +20719,7 @@ StudlyCaps, e.g. <q>org.gnome.font-rendering</q>.</p>
 <p>In addition to <code>GVariant</code> types, keys can have types that have
 enumerated types. These can be described by a <choice>,
 <enum> or <flags> element, as seen in the
-[example][schema-enumerated]. The underlying type of such a key
+<a href="#schema-enumerated">example</a>. The underlying type of such a key
 is string, but you can use <code>g_settings_get_enum()</code>, <code>g_settings_set_enum()</code>,
 <code>g_settings_get_flags()</code>, <code>g_settings_set_flags()</code> access the numeric values
 corresponding to the string value of enum and flags keys.</p>
@@ -20805,14 +20793,13 @@ corresponding to the string value of enum and flags keys.</p>
   <span class="o">&lt;/</span><span class="n">schema</span><span class="o">&gt;</span>
 <span class="o">&lt;/</span><span class="n">schemalist</span><span class="o">&gt;</span>
 </code></pre>
-
-<p>&ldquo;&rdquo; Vendor overrides</p>
+<h2 id='vendor-overrides' class='heading'>Vendor overrides</h2>
 
 <p>Default values are defined in the schemas that get installed by
 an application. Sometimes, it is necessary for a vendor or distributor
 to adjust these defaults. Since patching the XML source for the schema
 is inconvenient and error-prone,
-[glib-compile-schemas][glib-compile-schemas] reads so-called vendor
+<a href="#glib-compile-schemas">glib-compile-schemas</a> reads so-called vendor
 override&rsquo; files. These are keyfiles in the same directory as the XML
 schema sources which can override default values. The schema id serves
 as the group name in the key file, and the values are expected in
@@ -20824,97 +20811,89 @@ serialized GVariant form, as in the following example:</p>
 
 <p>glib-compile-schemas expects schema files to have the extension
 <code>.gschema.override</code>.</p>
-<pre class="highlight plaintext"><code>
-A very convenient feature of GSettings lets you bind `GObject` properties
-directly to settings, using `g_settings_bind()`. Once a GObject property
+<h2 id='binding' class='heading'>Binding</h2>
+
+<p>A very convenient feature of GSettings lets you bind <code>GObject</code> properties
+directly to settings, using <code>g_settings_bind()</code>. Once a GObject property
 has been bound to a setting, changes on either side are automatically
 propagated to the other side. GSettings handles details like mapping
-between GObject and GVariant types, and preventing infinite cycles.
+between GObject and GVariant types, and preventing infinite cycles.</p>
 
-This makes it very easy to hook up a preferences dialog to the
+<p>This makes it very easy to hook up a preferences dialog to the
 underlying settings. To make this even more convenient, GSettings
-looks for a boolean property with the name "sensitivity" and
+looks for a boolean property with the name <q>sensitivity</q> and
 automatically binds it to the writability of the bound setting.
-If this 'magic' gets in the way, it can be suppressed with the
-`G_SETTINGS_BIND_NO_SENSITIVITY` flag.
+If this &lsquo;magic&rsquo; gets in the way, it can be suppressed with the
+<code>G_SETTINGS_BIND_NO_SENSITIVITY</code> flag.</p>
+<h2 id='relocatable-schemas-a-name-gsettings-relocatable-a' class='heading'>Relocatable schemas # <a name="gsettings-relocatable"></a></h2>
 
-```` Relocatable schemas `` {`gsettings`-relocatable}
-
-A relocatable schema is one with no `path` attribute specified on its
-&lt;schema&gt; element. By using `g_settings_new_with_path()`, a `GSettings` object
+<p>A relocatable schema is one with no <code>path</code> attribute specified on its
+<schema> element. By using <code>g_settings_new_with_path()</code>, a <code>GSettings</code> object
 can be instantiated for a relocatable schema, assigning a path to the
-instance. Paths passed to `g_settings_new_with_path()` will typically be
+instance. Paths passed to <code>g_settings_new_with_path()</code> will typically be
 constructed dynamically from a constant prefix plus some form of instance
 identifier; but they must still be valid GSettings paths. Paths could also
 be constant and used with a globally installed schema originating from a
-dependency library.
+dependency library.</p>
 
-For example, a relocatable schema could be used to store geometry information
+<p>For example, a relocatable schema could be used to store geometry information
 for different windows in an application. If the schema ID was
-`org.foo.MyApp.Window`, it could be instantiated for paths
-`/org/foo/MyApp/main/`, `/org/foo/MyApp/document-1/`,
-`/org/foo/MyApp/document-2/`, etc. If any of the paths are well-known
-they can be specified as &lt;child&gt; elements in the parent schema, e.g.:
+<code>org.foo.MyApp.Window</code>, it could be instantiated for paths
+<code>/org/foo/MyApp/main/</code>, <code>/org/foo/MyApp/document-1/</code>,
+<code>/org/foo/MyApp/document-2/</code>, etc. If any of the paths are well-known
+they can be specified as <child> elements in the parent schema, e.g.:</p>
+<pre class="highlight swift"><code><span class="o">&lt;</span><span class="n">schema</span> <span class="n">id</span><span class="o">=</span><span class="s">"org.foo.MyApp"</span> <span class="n">path</span><span class="o">=</span><span class="s">"/org/foo/MyApp/"</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">child</span> <span class="n">name</span><span class="o">=</span><span class="s">"main"</span> <span class="n">schema</span><span class="o">=</span><span class="s">"org.foo.MyApp.Window"</span><span class="o">/&gt;</span>
+<span class="o">&lt;/</span><span class="n">schema</span><span class="o">&gt;</span>
+</code></pre>
+<h2 id='build-system-integration-a-name-gsettings-build-system-a' class='heading'>Build system integration # <a name="gsettings-build-system"></a></h2>
+
+<p>GSettings comes with autotools integration to simplify compiling and
+installing schemas. To add GSettings support to an application, add the
+following to your <code>configure.ac</code>:</p>
+<pre class="highlight swift"><code><span class="kt">GLIB_GSETTINGS</span>
 </code></pre>
 
-<p><schema id="org.foo.MyApp" path="/org/foo/MyApp/">
-  <child name="main" schema="org.foo.MyApp.Window"/>
-</schema></p>
-<pre class="highlight swift"><code>
-<span class="err">````</span> <span class="kt">Build</span> <span class="n">system</span> <span class="n">integration</span> <span class="err">``</span> <span class="p">{`</span><span class="nv">gsettings</span><span class="p">`</span><span class="o">-</span><span class="n">build</span><span class="o">-</span><span class="n">system</span><span class="p">}</span>
+<p>In the appropriate <code>Makefile.am</code>, use the following snippet to compile and
+install the named schema:</p>
+<pre class="highlight swift"><code><span class="n">gsettings_SCHEMAS</span> <span class="o">=</span> <span class="n">org</span><span class="o">.</span><span class="n">foo</span><span class="o">.</span><span class="kt">MyApp</span><span class="o">.</span><span class="n">gschema</span><span class="o">.</span><span class="n">xml</span>
+<span class="kt">EXTRA_DIST</span> <span class="o">=</span> <span class="err">$</span><span class="p">(</span><span class="n">gsettings_SCHEMAS</span><span class="p">)</span>
 
-<span class="kt">GSettings</span> <span class="n">comes</span> <span class="n">with</span> <span class="n">autotools</span> <span class="n">integration</span> <span class="n">to</span> <span class="n">simplify</span> <span class="n">compiling</span> <span class="n">and</span>
-<span class="n">installing</span> <span class="n">schemas</span><span class="o">.</span> <span class="kt">To</span> <span class="n">add</span> <span class="kt">GSettings</span> <span class="n">support</span> <span class="n">to</span> <span class="n">an</span> <span class="n">application</span><span class="p">,</span> <span class="n">add</span> <span class="n">the</span>
-<span class="n">following</span> <span class="n">to</span> <span class="n">your</span> <span class="err">`</span><span class="n">configure</span><span class="o">.</span><span class="n">ac</span><span class="err">`</span><span class="p">:</span>
+<span class="kd">@GSETTINGS_RULES</span><span class="err">@</span>
 </code></pre>
 
-<p>GLIB_GSETTINGS</p>
-<pre class="highlight swift"><code>
-<span class="kt">In</span> <span class="n">the</span> <span class="n">appropriate</span> <span class="err">`</span><span class="kt">Makefile</span><span class="o">.</span><span class="n">am</span><span class="err">`</span><span class="p">,</span> <span class="n">use</span> <span class="n">the</span> <span class="n">following</span> <span class="n">snippet</span> <span class="n">to</span> <span class="n">compile</span> <span class="n">and</span>
-<span class="n">install</span> <span class="n">the</span> <span class="n">named</span> <span class="nv">schema</span><span class="p">:</span>
+<p>No changes are needed to the build system to mark a schema XML file for
+translation. Assuming it sets the <code>gettext-domain</code> attribute, a schema may
+be marked for translation by adding it to <code>POTFILES.in</code>, assuming gettext
+0.19 is in use (the preferred method for translation):</p>
+<pre class="highlight swift"><code><span class="n">data</span><span class="o">/</span><span class="n">org</span><span class="o">.</span><span class="n">foo</span><span class="o">.</span><span class="kt">MyApp</span><span class="o">.</span><span class="n">gschema</span><span class="o">.</span><span class="n">xml</span>
 </code></pre>
 
-<p>gsettings_SCHEMAS = org.foo.MyApp.gschema.xml
-EXTRA_DIST = $(gsettings_SCHEMAS)</p>
-
-<p>@GSETTINGS_RULES@</p>
-<pre class="highlight swift"><code>
-<span class="kt">No</span> <span class="n">changes</span> <span class="n">are</span> <span class="n">needed</span> <span class="n">to</span> <span class="n">the</span> <span class="n">build</span> <span class="n">system</span> <span class="n">to</span> <span class="n">mark</span> <span class="n">a</span> <span class="n">schema</span> <span class="kt">XML</span> <span class="n">file</span> <span class="k">for</span>
-<span class="n">translation</span><span class="o">.</span> <span class="kt">Assuming</span> <span class="n">it</span> <span class="n">sets</span> <span class="n">the</span> <span class="err">`</span><span class="n">gettext</span><span class="o">-</span><span class="n">domain</span><span class="err">`</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">a</span> <span class="n">schema</span> <span class="n">may</span>
-<span class="n">be</span> <span class="n">marked</span> <span class="k">for</span> <span class="n">translation</span> <span class="n">by</span> <span class="n">adding</span> <span class="n">it</span> <span class="n">to</span> <span class="err">`</span><span class="kt">POTFILES</span><span class="o">.</span><span class="k">in</span><span class="err">`</span><span class="p">,</span> <span class="n">assuming</span> <span class="n">gettext</span>
-<span class="mf">0.19</span> <span class="k">is</span> <span class="k">in</span> <span class="nf">use</span> <span class="p">(</span><span class="n">the</span> <span class="n">preferred</span> <span class="n">method</span> <span class="k">for</span> <span class="n">translation</span><span class="p">):</span>
+<p>Alternatively, if intltool 0.50.1 is in use:</p>
+<pre class="highlight swift"><code><span class="p">[</span><span class="nv">type</span><span class="p">:</span> <span class="n">gettext</span><span class="o">/</span><span class="n">gsettings</span><span class="p">]</span><span class="n">data</span><span class="o">/</span><span class="n">org</span><span class="o">.</span><span class="n">foo</span><span class="o">.</span><span class="kt">MyApp</span><span class="o">.</span><span class="n">gschema</span><span class="o">.</span><span class="n">xml</span>
 </code></pre>
 
-<p>data/org.foo.MyApp.gschema.xml</p>
-<pre class="highlight swift"><code>
-<span class="kt">Alternatively</span><span class="p">,</span> <span class="k">if</span> <span class="n">intltool</span> <span class="mf">0.50</span><span class="o">.</span><span class="mi">1</span> <span class="k">is</span> <span class="k">in</span> <span class="nv">use</span><span class="p">:</span>
+<p>GSettings will use gettext to look up translations for the <summary> and
+<description> elements, and also any <default> elements which have a <code>l10n</code>
+attribute set. Translations must not be included in the <code>.gschema.xml</code> file
+by the build system, for example by using intltool XML rules with a
+<code>.gschema.xml.in</code> template.</p>
+
+<p>If an enumerated type defined in a C header file is to be used in a GSettings
+schema, it can either be defined manually using an <enum> element in the
+schema XML, or it can be extracted automatically from the C header. This
+approach is preferred, as it ensures the two representations are always
+synchronised. To do so, add the following to the relevant <code>Makefile.am</code>:</p>
+<pre class="highlight swift"><code><span class="n">gsettings_ENUM_NAMESPACE</span> <span class="o">=</span> <span class="n">org</span><span class="o">.</span><span class="n">foo</span><span class="o">.</span><span class="kt">MyApp</span>
+<span class="n">gsettings_ENUM_FILES</span> <span class="o">=</span> <span class="n">my</span><span class="o">-</span><span class="n">app</span><span class="o">-</span><span class="n">enums</span><span class="o">.</span><span class="n">h</span> <span class="n">my</span><span class="o">-</span><span class="n">app</span><span class="o">-</span><span class="n">misc</span><span class="o">.</span><span class="n">h</span>
 </code></pre>
 
-<p>[type: gettext/gsettings]data/org.foo.MyApp.gschema.xml</p>
-<pre class="highlight swift"><code>
-<span class="kt">GSettings</span> <span class="n">will</span> <span class="n">use</span> <span class="n">gettext</span> <span class="n">to</span> <span class="n">look</span> <span class="n">up</span> <span class="n">translations</span> <span class="k">for</span> <span class="n">the</span> <span class="o">&lt;</span><span class="n">summary</span><span class="o">&gt;</span> <span class="n">and</span>
-<span class="o">&lt;</span><span class="n">description</span><span class="o">&gt;</span> <span class="n">elements</span><span class="p">,</span> <span class="n">and</span> <span class="n">also</span> <span class="n">any</span> <span class="o">&lt;</span><span class="k">default</span><span class="o">&gt;</span> <span class="n">elements</span> <span class="n">which</span> <span class="n">have</span> <span class="n">a</span> <span class="p">`</span><span class="nv">l10n</span><span class="p">`</span>
-<span class="n">attribute</span> <span class="k">set</span><span class="o">.</span> <span class="kt">Translations</span> <span class="n">must</span> <span class="n">not</span> <span class="n">be</span> <span class="n">included</span> <span class="k">in</span> <span class="n">the</span> <span class="err">`</span><span class="o">.</span><span class="n">gschema</span><span class="o">.</span><span class="n">xml</span><span class="err">`</span> <span class="n">file</span>
-<span class="n">by</span> <span class="n">the</span> <span class="n">build</span> <span class="n">system</span><span class="p">,</span> <span class="k">for</span> <span class="n">example</span> <span class="n">by</span> <span class="n">using</span> <span class="n">intltool</span> <span class="kt">XML</span> <span class="n">rules</span> <span class="n">with</span> <span class="n">a</span>
-<span class="err">`</span><span class="o">.</span><span class="n">gschema</span><span class="o">.</span><span class="n">xml</span><span class="o">.</span><span class="k">in</span><span class="err">`</span> <span class="n">template</span><span class="o">.</span>
-
-<span class="kt">If</span> <span class="n">an</span> <span class="n">enumerated</span> <span class="n">type</span> <span class="n">defined</span> <span class="k">in</span> <span class="n">a</span> <span class="kt">C</span> <span class="n">header</span> <span class="n">file</span> <span class="k">is</span> <span class="n">to</span> <span class="n">be</span> <span class="n">used</span> <span class="k">in</span> <span class="n">a</span> <span class="kt">GSettings</span>
-<span class="n">schema</span><span class="p">,</span> <span class="n">it</span> <span class="n">can</span> <span class="n">either</span> <span class="n">be</span> <span class="n">defined</span> <span class="n">manually</span> <span class="n">using</span> <span class="n">an</span> <span class="o">&lt;</span><span class="kd">enum</span><span class="o">&gt;</span> <span class="n">element</span> <span class="k">in</span> <span class="n">the</span>
-<span class="n">schema</span> <span class="kt">XML</span><span class="p">,</span> <span class="n">or</span> <span class="n">it</span> <span class="n">can</span> <span class="n">be</span> <span class="n">extracted</span> <span class="n">automatically</span> <span class="n">from</span> <span class="n">the</span> <span class="kt">C</span> <span class="n">header</span><span class="o">.</span> <span class="kt">This</span>
-<span class="n">approach</span> <span class="k">is</span> <span class="n">preferred</span><span class="p">,</span> <span class="k">as</span> <span class="n">it</span> <span class="n">ensures</span> <span class="n">the</span> <span class="n">two</span> <span class="n">representations</span> <span class="n">are</span> <span class="n">always</span>
-<span class="n">synchronised</span><span class="o">.</span> <span class="kt">To</span> <span class="k">do</span> <span class="n">so</span><span class="p">,</span> <span class="n">add</span> <span class="n">the</span> <span class="n">following</span> <span class="n">to</span> <span class="n">the</span> <span class="n">relevant</span> <span class="err">`</span><span class="kt">Makefile</span><span class="o">.</span><span class="n">am</span><span class="err">`</span><span class="p">:</span>
-</code></pre>
-
-<p>gsettings_ENUM_NAMESPACE = org.foo.MyApp
-gsettings_ENUM_FILES = my-app-enums.h my-app-misc.h</p>
-<pre class="highlight swift"><code>
-<span class="p">`</span><span class="nv">gsettings_ENUM_NAMESPACE</span><span class="p">`</span> <span class="n">specifies</span> <span class="n">the</span> <span class="n">schema</span> <span class="n">namespace</span> <span class="k">for</span> <span class="n">the</span> <span class="kd">enum</span> <span class="n">files</span><span class="p">,</span>
-<span class="n">which</span> <span class="n">are</span> <span class="n">specified</span> <span class="k">in</span> <span class="p">`</span><span class="nv">gsettings_ENUM_FILES</span><span class="p">`</span><span class="o">.</span> <span class="kt">This</span> <span class="n">will</span> <span class="n">generate</span> <span class="n">a</span>
-<span class="err">`</span><span class="n">org</span><span class="o">.</span><span class="n">foo</span><span class="o">.</span><span class="kt">MyApp</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">xml</span><span class="err">`</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">the</span> <span class="n">extracted</span> <span class="n">enums</span><span class="p">,</span> <span class="n">which</span> <span class="n">will</span> <span class="n">be</span>
-<span class="n">automatically</span> <span class="n">included</span> <span class="k">in</span> <span class="n">the</span> <span class="n">schema</span> <span class="n">compilation</span><span class="p">,</span> <span class="n">install</span> <span class="n">and</span> <span class="n">uninstall</span>
-<span class="n">rules</span><span class="o">.</span> <span class="kt">It</span> <span class="n">should</span> <span class="n">not</span> <span class="n">be</span> <span class="n">committed</span> <span class="n">to</span> <span class="n">version</span> <span class="n">control</span> <span class="n">or</span> <span class="n">included</span> <span class="k">in</span>
-<span class="p">`</span><span class="nv">EXTRA_DIST</span><span class="p">`</span><span class="o">.</span>
-</code></pre>
+<p><code>gsettings_ENUM_NAMESPACE</code> specifies the schema namespace for the enum files,
+which are specified in <code>gsettings_ENUM_FILES</code>. This will generate a
+<code>org.foo.MyApp.enums.xml</code> file containing the extracted enums, which will be
+automatically included in the schema compilation, install and uninstall
+rules. It should not be committed to version control or included in
+<code>EXTRA_DIST</code>.</p>
 
                         <a href="Classes/Settings.html" class="slightly-smaller">See more</a>
                       </div>
@@ -21173,7 +21152,7 @@ or it can use <code>GThreads</code>.
 <code>g_simple_async_result_complete()</code> will finish an I/O task directly
 from the point where it is called. <code>g_simple_async_result_complete_in_idle()</code>
 will finish it from an idle handler in the
-[thread-default main context][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main context</a>
 where the <code>GSimpleAsyncResult</code> was created.
 <code>g_simple_async_result_run_in_thread()</code> will run the job in a
 separate thread and then use
@@ -21959,7 +21938,7 @@ If you are interested in writing connection handlers that contain
 blocking code then see <code>GThreadedSocketService</code>.</p>
 
 <p>The socket service runs on the main loop of the
-[thread-default context][g-main-context-push-thread-default-context]
+<a href="#g-main-context-push-thread-default-context">thread-default context</a>
 of the thread it is created in, and is not
 threadsafe in general. However, the calls to start and stop the
 service are thread-safe so these can be used from threads that
@@ -22162,8 +22141,7 @@ It provides the methods that can operate on this data type through <code><a href
 Use <code>Task</code> as a strong reference or owner of a <code>GTask</code> instance.</p>
 
 <p>A <code>GTask</code> represents and manages a cancellable <q>task</q>.</p>
-
-<p>&ldquo;&rdquo; Asynchronous operations</p>
+<h2 id='asynchronous-operations' class='heading'>Asynchronous operations</h2>
 
 <p>The most common usage of <code>GTask</code> is as a <code>GAsyncResult</code>, to
 manage data during an asynchronous operation. You call
@@ -22175,7 +22153,7 @@ Eventually, you will call a method such as
 <code>g_task_return_pointer()</code> or <code>g_task_return_error()</code>, which will
 save the value you give it and then invoke the task&rsquo;s callback
 function in the
-[thread-default main context][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main context</a>
 where it was created (waiting until the next iteration of the main
 loop first, if necessary). The caller will pass the <code>GTask</code> back to
 the operation&rsquo;s finish function (as a <code>GAsyncResult</code>), and you can
@@ -22276,14 +22254,13 @@ return value.</p>
       return g_task_propagate_pointer (G_TASK (result), error);
     }
 </code></pre>
-
-<p>&ldquo;&rdquo; Chained asynchronous operations</p>
+<h2 id='chained-asynchronous-operations' class='heading'>Chained asynchronous operations</h2>
 
 <p><code>GTask</code> also tries to simplify asynchronous operations that
 internally chain together several smaller asynchronous
 operations. <code>g_task_get_cancellable()</code>, <code>g_task_get_context()</code>,
 and <code>g_task_get_priority()</code> allow you to get back the task&rsquo;s
-<code>GCancellable</code>, <code>GMainContext</code>, and [I/O priority][io-priority]
+<code>GCancellable</code>, <code>GMainContext</code>, and <a href="#io-priority">I/O priority</a>
 when starting a new subtask, so you don&rsquo;t have to keep track
 of them yourself. <code>g_task_attach_source()</code> simplifies the case
 of waiting for a source to fire (automatically using the correct
@@ -22416,13 +22393,12 @@ of waiting for a source to fire (automatically using the correct
       return g_task_propagate_pointer (G_TASK (result), error);
     }
 </code></pre>
-
-<p>&ldquo;&rdquo; Asynchronous operations from synchronous ones</p>
+<h2 id='asynchronous-operations-from-synchronous-ones' class='heading'>Asynchronous operations from synchronous ones</h2>
 
 <p>You can use <code>g_task_run_in_thread()</code> to turn a synchronous
 operation into an asynchronous one, by running it in a thread.
 When it completes, the result will be dispatched to the
-[thread-default main context][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main context</a>
 where the <code>GTask</code> was created.</p>
 
 <p>Running a task in a thread:</p>
@@ -22496,8 +22472,7 @@ where the <code>GTask</code> was created.</p>
       return g_task_propagate_pointer (G_TASK (result), error);
     }
 </code></pre>
-
-<p>&ldquo;&rdquo; Adding cancellability to uncancellable tasks</p>
+<h2 id='adding-cancellability-to-uncancellable-tasks' class='heading'>Adding cancellability to uncancellable tasks</h2>
 
 <p>Finally, <code>g_task_run_in_thread()</code> and <code>g_task_run_in_thread_sync()</code>
 can be used to turn an uncancellable operation into a
@@ -22603,8 +22578,7 @@ synchronous variants of blocking APIs.</p>
       return cake;
     }
 </code></pre>
-
-<p>&ldquo;&rdquo; Porting from GSimpleAsyncResult</p>
+<h2 id='porting-from-gsimpleasyncresult' class='heading'>Porting from GSimpleAsyncResult</h2>
 
 <p><code>GTask</code>&lsquo;s API attempts to be simpler than <code>GSimpleAsyncResult</code>&rsquo;s
 in several ways:</p>
@@ -22615,7 +22589,7 @@ retrieve it later with <code>g_task_get_task_data()</code>. This replaces the
 abuse of <code>g_simple_async_result_set_op_res_gpointer()</code> for the same
 purpose with <code>GSimpleAsyncResult</code>.</li>
 <li>In addition to the task data, <code>GTask</code> also keeps track of the
-[priority][io-priority], <code>GCancellable</code>, and
+<a href="#io-priority">priority</a>, <code>GCancellable</code>, and
 <code>GMainContext</code> associated with the task, so tasks that consist of
 a chain of simpler asynchronous operations will have easy access
 to those values when starting each sub-task.</li>
@@ -24259,8 +24233,7 @@ This is not thread-safe, so all <code>GTestDBus</code> calls should be completed
 threads are spawned, or should have appropriate locking to ensure no access
 conflicts to environment variables shared between <code>GTestDBus</code> and other
 threads.</p>
-
-<p>&ldquo;&rdquo; Creating unit tests using GTestDBus</p>
+<h2 id='creating-unit-tests-using-gtestdbus' class='heading'>Creating unit tests using GTestDBus</h2>
 
 <p>Testing of D-Bus services can be tricky because normally we only ever run
 D-Bus services over an existing instance of the D-Bus daemon thus we
@@ -25961,8 +25934,7 @@ passed to the callback.  That callback should then call
 <code>GAsyncResult</code> data to see if the operation was completed
 successfully.  If an <code>error</code> is present when <code>g_volume_mount_finish()</code>
 is called, then it will be filled with any error information.</p>
-
-<p>&ldquo;<code>Volume Identifiers</code> {<code>volume</code>-identifier}</p>
+<h2 id='volume-identifiers-a-name-volume-identifier-a' class='heading'>Volume Identifiers # <a name="volume-identifier"></a></h2>
 
 <p>It is sometimes necessary to directly access the underlying
 operating system object behind a volume (e.g. for passing a volume
@@ -27347,7 +27319,7 @@ on the computer. In other words, what a file selector or file manager
 would show in a sidebar.</p>
 
 <p><code>GVolumeMonitor</code> is not
-[thread-default-context aware][g-main-context-push-thread-default],
+<a href="#g-main-context-push-thread-default">thread-default-context aware</a>,
 and so should not be used other than from the main thread, with no
 thread-default-context active.</p>
 

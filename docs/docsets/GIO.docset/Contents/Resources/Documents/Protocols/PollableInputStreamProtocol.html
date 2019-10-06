@@ -7814,12 +7814,12 @@ to having been cancelled.</p>
                       <div class="abstract">
                         <p>Checks if <code>stream</code> can be read.</p>
 
-<p>Note that some stream types may not be able to implement this 100`<code>
-reliably, and it is possible that a call to</code>g_input_stream_read()<code>
-after this returns</code>true<code>would still block. To guarantee
+<p>Note that some stream types may not be able to implement this 100%
+reliably, and it is possible that a call to <code>g_input_stream_read()</code>
+after this returns <code>true</code> would still block. To guarantee
 non-blocking behavior, you should always use
-</code>g_pollable_input_stream_read_nonblocking()<code>, which will return a
-</code>G_IO_ERROR_WOULD_BLOCK` error rather than blocking.</p>
+<code>g_pollable_input_stream_read_nonblocking()</code>, which will return a
+<code>G_IO_ERROR_WOULD_BLOCK</code> error rather than blocking.</p>
 
                       </div>
                       <div class="declaration">

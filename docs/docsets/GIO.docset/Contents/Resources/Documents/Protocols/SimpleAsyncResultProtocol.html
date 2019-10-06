@@ -7538,7 +7538,7 @@ or it can use <code>GThreads</code>.
 <code>g_simple_async_result_complete()</code> will finish an I/O task directly
 from the point where it is called. <code>g_simple_async_result_complete_in_idle()</code>
 will finish it from an idle handler in the
-[thread-default main context][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main context</a>
 where the <code>GSimpleAsyncResult</code> was created.
 <code>g_simple_async_result_run_in_thread()</code> will run the job in a
 separate thread and then use
@@ -7895,7 +7895,7 @@ Use #GTask instead.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Completes an asynchronous function in an idle handler in the
-[thread-default main context][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main context</a>
 of the thread that <code>simple</code> was initially created in
 (and re-pushes that context around the invocation of the callback).</p>
 

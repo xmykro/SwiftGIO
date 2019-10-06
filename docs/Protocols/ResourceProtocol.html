@@ -7497,7 +7497,7 @@ really part of the application, rather than user data. For instance
 icons, etc. These are often shipped as files in <code>$datadir/appname</code>, or
 manually included as literal strings in the code.</p>
 
-<p>The <code>GResource</code> API and the [glib-compile-resources][glib-compile-resources] program
+<p>The <code>GResource</code> API and the <a href="#glib-compile-resources">glib-compile-resources</a> program
 provide a convenient and efficient alternative to this which has some nice properties. You
 maintain the files as normal files, so its easy to edit them, but during the build the files
 are combined into a binary bundle that is linked into the executable. This means that loading
@@ -7533,7 +7533,7 @@ different location in the resource namespace. Typically, this is used to
 include files from a different source directory without exposing the source
 directory in the resource namespace, as in the example below.</p>
 
-<p>Resource bundles are created by the [glib-compile-resources][glib-compile-resources] program
+<p>Resource bundles are created by the <a href="#glib-compile-resources">glib-compile-resources</a> program
 which takes an XML file that describes the bundle, and a set of files that the XML references. These
 are combined into a binary resource bundle.</p>
 
@@ -7559,12 +7559,12 @@ are combined into a binary resource bundle.</p>
 <p>Note that all resources in the process share the same namespace, so use Java-style
 path prefixes (like in the above example) to avoid conflicts.</p>
 
-<p>You can then use [glib-compile-resources][glib-compile-resources] to compile the XML to a
+<p>You can then use <a href="#glib-compile-resources">glib-compile-resources</a> to compile the XML to a
 binary bundle that you can load with <code>g_resource_load()</code>. However, its more common to use the &ndash;generate-source and
 &ndash;generate-header arguments to create a source file and header to link directly into your application.
 This will generate <code>get_resource()</code>, <code>register_resource()</code> and
 <code>unregister_resource()</code> functions, prefixed by the <code>--c-name</code> argument passed
-to [glib-compile-resources][glib-compile-resources]. <code>get_resource()</code> returns
+to <a href="#glib-compile-resources">glib-compile-resources</a>. <code>get_resource()</code> returns
 the generated <code>GResource</code> object. The register and unregister functions
 register the resource so its files can be accessed using
 <code>g_resources_lookup_data()</code>.</p>

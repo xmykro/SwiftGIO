@@ -7506,8 +7506,7 @@ it (or, in the case of the &lsquo;root&rsquo; menu, is defined by the context
 in which it is used).</p>
 
 <p>As an example, consider the visible portions of this menu:</p>
-
-<p>&ldquo;<code>An example menu</code> {<code>menu</code>-example}</p>
+<h2 id='an-example-menu-a-name-menu-example-a' class='heading'>An example menu # <a name="menu-example"></a></h2>
 
 <p><img src="menu-example.png" alt=""></p>
 
@@ -7525,17 +7524,16 @@ submenus and 5 sections:</p>
 <li>the Markup section (containing 2 items)</li>
 </ul>
 
-<p>The [example][menu-model] illustrates the conceptual connection between
+<p>The <a href="#menu-model">example</a> illustrates the conceptual connection between
 these 8 menus. Each large block in the figure represents a menu and the
 smaller blocks within the large block represent items in that menu. Some
 items contain references to other menus.</p>
-
-<p>&rdquo;<code>A menu example</code> {<code>menu</code>-model}</p>
+<h2 id='a-menu-example-a-name-menu-model-a' class='heading'>A menu example # <a name="menu-model"></a></h2>
 
 <p><img src="menu-model.png" alt=""></p>
 
-<p>Notice that the separators visible in the [example][menu-example]
-appear nowhere in the [menu model][menu-model]. This is because
+<p>Notice that the separators visible in the <a href="#menu-example">example</a>
+appear nowhere in the <a href="#menu-model">menu model</a>. This is because
 separators are not explicitly represented in the menu model. Instead,
 a separator is inserted between any two non-empty sections of a menu.
 Section items can have labels just like any other item. In that case,
@@ -7546,8 +7544,8 @@ that modern user interfaces tend to make these controls available
 outside the application. Examples include global menus, jumplists,
 dash boards, etc. To support such uses, it is necessary to &lsquo;export&rsquo;
 information about actions and their representation in menus, which
-is exactly what the [GActionGroup exporter][gio-GActionGroup-exporter]
-and the [GMenuModel exporter][gio-GMenuModel-exporter] do for
+is exactly what the <a href="#gio-GActionGroup-exporter">GActionGroup exporter</a>
+and the <a href="#gio-GMenuModel-exporter">GMenuModel exporter</a> do for
 <code>GActionGroup</code> and <code>GMenuModel</code>. The client-side counterparts to
 make use of the exported information are <code>GDBusActionGroup</code> and
 <code>GDBusMenuModel</code>.</p>
@@ -7580,33 +7578,31 @@ menu information:</p>
 <li>an action with no parameter type and boolean state</li>
 <li>an action with string parameter type and string state</li>
 </ul>
-<pre class="highlight plaintext"><code>
-A stateless action typically corresponds to an ordinary menu item.
+<h2 id='stateless' class='heading'>Stateless</h2>
 
-Selecting such a menu item will activate the action (with no parameter).
+<p>A stateless action typically corresponds to an ordinary menu item.</p>
 
-```` Boolean State
+<p>Selecting such a menu item will activate the action (with no parameter).</p>
+<h2 id='boolean-state' class='heading'>Boolean State</h2>
 
-An action with a boolean state will most typically be used with a "toggle"
-or "switch" menu item. The state can be set directly, but activating the
-action (with no parameter) results in the state being toggled.
+<p>An action with a boolean state will most typically be used with a <q>toggle</q>
+or <q>switch</q> menu item. The state can be set directly, but activating the
+action (with no parameter) results in the state being toggled.</p>
 
-Selecting a toggle menu item will activate the action. The menu item should
-be rendered as "checked" when the state is true.
+<p>Selecting a toggle menu item will activate the action. The menu item should
+be rendered as <q>checked</q> when the state is true.</p>
+<h2 id='string-parameter-and-state' class='heading'>String Parameter and State</h2>
 
-```` String Parameter and State
-
-Actions with string parameters and state will most typically be used to
+<p>Actions with string parameters and state will most typically be used to
 represent an enumerated choice over the items available for a group of
 radio menu items. Activating the action with a string parameter is
-equivalent to setting that parameter as the state.
+equivalent to setting that parameter as the state.</p>
 
-Radio menu items, in addition to being associated with the action, will
+<p>Radio menu items, in addition to being associated with the action, will
 have a target value. Selecting that menu item will result in activation
 of the action with the target value as the parameter. The menu item should
-be rendered as "selected" when the state of the action is equal to the
-target value of the menu item.
-</code></pre>
+be rendered as <q>selected</q> when the state of the action is equal to the
+target value of the menu item.</p>
 
           </div>
         </section>

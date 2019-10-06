@@ -8701,7 +8701,7 @@ a particular certificate was rejected (eg, in
 operation within GIO has been completed. <code>GAsyncReadyCallback</code>
 callbacks from <code>GTask</code> are guaranteed to be invoked in a later
 iteration of the
-[thread-default main context][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main context</a>
 where the <code>GTask</code> was created. All other users of
 <code>GAsyncReadyCallback</code> must likewise call it asynchronously in a
 later iteration of the main context.</p>
@@ -9102,7 +9102,7 @@ use for an interface proxy (if <code>interface_name</code> is not <code>nil</cod
 object proxy (if <code>interface_name</code> is <code>nil</code>).</p>
 
 <p>This function is called in the
-[thread-default main loop][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main loop</a>
 that <code>manager</code> was constructed in.</p>
 
                       </div>

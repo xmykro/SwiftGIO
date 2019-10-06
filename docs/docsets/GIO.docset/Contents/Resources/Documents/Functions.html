@@ -8169,7 +8169,7 @@ the <code>GDBusConnection:exit</code>-on-close property set to <code>true</code>
                         <p>Starts acquiring <code>name</code> on the bus specified by <code>bus_type</code> and calls
 <code>name_acquired_handler</code> and <code>name_lost_handler</code> when the name is
 acquired respectively lost. Callbacks will be invoked in the
-[thread-default main context][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main context</a>
 of the thread you are calling this function from.</p>
 
 <p>You are guaranteed that one of the <code>name_acquired_handler</code> and <code>name_lost_handler</code>
@@ -8212,7 +8212,7 @@ in <code>bus_acquired_handler</code> since you are guaranteed that this will run
 before <code>name</code> is requested from the bus.</p>
 
 <p>This behavior makes it very simple to write applications that wants
-to [own names][gdbus-owning-names] and export objects.
+to <a href="#gdbus-owning-names">own names</a> and export objects.
 Simply register objects to be exported in <code>bus_acquired_handler</code> and
 unregister the objects (if any) in <code>name_lost_handler</code>.</p>
 
@@ -8401,7 +8401,7 @@ easier binding in other languages.</p>
 <code>name_appeared_handler</code> and <code>name_vanished_handler</code> when the name is
 known to have a owner respectively known to lose its
 owner. Callbacks will be invoked in the
-[thread-default main context][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main context</a>
 of the thread you are calling this function from.</p>
 
 <p>You are guaranteed that one of the handlers will be invoked after
@@ -8422,7 +8422,7 @@ guaranteed that the next time one of the handlers is invoked, it
 will be <code>name_vanished_handler</code>. The reverse is also true.</p>
 
 <p>This behavior makes it very simple to write applications that want
-to take action when a certain [name exists][gdbus-watching-names].
+to take action when a certain <a href="#gdbus-watching-names">name exists</a>.
 Basically, the application should create object proxies in
 <code>name_appeared_handler</code> and destroy them again (if any) in
 <code>name_vanished_handler</code>.</p>
@@ -9575,7 +9575,7 @@ parameter.</p>
 </ul>
 
 <p>This can fail if e.g. <code>gvalue</code> is of type <code>G_TYPE_STRING</code> and <code>type</code>
-is [&lsquo;i&rsquo;][G-VARIANT-TYPE-INT32:CAPS]. It will also fail for any <code>GType</code>
+is <a href="#G-VARIANT-TYPE-INT32:CAPS">&lsquo;i&rsquo;</a>. It will also fail for any <code>GType</code>
 (including e.g. <code>G_TYPE_OBJECT</code> and <code>G_TYPE_BOXED</code> derived-types) not
 in the table above.</p>
 

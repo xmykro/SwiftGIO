@@ -7520,23 +7520,19 @@ completed initialization successfully is considered to be invalid, and leads
 to undefined behaviour. In particular, if initialization fails with a
 <code>GError</code>, the only valid thing you can do with that <code>GDBusConnection</code> is to
 free it with <code>g_object_unref()</code>.</p>
-
-<p>&ldquo;<code>An example D-Bus server</code> {<code>gdbus</code>-server}</p>
+<h2 id='an-example-d-bus-server-a-name-gdbus-server-a' class='heading'>An example D-Bus server # <a name="gdbus-server"></a></h2>
 
 <p>Here is an example for a D-Bus server:
 <a href="https://git.gnome.org/browse/glib/tree/gio/tests/gdbus-example-server.c">gdbus-example-server.c</a></p>
-
-<p>&rdquo;<code>An example for exporting a subtree</code> {<code>gdbus</code>-subtree-server}</p>
+<h2 id='an-example-for-exporting-a-subtree-a-name-gdbus-subtree-server-a' class='heading'>An example for exporting a subtree # <a name="gdbus-subtree-server"></a></h2>
 
 <p>Here is an example for exporting a subtree:
 <a href="https://git.gnome.org/browse/glib/tree/gio/tests/gdbus-example-subtree.c">gdbus-example-subtree.c</a></p>
-
-<p>&ldquo;<code>An example for file descriptor passing</code> {<code>gdbus</code>-unix-fd-client}</p>
+<h2 id='an-example-for-file-descriptor-passing-a-name-gdbus-unix-fd-client-a' class='heading'>An example for file descriptor passing # <a name="gdbus-unix-fd-client"></a></h2>
 
 <p>Here is an example for passing UNIX file descriptors:
 <a href="https://git.gnome.org/browse/glib/tree/gio/tests/gdbus-example-unix-fd-client.c">gdbus-unix-fd-client.c</a></p>
-
-<p>&rdquo;<code>An example for exporting a GObject</code> {<code>gdbus</code>-export}</p>
+<h2 id='an-example-for-exporting-a-gobject-a-name-gdbus-export-a' class='heading'>An example for exporting a GObject # <a name="gdbus-export"></a></h2>
 
 <p>Here is an example for exporting a <code>GObject:</code>
 <a href="https://git.gnome.org/browse/glib/tree/gio/tests/gdbus-example-export.c">gdbus-example-export.c</a></p>
@@ -7959,7 +7955,7 @@ convenient &lsquo;inline&rsquo; use of <code>g_variant_new()</code>, e.g.:
 
 <p>This is an asynchronous method. When the operation is finished,
 <code>callback</code> will be invoked in the
-[thread-default main context][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main context</a>
 of the thread you are calling this method from. You can then call
 <code>g_dbus_connection_call_finish()</code> to get the result of the operation.
 See <code>g_dbus_connection_call_sync()</code> for the synchronous version of this
@@ -8217,12 +8213,12 @@ be lost. Use <code>g_dbus_connection_flush()</code> if you need such guarantees.
 
 <p>When <code>connection</code> has been closed, the <code>GDBusConnection::closed</code>
 signal is emitted in the
-[thread-default main context][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main context</a>
 of the thread that <code>connection</code> was constructed in.</p>
 
 <p>This is an asynchronous method. When the operation is finished,
 <code>callback</code> will be invoked in the
-[thread-default main context][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main context</a>
 of the thread you are calling this method from. You can
 then call <code>g_dbus_connection_close_finish()</code> to get the result of the
 operation. See <code>g_dbus_connection_close_sync()</code> for the synchronous
@@ -8473,7 +8469,7 @@ been sent to the networking buffers in the OS kernel.</p>
 
 <p>This is an asynchronous method. When the operation is finished,
 <code>callback</code> will be invoked in the
-[thread-default main context][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main context</a>
 of the thread you are calling this method from. You can
 then call <code>g_dbus_connection_flush_finish()</code> to get the result of the
 operation. See <code>g_dbus_connection_flush_sync()</code> for the synchronous
@@ -8869,7 +8865,7 @@ D-Bus interface that is described in <code>interface_info</code>.</p>
 
 <p>Calls to functions in <code>vtable</code> (and <code>user_data_free_func</code>) will happen
 in the
-[thread-default main context][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main context</a>
 of the thread you are calling this method from.</p>
 
 <p>Note that all <code>GVariant</code> values passed to functions in <code>vtable</code> will match
@@ -8901,7 +8897,7 @@ incremented by 1 (unless allocated statically, e.g. if the
 reference count is -1, see <code>g_dbus_interface_info_ref()</code>) for as long
 as the object is exported. Also note that <code>vtable</code> will be copied.</p>
 
-<p>See this [server][gdbus-server] for an example of how to use this method.</p>
+<p>See this <a href="#gdbus-server">server</a> for an example of how to use this method.</p>
 
                       </div>
                       <div class="declaration">
@@ -8984,7 +8980,7 @@ where to dispatch the call. The collected <code>GDBusInterfaceVTable</code> and
 the request.</p>
 
 <p>All calls into user-provided code will be invoked in the
-[thread-default main context][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main context</a>
 of the thread you are calling this method from.</p>
 
 <p>If an existing subtree is already registered at <code>object_path</code> or
@@ -9000,7 +8996,7 @@ registered via <code>g_dbus_connection_register_object()</code> or other binding
 <p>Note that <code>vtable</code> will be copied so you cannot change it after
 registration.</p>
 
-<p>See this [server][gdbus-subtree-server] for an example of how to use
+<p>See this <a href="#gdbus-subtree-server">server</a> for an example of how to use
 this method.</p>
 
                       </div>
@@ -9087,7 +9083,7 @@ submitting the message to the underlying transport.</p>
 <code>G_IO_ERROR_CLOSED</code>. If <code>message</code> is not well-formed,
 the operation fails with <code>G_IO_ERROR_INVALID_ARGUMENT</code>.</p>
 
-<p>See this [server][gdbus-server] and [client][gdbus-unix-fd-client]
+<p>See this <a href="#gdbus-server">server</a> and <a href="#gdbus-unix-fd-client">client</a>
 for an example of how to use this low-level API to send and receive
 UNIX file descriptors.</p>
 
@@ -9141,7 +9137,7 @@ the operation fails with <code>G_IO_ERROR_INVALID_ARGUMENT</code>.</p>
 
 <p>This is an asynchronous method. When the operation is finished, <code>callback</code>
 will be invoked in the
-[thread-default main context][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main context</a>
 of the thread you are calling this method from. You can then call
 <code>g_dbus_connection_send_message_with_reply_finish()</code> to get the result of the operation.
 See <code>g_dbus_connection_send_message_with_reply_sync()</code> for the synchronous version.</p>
@@ -9149,7 +9145,7 @@ See <code>g_dbus_connection_send_message_with_reply_sync()</code> for the synchr
 <p>Note that <code>message</code> must be unlocked, unless <code><a href="../Protocols/DBusConnectionProtocol.html#/s:3GIO22DBusConnectionProtocolPAAE5flagsSo05GDBusC5Flagsavp">flags</a></code> contain the
 <code>G_DBUS_SEND_MESSAGE_FLAGS_PRESERVE_SERIAL</code> flag.</p>
 
-<p>See this [server][gdbus-server] and [client][gdbus-unix-fd-client]
+<p>See this <a href="#gdbus-server">server</a> and <a href="#gdbus-unix-fd-client">client</a>
 for an example of how to use this low-level API to send and receive
 UNIX file descriptors.</p>
 
@@ -9191,7 +9187,7 @@ occurred. That is to say that the returned <code>GDBusMessage</code> object may
 be of type <code>G_DBUS_MESSAGE_TYPE_ERROR</code>. Use
 <code>g_dbus_message_to_gerror()</code> to transcode this to a <code>GError</code>.</p>
 
-<p>See this [server][gdbus-server] and [client][gdbus-unix-fd-client]
+<p>See this <a href="#gdbus-server">server</a> and <a href="#gdbus-unix-fd-client">client</a>
 for an example of how to use this low-level API to send and receive
 UNIX file descriptors.</p>
 
@@ -9248,7 +9244,7 @@ occurred. That is to say that the returned <code>GDBusMessage</code> object may
 be of type <code>G_DBUS_MESSAGE_TYPE_ERROR</code>. Use
 <code>g_dbus_message_to_gerror()</code> to transcode this to a <code>GError</code>.</p>
 
-<p>See this [server][gdbus-server] and [client][gdbus-unix-fd-client]
+<p>See this <a href="#gdbus-server">server</a> and <a href="#gdbus-unix-fd-client">client</a>
 for an example of how to use this low-level API to send and receive
 UNIX file descriptors.</p>
 
@@ -9330,7 +9326,7 @@ when the user session ends.</p>
                       <div class="abstract">
                         <p>Subscribes to signals on <code>connection</code> and invokes <code>callback</code> with a whenever
 the signal is received. Note that <code>callback</code> will be invoked in the
-[thread-default main context][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main context</a>
 of the thread you are calling this method from.</p>
 
 <p>If <code>connection</code> is not a message bus connection, <code>sender</code> must be

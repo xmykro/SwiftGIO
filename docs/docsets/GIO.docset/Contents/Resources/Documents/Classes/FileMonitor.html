@@ -7499,7 +7499,7 @@ Use <code>FileMonitor</code> as a strong reference or owner of a <code>GFileMoni
 <p>To get informed about changes to the file or directory you are
 monitoring, connect to the <code>GFileMonitor::changed</code> signal. The
 signal will be emitted in the
-[thread-default main context][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main context</a>
 of the thread that the monitor was created in
 (though if the global default main context is blocked, this may
 cause notifications to be blocked even if the thread-default

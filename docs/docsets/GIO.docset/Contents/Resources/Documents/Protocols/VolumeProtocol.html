@@ -7513,8 +7513,7 @@ passed to the callback.  That callback should then call
 <code>GAsyncResult</code> data to see if the operation was completed
 successfully.  If an <code>error</code> is present when <code>g_volume_mount_finish()</code>
 is called, then it will be filled with any error information.</p>
-
-<p>&ldquo;<code>Volume Identifiers</code> {<code>volume</code>-identifier}</p>
+<h2 id='volume-identifiers-a-name-volume-identifier-a' class='heading'>Volume Identifiers # <a name="volume-identifier"></a></h2>
 
 <p>It is sometimes necessary to directly access the underlying
 operating system object behind a volume (e.g. for passing a volume
@@ -7938,7 +7937,7 @@ and <code>GAsyncResult</code> data returned in the <code>callback</code>.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the kinds of [identifiers][volume-identifier] that <code>volume</code> has.
+                        <p>Gets the kinds of <a href="#volume-identifier">identifiers</a> that <code>volume</code> has.
 Use <code>g_volume_get_identifier()</code> to obtain the identifiers themselves.</p>
 
                       </div>
@@ -8099,7 +8098,7 @@ implementations to find the underlying mount to shadow, see
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the identifier of the given kind for <code>volume</code>.
-See the [introduction][volume-identifier] for more
+See the <a href="#volume-identifier">introduction</a> for more
 information about volume identifiers.</p>
 
                       </div>

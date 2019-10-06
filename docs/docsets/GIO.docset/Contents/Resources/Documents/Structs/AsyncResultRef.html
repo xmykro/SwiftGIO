@@ -7497,7 +7497,7 @@ which are chained together by a <code>GAsyncReadyCallback</code>. To begin
 an asynchronous operation, provide a <code>GAsyncReadyCallback</code> to the
 asynchronous function. This callback will be triggered when the
 operation has completed, and must be run in a later iteration of
-the [thread-default main context][g-main-context-push-thread-default]
+the <a href="#g-main-context-push-thread-default">thread-default main context</a>
 from where the operation was initiated. It will be passed a
 <code>GAsyncResult</code> instance filled with the details of the operation&rsquo;s
 success or failure, the object the asynchronous function was
@@ -7564,8 +7564,7 @@ int main (int argc, void *argv[])
 <p>The callback for an asynchronous operation is called only once, and is
 always called, even in the case of a cancelled operation. On cancellation
 the result is a <code>G_IO_ERROR_CANCELLED</code> error.</p>
-
-<p>&ldquo;<code>I/O Priority</code> {<code>io</code>-priority}</p>
+<h2 id='i-o-priority-a-name-io-priority-a' class='heading'>I/O Priority # <a name="io-priority"></a></h2>
 
 <p>Many I/O-related asynchronous operations have a priority parameter,
 which is used in certain cases to determine the order in which

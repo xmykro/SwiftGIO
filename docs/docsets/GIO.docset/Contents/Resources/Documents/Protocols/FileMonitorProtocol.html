@@ -7500,7 +7500,7 @@ Alternatively, use <code><a href="../Structs/FileMonitorRef.html">FileMonitorRef
 <p>To get informed about changes to the file or directory you are
 monitoring, connect to the <code>GFileMonitor::changed</code> signal. The
 signal will be emitted in the
-[thread-default main context][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main context</a>
 of the thread that the monitor was created in
 (though if the global default main context is blocked, this may
 cause notifications to be blocked even if the thread-default
@@ -7866,7 +7866,7 @@ has taken place. Should be called from file monitor
 implementations only.</p>
 
 <p>Implementations are responsible to call this method from the
-[thread-default main context][g-main-context-push-thread-default] of the
+<a href="#g-main-context-push-thread-default">thread-default main context</a> of the
 thread that the monitor was created in.</p>
 
                       </div>

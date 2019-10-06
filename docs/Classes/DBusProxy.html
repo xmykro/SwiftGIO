@@ -7516,13 +7516,13 @@ the message bus launching an owner (unless
 <code>GDBusProxy::g</code>-signal signals are not very convenient to work with.
 Therefore, the recommended way of working with proxies is to subclass
 <code>GDBusProxy</code>, and have more natural properties and signals in your derived
-class. This [example][gdbus-example-gdbus-codegen] shows how this can
-easily be done using the [gdbus-codegen][gdbus-codegen] tool.</p>
+class. This <a href="#gdbus-example-gdbus-codegen">example</a> shows how this can
+easily be done using the <a href="#gdbus-codegen">gdbus-codegen</a> tool.</p>
 
 <p>A <code>GDBusProxy</code> instance can be used from multiple threads but note
 that all signals (e.g. <code>GDBusProxy::g</code>-signal, <code>GDBusProxy::g</code>-properties-changed
 and <code>GObject::notify</code>) are emitted in the
-[thread-default main context][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main context</a>
 of the thread where the instance was constructed.</p>
 
 <p>An example using a proxy for a well-known name can be found in
@@ -7796,7 +7796,7 @@ Will retain <code>GDBusProxy</code>.</p>
                       <div class="abstract">
                         <p>Like <code>g_dbus_proxy_new_sync()</code> but takes a <code>GBusType</code> instead of a <code>GDBusConnection</code>.</p>
 
-<p><code>GDBusProxy</code> is used in this [example][gdbus-wellknown-proxy].</p>
+<p><code>GDBusProxy</code> is used in this <a href="#gdbus-wellknown-proxy">example</a>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7847,7 +7847,7 @@ will be requested to launch a name owner for the name.</p>
 <p>This is a synchronous failable constructor. See <code>g_dbus_proxy_new()</code>
 and <code>g_dbus_proxy_new_finish()</code> for the asynchronous version.</p>
 
-<p><code>GDBusProxy</code> is used in this [example][gdbus-wellknown-proxy].</p>
+<p><code>GDBusProxy</code> is used in this <a href="#gdbus-wellknown-proxy">example</a>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7939,7 +7939,7 @@ and <code>g_dbus_proxy_new_finish()</code> for the asynchronous version.</p>
                       <div class="abstract">
                         <p>Like <code>g_dbus_proxy_new_sync()</code> but takes a <code>GBusType</code> instead of a <code>GDBusConnection</code>.</p>
 
-<p><code>GDBusProxy</code> is used in this [example][gdbus-wellknown-proxy].</p>
+<p><code>GDBusProxy</code> is used in this <a href="#gdbus-wellknown-proxy">example</a>.</p>
 
                       </div>
                       <div class="declaration">
@@ -7990,7 +7990,7 @@ will be requested to launch a name owner for the name.</p>
 <p>This is a synchronous failable constructor. See <code>g_dbus_proxy_new()</code>
 and <code>g_dbus_proxy_new_finish()</code> for the asynchronous version.</p>
 
-<p><code>GDBusProxy</code> is used in this [example][gdbus-wellknown-proxy].</p>
+<p><code>GDBusProxy</code> is used in this <a href="#gdbus-wellknown-proxy">example</a>.</p>
 
                       </div>
                       <div class="declaration">

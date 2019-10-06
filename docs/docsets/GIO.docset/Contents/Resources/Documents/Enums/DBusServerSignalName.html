@@ -7522,7 +7522,7 @@ the <code>GDBusConnection::closed</code> signal.</p>
 <p>If <code>GDBusServer:flags</code> contains <code>G_DBUS_SERVER_FLAGS_RUN_IN_THREAD</code>
 then the signal is emitted in a new thread dedicated to the
 connection. Otherwise the signal is emitted in the
-[thread-default main context][g-main-context-push-thread-default]
+<a href="#g-main-context-push-thread-default">thread-default main context</a>
 of the thread that <code>server</code> was constructed in.</p>
 
 <p>You are guaranteed that signal handlers for this signal runs
@@ -7580,7 +7580,7 @@ single property, by specifying the property name as a detail in the
 </code></pre>
 
 <p>It is important to note that you must use
-[canonical parameter names][canonical-parameter-names] as
+<a href="#canonical-parameter-names">canonical parameter names</a> as
 detail strings for the notify signal.</p>
 
                       </div>
