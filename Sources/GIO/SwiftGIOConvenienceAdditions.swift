@@ -12,6 +12,10 @@ import CGLib
 import GLib
 import GLibObject
 
+#if os(Linux)
+public struct GNativeSocketAddress {}
+#endif
+
 /// Convenience additions for Cancellables
 public extension CancellableProtocol {
     /// Convenience function to connect to the #GCancellable::cancelled
