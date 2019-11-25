@@ -4,7 +4,7 @@
 # the compiler and linker flags to use.
 #
 VER=2.0
-JAZZY_VER=2.62.1
+JAZZY_VER=2.62.3
 Mod=Gio
 MOD=`echo "${Mod}" | tr '[:lower:]' '[:upper:]'`
 Module=${Mod}-$VER
