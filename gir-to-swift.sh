@@ -47,10 +47,13 @@ grep -h 'public protocol' Sources/${MOD}/*-*.swift | cut -d' ' -f3 | cut -d: -f1
 echo >> Sources/${MOD}/Swift${Mod}.swift ""
 grep -h '^open class' Sources/${MOD}/*-*.swift | cut -d' ' -f3 | cut -d: -f1 | sort -u | sed -e 's/^\(.*\)/public typealias _gio_\1 = \1/' >> Sources/${MOD}/Swift${Mod}.swift
 echo >> Sources/${MOD}/Swift${Mod}.swift ""
+grep -h '^public struct' Sources/${MOD}/*-bitfields.swift | cut -d' ' -f3 | cut -d: -f1 | sort -u | sed -e 's/^\(.*\)/public typealias _gio_\1 = \1/' >> Sources/${MOD}/Swift${Mod}.swift
+echo >> Sources/${MOD}/Swift${Mod}.swift ""
 echo >> Sources/${MOD}/Swift${Mod}.swift "public struct Gio {"
 grep -h 'public protocol' Sources/${MOD}/*-*.swift | cut -d' ' -f3 | cut -d: -f1 | sort -u | sed -e 's/^\(.*\)/    public typealias \1 = _gio_\1/' >> Sources/${MOD}/Swift${Mod}.swift
 echo >> Sources/${MOD}/Swift${Mod}.swift ""
 grep -h '^open class' Sources/${MOD}/*-*.swift | cut -d' ' -f3 | cut -d: -f1 | sort -u | sed -e 's/^\(.*\)/    public typealias \1 = _gio_\1/' >> Sources/${MOD}/Swift${Mod}.swift
 echo >> Sources/${MOD}/Swift${Mod}.swift ""
 grep -h '^public typealias' Sources/${MOD}/*-*.swift | sed 's/^/    /' >> Sources/${MOD}/Swift${Mod}.swift
+grep -h '^public struct' Sources/${MOD}/*-bitfields.swift | cut -d' ' -f3 | cut -d: -f1 | sort -u | sed -e 's/^\(.*\)/    public typealias \1 = _gio_\1/' >> Sources/${MOD}/Swift${Mod}.swift
 echo >> Sources/${MOD}/Swift${Mod}.swift "}"
