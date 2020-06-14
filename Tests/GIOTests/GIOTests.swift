@@ -13,8 +13,8 @@ class GIOTests: XCTestCase {
             let ls = "/bin/ls"
             guard let file = File.newFor(path: ls) else { XCTFail(ls) ; return }
             guard let base = file.basename else { XCTFail() ; return }
-            guard let ai = try AppInfo.createFrom(commandline: ls, applicationName: base, flags: .needs_terminal) else {
-                XCTFail("Cannot creat AppInfo") ; return
+            guard let ai = try AppInfo.createFrom(commandline: ls, applicationName: base, flags: .needsTerminal) else {
+                XCTFail("Cannot create AppInfo") ; return
             }
             XCTAssertNotNil(ai.commandline)
             XCTAssertTrue(ai.supportsFiles())
