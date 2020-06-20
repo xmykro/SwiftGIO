@@ -3,7 +3,7 @@
 //  GIO
 //
 //  Created by Rene Hexel on 20/6/16.
-//  Copyright © 2016, 2018, 2019 Rene Hexel.
+//  Copyright © 2016, 2018, 2019, 2020 Rene Hexel.
 //  All Rights Reserved
 //
 //
@@ -36,7 +36,7 @@ public extension CancellableProtocol {
     /// @callback is invoked.  This lifts a restriction in place for
     /// earlier GLib versions which now makes it easier to write cleanup
     /// code that unconditionally invokes e.g. g_cancellable_cancel().
-    func connect<T>(data: UnsafePointer<T>? = nil, dataDestroyFunc: GLib.DestroyNotify? = nil, callback c: @escaping GLibObject.Callback) -> CUnsignedLong {
+    func connect<T>(data: UnsafePointer<T>? = nil, dataDestroyFunc: GLib.DestroyNotify? = nil, callback c: @escaping GLibObject.Callback) -> Int {
         let d = data.map { UnsafeMutableRawPointer(mutating: $0) } ?? UnsafeMutableRawPointer(ptr)
         let f = dataDestroyFunc ?? { _ in }
         return connect(callback: c, data: d, dataDestroyFunc: f)
