@@ -8,7 +8,8 @@ let package = Package(
         .library(name: "GIO", targets: ["GIO"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/rhx/SwiftGObject.git", .branch("master"))
+        .package(url: "ssh://promac.local/Users/rh/src/swift/rh/gtk/SwiftGObject", .branch("master"))
+        //.package(url: "https://github.com/rhx/SwiftGObject.git", .branch("master"))
     ],
     targets: [
         .target(name: "GIO", dependencies: ["GLibObject"]),

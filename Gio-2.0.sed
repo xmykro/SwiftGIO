@@ -2,10 +2,10 @@ s/GLib.Type/GType/g
 s/GLib.CompareFunc/GCompareFunc/g
 s/GLib.CompareDataFunc/GCompareDataFunc/g
 s/public func (parseName parse_name:/public func parse(name parse_name:/
-s/.*no reference counting for GFile, cannot ref.*/	g_object_ref(cast(ptr))/
-s/.*no reference counting for GFile, cannot unref.*/	g_object_unref(cast(ptr))/
-s/.*no reference counting for GAppInfo, cannot ref.*/	g_object_ref(cast(ptr))/
-s/.*no reference counting for GAppInfo, cannot unref.*/	g_object_unref(cast(ptr))/
+s/.*no reference counting for GFile, cannot ref.*/        g_object_ref(ptr)/
+s/.*no reference counting for GFile, cannot unref.*/        g_object_unref(ptr)/
+s/.*no reference counting for GAppInfo, cannot ref.*/        g_object_ref(ptr)/
+s/.*no reference counting for GAppInfo, cannot unref.*/        g_object_unref(ptr)/
 s/Pem(pem/(PEM/
 s/Ssl/SSL/g
 s/Tls/TLS/g
@@ -35,3 +35,4 @@ s/: \([A-Za-z.]*Mapping[,)]\)/: @escaping \1/g
 s/path: UnsafeMutablePointer<CChar>/path: UnsafePointer<CChar>/g
 s/GObject.Callback/GLibObject.Callback/g
 s/, GObject.TypePluginProtocol//
+s/peekBuffer(count: UnsafeMutablePointer<gsize>!) -> UnsafeMutableRawPointer!/peekBuffer(count: UnsafeMutablePointer<gsize>!) -> UnsafeRawPointer!/

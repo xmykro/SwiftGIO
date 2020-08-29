@@ -12,9 +12,9 @@ import CGLib
 import GLib
 import GLibObject
 
-#if os(Linux)
-public struct GNativeSocketAddress {}
-#endif
+//#if os(Linux)
+//public struct GNativeSocketAddress {}
+//#endif
 
 /// Convenience additions for Cancellables
 public extension CancellableProtocol {
