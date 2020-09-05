@@ -36,3 +36,10 @@ s/path: UnsafeMutablePointer<CChar>/path: UnsafePointer<CChar>/g
 s/GObject.Callback/GLibObject.Callback/g
 s/, GObject.TypePluginProtocol//
 s/peekBuffer(count: UnsafeMutablePointer<gsize>!) -> UnsafeMutableRawPointer!/peekBuffer(count: UnsafeMutablePointer<gsize>!) -> UnsafeRawPointer!/
+s/argv: UnsafeMutablePointer<UnsafeMutablePointer<gchar>/argv: UnsafePointer<UnsafePointer<gchar>/
+s/value: UnsafeMutablePointer<UnsafeMutablePointer<gchar>/value: UnsafePointer<UnsafePointer<gchar>/
+s/environ: UnsafeMutablePointer<UnsafeMutablePointer<gchar>/environ: UnsafePointer<UnsafePointer<gchar>/
+s/items: UnsafeMutablePointer<UnsafeMutablePointer<gchar>/items: UnsafePointer<UnsafePointer<gchar>/
+s/supportedTypes: UnsafeMutablePointer<UnsafeMutablePointer<gchar>/supportedTypes: UnsafeMutablePointer<UnsafePointer<gchar>/
+s/func getEnviron() -> UnsafeMutablePointer<UnsafeMutablePointer<gchar>/func getEnviron() -> UnsafePointer<UnsafePointer<gchar>/
+s/func getSupportedTypes() -> UnsafeMutablePointer<UnsafeMutablePointer<gchar>/func getSupportedTypes() -> UnsafePointer<UnsafePointer<gchar>/
