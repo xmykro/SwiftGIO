@@ -2,17 +2,19 @@
 #
 # Patch the generated wrapper Swift code to handle special cases
 #
-BEGIN { noimm = 0 }
+BEGIN { immutable = 0 }
 /additional application actions/ {
-	noimm = 1
+	immutable = 1
 }
-/func listActions() -> UnsafeMutablePointer<UnsafeMutablePointer<gchar>/ {
-	if (noimm == 0) {
+/func listActions.. .. UnsafeMutablePointer<UnsafeMutablePointer<gchar>/ {
+	if (immutable == 1) {
+		immutable = 0
 		gsub("UnsafeMutablePointer<UnsafeMutablePointer<gchar>", "UnsafePointer<UnsafePointer<gchar>")
+		print
+		next
 	}
-	noimm = 0
 }
 /^$/ {
-	noimm = 0
+	immutable = 0
 }
 // { print }
