@@ -42,5 +42,5 @@ s/environ: UnsafeMutablePointer<UnsafeMutablePointer<gchar>/environ: UnsafePoint
 s/items: UnsafeMutablePointer<UnsafeMutablePointer<gchar>/items: UnsafePointer<UnsafePointer<gchar>/
 s/supportedTypes: UnsafeMutablePointer<UnsafeMutablePointer<gchar>/supportedTypes: UnsafeMutablePointer<UnsafePointer<gchar>/
 s/func getEnviron() -> UnsafeMutablePointer<UnsafeMutablePointer<gchar>/func getEnviron() -> UnsafePointer<UnsafePointer<gchar>/
-s/func getSupportedTypes() -> UnsafeMutablePointer<UnsafeMutablePointer<..har>/func getSupportedTypes() -> UnsafePointer<UnsafePointer<CChar>/
+s/func getSupportedTypes() -> UnsafeMutablePointer<UnsafeMutablePointer<..har>/func getSupportedTypes() -> UnsafeMutablePointer<UnsafePointer<CChar>/
 s/\(func peekFds(length:.*\) -> UnsafeMutablePointer<gint>/\1 -> UnsafePointer<gint>/
