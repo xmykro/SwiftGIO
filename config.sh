@@ -22,9 +22,9 @@ export PKG_CONFIG_PATH=/usr/local/opt/libffi/lib/pkgconfig:${PKG_CONFIG_PATH}
 export LINKFLAGS="`pkg-config --libs $module gio-unix-2.0 glib-2.0 | tr ' ' '\n' | tr '	' '\n' | sed -e 's/^/-Xlinker /' -e 's/-Wl,//' | tr '\n' ' ' | sed -e 's/^/-Xlinker /' -e 's/-Wl,//' | sed -e 's/-pthread/-lpthread/g' -e 's/^/-Xlinker /' -e 's/-Wl,//g' -e 's/ -pthread/ -lpthread/g' -e 's/-Xcc *-Xlinker/-Xlinker/g' -e 's/-Xlinker *-Xcc/-Xcc/g' -e 's/-Xlinker *--export-dynamic//g' -e 's/-Xcc *-Xcc/-Xcc/g' -e 's/-Xlinker *-Xlinker/-Xlinker/g' -e 's/-Xcc *$//' -e 's/-Xlinker *-Xlinker/-Xlinker/g' -e 's/-Xlinker *$//'`"
 export CCFLAGS="`pkg-config --cflags $module gio-unix-2.0 glib-2.0 | tr ' ' '\n' | sed -e 's/^/-Xcc /' | tr '\n' ' ' | tr '	' '\n' | sed 's/^/-Xcc /' | tr '\n' ' ' | sed -e 's/^/-Xlinker /' -e 's/-Wl,//g' -e 's/ -pthread/ /g' -e 's/-Xcc *-Xlinker/-Xlinker/g' -e 's/-Xlinker *-Xcc/-Xcc/g' -e 's/-Xlinker *--export-dynamic//g' -e 's/-Xcc *-Xcc/-Xcc/g' -e 's/-Xlinker *-Xlinker/-Xlinker/g' -e 's/-Xcc *-Xcc/-Xcc/g' -e 's/-Xcc *$//' -e 's/-Xlinker *$//' -e 's/-Xcc *$//'`"
 TAC="tail -r"
-if which tac >/dev/null ; then
+if which tac >/dev/null 2>&1 ; then
    TAC=tac
-   else if which gtac >/dev/null ; then
+   else if which gtac >/dev/null 2>&1 ; then
 	TAC=gtac
    fi
 fi
