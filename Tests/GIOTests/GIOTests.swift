@@ -13,6 +13,7 @@ class GIOTests: XCTestCase {
             let ls = "/bin/ls"
             guard let file = File.newFor(path: ls) else { XCTFail(ls) ; return }
             guard let base = file.basename else { XCTFail() ; return }
+            #if !os(macOS)
             guard let ai = try AppInfo.createFrom(commandline: ls, applicationName: base, flags: .needsTerminal) else {
                 XCTFail("Cannot create AppInfo") ; return
             }
@@ -23,6 +24,7 @@ class GIOTests: XCTestCase {
             guard let ap = ai.dup() else { XCTFail() ; return }
             let dup = AppInfo(ap)
             XCTAssertEqual(ai.commandline, dup.commandline)
+            #endif
         } catch {
             XCTFail("Error creating AppInfo")
         }
