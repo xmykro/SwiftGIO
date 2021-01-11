@@ -4,6 +4,7 @@
 /docs
 /Packages
 /*.xcodeproj
+/.swiftpm
 *.tgz
 Sources/GIO/SwiftGio.swift
 Package.pins
