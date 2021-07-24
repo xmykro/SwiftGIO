@@ -62,5 +62,5 @@ jobs:
         with:
           name: build-artefact-18.04-5.3
           path: |
-            SwiftGIO/
+            SwiftGIO/Sources/
           retention-days: 1
