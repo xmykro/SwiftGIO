@@ -21,24 +21,7 @@ if [ ! -e "${GIR}" ] ; then
 	echo "and can be found in /usr /usr/local or by pkg-config!"
 	exit 1
 fi
-gir2swift -o Sources/${MOD} -m ${Module}.module -p ${GIR_DIR}/GLib-2.0.gir -p ${GIR_DIR}/GObject-2.0.gir "${GIR}"
-for src in Sources/${MOD}/*-*.swift ; do
-	sed -f ${Module}.sed < ${src} > ${src}.out
-	mv -f ${src}.out ${src}
-	for ver in 2.60.0 ; do
-		if pkg-config --max-version=$ver glib-2.0 ; then
-			sed -f ${Module}-$ver.sed < ${src} |	\
-			awk -f ${Module}-$ver.awk > ${src}.out
-			mv -f ${src}.out ${src}
-		fi
-	done
-	for ver in 2.62.0 ; do
-		if pkg-config --atleast-version=$ver glib-2.0 ; then
-			sed -f ${Module}-$ver.sed < ${src} > ${src}.out
-			mv -f ${src}.out ${src}
-		fi
-	done
-done
+gir2swift -o Sources/${MOD} -p ${GIR_DIR}/GLib-2.0.gir -p ${GIR_DIR}/GObject-2.0.gir "${GIR}"
 touch Sources/${MOD}/${Module}.swift
 echo  > Sources/${MOD}/Swift${Mod}.swift "import CGLib"
 echo >> Sources/${MOD}/Swift${Mod}.swift "import GLib"
