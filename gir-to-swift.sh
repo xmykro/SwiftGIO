@@ -21,23 +21,4 @@ if [ ! -e "${GIR}" ] ; then
 	echo "and can be found in /usr /usr/local or by pkg-config!"
 	exit 1
 fi
-gir2swift -o Sources/${MOD} -p ${GIR_DIR}/GLib-2.0.gir -p ${GIR_DIR}/GObject-2.0.gir "${GIR}"
-touch Sources/${MOD}/${Module}.swift
-echo  > Sources/${MOD}/Swift${Mod}.swift "import CGLib"
-echo >> Sources/${MOD}/Swift${Mod}.swift "import GLib"
-echo >> Sources/${MOD}/Swift${Mod}.swift "import GLibObject"
-echo >> Sources/${MOD}/Swift${Mod}.swift ""
-grep -h 'public protocol' Sources/${MOD}/*-*.swift | cut -d' ' -f3 | cut -d: -f1 | sort -u | sed -e 's/^\(.*\)/public typealias _gio_\1 = \1/' >> Sources/${MOD}/Swift${Mod}.swift
-echo >> Sources/${MOD}/Swift${Mod}.swift ""
-grep -h '^open class' Sources/${MOD}/*-*.swift | cut -d' ' -f3 | cut -d: -f1 | sort -u | sed -e 's/^\(.*\)/public typealias _gio_\1 = \1/' >> Sources/${MOD}/Swift${Mod}.swift
-echo >> Sources/${MOD}/Swift${Mod}.swift ""
-grep -h '^public struct' Sources/${MOD}/*-bitfields.swift | cut -d' ' -f3 | cut -d: -f1 | sort -u | sed -e 's/^\(.*\)/public typealias _gio_\1 = \1/' >> Sources/${MOD}/Swift${Mod}.swift
-echo >> Sources/${MOD}/Swift${Mod}.swift ""
-echo >> Sources/${MOD}/Swift${Mod}.swift "public struct Gio {"
-grep -h 'public protocol' Sources/${MOD}/*-*.swift | cut -d' ' -f3 | cut -d: -f1 | sort -u | sed -e 's/^\(.*\)/    public typealias \1 = _gio_\1/' >> Sources/${MOD}/Swift${Mod}.swift
-echo >> Sources/${MOD}/Swift${Mod}.swift ""
-grep -h '^open class' Sources/${MOD}/*-*.swift | cut -d' ' -f3 | cut -d: -f1 | sort -u | sed -e 's/^\(.*\)/    public typealias \1 = _gio_\1/' >> Sources/${MOD}/Swift${Mod}.swift
-echo >> Sources/${MOD}/Swift${Mod}.swift ""
-grep -h '^public typealias' Sources/${MOD}/*-*.swift | sed 's/^/    /' >> Sources/${MOD}/Swift${Mod}.swift
-grep -h '^public struct' Sources/${MOD}/*-bitfields.swift | cut -d' ' -f3 | cut -d: -f1 | sort -u | sed -e 's/^\(.*\)/    public typealias \1 = _gio_\1/' >> Sources/${MOD}/Swift${Mod}.swift
-echo >> Sources/${MOD}/Swift${Mod}.swift "}"
+gir2swift -n Gio -o Sources/${MOD} -p ${GIR_DIR}/GLib-2.0.gir -p ${GIR_DIR}/GObject-2.0.gir "${GIR}"
