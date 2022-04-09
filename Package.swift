@@ -13,6 +13,7 @@ let package = Package(
         .target(
             name: "GIO",
             dependencies: [
+                .product(name: "gir2swift", package: "gir2swift"),
                 .product(name: "GLibObject", package: "SwiftGObject")
             ],
             plugins: [
