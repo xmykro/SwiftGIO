@@ -4,5 +4,4 @@
 # that the swift wrapper code exists
 #
 . ./config.sh
-[ -e Sources/${MOD}/${Module}.swift ] || ./generate-wrapper.sh
 exec swift test --build-path "$BUILD_DIR" $CCFLAGS $LINKFLAGS "$@"
