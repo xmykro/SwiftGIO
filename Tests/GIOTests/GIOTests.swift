@@ -56,11 +56,3 @@ class GIOTests: XCTestCase {
         XCTAssertEqual(calledBackCount, 1)
     }
 }
-extension GIOTests {
-    static var allTests : [(String, (GIOTests) -> () throws -> Void)] {
-        return [
-            ("testAppInfoAndFile",  testAppInfoAndFile),
-            ("testCancellable",     testCancellable),
-        ]
-    }
-}
